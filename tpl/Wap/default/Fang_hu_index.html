@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/style.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/back.css" media="all" />
+        <script type="text/javascript" src="{noercms::RES}/js/fang/share.js"></script>
+        <script type="text/javascript" src="{noercms::RES}/js/fang/common.js"></script>
+        <script type="text/javascript" src="{noercms::RES}/js/fang/house.js"></script>
+        <title>楼盘户型</title>
+    </head>
+    <body >
+<div class="wrapper" id="container">
+	<!-- start -->
+		<div class="act_top" id="actTop">
+			<div class="act_top_show">
+				<img id="bannerPic" style="width:100%;max-height:175px;" src="{noercms:$data['hu_top_topic']}" alt="loading...">
+			</div>
+		</div>
+		<div id="roomDetails"></div>
+		<p>&nbsp;</p>
+	<!-- end -->
+</div>
+<!-- 户型简介 start -->
+		<div class="box box_up box_up3" id="box0">
+			<h3>{noercms:$data['title']}</h3>
+			<div class="box_type" style=" height:auto;">
+				<ul class="house_type">
+                    <volist  name="arr" id="v">
+					<li id="boxLi{noercms:$i}" class="">        
+                        <a href="javascript:void(0);" onclick="List.toggleList({noercms:$i},0);">         
+                            <strong>{noercms:$v.name}</strong>         
+                            <span>{noercms:$data['title']}</span>         
+                            <em>{noercms:$v.fang}房{noercms:$v.ting}厅 约{noercms:$v.area}平方米</em>        
+                        </a>        
+                        <div class="house_photo" style="display: none; ">         
+                            <a href="{noercms::U('Fang/hu_photo',array('id'=>$v['id'],'token'=>$v['token']))}"  class="ico_type">户型图</a>         
+                            <a href="{noercms::U('Fang/panoramic_photo',array('id'=>$v['id'],'token'=>$v['token']))}"  class="ico_360">全景图</a> 
+                        </div>       
+                    </li>
+					</volist >
+				</ul>
+			</div>
+		</div>
+<!-- 户型简介 end -->
+<script>
+var PID = 2356;
+var WECHATID = 'o8ViLjqXXdEbCHRGmquQb7L19-T0';
+</script>
+<a href="javascript:history.go(-1);" class="back360" style="">&nbsp;</a>        		
+<div mark="stat_code" style="width:0px; height:0px; display:none;"></div>
+</body>
+</html>

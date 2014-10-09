@@ -1,0 +1,122 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*top样式*/
+body{ margin:0px; padding:0px; width:100%; font-size:12px; color:#333;}
+img{border:0 none;}
+body, h1, h2, h3, h4, h5, h6, p, ul, li, dl, dt, dd {margin: 0; padding: 0;}
+ul{margin:0px; padding:0px; list-style:none;}
+.clear{clear:both;}
+a{color:#333; text-decoration:none;}
+a:hover{color:#1d6cc4; text-decoration:underline;}
+.font{font-size:12px;}
+.font_table_title{color:#1d6cc4; font-size:12px;}
+.fon14{font-size:14px;}
+textarea{font-size:12px;}
+
+
+
+.head{background:url(/tpl/System/common/wqyimg/images/head_bg.jpg) no-repeat #3697fe;}
+.navigation{width:100%; padding:37px 0px 0px 20px; overflow:hidden; display:block;}
+.navigation li{float:left; margin-right:4px; display:inline; width:84px; height:35px; line-height:35px; text-align:center; font-size:14px; font-weight:bold;}
+.navigation .nav{background:url(/tpl/System/common/wqyimg/images/nav_bg.gif) no-repeat; color:#fff;}
+.navigation .nav a{ text-decoration:none; color:#fff;}
+.navigation .nav a:hover{text-decoration:none; }
+.navigation .nava{background:url(/tpl/System/common/wqyimg/images/nav_abg.gif) no-repeat; color:#1d6cc4;}
+.navigation .nava a{ text-decoration:none; color:#1d6cc4;}
+.navigation .nava a:hover{text-decoration:none; color:#1d6cc4;}
+
+/*left样式*/
+.menu{width:134px;}
+.menu_title{width:122px; border:1px #fff solid; height:26px; background:url(/tpl/System/common/wqyimg/images/tit_bg.jpg) repeat-x; color:#fff; font-weight:bold; line-height:26px; padding-left:10px; font-size:12px;}
+.sidemenu{padding:7px 0px 10px 0px;}
+.sidemenu li{line-height:24px; background:url(/tpl/System/common/wqyimg/images/lf_icon.jpg) no-repeat 12px 9px; padding-left:27px; font-size:12px; border-bottom:1px #c8d6e3 dashed;}
+.sidemenu li a{color:#0e63be;}
+.sidemenu li a:hover{color:#2ab809; font-weight:bold;}
+
+/*right样式*/
+.righttop{height:26px; background:url(/tpl/System/common/wqyimg/images/tit_bg.jpg) repeat-x; border:1px #fff solid; color:#fff; padding:0px 15px;}
+.rightbottom{padding:6px; line-height:20px;}
+.weiz{ font-size:12px;}
+.weiz li{float:right; margin-left:20px; display:inline;}
+.weiz li a{color:#fff; text-decoration:underline;}
+.weiz li a:hover{color:#fff; font-weight:bold; text-decoration:underline;}
+.weiz .tc{background:url(/tpl/System/common/wqyimg/images/tc_icon.gif) no-repeat; padding-left:20px;}
+.weiz .sy{background:url(/tpl/System/common/wqyimg/images/syicon.gif) no-repeat; padding-left:20px;}
+.right_title{background:url(/tpl/System/common/wqyimg/images/titlebg.jpg) repeat-x; height:26px; line-height:26px; padding-left:15px; border:1px #fff solid; color:#1d6cc4; font-weight:bold; font-size:12px;}
+.admin{padding:10px 0px 15px 0px; font-size:12px; line-height:22px;}
+.admin li{float:left; margin-left:30px;}
+.font1{color: #1d6cc4; font-weight: bold; font-size:12px;}
+.font2{color: #FFFFFF; font-size:12px;}
+.adminbottom{margin-top:8px; border:1px #c8d6e3 solid;}
+
+/*server样式*/
+.font14 {color: #3e73bf;font-size: 12px;font-weight: bold;}
+.font14 a{color: #3e73bf;font-size: 12px;font-weight: bold;}
+.font14 a:hover{color: #2ab809;font-size: 12px;font-weight: bold;}
+.en{color: #999;font-family: Arial, Helvetica, sans-serif; font-size:12px;}
+
+/*server_list样式*/
+.dq{color: #2ab809}
+.fwtop_siadmenu{}
+.fwtop_siadmenu li{width:116px; height:52px; float:right; border-left:1px #c8d6e3 solid; font-size:14px; text-align:center; line-height:52px;}
+/*
+.fwtop_siadmenu li a{color:#1d6cc4; display:block; text-decoration:none;}
+.fwtop_siadmenu li a:hover{color:#1d6cc4; background:#e5eff8; display:block; text-decoration:none;}
+*/
+.sel{color:#1d6cc4; background:#e5eff8; display:block; text-decoration:none;}
+.normal{color:#1d6cc4; display:block; text-decoration:none;}
+.green {color: #2ab809; font-size: 14px; }
+.greena{color: #2ab809; font-size: 12px; font-weight:bold;}
+.yellow{font-size: 14px; color: #ff6600;}
+.blue{color:#0000ff; font-size:12px;}
+.wjlist{}
+.wjlist li{float:left; font-size:12px; margin-left:5px; display:inline;}
+.wjlist a{border:1px #6388b2 solid; background:#cad8e4; padding:2px 5px; line-height:15px; color:#1d6cc4; display:block;}
+.wjlist a:hover{border:1px #6388b2 solid; background:#7f97b2; padding:2px 5px; line-height:15px; color:#fff; display:block; text-decoration:none;}
+
+/*bmmanage样式*/
+.bmlist{}
+.bmlist li{float:right; font-size:12px; margin-right:5px; display:inline;}
+.bmlist a{border:1px #6388b2 solid; background:#cad8e4; padding:2px 5px; line-height:15px; color:#1d6cc4; display:block;}
+.bmlist a:hover{border:1px #6388b2 solid; background:#7f97b2; padding:2px 5px; line-height:15px; color:#fff; display:block; text-decoration:none;}
+
+.server_list_bottom{margin-top:6px;}
+.search{ padding-left:10px;}
+.search li{float:left; margin-left:5px; display:inline; font-size:12px;}
+.font_line{margin-top:5px; color:#1d6cc4;}
+.dc{border:1px #6388b2 solid; background:#cad8e4; padding:2px 5px;color:#1d6cc4;}
+.fontbo a{border:1px #6388b2 solid; background:#cad8e4; padding:2px 5px; line-height:15px; color:#1d6cc4; font-size:12px; }
+.fontbo a:hover{border:1px #6388b2 solid; background:#7f97b2; padding:2px 5px; line-height:15px; color:#fff; text-decoration:none; font-size:12px;}
+.content{width:100%;}
+.red14{color: #FF0000; font-size: 14px; font-weight: bold;}
+.red12{color: #FF0000; font-size: 12px; font-weight: bold;}
+.red{color: #FF0000; font-size:12px;}
+.green2{color:#ff9900; font-size:12px;}
+.font999{color:#999; font-size:12px;}
+
+/*server_list_bpms.html样式*/
+.fh a{color:#1d6cc4; text-decoration:underline; font-size:12px;}
+.fh a:hover{ color:#009900; text-decoration:underline; font-size:12px;}
+.STYLE22{font-size:12px;}
+
+/*server_list_detail.html样式*/
+.wjlist_detail li{ width:83px; font-size:12px; margin-top:5px;}
+.wjlist_detail a{border:1px #6388b2 solid; background:#cad8e4; padding:2px 5px; line-height:15px; color:#1d6cc4; display:block;}
+.wjlist_detail a:hover{border:1px #6388b2 solid; background:#7f97b2; padding:2px 5px; line-height:15px; color:#fff; display:block; text-decoration:none;}
+
+.rttitle{color: #1d6cc4; font-weight: bold; font-size:12px;}
+.ruihuan a{color:#2ab809; font-size:12px; font-weight:bold; line-height:26px;}
+.ruihuan a:hover{color:#1d6cc4; font-size:12px; font-weight:bold; line-height:26px;}
+
+/*qxmanage.html样式*/
+.qxmanage{}
+.qxmanage li{float:left; margin-right:30px; padding-bottom:8px;}
+
+.weiz2{ font-size:12px;}
+.weiz2 li{float:right; margin:45px 20px 0 0; display:inline;}
+.weiz2 li a{color:#fff; text-decoration:none;}
+.weiz2 li a:hover{color:#fff; font-weight:bold; text-decoration:none;}
+.tc{color:#fff;font-weight:bold;}
+.tc b{color:red;}
+

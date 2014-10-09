@@ -1,0 +1,118 @@
+.nav_9{
+	height:50px;
+	text-align:center;
+}
+
+.footer_bar .nav_9{height:0;}
+.nav_9 ul{
+	border-top:1px solid #4b3e38;
+	height:50px;
+	position:fixed;
+	z-index:200;
+	bottom:0;
+	left:0;
+	width:100%;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#5e544f), to(#433c38));
+}
+.nav_9 li>a{
+	color:#8c8f94;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	border-bottom:0;
+	display:block;
+	height:100%;
+	padding:5px 0;
+	text-align:center;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.nav_9 li>a.on, .nav_9 li>a.active{
+	color:#fff;
+}
+.nav_9 li>a>*{
+	pointer-events:none;
+}
+.nav_9 li>a>p{
+	display: block;
+	width:25px;
+	height:25px;
+	margin:auto;
+	background:url(../img/nav_9_icon.png) no-repeat -13px -13px;
+	-webkit-background-size:100px auto;
+	/*background-color:red;*/
+}
+.nav_9 li>a>p[class*="icon"]{
+	background: none;
+	font-size: 19px;
+	line-height: 25px;
+}
+.nav_9 li>a>p.voice{
+	background-position:-13px -63px;
+}
+.nav_9 li>a>p.addr{
+	background-position:-13px -113px;
+}
+.nav_9 li>a>p.tip{
+	background-position:-13px -163px;
+}
+.nav_9 li>a>p.back{
+	background-position:-13px -213px;
+}
+.nav_9 li>a>p.share{
+	background-position:-13px -263px;
+}
+.nav_9 li>a>p.back2{
+	background-position:-13px -313px;
+}
+.nav_9 li>a.on>p, .nav_9 li>a.active>p{
+	background-position-x:-63px;
+}
+
+.nav_9 li>a.home{
+	height:70px;
+	width:70px;
+	margin:auto;
+	border-radius: 60px;
+	position:relative;
+	top:-20px;
+	background:url(../img/nav_9_home.png) no-repeat center center;
+	-webkit-background-size:100% 100%;
+}
+.toshare{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background:rgba(0,0,0,0.5);
+    display:none;
+}
+.toshare.on{
+    display:block;
+}
+.toshare table{
+    float:right;
+    margin-right:10px;
+    width:235px;
+    text-align:center;
+}
+.toshare table img{
+}
+.toshare tr:nth-of-type(2){
+    text-align:center;
+    border:2px dashed #fff;
+    border-radius:8px;
+    -webkit-border-radius:8px;
+    display:block;
+    color:#fff;
+    line-height:30px;
+}
+.toshare td{
+    width:116px;
+    text-align:center;
+}
+.toshare tr:nth-of-type(2) img{
+    width:66px!important;
+    height:66px!important;
+    margin:5px;
+}

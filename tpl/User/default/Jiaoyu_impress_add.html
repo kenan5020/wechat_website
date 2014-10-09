@@ -1,0 +1,88 @@
+<include file="Public:head"/>
+<script src="./tpl/User/default/common/js/date/WdatePicker.js"></script>
+<script src="/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="/tpl/static/artDialog/plugins/iframeTools.js"></script>
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{noercms::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+ <script src="/tpl/static/upyun.js"></script>
+<script>
+var editor;
+KindEditor.ready(function(K) {
+editor = K.create('#description', {
+resizeType : 1,
+allowPreviewEmoticons : false,
+allowImageUpload : true,
+uploadJson : '/index.php?g=User&m=Upyun&a=kindedtiropic',
+items : [
+'source','undo','plainpaste','wordpaste','clearhtml','quickformat','selectall','fullscreen','fontname', 'fontsize','subscript','superscript','indent','outdent','|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline','hr']
+});
+});
+</script>
+ <div class="content"  >
+  <link rel="stylesheet" type="text/css" href="./tpl/User/default/common/css/cymain.css" />
+<div class="tab">
+<ul>
+<li class="<if condition="ACTION_NAME EQ 'index'">current</if> tabli" id="tab0"><a href="{noercms::U('Jiaoyu/index',array('token'=>$token))}">培训机构介绍</a></li>
+<li class="<if condition="ACTION_NAME EQ 'son' ">current</if> tabli" id="tab2"><a href="{noercms::U('Jiaoyu/son',array('token'=>$token))}">校区</a></li>
+<li class="<if condition="ACTION_NAME EQ 'housetype' ">current</if> tabli" id="tab2"><a href="{noercms::U('Jiaoyu/housetype',array('token'=>$token))}">培训课程</a></li>
+<li class="<if condition="ACTION_NAME EQ 'album' or ACTION_NAME EQ 'album_add'">current</if> tabli" id="tab5"><a href="{noercms::U('Jiaoyu/album',array('token'=>$token))}">教学相册</a></li>
+<li class="<if condition="ACTION_NAME EQ 'impress'">current</if> tabli" id="tab5" style="display:none"><a href="{noercms::U('Jiaoyu/impress',array('token'=>$token))}" style="display:none">学员印象</a></li>
+<li class="<if condition="ACTION_NAME EQ 'expert'">current</if> tabli" id="tab5"><a href="{noercms::U('Jiaoyu/expert',array('token'=>$token))}">学院印象</a></li>
+<li class="<if condition="ACTION_NAME EQ 'jiaoyuindex'">current</if> tabli" id="tab6"><a href="{noercms::U('Reservation/jiaoyuindex',array('token'=>$token))}">预约管理</a></li>
+</ul>
+</div>
+<div style="clear:both"></div>
+<div class="cLineB">
+<h4>添加点评</h4><a href="javascript:history.go(-1);return false;" class="right btnGrayS vm" style="margin-top:-27px">返回</a>
+ </div>
+    <div class="msgWrap bgfc">
+	  <form class="form" method="post" action="" target="_top" >	 
+		<table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%">
+			<tbody>
+				<tr>
+				  <th valign="top"><span class="red">*</span>标题：</th>
+				  <td>
+					<input type="text" id="title" name="title" value="{noercms:$impress['title']}" class="input-large px" data-rule-required="true" data-rule-maxlength="4" maxlength="4">
+                                        <span class="maroon">*</span>
+                                        <span class="help-inline">请填写4个中文印象！</span>
+					</td>
+				</tr>
+				<tr>
+					<th width="120">显示顺序：</th>
+					<td> <input type="text" id="sort" name="sort" value="{noercms:$impress['sort']|default=1}" class="input-mini px" data-rule-required="true" data-rule-number="true">
+                                        <span class="maroon">*</span>
+                                        <span class="help-inline">数值越大越靠前</span></td>
+				</tr>
+				<tr>
+					<th width="120">印象数：</th>
+					<td> <input type="text" id="comment" name="comment" value="{noercms:$impress['comment']}" class="input-large px" data-rule-required="true" data-rule-number="true">
+                                        <span class="maroon">*</span></td>
+				</tr>
+				<tr>
+					<th>是否显示：</th>
+					<td><label class="radio inline">
+                                            <input type="radio" name="is_show" value="1" <if condition="$impress['is_show'] eq 1"> checked="checked"</if>>显示此印象
+                                        </label>
+                                        <label class="radio inline">
+                                            <input type="radio" name="is_show" value="0" <if condition="$impress['is_show'] eq 0"> checked="checked"</if>>不显示此印象
+                                        </label></td>
+				</tr>
+				<th>&nbsp;</th>
+				  <if condition="$impress['id'] neq ''">
+                                    <input type="hidden" name="id" value="{noercms:$impress['id']}" />
+                                    </if>
+                                    <input type="hidden" name="pid" value="{noercms:$pid}">
+					<td>
+						<button type="submit" name="button" class="btnGreen">保存</button>
+						<a href="javascript:history.go(-1);" class="btnGray vm">取消</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+  </div> 
+        </div>
+<include file="Public:footer"/>

@@ -1,0 +1,102 @@
+<include file="Public:head"/>
+<script src="/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="/tpl/static/artDialog/plugins/iframeTools.js"></script>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<script type="text/javascript" src="/tpl/static/jquery.min.js"></script>
+
+
+    
+ <div class="content" style="width:1070px; background:none; margin-left:125px; border:none; margin-bottom:30px; margin-top:30px;" >
+
+<div class="cLineB">
+   <div  class="quick-actions_homepage">
+    
+  </div> 
+  <h4>讨论社区配置 </h4>
+ </div>
+<!--tab start-->
+<div class="tab">
+<ul>
+<li class="tabli" id="tab2"><a href="{noercms::U('Forum/index',array('token'=>$token))}">帖子管理</a></li>
+<li class="tabli" id="tab0"><a href="{noercms::U('Forum/comment',array('token'=>$token))}">评论管理</a></li>
+
+<li class="tabli" id="tab2"><a href="{noercms::U('Forum/message',array('token'=>$token))}">消息管理</a></li>
+<li class="current tabli" id="tab5"><a href="{noercms::U('Forum/config',array('token'=>$token,'infotype'=>'Shop'))}">社区配置</a></li>
+</ul>
+</div>
+<!--tab end-->
+    <div class="msgWrap bgfc">
+	  <form class="form" method="post" action="{noercms::U('Forum/set')}" target="_top" enctype="multipart/form-data">	 
+		<table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%">
+			<tbody>
+				<tr>
+				  <th valign="top"><span class="red">*</span>关键词：</th>
+				  <td>
+					<span class="red">论坛 或者 讨论社区 —— 当用户输入该关键词时，将会触发此回复。</span></td>
+				</tr>
+				
+				<tr>
+					<th width="120">讨论社区名字</th>
+					<td><input type="text" name="forumname" value="{noercms:$conf.forumname|default=$wxname.'官方粉丝社区'}" class="px" style="width:250px;"></td>
+				</tr>
+				<tr>
+					<th>回复图片：</th>
+					<td><input type="text" name="picurl" id="picurl" value="{noercms:$conf.picurl}" class="px" style="width:550px;"><script src="/tpl/static/upyun.js"></script>  <a href="###" onclick="upyunPicUpload('picurl',360,200,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('picurl')">预览</a><br/> </td>
+				</tr>
+				
+				<tr>
+					<th>讨论社区Logo：</th>
+					<td><input type="text" name="logourl" id="logourl" value="{noercms:$conf.logo}" class="px" style="width:550px;">  <a href="###" onclick="upyunPicUpload('logourl',1500,1000,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('logourl')">预览</a><br/> </td>
+				</tr>				
+				<tr>
+					<th>自定义背景</th>
+					<td><input type="text" name="bgurl" id="bgurl" value="{noercms:$conf.bgurl}" class="px" style="width:550px;">  <a href="###" onclick="upyunPicUpload('bgurl',1500,1000,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('bgurl')">预览</a><br/> </td>
+				</tr>
+				<tr>
+					<th width="120">图文回复介绍：</th>
+					<td><textarea style="width:560px;height:75px" name="intro" id="intro" class="px">{noercms:$conf.intro}</textarea></td>
+				</tr>
+				
+				
+				<tr>
+					<th width="120">是否需要审核新帖</th>
+					<td>
+						<input type="radio" name="ischeck" id="nocheck" <if condition="$conf['ischeck'] eq 0">checked</if> value="0" /><label for="nocheck">不需要 &nbsp;</label>
+						<input type="radio" name="ischeck" id="check" <if condition="$conf['ischeck'] eq 1">checked</if> value="1" /><label for="check">需要</label>
+					</td>
+				</tr>
+								
+				<tr>
+					<th width="120">是否需要审核新评论</th>
+					<td>
+						<input type="radio" name="comcheck" id="nocomcheck" <if condition="$conf['comcheck'] eq 0">checked</if> value="0" /><label for="nocomcheck">不需要 &nbsp;</label>
+						<input type="radio" name="comcheck" id="comcheck" <if condition="$conf['comcheck'] eq 1">checked</if> value="1" /><label for="comcheck">需要</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<th width="120">开启/关闭讨论社区</th>
+					<td>
+						<input type="radio" name="isopen" id="open" <if condition="$conf['isopen'] eq 1">checked</if> value="1" /><label for="open">开启 &nbsp;</label>
+						<input type="radio" name="isopen" id="noopen" <if condition="$conf['isopen'] eq 0">checked</if> value="0" /><label for="noopen">关闭</label>
+						 &nbsp; &nbsp; &nbsp;<tt style="color:red">(*选择关闭将不能打开讨论社区)</tt>
+					</td>
+				</tr>
+				
+				
+				
+				<th>&nbsp;</th>
+					<td>
+						<input type="hidden" name="token" value="{noercms:$_GET['token']}" />
+						<button type="submit" class="btnGreen">保存</button>
+						<a href="javascript:history.go(-1);" class="btnGray vm">取消</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+  </div> 
+ 
+  
+        </div>
+<include file="Public:footer"/>

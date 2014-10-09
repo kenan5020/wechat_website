@@ -1,0 +1,67 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/default_user_com.css" media="all">
+ <div class="content"  >
+        <link rel="stylesheet" type="text/css" href="./tpl/User/default/common/css/cymain.css" />
+<div class="tab">
+<ul>
+<li class="<if condition="ACTION_NAME EQ 'index'">current</if> tabli" id="tab0"><a href="{noercms::U('Hunqing/index',array('token'=>$token))}">婚庆公司介绍</a></li>
+<li class="<if condition="ACTION_NAME EQ 'son' ">current</if> tabli" id="tab2"><a href="{noercms::U('Hunqing/son',array('token'=>$token))}">婚庆门店</a></li>
+<li class="<if condition="ACTION_NAME EQ 'housetype' ">current</if> tabli" id="tab2"><a href="{noercms::U('Hunqing/housetype',array('token'=>$token))}">成功案例</a></li>
+<li class="<if condition="ACTION_NAME EQ 'album' or ACTION_NAME EQ 'album_add'">current</if> tabli" id="tab5"><a href="{noercms::U('Hunqing/album',array('token'=>$token))}">婚庆相册</a></li>
+<li class="<if condition="ACTION_NAME EQ 'expert'">current</if> tabli" id="tab5"><a href="{noercms::U('Hunqing/expert',array('token'=>$token))}">客户印象</a></li>
+<li class="<if condition="ACTION_NAME EQ 'hunqingindex'">current</if> tabli" id="tab6"><a href="{noercms::U('Reservation/hunqingindex',array('token'=>$token))}">预约管理</a></li>
+</ul>
+</div>
+          <div class="cLine">
+</div>
+          <div class="cLine">
+            <div class="pageNavigator left" >
+                <a href="{noercms::U('Hunqing/housetype_add',array('token'=>$token))}" class="btnGrayS vm bigbtn">
+                    <img src="tpl/User/default/common/images/pic.png" class="vm">添加成功案例
+                </a>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="msgWrap">
+          <form method="post" action="" id="info">
+          <input name="delall" type="hidden" value="del">
+           <input name="wxid" type="hidden" value="gh_423dwjkewad">
+            <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+             <tr>
+                                            <th class="span3">成功案例名称</th>
+                                            <th class="span3">所属婚庆门店</th>
+                                            <th class="span1">显示顺序</th>
+                                            <th class="span3">操作</th>
+                                        </tr>
+                                       </thead>
+                                                  <tbody>
+                                        <if condition="$housetype eq ''">
+                                        <tr>
+                                        <td colspan="6" style="text-align:center; height:30px;"><strong>没有成功案例信息.</strong></td>
+                                        </tr>
+                                    <else/>
+                                    <volist name="housetype" id="list">
+                                        <tr>
+                                        <td style="">{noercms:$list['name']}</td>
+                                        <td style=""><span class="label"> {noercms:$list['title']|default=""}</span></td>
+                                        <td style="">{noercms:$list['sort']}</td>
+                                        <td style="">
+                                        <a href="{noercms::U('Hunqing/housetype_add',array('id'=>$list['id'],'token'=>$list['token']))}" class="btn">编辑</a>
+                                        <a href="{noercms::U('Hunqing/housetype_del',array('id'=>$list['id'],'token'=>$list['token']))}" onclick="return(confirm('确定要删除吗？'))" class="btn">删除</a></a>
+                                        </td>
+                                        </tr>
+                                    </volist>
+                                    </if>
+                                    </tbody>
+            </table>
+           </form> 
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages">{noercms:$page}</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>  
+<include file="Public:footer"/>

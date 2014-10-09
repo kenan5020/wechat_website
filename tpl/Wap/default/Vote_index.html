@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{noercms:$vote.title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="{noercms::STATICS}/vote/wap/skins/all.css?v=0.9.1" rel="stylesheet">
+<link href="{noercms::STATICS}/vote/wap/vote.css?999" rel="stylesheet">
+<script src="{noercms::STATICS}/vote/wap/js/jquery.js"></script>
+<script src="{noercms::STATICS}/vote/wap/jquery.icheck.min.js?v=0.9.1"></script>
+</head>
+<body id="vote-text" style="width:100%;margin:0 auto;">
+<div class="vote">
+  <div class="layout clear div_test">
+      <div class="skin skin-line">          
+            <div class="skin-section">
+              <h2>{noercms:$vote.title}</h2>
+			  <span class="date">{noercms:$vote.statdate|date="Y-m-d",###}</span>
+			   <p class="modus"><?php echo html_entity_decode(htmlspecialchars_decode($vote['info'])); ?></p><p>
+         <br/>
+			   <if condition="($vote['picurl'] neq '') AND ($vote['showpic'] eq 1) ">
+			   <p><img src="{noercms:$vote.picurl}"  width="100%" /></p>
+			   </if>
+			 <p class="modus"> <if condition="$vote['cknums'] eq 1"> 单选<else/>多选</if>投票，<span class="number">共有{noercms:$count}人参与投票</span></p>
+       <br/>
+        <ul class="list">
+			  <volist name="vote_item" id="li"> 
+			  <if condition="$vote['cknums'] eq 1">
+          <if condition="$vote['type'] eq 'text'">
+              <li>
+                <input tabindex="{noercms:$i}" type="radio" name="vid" value="{noercms:$li.id}" id="line-radio-{noercms:$i}">
+                <label for="line-radio-{noercms:$i}">{noercms:$li.item}</label> 
+<div class="progress-bar orange shine">
+    <span style="width: {noercms:$li.per|default=2}%"> {noercms:$li.per}%</span> 
+</div>          
+             </li>
+          <else/> <!--img-->
+                <li>
+                <span><img src="{noercms:$li.startpicurl}" width="100%" ></span>
+                <input tabindex="{noercms:$i}" type="radio" name="vid" value="{noercms:$li.id}" id="line-radio-{noercms:$i}">
+                <label for="line-radio-{noercms:$i}">{noercms:$li.item}</label>
+                <div class="progress-bar orange shine">
+    <span style="width: {noercms:$li.per|default=2}%">{noercms:$li.per}%</span> 
+</div>               
+              </li>
+          </if>
+			  <else/>
+				    <if condition="$vote['type'] eq 'text'">
+              <li>
+                <input tabindex="{noercms:$i}" type="radio" name="vid[]" value="{noercms:$li.id}" id="line-radio-{noercms:$i}">
+                <label for="line-radio-{noercms:$i}">{noercms:$li.item}</label>
+                <div class="progress-bar orange shine">
+    <span style="width: {noercms:$li.per|default=2}%">{noercms:$li.per}%</span> 
+</div>            
+             </li>
+          <else/> 
+                <li>
+                <span><php>if(substr($li[startpicurl],0,5)=='http:'){</php><img src="{noercms:$li.startpicurl}" width="100％" ><php>}</php></span>
+				<if condition="$vote['rtype'] eq 0">
+				<input tabindex="{noercms:$i}" type="radio" name="vid" value="{noercms:$li.id}" id="line-radio-{noercms:$i}">
+				<else/>
+				<input tabindex="{noercms:$i}" type="checkbox" name="vid[{noercms:$li.id}]" value="{noercms:$li.id}" id="line-radio-{noercms:$i}" class="voteclass">
+				</if>
+                <label for="line-radio-{noercms:$i}">{noercms:$li.item}</label> 
+                <div class="progress-bar orange shine">
+    <span style="width: {noercms:$li.per|default=2}%">{noercms:$li.per}%</span>
+</div>                
+              </li>
+          </if>
+			  </if>
+				</volist>                  
+        </ul>             
+			   <input class="pxbtn" name="sub" id="sub" value="提交选票" type="submit">
+         <br/><br/>
+    </div>
+</div>
+<script>
+  $(document).ready(function(){
+     $('.skin-line input').each(function(){
+       var self = $(this),
+        label = self.next(),
+        label_text = label.text();
+       label.remove();
+       self.iCheck({
+         checkboxClass: 'icheckbox_line-orange',
+         radioClass: 'iradio_line-orange',
+         insert: '<div class="icheck_line-icon"></div>' + label_text
+       });
+    });
+$('.skin-line input').on('ifChanged', function(event){
+  //alert($("input[name='vid']:checked").length);
+  if({noercms:$vote.rtype}=="1"){
+	var cnum = $("input:checked").length;
+	var ynum = {noercms:$vote.cknums};
+	if(cnum>=ynum){
+		$('.skin-line input').each(function(){
+			if($(this).attr("checked")!="checked"){
+				$(this).iCheck('disable');
+			}
+		});
+	}else{
+		$('.skin-line input').each(function(){
+				$(this).iCheck('enable');
+		});
+	}
+  }
+});
+  $(".pxbtn").bind("click",function(){
+     var self = $(this);
+    var chid = ""; 
+    var wecha_id = "{noercms:$Think.get.wecha_id}";
+    var token  = "{noercms:$Think.get.token}";
+    var tid = "{noercms:$Think.get.id}";
+	if({noercms:$vote.rtype}=="1"){
+		$('.voteclass').each(function(){
+			if($(this).attr("checked")=="checked"){
+				chid+=$(this).val()+",";
+			}
+		});
+	}else{
+	var chk = document.getElementsByName('vid');
+    var objarray = chk.length;
+    for (i=0;i<objarray;i++)
+    {
+      if(chk[i].checked == true)
+      {
+         chid+=chk[i].value+",";
+      }
+    }
+	}
+    if(chid == ""){
+      alert("您还没选择哦。");
+	  return;
+    }else{     
+        var submitData={
+            wecha_id : wecha_id,
+            tid      : tid,
+            chid     : chid,
+            token    : token,
+            action   : "add_vote"
+        };
+        $.post('index.php?g=Wap&m=Vote&a=add_vote&token={noercms:$Think.get.token}&wecha_id={noercms:$Think.get.wecha_id}', submitData, function(bakcdata) {
+          var obj=eval('('+bakcdata+')');
+          if(obj.success == 1){
+           alert('您已投票成功');         
+          setTimeout("window.location.href='index.php?g=Wap&m=Vote&a=index&token={noercms:$Think.get.token}&wecha_id={noercms:$Think.get.wecha_id}&id={noercms:$Think.get.id}'",2000);
+              return
+          }else{
+            alert('您已经投票过了');
+            return
+          }
+        });  
+    }
+  });
+});
+</script>  
+</div> 
+</div>     
+</body>
+</html>

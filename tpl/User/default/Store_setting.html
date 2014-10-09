@@ -1,0 +1,48 @@
+ <include file="Public:head" /> 
+ <script src="/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="/tpl/static/artDialog/plugins/iframeTools.js"></script>
+  <div class="content" style="width:1070px; background:none; margin-left:125px; border:none; margin-bottom:30px; margin-top:30px;" > 
+ 
+   <div class="cLineB"> 
+      <div  class="quick-actions_homepage">
+   
+  </div>
+    <h4>商城设置</h4> 
+    <a href="{noercms::U('Store/index',array('token'=>$token))}" class="right  btnGreen" style="margin-top:-27px">返回</a> 
+   </div> 
+   <form class="form" method="post" action=""> 
+    <input type="hidden" name="id" value="{noercms:$setting.id}" /> 
+    <input type="hidden" name="token" value="{noercms:$token}" /> 
+     
+    <div class="msgWrap bgfc"> 
+     <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+      <tbody>
+       <tr>
+        <th><span class="red">*</span>免邮设置：</th> 
+        <td>满  <input type="text" name="price" value="{noercms:$setting.price}" class="px"/>  元免邮</td> 
+       </tr>
+       
+       <tr>
+        <th><span class="red">*</span>积分兑换：</th> 
+        <td><input type="text" name="score" value="{noercms:$setting.score}" class="px"/>积分=1元 (注：写0表示积分不可兑换)</td> 
+       </tr>
+       
+       <tr>
+        <th><span class="red">*</span>是否支持货到付款：</th> 
+        <td>
+	        <input type="radio" name="paymode" value="0" id="paymode_0" <if condition="$setting['paymode'] eq 0">checked</if> /><label for="paymode_0">不支持</label>
+	        <input type="radio" name="paymode" value="1" id="paymode_1" <if condition="$setting['paymode'] eq 1">checked</if> /><label for="paymode_1">支持</label>
+        </td> 
+       </tr>
+       <tr>         
+       <th>&nbsp;</th>
+       <td>
+       <button type="submit" name="button" class="btnGreen">保存</button> &nbsp; <a href="{noercms::U('Store/index',array('token' => $token))}" class="btnGray vm">取消</a></td> 
+       </tr> 
+      </tbody> 
+     </table> 
+     </div>
+    
+   </form> 
+  </div> 
+  <include file="Public:footer" />

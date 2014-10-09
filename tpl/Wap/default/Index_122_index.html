@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{noercms:$tpl['wxname']}</title>
+<base href="." />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/yuesh/wz.css" />
+ <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/snower.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/reset.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/home-32.css" media="all" />
+<script type="text/javascript" src="{noercms::RES}/src/template/maivl.js"></script>
+<script type="text/javascript" src="{noercms::RES}/src/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/music-left.css" media="all" />
+</head>
+<body id="cate4">
+	<div id="todayList">
+		<ul class="todayList">
+	<volist name="info" id="vo">
+						<li class="only4"><a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{noercms:$vo.img}</if>">
+					<div class="img">
+						<img src="{noercms:$vo.img}">
+					</div>
+					<h2>{noercms:$vo.name}</h2>
+					<p class="onlyheight">{noercms:$vo.info}</p><span
+					class="icon">&nbsp;</span>
+			</a></li>
+	</volist>
+					</ul>
+	</div>
+	<!--播放器开始-->	
+				<script type="text/javascript" src="{noercms::RES}/js/heka/audio.js"></script>
+				<script>
+			window.addEventListener("DOMContentLoaded", function(){
+				playbox.init("playbox");
+			}, false);
+		</script>
+				<if condition="$homeInfo.musicurl neq false"><span id="playbox" class="btn_music" onclick="playbox.init(this).play();"><audio src="{noercms:$homeInfo.musicurl}" loop id="audio"></audio></span><else/></if>	
+        		<!--播放器结束-->
+	<div class="copyright" style="text-align:center; >
+<if condition="$iscopyright eq 1">
+{noercms:$homeInfo.copyright}
+<else/>
+{noercms:$siteCopyright}
+</if>
+</div>
+</div>              
+    <include file="Index:styleInclude"/> 
+</body>
+</html>

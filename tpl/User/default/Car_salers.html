@@ -1,0 +1,69 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/default_user_com.css" media="all">
+<div class="content" style="width:95%; background:none; margin-left:25px; border:none; margin-bottom:30px; margin-top:30px;" >
+  <div class="cLineB">
+    <div  class="quick-actions_homepage">
+    <ul class="quick-actions">
+    <li class="bg_ls"> <a href="{noercms::U('Car/index',array('token'=>$token))}"> <i class="icon-truck"></i> 微汽车 </a> </li>
+      <li class="bg_lb"> <a href="{noercms::U('Product/orders',array('token'=>$token,'dining'=>1))}"> <i class="icon-glass"></i> 微餐饮 </a> </li>
+      <li class="bg_dy"> <a href="{noercms::U('Estate/index',array('token'=>$token))}"> <i class="icon-star"></i> 微房产</a> </li>
+      <li class="bg_lg"> <a href="{noercms::U('Jiudian/index',array('token'=>$token))}"> <i class="icon-plus"></i> 微酒店</a> </li>
+      <li class="bg_ly"> <a href="{noercms::U('Yiliao/index',array('token'=>$token))}"> <i class="icon-tag"></i> 微医疗 </a> </li>
+      <li class="bg_lo"> <a href="{noercms::U('Reservation/index',array('token'=>$token))}"> <i class="icon-map-marker"></i> 微预约 </a> </li>
+      <li class="bg_db"> <a href="javascript:history.go(-1);"> <i class="icon-share-alt"></i> 返回</a> </li>
+    </ul>
+  </div>
+  <h4>销售顾问管理</h4>
+  <include file="Car:menu"/>
+              <div class="clr"></div>
+          </div>
+          <div class="cLine">
+</div>
+          <div class="cLine">
+            <div class="pageNavigator left">
+            <a href="{noercms::U('Car/add_saler',array('token'=>$token))}" class="btnGrayS vm bigbtn" id="add_menu">
+                    <img src="tpl/User/default/common/images/pic.png" class="vm">添加销售顾问
+                </a>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="msgWrap">
+          <form method="post" action="" id="info">
+            <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                   <th>头像</th>
+                   <th>姓名</th>
+                   <th>电话</th>
+                   <th>销售类型</th>
+                   <th>显示顺序</th>
+                   <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+              <volist name="salers" id="vo">
+                    <tr>
+                      <td><img src="{noercms:$vo['picture']}" style="max-height:50px;"/></td>
+                      <td>{noercms:$vo['name']}</td>
+                      <td>{noercms:$vo['mobile']}</td>
+                      <td><if condition="$vo['salestype'] eq 1">售前</if><if condition="$vo['salestype'] eq 2">售后</if> <if condition="$vo['salestype'] eq 3">售前/售后</if> </td>
+                      <td>{noercms:$vo['sort']}</td>
+                      <td class="input-medium">
+                        <a class="btn" href="{noercms::U('Car/edit_salers',array('token'=>$token,'id'=>$vo['id']))}" title="编辑">编辑</a>
+                        <a class="btn" href="{noercms::U('Car/del_salers',array('token'=>$token,'id'=>$vo['id']))}" title="删除" onclick="return(confirm('确定要删除吗？'))">删除</a>
+                      </td>
+                </volist>
+                 <tr>
+                </tr>
+              </tbody>
+            </table>
+           </form> 
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages">{noercms:$page}</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>
+<include file="Public:footer"/>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/fang/css/snower.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/fang/css/common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/fang/css/reset.css?2014-01-08-4" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/fang/css/home-38.css?2014-01-08-4" media="all" />
+<script type="text/javascript" src="{noercms::RES}/fang/js/maivl.js?2014-01-08-4"></script>
+<script type="text/javascript" src="{noercms::RES}/fang/js/jquery.js?2014-01-08-4"></script>
+<script type="text/javascript" src="{noercms::RES}/fang/js/swipe.js?2014-01-08-4"></script>
+<script type="text/javascript" src="{noercms::RES}/fang/js/zepto.js?2014-01-08-4"></script>
+<title>mia</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+            <meta content="no-cache" http-equiv="pragma">
+            <meta content="0" http-equiv="expires">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+<link rel="stylesheet" type="text/css" href="/img/font-awesome.css?v=2014011121" media="all" />
+<div class="body">
+		<!--
+	幻灯片管理
+	-->
+<div style="-webkit-transform:translate3d(0,0,0);">
+    <div id="banner_box" class="box_swipe">
+        <ul>
+            <li>
+            <a onClick="return false;">
+            <img src="{noercms:$data['slide1']}" alt="1" style="width:100%;" />
+            </a>
+            </li>
+            <li>
+            <a onClick="return false;">
+            <img src="{noercms:$data['slide2']}" alt="2" style="width:100%;" />
+            </a>
+            </li>
+            <li>
+            <a onClick="return false;">
+            <img src="{noercms:$data['slide3']}" alt="3" style="width:100%;" />
+            </a>
+            </li>
+        </ul>
+        <ol>
+            <li class="on"></li>
+            <li ></li>
+            <li ></li>
+        </ol>
+    </div>
+</div>
+<script>
+		$(function(){
+			new Swipe(document.getElementById('banner_box'), {
+				speed:500,
+				auto:3000,
+				callback: function(){
+					var lis = $(this.element).next("ol").children();
+					lis.removeClass("on").eq(this.index).addClass("on");
+				}
+			});
+		});
+	</script>
+<br/><header>
+        <div class="snower">
+        </div>
+    </header> 			<!--
+		用户分类管理
+        -->
+		<section>
+			<div id="navList_box" class="box_swipe">
+				<ul>
+					<li>
+						<a href="{noercms::U('Fang/index_info',array('token'=>$token,'pid'=>$data['id']))}" class="weimob-list-item">
+						<span class="icon-home"></span>
+					<img src="" alt="楼盘简介" />
+					<div>楼盘简介</div>
+					</a>
+					<a href="{noercms::U('Fang/photo_index',array('token'=>$token,'pid'=>$data['id']))}" class="weimob-list-item">
+								<span class="icon-picture"></span>
+								<img src="" alt="九里画册" />
+								<div>九里画册</div>
+					</a>
+				<a href="{noercms::U('Fang/hu_index',array('token'=>$token,'pid'=>$data['id']))}" class="weimob-list-item">
+															<span class="icon-building"></span>
+								<img src="http://stc.weimob.com//img/template/lib/home-300300.jpg?v=2013-9-28-2?=2013-9-28-2" alt="户型全景" />
+								<div>户型全景</div>
+							</a>
+								<a href="{noercms::U('Fang/effect_index',array('token'=>$token,'pid'=>$data['id']))}" class="weimob-list-item">
+															<span class="icon-check"></span>
+								<img src="http://stc.weimob.com//img/template/lib/home-300300.jpg?v=2013-9-28-2?=2013-9-28-2" alt="石梅印象" />
+								<div>石梅印象</div>
+							</a>
+													</li>
+																								<li>
+																					<a href="/weisite/list?pid=2356&bid=5231&wechatid=osXr8jvvTzzDNgeboCJxKhytOsNw&ltid=9496&wxref=mp.weixin.qq.com" class="weimob-list-item">
+															<span class="icon-rss-sign"></span>
+								<img src="http://stc.weimob.com//img/template/lib/home-300300.jpg?v=2013-9-28-2?=2013-9-28-2" alt="新闻动态" />
+								<div>新闻动态</div>
+							</a>
+																													<a href="{noercms::U('Fang/yuyue_index',array('token'=>$token,'pid'=>$data['id']))}" class="weimob-list-item">
+															<span class="icon-edit"></span>
+								<img src="http://stc.weimob.com//img/template/lib/home-300300.jpg?v=2013-9-28-2?=2013-9-28-2" alt="预约看房" />
+								<div>预约看房</div>
+							</a>
+								<a href="{noercms::U('Fang/yuyue_index',array('token'=>$token,'pid'=>$data['id']))}" class="weimob-list-item">
+															<span class="icon-credit-card"></span>
+								<img src="http://stc.weimob.com//img/template/lib/home-300300.jpg?v=2013-9-28-2?=2013-9-28-2" alt="会员尊享" />
+								<div>会员尊享</div>
+							</a>
+																																<a href="tel:{noercms:$homeInfo.dianhua}" class="weimob-list-item">
+															<span class="icon-phone"></span>
+								<img src="http://stc.weimob.com//img/template/lib/home-300300.jpg?v=2013-9-28-2?=2013-9-28-2" alt="联系我们" />
+								<div>联系我们</div>
+							</a>
+													</li>
+															</ul>
+				<ol>
+					<a href="javascript:navList_box.prev();">&nbsp;</a>
+					<a href="javascript:navList_box.next();">&nbsp;</a>
+				</ol>
+			</div>
+		</section>
+		<script>
+			$(document).ready(function(){
+				window.navList_box = new Swipe(document.getElementById('navList_box'), {auto:0});
+			});
+		</script>
+	</div>        			<footer style="overflow:visible;">
+				<div class="weimob-copyright" style="padding-bottom:50px;color:{noercms:$homeInfo.plugmenucolor}" >
+					{noercms:$homeInfo.copyright}
+				</div>
+							</footer>
+				<div mark="stat_code" style="width:0px; height:0px; display:none;">
+					</div>
+	</body>
+	<script type="text/javascript">
+	(function() {
+		var wtj = document.createElement('script'); wtj.type = 'text/javascript'; wtj.async = true;
+		wtj.src = 'http://tj.weimob.com/wtj.js?url=' + encodeURIComponent(location.href);
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wtj, s);
+	})();
+</script></html>

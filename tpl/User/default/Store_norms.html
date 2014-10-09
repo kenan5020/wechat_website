@@ -1,0 +1,73 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />  
+<div class="content" style="width:1070px; background:none; margin-left:125px; border:none; margin-bottom:30px; margin-top:30px;" >
+<div class="cLineB">
+      <div  class="quick-actions_homepage">
+   
+  </div>
+<h4 class="left">分类管理</h4>
+<div class="clr"></div>
+</div>
+<!--tab start-->
+<div class="tab">
+<ul>
+<li class="current tabli" id="tab2"><a href="{noercms::U('Store/index',array('token'=>$token))}">商品分类管理</a></li>
+<li class="tabli" id="tab0"><a href="{noercms::U('Store/product',array('token'=>$token, 'catid'=>$catid))}">商品管理</a></li>
+<li class="tabli" id="tab2"><a href="{noercms::U('Store/orders',array('token'=>$token))}">订单管理</a></li>
+<li class="tabli" id="tab5"><a href="{noercms::U('Reply_info/set',array('token'=>$token,'infotype'=>'Shop'))}">商城回复配置</a></li>
+</ul>
+</div>
+<!--tab end-->
+<div class="cLine" style="width:100%">
+<if condition="$type eq 1">
+<div class="pageNavigator left">
+	<a href="{noercms::U('Store/normsAdd',array('token' => $token, 'catid' => $catid, 'type' => $type))}" title="新增外观值" class="btnGrayS vm bigbtn">
+	<img src="{noercms::RES}/images/product/add.png" class="vm">新增<span class="red">{noercms:$catData.name}</span>分类的外观值</a>
+</div>
+<else />
+<div class="pageNavigator left">
+	<a href="{noercms::U('Store/normsAdd',array('token' => $token, 'catid' => $catid, 'type' => $type))}" title="新增规格值" class="btnGrayS vm bigbtn">
+	<img src="{noercms::RES}/images/product/add.png" class="vm">新增<span class="red">{noercms:$catData.name}</span>分类的规格值</a>
+</div>
+</if>
+<div class="pageNavigator right">
+	<a href="{noercms::U('Store/index',array('token' => $token, 'catid' => $catid))}" class="btnGrayS vm bigbtn">返回</a>
+</div>
+<div class="clr"></div>
+</div>
+<div class="msgWrap">
+<form method="post" action="" id="info">
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+<tr>
+<th class="select">名称</th>
+<th width="160">分类名称</th>
+<th width="130"><if condition="$type eq 1">外观<else />规格</if>值</th>
+<th width="250" class="norightborder">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr></tr>
+<volist name="list" id="hostlist"> 
+<tr>
+<td></td>
+<td>{noercms:$catData.name}</td>
+<td>{noercms:$hostlist.value}</td>
+<td class="norightborder">
+	<a href="{noercms::U('Store/normsAdd',array('token' => $token, 'id' => $hostlist['id'], 'catid' => $catid, 'type' => $type))}">修改</a>
+	<a href="javascript:drop_confirm('您确定要删除吗?', '{noercms::U('Store/normsDel',array('token' => $token, 'id' => $hostlist['id'], 'catid' => $catid, 'type' => $type))}');">删除</a>
+</td>
+</tr>
+</volist>
+</tbody>
+</table>
+</form>
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{noercms:$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

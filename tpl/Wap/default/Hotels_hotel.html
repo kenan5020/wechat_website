@@ -1,0 +1,94 @@
+<include file="Hotels:header"/>
+<body>
+	<div class="html">
+		<div class="main">
+<header>
+  <a href="{noercms::U('Hotels/selectdate',array('token' => $_GET['token'], 'wecha_id' => $wecha_id))}" class="ico-hd arr-hd"></a>
+  <h1>{noercms:$company['name']}</h1>
+  <a href="{noercms::U('Hotels/my',array('token' => $_GET['token'], 'wecha_id' => $wecha_id))}" class="ico-hd ico-order">我的订单</a>
+</header>
+<div class="contxt cont-artical">
+  <div class="box-cont box-hotel">
+      <div class="hotel-th">
+      <span>
+      <a href="">
+      <img src="{noercms:$company['logourl']}">
+      </a>
+      </span>
+      </div>
+    <div class="hotel-td">
+      <p><span class="ico ico-comment" >{noercms:$company['name']}</span><i class="arrow arr-small"></i></p>
+      <p><span class="ico ico-phone" onclick="javascript:window.location.href='tel:{noercms:$company['tel']}';">{noercms:$company['tel']}</span><i class="arrow arr-small"></i></p>
+    </div>
+  </div>
+  <div class="box-cont box-list">
+		<a href="{noercms::U('Card/companyMap', array('token'=>$token, 'wecha_id'=>$wecha_id, 'companyid'=>$company['id']))}">
+			<span class="ico ico-location">{noercms:$company['address']}</span>
+			<span class="arrow arr-small"></span>
+		</a>
+		<a href="{noercms::U('Card/companyMap', array('token'=>$token, 'wecha_id'=>$wecha_id, 'companyid'=>$company['id']))}">
+			<span class="ico ico-nav">一键导航</span>
+			<span class="arrow arr-small"></span>
+		</a>
+  </div>
+  <div class="box-cont box-txt box-hotel-txt">
+    <p><span>入住</span><b> {noercms:$sday}</b></p>
+    <p><span>离店</span><b> {noercms:$eday} （{noercms:$days} 晚）</b></p>
+  </div>
+  <div class="box-cont box-list-room">
+	<volist name="list" id="sort">
+	<div class="list-li">
+	  <div class="table">
+	    <div class="hd box-txt td">
+	      <a class="box-block list-a"><span class="visuallyhidden">链接</span></a>
+	      <p><span>普通价格</span><em>￥{noercms:$sort['price']}</em></p>
+	      <p><span>会员价格</span><em>￥{noercms:$sort['vprice']}</em></p>
+	    </div>
+	    <div class="bd td">
+	      <span>{noercms:$sort['name']}</span>
+	    </div>
+	    <div class="bd2 td">
+	    	<if condition="$sort['houses'] gt $sort['useHouse']">
+	    	<a class="btn btn-small" href="{noercms::U('Hotels/order',array('wecha_id' => $wecha_id, 'token' => $token, 'sid' => $sort['id'], 'startdate' => $startdate, 'enddate' => $enddate))}">预订</a>
+	    	<else />
+	    	<a class="btn btn-error btn-small">已满</a>
+	    	</if>
+	        
+	    </div>
+	  </div>
+      <volist name="ssorts" id="sort1">
+	  <div class="ft">
+	    <div class="fl">
+	      <img src="{noercms:$sort1['image']}" style="height:150px">
+	    </div>
+	    <div class="fr">
+	      <p>房间号：{noercms:$sort1['name']}</p>
+           <p>房间介绍：{noercms:$sort1['note']}</p>
+	    </div>
+      
+	  </div>
+        </volist>
+	</div>
+	</volist>
+  </div>
+  <div class="tcenter"></div>
+  <div class="tcenter"><div class="isloading loading" style="display: none">加载中...</div></div>
+</div>
+	</div>
+</div>
+</body>
+
+<script type="text/javascript">
+window.shareData = {  
+            "moduleName":"Hotels",
+            "moduleID":"{noercms:$company[0]['id']}",
+            "imgUrl": "{noercms:$company[0]['logourl']}", 
+            "timeLineLink": "{noercms::C('site_url') .  U('Hotels/hotel',array('token' => $_GET['token']))}",
+            "sendFriendLink": "{noercms::C('site_url') .  U('Hotels/hotel',array('token' => $_GET['token']))}",
+            "weiboLink": "{noercms::C('site_url') .  U('Hotels/hotel',array('token' => $_GET['token']))}",
+            "tTitle": "{noercms:$metaTitle}",
+            "tContent": "{noercms:$metaTitle}"
+        };
+</script>
+{noercms:$shareScript}
+</html>

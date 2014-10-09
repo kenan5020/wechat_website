@@ -1,0 +1,154 @@
+            <div class="ancz">
+                <a onclick="ShowDiv();" class="nbtn fl">
+                    <img src="/tpl/Wap/default/common/css/product/images/fsico.png" alt="" class="ico_cz" />
+                    <span class="bt_txt">
+                        发送给朋友
+                    </span>
+                </a>
+                <a class="nbtn fr" onclick="ShowDiv();">
+                    <img src="/tpl/Wap/default/common/css/product/images/zfico.png" alt="" class="ico_cz" />
+                    <span class="bt_txt">
+                        分享朋友圈
+                    </span>
+                </a>
+            </div>
+            <div id="sharebg" style="display: none;">
+            </div>
+            <div id="sharebox" style="display: none; top: 496px;">
+                <img src="/tpl/Wap/default/common/css/product/images/follow.png" alt="" />
+            </div>
+            <style>
+				#sharebg,#codebg,#tipsbg {
+					filter:alpha(opacity=50);
+					-moz-opacity:0.5;
+					opacity:0.5;
+					background-color:#000;
+					width:100%;
+					height:100%;
+					z-index:1000;
+					position:absolute;
+					left:0;
+					top:0;
+					display:none;
+					overflow:hidden;
+				}
+				#sharebox {
+					position:absolute;
+					z-index:1000000;
+					right:0;
+					width:100%;
+					text-align:right;
+					display:none
+				}
+				#sharebox img {
+					width:100%
+				}
+				.ui-btn-left,.ui-btn-right,.ui-input-clear,.ui-btn-inline,.ui-grid-a
+								.ui-btn,.ui-grid-b .ui-btn,.ui-grid-c .ui-btn,.ui-grid-d .ui-btn,.ui-grid-e
+								.ui-btn,.ui-grid-solo .ui-btn {
+					margin-right:5px;
+					margin-left:5px
+				}
+				.sharebtn,.followbtn,.followbtn
+								.ui-btn-corner-all {
+					-moz-border-radius:.2em;
+					-webkit-border-radius:.2em;
+					border-radius:.2em;
+				}
+				.sharebtn .ui-btn-inner {
+					padding:.6em 10px .6em 30px;
+					min-width:.70em;
+				}
+				.ui-icon-friend {
+					background-position:0 0;
+					background:url(/images/pyq.png)
+				}
+				.ui-icon-send {
+					background-position:0 0;
+					background:url(/images/zhuanfa.png)
+				}
+				.ui-btn {
+					cursor:pointer;
+					display:block;
+					margin:0.5em 0;
+					padding:0;
+					position:relative;
+					text-align:center;
+				}
+				.ui-btn-inner {
+					display:block;
+					font-size:16px;
+					min-width:0.75em;
+					overflow:hidden;
+					padding:0.6em 20px;
+					position:relative;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+				}
+				.ui-btn-text {
+					position:relative;
+					z-index:1;
+					width:100%;
+					-moz-user-select:none;
+					-webkit-user-select:none;
+					-ms-user-select:none
+				}
+				.ui-btn-icon-left > .ui-btn-inner > .ui-icon,.ui-btn-icon-right > .ui-btn-inner
+								> .ui-icon {
+					position:absolute;
+					top:50%;
+					margin-top:-9px
+				}
+				.ui-btn-icon-left
+								.ui-icon {
+					left:10px
+				}
+				.ui-icon {
+					height:18px;
+					width:18px;
+				}
+				.ancz {
+					margin:2em
+								2em 0;
+					overflow:hidden
+				}
+				.nbtn {
+					width:45%;
+					background-image:-webkit-gradient(linear,50%
+								0,50% 100%,color-stop(0%,#fff),color-stop(100%,#efeded));
+					background-image:-webkit-linear-gradient(#fff,#efeded);
+					background-image:-moz-linear-gradient(#fff,#efeded);
+					background-image:-o-linear-gradient(#fff,#efeded);
+					background-image:linear-gradient(#fff,#efeded);
+					display:block;
+					border:1px solid #ccc;
+					-moz-border-radius:5px;
+					-webkit-border-radius:5px;
+					border-radius:5px;
+					text-align:center;
+					padding:0.5em 0;
+					cursor:pointer
+				}
+				.nbtn .ico_cz {
+					width:2em;
+					height:2em;
+					margin-right:0.5em
+				}
+				.nbtn .bt_txt {
+					font-size:1.5em
+				}
+
+            </style>
+            <script>
+                function ShowDiv() {
+                    jQuery("#sharebg").css("height", jQuery(document).height()) jQuery("#sharebg,#sharebox").show();
+                    jQuery("#sharebox").css({
+                        "top": jQuery(window).scrollTop()
+                    })
+                }
+                jQuery(document).ready(function() {
+                    jQuery("#sharebg,#sharebox").click(function() {
+                        jQuery("#sharebg,#sharebox").hide();
+                    });
+                });
+            </script>

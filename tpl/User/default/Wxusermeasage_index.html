@@ -1,0 +1,50 @@
+<include file="Public:head"/>
+<div class="content">
+         <div class="cLineB">
+              <h4 class="left">在线客服</h4>
+              <div class="clr"></div>
+          </div>
+          <div class="msgWrap">
+            <TABLE class="ListProduct" border="0" cellSpacing="0" cellPadding="0" width="100%">
+              <THEAD>
+                <TR>
+<TH >编号</TH>
+<TH class="keywords">发送方帐号</TH>
+<TH class="answer">消息创建时间</TH>
+                    <TH  class="category" >信息类型</TH>
+                    <TH class="time">消息内容</TH>
+<TH class="time">图片链接</TH>
+<TH class="edit norightborder">操作</TH>
+                </TR>
+              </THEAD>
+              <TBODY>
+                <TR>
+				</TR>
+				<volist name="info" id="vo">
+				<tr>
+                  <td> {noercms:$vo.id}</td>
+                  <td>{noercms:$vo.FromUserName}</td>
+                  <td><php>echo date('Y-m-d h:i:s',$vo['CreateTime']);</php></td>
+                  <td>{noercms:$vo.MsgType}</td>
+                  <td>{noercms:$vo.Content}</td>
+                    <td><if condition="$vo.PicUrl neq ''"><a href="{noercms:$vo.PicUrl}">查看</a><else/>无</if></td>
+                   <td class="norightborder"> <a href="{noercms::U('Wxusermeasage/more',array('id'=>$vo['id']))}" title="详情">详情</a> <a href="{noercms::U('Wxusermeasage/answer',array('id'=>$vo['id']))}">回复</a></td>
+                </tr>
+				</volist>
+              </TBODY>
+            </TABLE>
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages">{noercms:$page}</div>
+              </div>
+            <div class="clr"></div>
+          </div>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+  <!--底部-->
+  	</div>
+<include file="Public:footer"/>

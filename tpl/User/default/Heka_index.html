@@ -1,0 +1,54 @@
+﻿<include file="Public:head"/> 
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<div class="content"  >
+<div class="cLineB">
+<h4 class="left">贺卡管理</h4>
+<div class="searchbar right">
+<form method="post" action="">
+<input type="text" id="msgSearchInput" class="txt left" placeholder="输入关键词搜索" name="searchkey" value="{noercms:$key}">
+<input type="submit" value="搜索" id="msgSearchBtn" href="" class="btnGrayS" title="搜索">
+</form>
+</div>
+<div class="clr"></div>
+</div>
+<div class="cLine">
+<div class="pageNavigator left"> <a href="{noercms::U('Heka/add',array('token'=>$token))}" title="添加贺卡" class="btnGrayS vm bigbtn"><img src="{noercms::RES}/images/product/add.png" width="16" class="vm">添加贺卡</a></div>
+<div class="clr"></div>
+</div>
+<div class="msgWrap">
+<form method="post" action="" id="info">
+<input name="delall" type="hidden" value="">
+<input name="wxid" type="hidden" value="">
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+<tr>
+<th width="160">贺卡名称</th>
+<th width="160">关键词</th>
+<th width="160">转发次数</th>
+<th width="160">查看次数</th>
+<th width="200" class="norightborder">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr></tr>
+<volist name="data" id="item"> 
+<tr>
+<td>{noercms:$item.title}</td>
+<td>{noercms:$item.keyword}</td>
+<td>{noercms:$item.forwards}</td>
+<td>{noercms:$item.see}</td>
+<td class="norightborder"><a href="{noercms::U('Heka/set',array('id'=>$item['id'],'token'=>$token))}">修改</a>&nbsp;&nbsp;<a target="_blank" href="index.php?g=Wap&m=Heka&a=index&id={noercms:$item['id']}&token={noercms:$item['token']}">查看</a>&nbsp;&nbsp;<a href="{noercms::U('Heka/del',array('id'=>$item['id'],'token'=>$token))}">删除</a></td>
+</tr>
+</volist>
+</tbody>
+</table>
+</form>
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{noercms:$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

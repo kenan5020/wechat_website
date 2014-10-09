@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html ><head>
+<meta charset="utf-8">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/car/css/reset.css" media="all">
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/car/css/common.css" media="all">
+<script type="text/javascript" src="{noercms::RES}/car/js/jquery152_min.js"></script>
+<script type="text/javascript" src="{noercms::RES}/car/js/jquery_easing.js"></script>
+<script type="text/javascript" src="{noercms::RES}/car/js/com_clanmo_gallery_min.js"></script>
+<script type="text/javascript" src="{noercms::RES}/car/js/swipe.js"></script>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/car/Tabs/css/easy-responsive-tabs.css" media="all">
+<script type="text/javascript" src="{noercms::RES}/car/Tabs/js/easyResponsiveTabs.js"></script>
+<title>{noercms:$title}-车型－车系</title>
+        <style>
+            img{width:100%!important;}
+        </style>
+    <meta content="clickberry-extension-here">
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;" class="portrait">
+    <div class="header">
+        <div class="logo">
+           {noercms:$title} <img src="{noercms:$logo}"width="213" height="29" alt="" style="width:auto!important;max-width:213px;">
+        </div>
+        <!-- <div style="clear: both;"></div>-->
+    </div>
+    <span class="gradient_h_wbw"></span>
+    <div class="top">
+        <div id="roundabout_container" class="relative">
+            <!--a id="scrollLeft__7f8fc196" class="scrollLeft__7f8fc196 btn_ra_prev" style="display: none;"></a>
+            <a id="scrollRight__7f8fc196" class="scrollRight__7f8fc196 btn_ra_next" style="display: none;"></a-->
+            <div id="roundabout__7f8fc196" class="ofh">
+                <ul class="list_ul_top" style="left: 0px;">
+                <volist name="series" id="vo">
+                    <li>
+                        <a href="{noercms::U('Car/carseries',array('token'=>$token,'wecha_id'=>$wecha_id,'sid'=>$vo['id'],'bid'=>$vo['brand_id'],'getlist'=>1,'title'=>$title))}"><span><strong>{noercms:$vo['shortname']}</strong></span></a>
+                    </li>
+                </volist>
+                </ul>
+            </div>
+        </div>
+        <span class="gradient_h_wbw"></span>
+            <!--可以使用幻灯片-->
+                <div class="image m_b_s">
+                <img class="zeroborder scale" src="{noercms:$series_info['picture']}" height="150" alt="" style="width:100%;max-height:180px;">
+                </div>
+                 <ul class="car_detail">
+                 <table>
+                     <tbody><tr>
+                        <td colspan="2"> {noercms:$series_info['info']|html_entity_decode|trim} </td>
+                    </tr>
+                 </table>
+            </ul>
+            </div>
+<!-- 车系列表 begin -->
+<!--- 车型列表 begin -->
+        <div class="main" style="padding-top: 10px;">
+        <!--Horizontal Tab-->
+        <div id="horizontalTab">
+            <ul class="resp-tabs-list">
+                <volist name="model" id="vo">
+                <li>{noercms:$vo['name']} &nbsp;&nbsp;&nbsp;&nbsp;RMB {noercms:$vo['dealer_price']}万元 起 </li>
+                </volist>
+            </ul>
+            <div class="resp-tabs-container">
+            <volist name="model" id="vo">
+            <div>
+                <img alt="{noercms:$vo['name']}" style="width:100%;max-height:400px;" src="{noercms:$vo['pic_url']}" data-touchable="touchable"/>
+            <div class="main" style="padding-top: 10px;">
+            <ul class="car_detail">
+                <div style="margin:5px;border: 1px solid #ccc;line-height:35px;text-indent:10px;border-radius:5px;background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#eee));-webkit-box-shadow: 0 1px 1px #fff;">
+                    <a href="{noercms::U('Panorama/item',array('token'=>$token,'id'=>$vo['panorama_id'],'wecha_id'=>$wecha_id,'sgssz'=>'mp.weixin.qq.com'))}" style="color:#666;display:block;">内部设计：360全景看车</a>
+                </div>
+                <table>
+                    <tbody><tr>
+                        <td>指导价：</td>
+                        <td>{noercms:$vo['guide_price']}万</td>
+                    </tr>
+                    <tr>
+                        <td>经销商报价：</td>
+                        <td>{noercms:$vo['dealer_price']}万</td>
+                    </tr>
+                    <tr>
+                        <td>排量：</td>
+                        <td>{noercms:$vo['emission']}L</td>
+                    </tr>
+                    <tr>
+                        <td>年款：</td>
+                        <td>{noercms:$vo['model_year']}</td>
+                    </tr>
+                    <tr>
+                        <td>档位：</td>
+                        <td>{noercms:$vo['stalls']}档</td>
+                    </tr>
+                    <tr>
+                        <td>变速箱：</td>
+                        <td>{noercms:$vo['box']}</td>
+                    </tr>
+                </tbody></table>
+                <li class="box group_btn">
+                    <div><a href="{noercms::U('Car/salers',array('token'=>$token,'wecha_id'=>$wecha_id,'sid'=>$vo['id'],'bid'=>$vo['brand_id'],'getlist'=>1,'title'=>$title))}" class="gray">联系销售</a></div>
+                    <div><a href="{noercms::U('Car/CarReserveBook',array('token'=>$token,'wecha_id'=>$wecha_id,'sid'=>$vo['id'],'bid'=>$vo['brand_id'],'getlist'=>1,'title'=>$title,'addtype'=>'drive'))}">预约试驾</a></div>
+                </li>
+                <li><br /><br /><br /></li>
+            </ul>
+        </div>
+        </div>
+            </volist>
+            </div>
+        </div>
+        </div>
+<!-- 车型详情 begin -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#horizontalTab').easyResponsiveTabs({
+            type: 'accordion', //Types: default, vertical, accordion           
+            width: 'auto', //auto or any width like 600px
+            fit: true,   // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+</script>
+<!-- end -->
+ <p><br /><br /><br /><br /></p>
+<include file="Car:menu"/>
+                    <div mark="stat_code" style="width:0px; height:0px; display:none;">
+                    </div>
+</body></html>

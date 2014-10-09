@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/reset.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/common.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/peak-3.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/menu-2.css" media="all" />
+    <script type="text/javascript" src="{noercms::RES}/js/fang/jquery.js"></script>
+    <title>{noercms:$data['title']}</title>
+    <style>
+        img{width:100%!important;}
+    </style>
+</head>
+<body onselectstart="return true;" ondragstart="return false;">
+    <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/font-awesome.css" media="all" />
+<div class="body" style="padding-bottom:60px;">
+<!--
+分享前控制
+-->
+<section class="news_article">
+    <header>
+        <h3 style="font-size:14px;">{noercms:$data['title']}</h3>
+        <small class="gray">{noercms:$data['uptatetime']}</small>
+    </header>
+    <article>
+    <p>
+        <img src="{noercms:$data['pic']}" style="width:100%;"/>
+    </P>
+	<p>
+		{noercms:$data['info']}
+	</p>
+    <p>
+        <span style="line-height:1.5;">华润邀您到海南石梅湾体验“无忧全度假”生活，湾区热线0898-62268888</span> 
+    </p>			
+    </article>
+</section>
+	<section style="width:95%; margin:0px auto;">
+	<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display:none;">
+		<img src="{noercms::RES}/images/fang/guide.png">
+	</div>
+	<div class="text" id="content">
+		<div id="mess_share">
+			<div id="share_1">
+				<button class="button2" onclick="document.getElementById('mcover').style.display='block';">
+					<img src="{noercms::RES}/images/fang/icon_msg.png">&nbsp;发送给朋友
+				</button>
+			</div>
+			<div id="share_2">
+				<button class="button2" onclick="document.getElementById('mcover').style.display='block';">
+					<img src="{noercms::RES}/images/fang/icon_timeline.png">&nbsp;分享到朋友圈
+				</button>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+</section>
+<div style="padding-bottom:0!important;">
+    <a href="javascript:window.scrollTo(0,0);" style="font-size:12px;margin:5px auto;display:block;color:#fff;text-align:center;line-height:35px;background:#333;margin-bottom:-10px;">返回顶部
+    </a>
+</div>
+</div>        			
+<footer>
+    <div class="weimob-copyright" style="color:{noercms:$homeInfo.plugmenucolor}">
+{noercms:$homeInfo.copyright}    </div>
+</footer>
+<div mark="stat_code" style="width:0px; height:0px; display:none;">
+</div>
+	</body>
+</html>

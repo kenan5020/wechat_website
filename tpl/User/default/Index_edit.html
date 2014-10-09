@@ -1,0 +1,152 @@
+<include file="Index:header"/>
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{noercms::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<script src="/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script>
+	KindEditor.ready(function(K){
+		var editor = K.editor({
+			allowFileManager:true
+		});
+		K('#upload').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#pic').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#pic').val(url);
+						}else{
+							K('#pic').val("{noercms::C('site_url')}"+url);
+						}
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+	});
+</script>
+<!--tab start-->
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />  
+<div class="tab">
+<ul>
+<li class='<if condition="(ACTION_NAME eq \'autobind_add\')">current </if> tabli' id="tab5"><a href="{noercms::U('Index/autobind_add')}">一键绑定</a></li>
+<li class='<if condition="(ACTION_NAME eq \'add\')">current </if> tabli' id="tab5"><a href="{noercms::U('Index/add')}">手动绑定</a></li>
+</ul>
+</div>
+<!--tab end-->
+<div class="content"  >
+          <div class="cLineB"><h4>修改微信公众号</h4></div>
+          <form method="post" action="{noercms::U('User/Index/upsave')}" enctype="multipart/form-data">
+          <input type="hidden" name="id" value="{noercms:$info.id}">
+          <div class="msgWrap">
+            <table class="userinfoArea" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                  <th><span class="red">*</span>公众号名称：</th>
+                  <td><input type="text" required="" class="px" name="wxname" value="{noercms:$info.wxname}" tabindex="1" size="25">
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th><span class="red">*</span>公众号原始id：</th>
+                  <td><input type="text" required="" name="wxid" value="{noercms:$info.wxid}" onmouseup="this.value=this.value.replace('_430','')" class="px" tabindex="1" size="25" readonly="readonly" style="width: 160px; background-image: none; background-color:#38A7AB;>　<span class="red"> 此项已经锁定，无法更改，如需更改请联系管理员。</span></td>
+                </tr>
+                <tr>
+                  <th><span class="red">*</span>微信号：</th>
+                  <td><input type="text" required="" name="weixin" value="{noercms:$info.weixin}" class="px" tabindex="1" size="25">　比如：cqaboy </td>
+                </tr>
+				 <tr>
+                  <th>AppID：</th>
+                  <td><input type="text" name="appid" value="{noercms:$info.appid}" class="px" size="25">　高级认证服务号特权功能，微客服、粉丝管理等系统，可以不填 </td>
+                </tr>
+				<tr>
+                  <th>AppSecret：</th>
+                  <td><input type="text" name="appsecret" value="{noercms:$info.appsecret}" class="px"  size="25">高级认证服务号特权功能，微客服、粉丝管理等系统，可以不填 </td>
+                </tr>
+				<tr>
+
+                  <th><span class="red"></span>微信号类型：</th>
+
+                  <td><select id="winxintype" name="winxintype">                  
+
+                  <option value="1" <if condition="$info.winxintype eq '1'">selected </if>>订阅号</option>
+
+                  <option value="2" <if condition="$info.winxintype eq '2'">selected </if>>服务号</option>
+
+                  <option value="3" <if condition="$info.winxintype eq '3'">selected </if>>高级服务号</option>
+
+                  </select>　高级服务号是指每年向微信官方交300元认证费的公众号 </td>
+
+                </tr>
+                  <tr>
+                  <th>头像地址（url）:</th>
+                  <td><input class="px" name="headerpic" id="pic" value="{noercms:$info.headerpic}" size="60">  <span class="ke-button-common" id="upload" style="margin-top: 0px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="上传图片"></span></td>
+                </tr>
+                 <input type="hidden" name="token" value="{noercms:$info.token}" class="px" tabindex="1" size="40">
+                <tr>
+                  <th><span class="red">*</span>地区</th>
+                  <td>
+                  省：<input type="text" class="px" id="province" value="{noercms:$info.province}" name="province" tabindex="1" size="20">  市：<input id="city" value="{noercms:$info.city}" type="text" name="city" class="px" tabindex="1" size="20">
+               （此处关联公交等本地化查询）
+                  </td>
+                </tr>
+                <tr>
+                  <th>公众号邮箱：</th>
+                  <td><input type="text" required="" class="px" tabindex="1" value="{noercms:$info.qq}" name="qq" size="25"></td>
+                </tr>
+                 <tr>
+                  <th>粉丝数：</th>
+                  <td><input type="text" required="" name="wxfans" value="{noercms:$info.wxfans}" class="px" tabindex="1" size="25"></td>
+                </tr>
+                <tr>
+                  <th>类型：</th>
+                  <td><select id="type" name="type">
+                  <option value="1,情感" <eq name="info.typeid" value="1">selected</eq> >情感</option>
+                  <option value="2,数码" <eq name="info.typeid" value="2">selected</eq> >数码</option>
+                  <option value="3,娱乐" <eq name="info.typeid" value="3">selected</eq> >娱乐</option>
+                  <option value="4,IT" <eq name="info.typeid" value="4">selected</eq> >IT</option>
+                  <option value="5,数码" <eq name="info.typeid" value="5">selected</eq> >数码</option>
+                  <option value="6,购物" <eq name="info.typeid" value="6">selected</eq> >购物</option>
+                  <option value="7,生活" <eq name="info.typeid" value="7">selected</eq> >生活</option>
+                  <option value="8,服务" <eq name="info.typeid" value="8">selected</eq> >服务</option>
+                  </select></td>
+                </tr><!--
+				                 <tr>
+				                   <th><span class="red">■■■■■■■■■■■■■■■■■</span></th>
+                  <td><input value="img/images/email-help.jpg"  onchange="document.getElementById('end').src=this.value;"  style="width:0px;" id="pic2">请使用163邮箱，需要开启IMAP/SMTP服务，<a href="###" onclick="viewImg('pic2')">开启帮助点我</a><script src="/tpl/static/upyun.js"></script><span class="red">■■■■■■■■■■■■■■■■■</span></td>
+                </tr>   
+                 <tr>
+                  <th><span class="red">*</span>邮件地址：</th>
+                  <td><input type="text" required="" name="email" value="{noercms:$info.email}" class="px" tabindex="1" size="25"> <span class="red">请一定填写163邮箱地址</span> 比如：xxxxxx@163.com</td>
+                </tr>    
+				                 <tr>
+                  <th><span class="red">*</span>SMTP账号：</th>
+                  <td><input type="text" required="" name="emailuser" value="{noercms:$info.emailuser}" class="px" tabindex="1" size="25"> <span class="red">请填写您的163账号, 比如：xxxxxx</span></td>
+                </tr>  
+				                 <tr>
+                  <th><span class="red">*</span>SMTP密码：</th>
+                  <td><input type="password" required="" name="emailpassword" value="{noercms:$info.emailpassword}" class="px" tabindex="1" size="25"> <span class="red">请填写您的163邮箱密码</span>请放心填写，此密码只有您自己看见</td>
+                </tr>  
+				                 <tr>
+                  <th><span class="red">*</span>邮件平台状态：</th>
+                  <td><input type="text" required="" name="emailstatus" value="{noercms:$info.emailstatus}" class="px" tabindex="1" size="25"> <span class="red">填1表示开启，填0表示关闭</span></td>
+                </tr>  -->      
+                <tr>
+                  <th></th>
+                  <td><button type="submit" class="btnGreen" id="saveSetting">保存</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </form>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+  <!--底部-->
+  	</div>
+<include file="Public:footer"/>	

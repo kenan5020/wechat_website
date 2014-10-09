@@ -1,0 +1,39 @@
+<include file="Public:head"/>
+
+<div class="content" style="width:1070px; background:none; margin-left:125px; border:none; margin-bottom:30px; margin-top:30px;" >
+
+          <h4>设置粉丝分组</h4><a href="javascript:history.go(-1);"  class="right btnGrayS vm" style="margin-top:-27px" >返回</a>
+         <div class="cLineB">
+          </div>
+          <form method="post"   action=""  enctype="multipart/form-data" >
+          <div class="msgWrap form">
+            <TABLE class="userinfoArea" border="0" cellSpacing="0" cellPadding="0" width="100%">
+                          <TR>
+                  <TH valign="top"><label for="pic">名称：</label></TH>
+                  <TD><input class="px"  name="name" id="name" value="{noercms:$thisGroup['name']}" style="width:200px;"  />
+</TD>
+                </TR>
+                <TR>
+                  <TH valign="top"><label for="info">简介：</label></TH>
+                  <TD><textarea name="intro" id="intro" class="px"  rows="5" style="width:490px;height:80px">{noercms:$thisGroup['intro']}</textarea></TD>
+                </TR>  
+                
+                <TR>
+                  <TH></TH>
+                  <TD><if condition="$thisGroup"><input type="hidden" name="id" value="{noercms:$thisGroup['id']}" /></if><input type="submit" value="保存" name="sbmt" class="btnGreen left"></TD>
+                </TR>
+              </TBODY>
+            </TABLE>
+            
+          </div>
+          </form>
+          
+        </div>     
+ 
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div> 
+<!--底部-->
+  	</div>
+<include file="Public:footer"/>

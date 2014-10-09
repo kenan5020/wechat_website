@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>{noercms:$tpl.wxname}</title>
+        <base href="." />
+		  <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/music-left.css" media="all" />
+<script src="{noercms::RES}/css/flash/js/zepto.min.js" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+<link href="{noercms::RES}/css/allcss/cate{noercms:$tpl.tpltypeid}_{noercms:$tpl.color_id}.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/64/reset.css" media="all">
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/64/font-awesome.css" media="all">
+<!-- <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/119/home-46.css" media="all"> -->
+<script type="text/javascript" src="{noercms::RES}/css/61/jquery.js"></script>
+<script type="text/javascript" src="{noercms::RES}/css/64/zepto.js"></script>
+<script type="text/javascript" src="{noercms::RES}/css/64/swipe.js"></script>
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+    <!--背景音乐-->
+<if condition="$homeInfo['musicurl'] neq false">
+<include file="Index:music"/>
+</if>
+        <div class="body">
+        <!--
+    幻灯片管理
+    -->
+    <div style="-webkit-transform:translate3d(0,0,0);">
+        <div id="banner_box" class="box_swipe" style="visibility: visible;">
+            <ul style="list-style: none; width: 1350px; transition: 0ms; -webkit-transition: 0ms; -webkit-transform: translate3d(-450px, 0, 0);">
+            <volist name="flash" id="so">
+                <li style="width: 450px; display: table-cell; vertical-align: top;">
+                    <a href="{noercms:$so.url}">
+                    <img src="{noercms:$so.img}" style="width:100%;"></a>
+                </li>
+                </volist>
+            </ul>
+            <ol>
+                                    <li class=""></li>
+                                    <li class="on"></li>
+                                    <li class=""></li>
+                            </ol>
+        </div>
+    </div>
+        <script>
+        $(function(){
+            new Swipe(document.getElementById('banner_box'), {
+                speed:500,
+                auto:3000,
+                callback: function(){
+                    var lis = $(this.element).next("ol").children();
+                    lis.removeClass("on").eq(this.index).addClass("on");
+                }
+            });
+        });
+    </script>
+    <section>
+        <div>
+            <ul class="list_ul">
+                <li class="box">
+                <volist name="info" id="vo">
+                    <if condition="$i lt 3">
+                    <dl>
+                        <a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{noercms:$vo.url|htmlspecialchars_decode}</if>">
+                    <dd>
+                        <span>
+                            <img src="{noercms:$vo.img}" class="icon-smile" style="width:60px;height:40px;margin-top:5px;">
+                        </span>
+                    </dd>
+                    <dt style="font-size:11px;">{noercms:$vo.name}</dt>
+                        </a>
+                    </dl>
+                    </if>
+                </volist> 
+                 </li>   
+                <li class="box">
+                <volist name="info" id="vo">
+                    <if condition="($i gt 2) and ($i lt 5)">
+                    <dl>
+                        <a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{noercms:$vo.url|htmlspecialchars_decode}</if>">
+                    <dd>
+                        <span>
+                            <img src="{noercms:$vo.img}" class="icon-smile" style="width:60px;height:40px;margin-top:5px;">
+                        </span>
+                    </dd>
+                    <dt style="font-size:11px;">{noercms:$vo.name}</dt>
+                        </a>
+                    </dl>
+                    </if>
+                </volist> 
+                 </li>
+                 <li class="box">
+                <volist name="info" id="vo">
+                    <if condition="($i gt 4) and ($i lt 7)">
+                    <dl>
+                        <a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{noercms:$vo.url|htmlspecialchars_decode}</if>">
+                    <dd>
+                        <span>
+                            <img src="{noercms:$vo.img}" class="icon-smile" style="width:60px;height:40px;margin-top:5px;">
+                        </span>
+                    </dd>
+                    <dt style="font-size:11px;">{noercms:$vo.name}</dt>
+                        </a>
+                    </dl>
+                    </if>
+                </volist> 
+                 </li>
+				 <li class="box">
+                <volist name="info" id="vo">
+                    <if condition="($i gt 6) and ($i lt 9)">
+                    <dl>
+                        <a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{noercms:$vo.url|htmlspecialchars_decode}</if>">
+                    <dd>
+                        <span>
+                            <img src="{noercms:$vo.img}" class="icon-smile" style="width:60px;height:40px;margin-top:5px;">
+                        </span>
+                    </dd>
+                    <dt style="font-size:11px;">{noercms:$vo.name}</dt>
+                        </a>
+                    </dl>
+                    </if>
+                </volist> 
+                 </li>
+            </ul>
+        </div>
+    </section>
+<div class="copyright" style="text-align:center;margin-top:10px">
+<if condition="$iscopyright eq 1">
+{noercms:$homeInfo.copyright}
+<else/>
+{noercms:$siteCopyright}
+</if>
+</div>
+</div>
+<include file="Index:styleInclude"/>              
+</body></html>

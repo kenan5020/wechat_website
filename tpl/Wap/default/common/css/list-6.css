@@ -1,0 +1,10 @@
+body{background: #ffffff;}
+.weimob-list-item{ height:40px;}.weimob-list-item-line{padding-left:10px;}.weimob-copyright{ color:#000;}.weimob-copyright{ color:#000;}
+.weimob-list-item-title{
+    white-space: normal!important;
+    height:27px;
+    line-height:27px;
+    overflow:hidden;
+    padding-right:50px;
+    -webkit-box-sizing:border-box;
+}

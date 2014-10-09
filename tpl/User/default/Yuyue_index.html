@@ -1,0 +1,56 @@
+<include file="Public:head"/> 
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<div class="content"  >
+<div class="cLineB">
+<h4 class="left">预约管理 ({noercms:$page} ) </h4>
+<div class="searchbar right">
+<form method="post" action="">
+<input type="text" id="msgSearchInput" class="txt left" placeholder="输入关键词搜索" name="searchkey" value="{noercms:$key}">
+<input type="submit" value="搜索" id="msgSearchBtn" href="" class="btnGrayS" title="搜索">
+</form>
+</div>
+<div class="clr"></div>
+</div>
+<div class="cLine">
+<div class="pageNavigator left"> <a href="{noercms::U($type.'/add',array('token'=>$token))}" title="添加" class="btnGrayS vm bigbtn"><img src="{noercms::RES}/images/product/add.png" width="16" class="vm">添加</a></div>
+<div class="clr"></div>
+</div>
+<div class="msgWrap">
+<form method="post" action="" id="info">
+<input name="delall" type="hidden" value="">
+<input name="wxid" type="hidden" value="">
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+<tr>
+<th width="140">预约名称</th>
+<th width="160">关键词</th>
+<th width="140">预约电话</th>
+<th width="130">开始时间</th>
+<th width="130">结束时间</th>
+<th width="250" class="norightborder">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr></tr>
+<volist name="data" id="item"> 
+<tr>
+<td>{noercms:$item.title}</td>
+<td>{noercms:$item.keyword}</td>
+<td>{noercms:$item.phone}</td>
+<td>{noercms:$item.statdate}</td>
+<td>{noercms:$item.enddate}</td> 
+<td class="norightborder"><a href="{noercms::U($type.'/infos',array('id'=>$item['id'],'token'=>$token))}">订单管理</a>&nbsp;&nbsp;<a href="{noercms::U($type.'/setcin',array('id'=>$item['id'],'token'=>$token))}">类型设置</a>&nbsp;&nbsp;<a href="{noercms::U($type.'/setinfo',array('id'=>$item['id'],'token'=>$token))}">表单设置</a>&nbsp;&nbsp;<a href="{noercms::U($type.'/set',array('id'=>$item['id'],'token'=>$token))}">修改</a>&nbsp;&nbsp;<a href="{noercms::U($type.'/del',array('id'=>$item['id'],'token'=>$token))}">删除</a></td>
+</tr>
+</volist>
+</tbody>
+</table>
+</form>
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{noercms:$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

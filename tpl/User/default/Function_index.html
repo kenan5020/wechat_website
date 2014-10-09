@@ -1,0 +1,105 @@
+<include file="Public:head"/>  
+<script type="text/javascript">
+$(function(){
+  $(".status").click(function() {
+    var $flag = $(this).attr("flag");
+    var $token = $(this).attr("token");
+    var $id = $(this).attr("id");
+    switch($flag){
+      case "true":
+        var myurl='index.php?g=User&m=Token_open&a=del&token='+$token+'&id='+$id+'&r='+Math.random();
+        $(this).attr("flag","false");
+        $(this).removeClass('status_on').addClass('status_off');
+        $.get(myurl,function(data){
+          if(data==1){            
+            alert('已经取消该功能');
+          }
+        })        
+        break;
+      case "false":
+        var myurl='index.php?g=User&m=Token_open&a=add&token='+$token+'&id='+$id+'&r='+Math.random();
+        $(this).attr("flag","true");
+        $(this).removeClass('status_off').addClass('status_on');
+        $.get(myurl,function(data){
+          if(data==1){
+            alert('该功能已经成功添加');
+          }
+        })        
+        break;
+    }
+  });
+})
+</script>
+          <div class="content">
+          <div class="ykfg">
+            <em>
+              下面是已经开发的功能 请选择您要开启的功能 OFF关 NO 开
+            </em>
+          <div class="tleft">
+            <volist id="tleft" name="fun" key="k">
+              <table>
+                <tr class="title"><td colspan="3">VIP<?php echo $k-1;?>可以使用的功能</td></tr>
+                <tr>
+                  <th class="w1">功能</th>
+                  <th class="w2">回复关键词</th>
+                  <th class="w3">状态</th>
+                </tr>
+              <volist name="tleft" id="list" mod="2">
+                  <eq name="mod" value="0">
+                    <tr>
+                      <td class="w1">{noercms:$list.name}</td>
+                      <td class="w2">{noercms:$list.info}</td>
+                      <td class="w3"><input type="button" token="{noercms:$Think.session.token}" id="{noercms:$list.id}" 
+                        <if condition="$list['gid'] gt session('gid')">
+                          class="default"
+                        <else />
+                          <if condition="in_array($list['funname'],$check)">flag="true" class="status_on status"</if> <if condition="in_array($list['funname'],$check) neq 1"> flag="false" class="status_off status"</if>                         
+                        </if>
+                        /></td>
+                    </tr>
+                  </eq>
+              </volist>
+              </table>
+            </volist>         
+          </div>
+          <div class="tright">
+            <volist id="tright" name="fun" key="k">
+              <table>
+                <tr class="title"><td colspan="3">VIP<?php echo $k-1;?>可以使用的功能</td></tr>
+                <tr>
+                  <th class="w1">功能</th>
+                  <th class="w2">回复关键词</th>
+                  <th class="w3">状态</th>
+                </tr>
+                <volist name="tright" id="list" mod="2">
+                  <eq name="mod" value="1">
+                    <tr>
+                      <td class="w1">{noercms:$list.name}</td>
+                      <td class="w2">{noercms:$list.info}</td>
+                      <td class="w3"><input type="button" token="{noercms:$Think.session.token}" id="{noercms:$list.id}" 
+                      <if condition="$list['gid'] gt session('gid')">
+                        class="default"
+                      <else />
+                        <if condition="in_array($list['funname'],$check)">flag="true" class="status_on status"</if> <if condition="in_array($list['funname'],$check) neq 1"> flag="false" class="status_off status"</if>                         
+                      </if>
+                        /></td>
+                    </tr>
+                  </eq>
+                </volist>
+                  <?php
+                   if(count($tright)%2 == 1){
+                    echo '<tr>
+                      <td class="w1"></td>
+                      <td class="w2"></td>
+                      <td class="w3"></td>
+                    </tr>';
+                   }
+                  ?>
+              </table>
+            </volist>
+          </div>
+          </div>
+          <div style="clear:both;"></div>
+        </div>
+        <div class="clr"></div>
+    <include file="Public:footer"/>

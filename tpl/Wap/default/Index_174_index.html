@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/145/snower.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/145/common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/145/reset.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/145/font-awesome.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/145/home-51.css" media="all" />
+<script type="text/javascript" src="{noercms::RES}/css/145/js/maivl.js"></script>
+<script type="text/javascript" src="{noercms::RES}/css/145/js/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/reset.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/font-awesome.css" media="all" />
+<link href="{noercms::RES}/css/allcss/cate{noercms:$tpl.tpltypeid}_{noercms:$tpl.color_id}.css" rel="stylesheet" type="text/css" />
+<title>{noercms:$tpl.wxname}</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<!-- Mobile Devices Support @begin -->
+<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="0" http-equiv="expires">
+<meta content="telephone=no, address=no" name="format-detection">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- Mobile Devices Support @end -->
+</head>
+<body onselectstart="return true;" ondragstart="return false;">
+<if condition="$homeInfo['play_audio'] eq 'on'">
+<if condition="$homeInfo['bg_audio'] neq ''">
+<include file="Index:music"/>
+</if>
+</if>
+<style type="text/css">
+.body{
+	display:block;
+		background-size:100% 100%;
+}
+</style>
+<div class="body">
+  <header>
+    <div class="snower">
+      <script type="text/javascript"></script>
+      <script type="text/javascript" src="{noercms::RES}/css/145/js/snower.js"></script>
+    </div>
+  </header>
+  <section>
+    <div class="box_title">
+      <hgroup> </hgroup>
+    </div>
+    <ul class="list_ul">
+      <li class="box">
+        <volist name="info" id="vo">
+        <?php $xx=count($info); ?>
+        <php> $ii++; </php>
+        <a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}
+        <else/>
+        {noercms:$vo.url|htmlspecialchars_decode}
+        </if>
+        ">
+        <label><small>{noercms:$vo.name}</small></label>
+        <span class="{noercms:$vo.icon}"></span> </a>
+        <php>
+        if ($ii%3==0 & $ii!=$xx){echo "</li>
+      <li class='box'>";}
+        </php>
+        </volist>
+      </li>
+    </ul>
+  </section>
+</div>
+<div class="copyright" style="text-align:center;padding:10px 0">
+<if condition="$iscopyright eq 1">
+{noercms:$homeInfo.copyright}
+<else/>
+{noercms:$siteCopyright}
+</if>
+</div>
+</div>
+<include file="Index:styleInclude"/>
+</body>
+</html>

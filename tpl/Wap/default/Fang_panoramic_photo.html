@@ -1,0 +1,68 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/view.css" media="all">
+    <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/back.css" media="all">
+    <script type="text/javascript" src="{noercms::RES}/js/fang/share.js"></script>
+    <script type="text/javascript" src="{noercms::RES}/js/fang/common.js"></script>
+    <script type="text/javascript" src="{noercms::RES}/js/fang/3dfull.js"></script>
+    <title>楼盘全景图</title>
+    <script src="{noercms::RES}/js/fang/sharedata.js"></script>
+</head>
+<body onselectstart="return true;" ondragstart="return false;" style="">
+<style type="text/css">
+    .view_list{ overflow-y:scroll;bottom:72px;overflow:scroll;-webkit-overflow-scrolling: touch; }
+    ::-webkit-scrollbar {display:none;}
+    .view_list,.view_change,.view_house{z-index:301;}
+    .view_select,.view_house{opacity:0;}
+    .view_full{overflow:hidden;}
+    #popFail{z-index:25;}
+    .pop_mask{z-index:24;}
+</style>
+<div class="view_full" id="full3dDiv" style="width:100%; height:100%; ">
+	<img src="images/bg_3.jpg" style="width:100%; height:100%;">
+</div>
+<div class="view_select" style="min-height: 150px; overflow-y: scroll; max-height: 316px; height: 316px; padding-top: 0px; margin-top: 20px; opacity: 1.02; margin-bottom: 20px; ">
+	<div class="view_list" id="placeLink" style="opacity: 1.02; ">  
+        <h3>室内<em></em></h3>  
+        <ul style="margin-left: 21px; ">                
+            <li>
+                <a href="javascript:void(0);" onclick="FULL3D.go3D('/pfid/22');return false;">室内</a>
+            </li>            
+        </ul>  
+        <h3>花园<em></em></h3>  
+        <ul style="margin-left: 21px; ">                
+            <li>
+                <a href="javascript:void(0);" onclick="FULL3D.go3D('/pfid/21');return false;">花园</a>
+            </li>            
+        </ul>  
+        <h3>外景<em></em></h3>  
+        <ul style="margin-left: 21px; ">                
+            <li>
+                <a href="javascript:void(0);" onclick="FULL3D.go3D('/pfid/20');return false;">外景</a>
+            </li>            
+        </ul>  
+    </div>
+</div>
+<div class="view_house" style="opacity: 1.02; "><a id="currPlace" href="javascript:void(0);">石梅湾九里一期-A1半山观海独栋</a></div>
+<div class="pop_tips" id="popTips" style="display:none;">
+	<div class="oval"></div>
+	<div class="pop_show">
+		<h4 id="tipsTitle">温馨提示</h4>
+		<div class="pop_info" id="tipsMsg">
+			<p></p>
+		</div>
+		<div class="pop_btns">
+			<a href="javascript:void(0);" id="tipsOK">确定</a>
+			<a href="javascript:void(0);" style="display:none;" id="tipsCancel">取消</a>
+		</div>
+	</div>
+</div>
+<div class="pop_mask" id="popMask" style="display: none;"></div>
+<script>
+	var PID = 2356;
+	var WECHATID = 'o8ViLjqXXdEbCHRGmquQb7L19-T0';
+</script>
+<a href="javascript:history.go(-1);" class="back360" style="">&nbsp;</a>        		<div mark="stat_code" style="width:0px; height:0px; display:none;">
+					</div>
+</body></html>

@@ -1,0 +1,144 @@
+<include file="Public:head"/> 
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<script src="{noercms::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{noercms::STATICS}/artDialog/plugins/iframeTools.js"></script>
+ <link rel="stylesheet" href="{noercms::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{noercms::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<script type="text/javascript" src="{noercms::RES}/js/formCheck/formcheck.js"> </script>
+<script>
+var editor;
+KindEditor.ready(function(K) {
+	editor = K.create('#intro', {
+	resizeType : 1,
+	allowPreviewEmoticons : false,
+	allowImageUpload : false,
+	items : [
+	'source','undo','clearhtml','hr','fontsize','forecolor','hilitecolor',
+	'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+	'insertunorderedlist', '|', 'emoticons', 'image','link', 'unlink','baidumap','lineheight','table','anchor','preview','print','template','code','cut']
+	});
+});
+</script>
+<div class="content"  >
+<div class="cLineB">
+<h4 class="left">店铺信息</h4>
+<div class="searchbar right">
+<form method="post" action="">
+<script>
+function selectall(name) {
+	var checkItems=$('.cbitem');
+	if ($("#check_box").attr('checked')==false) {
+		$.each(checkItems, function(i,val){
+			val.checked=false;
+		});
+	} else {
+		$.each(checkItems, function(i,val){
+			val.checked=true;
+		});
+	}
+}
+function setlatlng(longitude,latitude){
+	art.dialog.data('longitude', longitude);
+	art.dialog.data('latitude', latitude);
+	// 此时 iframeA.html 页面可以使用 art.dialog.data('test') 获取到数据，如：
+	// document.getElementById('aInput').value = art.dialog.data('test');
+	art.dialog.open('{noercms::U('Map/setLatLng',array('token'=>$token,'id'=>$id))}',{lock:false,title:'设置经纬度',width:600,height:400,yesText:'关闭',background: '#000',opacity: 0.87});
+}
+</script>
+<if condition="($parentid neq  '0') and ($parentid neq '')"><a href="{noercms::U('Dining/cats',array('token'=>$token,'parentid'=>$parentCat['parentid']))}" class="btnGreen" style="margin-top:-27px">返回上</a></if>
+</form>
+</div>
+<div class="clr"></div>
+</div>
+<!--tab start-->
+<div class="tab">
+<ul>
+<if condition="$set.catid neq ''"><li class="current tabli" id="tab0"><a href="{noercms::U('Dining/ComIndex',array('token'=>$token))}">更新信息</a></li></if> 
+<li class="tabli" id="tab2"><a href="{noercms::U('Dining/ComBranches',array('token'=>$token))}">店铺信息</a></li>
+<li class="tabli" id="tab0"><a href="{noercms::U('Dining/index',array('token'=>$token,'dining'=>1))}">菜品管理</a></li>
+<li class="tabli" id="tab2"><a href="{noercms::U('Dining/cats',array('token'=>$token,'dining'=>1))}">菜品分类管理</a></li>
+<li class="tabli" id="tab2"><a href="{noercms::U('Dining/orders',array('token'=>$token,'dining'=>1))}">订单管理</a></li>
+<li class="tabli" id="tab2"><a href="{noercms::U('Dining/tables',array('token'=>$token,'dining'=>1))}">桌台管理</a></li>
+<li class="tabli" id="tab5"><a href="{noercms::U('Reply_info/set',array('token'=>$token,'infotype'=>'Dining'))}">订餐回复配置</a></li>
+</ul>
+</div>
+<!--tab end-->
+<div class="msgWrap">
+ <form class="form" method="post" id="form" action=""> 
+<if condition="$set.catid neq ''">
+<input type="hidden" name="id" value="{noercms:$set.id}" />
+</if>
+<input type="hidden" name="discount" id="discount" value="{noercms:$set.discount}" />
+    <div class="msgWrap bgfc"> 
+     <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+      <tbody> 
+       <tr> 
+        <th><span class="red">*</span>店铺选择：</th> 
+        <td>  <select name="catid" class="px require" style="width:400px;" >
+         <volist name="Company" id="t">
+        <option  value="{noercms:$t.id}">{noercms:$t.name}</option>
+        </volist>
+        </select> </td> 
+       </tr>
+       <tr> 
+        <th><span class="red"></span>店铺公告：</th> 
+        <td><input type="text" id="bulletin" name="bulletin" value="{noercms:$set.bulletin}" placeholder="如：店铺最新优惠：买10元送1元 " class="px require" style="width:400px;" /></td> 
+       </tr> 
+       <tr> 
+        <th><span class="red"></span>店铺状态：</th> 
+        <td>
+        <select name="status" class="px require" style="width:400px;" >
+        <option value="0" <if condition="$set.status eq 0">selected</if>>营业中</option>
+        <option value="1" <if condition="$set.status eq 1"> selected</if>>未营业</option></select> 
+        </td> 
+       </tr> 
+        <tr> 
+        <th><span class="red"></span>店铺类型：</th> 
+        <td><input type="text" id="category" name="category" value="{noercms:$set.category}" placeholder="如：小吃、快餐 " class="px require" style="width:400px;" /></td> 
+       </tr> 
+       <tr> 
+        <th><span class="red"></span>营业时间：</th> 
+        <td><input type="text" id="time" name="time" value="{noercms:$set.time}" placeholder="如：8：00~22：00 " class="px require" style="width:400px;" /></td> 
+       </tr> 
+       <tr> 
+        <th><span class="red"></span>起送价格：</th> 
+        <td><input type="text" id="money" name="money" value="{noercms:$set.money}" placeholder="请填写数字，如50，仅保留小数点后2位 " class="px require" style="width:400px;" /></td> 
+       </tr> 
+       <tr> 
+        <th><span class="red"></span>服务半径：</th> 
+        <td><input type="text" id="radius" name="radius" value="{noercms:$set.radius}" placeholder="如：3公里   "  class="px require" style="width:400px;" /></td> 
+       </tr> 
+       <tr> 
+        <th><span class="red"></span>配送区域：</th> 
+        <td><input type="text" id="scope" name="scope" value="{noercms:$set.scope}" placeholder="如：置地大道等   "   class="px require" style="width:400px;" /></td> 
+       </tr> 
+       <tr>         
+       <th>&nbsp;</th>
+       <td>
+       <if condition="$isBranch eq 1">
+      <input type="hidden" name="isbranch" value="1" />
+      </if>
+      <input type="hidden" name="token" value="{noercms::$token}" />
+       <button type="submit" name="button" class="btnGreen">保存</button></td> 
+       </tr> 
+      </tbody> 
+     </table> 
+     </div>
+   </form> 
+</div>
+<div class="cLine">
+<div class="clr"></div>
+</div>
+</div>
+<script language="javascript">
+$(function(){
+	$("#form").valid([
+	{ name:"name",simple:"名称",require:true},
+	{ name:"mp",type:"mobile",message:"手机号输入不正确"}
+	],true,true);
+})
+</script>
+<include file="Public:footer"/>

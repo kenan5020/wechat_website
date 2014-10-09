@@ -1,0 +1,59 @@
+<include file="Public:head"/>
+ <div class="content">
+          <div class="cLineB"><h4>客服回复</h4><a href="javascript:history.go(-1);"  class="right btnGrayS vm" style="margin-top:-27px" >返回</a></div> 
+<div class="msgWrap">
+  <form class="form" method="post"   action="{noercms::U('Wxusermeasage/post')}" >
+  <input type="hidden" name="id" value="{noercms:$message.id}">
+<TABLE class="userinfoArea" style=" margin:20px 0 0 0;" border="0" cellSpacing="0" cellPadding="0" width="100%">
+  <THEAD>
+<TR>
+  <TH>发送内容</TH>
+  <TD>{noercms:$message.Content}</TD>
+  <TD>&nbsp; </TD>
+</TR>
+                            </THEAD>
+  <TBODY>
+<TR>
+  <TH>回复内容</TH>
+  <TD><textarea  class="px" id="Hfcontent" name="text" style="width:500px; height:150px" required=""></textarea><div style="padding-top:10px;"><p id="textCount">请不要多于1000字否则无法发送!</p></div>
+</TD>
+  <TD rowspan="2" valign="top">&nbsp;</TD>
+<TR>
+  <TH></TH>
+  <TD><button type="submit"  name="button"  class="btnGreen left" >发送</button>　<a href=""  class="btnGray vm">取消</a>
+  	<div class="clr"></div>
+<script type="text/javascript">
+function jsbq(srt){
+	$("#Hfcontent").val($("#Hfcontent").val()+"/"+srt); 
+	$("#Hfcontent").focus();
+}
+$("#Hfcontent").keyup(function(e) { 
+	checkinput();
+}); 
+$('#Hfcontent').live('blur',function(){   
+      checkinput();
+});
+function checkinput(){
+	if($("#Hfcontent").val().length >1000) { 
+		var num=$("#Hfcontent").val().substr(0,1000); 
+		$("#Hfcontent").val(num); 
+		$("#textCount").text("不能再输入了！");
+	} else { 
+		$("#textCount").text("还能输入"+(1000-$("#Hfcontent").val().length)+"个字！"); 
+	} ;
+} 
+</script> 
+</TD>
+  </TR>
+  </TBODY>
+</TABLE>
+  </form>
+  </div> 
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div> 
+<!--底部-->
+  	</div>
+<include file="Public:footer"/>

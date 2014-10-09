@@ -1,0 +1,63 @@
+﻿<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+    <meta charset="utf-8" />
+    <title>相册详情</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <LINK href="{noercms::RES}/css/fang/sexylightbox.css" type=text/css rel=stylesheet>
+    <SCRIPT language=javascript src="{noercms::RES}/js/fang/jquery.min.js"></SCRIPT>
+    <style type="text/css">
+    </style>
+</HEAD>
+<body>
+<ul class="ul">
+	<li <if condition="$data['topic1'] eq null">style="display:none"</if> >
+        <a href="{noercms:$data['topic1']}" rel=sexylightbox[group1]>
+            <img src="{noercms:$data['topic1']}" class="img">
+        </a>
+    </li>
+    <li <if condition="$data['topic2'] eq null">style="display:none"</if>>
+        <a href="{noercms:$data['topic2']}" rel=sexylightbox[group1]>
+            <img src="{noercms:$data['topic2']}" class="img">
+        </a>
+    </li>   
+    <li <if condition="$data['topic3'] eq null">style="display:none"</if>>
+        <a href="{noercms:$data['topic3']}" rel=sexylightbox[group1]>
+            <img src="{noercms:$data['topic3']}" class="img">
+        </a>
+    </li>
+    <li <if condition="$data['topic4'] eq null">style="display:none"</if>>
+        <a href="{noercms:$data['topic4']}" rel=sexylightbox[group1]>
+            <img src="{noercms:$data['topic4']}" class="img">
+        </a>
+    </li>
+    <li <if condition="$data['topic5'] eq null">style="display:none"</if>>
+        <a href="{noercms:$data['topic5']}" rel=sexylightbox[group1]>
+            <img src="{noercms:$data['topic5']}" class="img">
+        </a>
+    </li>
+    <li <if condition="$data['topic6'] eq null">style="display:none"</if>>
+        <a href="{noercms:$data['topic6']}" rel=sexylightbox[group1]>
+            <img src="{noercms:$data['topic6']}" class="img">
+        </a>
+    </li>
+    <li <if condition="$data['topic7'] eq null">style="display:none"</if>>
+        <a href="{noercms:$data['topic7']}" rel=sexylightbox[group1]>
+            <img src="{noercms:$data['topic7']}" class="img">
+        </a>
+    </li>
+	<li <if condition="$data['topic8'] eq null">style="display:none"</if> >
+        <a href="{noercms:$data['topic8']}" rel=sexylightbox[group1]>
+            <img src="{noercms:$data['topic8']}" class="img">
+        </a>
+    </li>
+</ul>
+<SCRIPT src="{noercms::RES}/js/fang/jquery.easing.1.3.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{noercms::RES}/js/fang/sexylightbox.v2.3.jquery.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript>
+   $(document).ready(function(){
+      SexyLightbox.initialize({color:'white', dir: 'images'});
+    });
+</SCRIPT>
+</body>
+</HTML>

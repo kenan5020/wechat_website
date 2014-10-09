@@ -1,0 +1,61 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/default_user_com.css" media="all">
+<div class="content" style="width:95%; background:none; margin-left:25px; border:none; margin-bottom:30px; margin-top:30px;" >
+  <div class="cLineB">
+    <div  class="quick-actions_homepage">
+    <ul class="quick-actions">
+    <li class="bg_ls"> <a href="{noercms::U('Car/index',array('token'=>$token))}"> <i class="icon-truck"></i> 微汽车 </a> </li>
+      <li class="bg_lb"> <a href="{noercms::U('Product/orders',array('token'=>$token,'dining'=>1))}"> <i class="icon-glass"></i> 微餐饮 </a> </li>
+      <li class="bg_dy"> <a href="{noercms::U('Estate/index',array('token'=>$token))}"> <i class="icon-star"></i> 微房产</a> </li>
+      <li class="bg_lg"> <a href="{noercms::U('Jiudian/index',array('token'=>$token))}"> <i class="icon-plus"></i> 微酒店</a> </li>
+      <li class="bg_ly"> <a href="{noercms::U('Yiliao/index',array('token'=>$token))}"> <i class="icon-tag"></i> 微医疗 </a> </li>
+      <li class="bg_lo"> <a href="{noercms::U('Reservation/index',array('token'=>$token))}"> <i class="icon-map-marker"></i> 微预约 </a> </li>
+      <li class="bg_db"> <a href="javascript:history.go(-1);"> <i class="icon-share-alt"></i> 返回</a> </li>
+    </ul>
+  </div>
+  <h4>实用工具</h4>
+  <include file="Car:menu"/>
+              <div class="clr"></div>
+          </div>
+          <div class="cLine">
+    <div class="alert">
+    <p><span class="bold">使用方法：</span>开启状态可以在手机显示，关闭就不显示</p>
+    </div>
+</div>
+          <div class="msgWrap">
+            <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                    <th>工具名称</th>
+                    <!--<th>回复关键词</th> -->
+                    <th>状态</th>
+                </tr>
+              </thead>
+              <tbody>
+                <volist name="utility" id="vo">
+                     <form method="post" action="">
+                            <tr>
+                                <td><span class="sn weather">{noercms:$vo['name']}</span></td>
+                                <td>
+                                    <div class="switch switch-small">
+                                        <if condition="$vo['status'] eq 1">
+ <a href="{noercms::U('Car/utility',array('token'=>$token,'status'=>'on','id'=>$vo['id'],'isPost'=>1))}"><strong>开启</strong></a> 
+                                        <else/>
+<a href="{noercms::U('Car/utility',array('token'=>$token,'status'=>'off','id'=>$vo['id'],'isPost'=>1))}"><strong>关闭</strong></a> 
+                                        </if>
+                                    </div>
+                                </td>
+                            </tr>
+                    </form> 
+                </volist>
+                                </tbody>
+            </table>
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages">{noercms:$page}</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>
+<include file="Public:footer"/>

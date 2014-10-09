@@ -1,0 +1,35 @@
+   <script type="text/javascript">
+window.shareData = {
+            "moduleName":"School",
+            "moduleID":"0",
+            "imgUrl": "{noercms:$info['head_url']}",
+            "sendFriendLink": "{noercms::C('site_url')}{noercms::U('School/index',array('token'=>$token))}",
+            "tTitle": "{noercms:$info['title']}",
+            "tContent": "{noercms:$info['info']|html_entity_decode|strip_tags|mb_substr=0,89,'utf-8'}..."
+        };
+</script>
+{noercms:$shareScript}
+<script type="text/javascript" src="/tpl/Wap/default/common/js/ChatFloat.js"></script>
+<if condition="$kefu['jiaoyu'] eq '1'"><a href="{noercms:$kefu.info2}" id="CustomerChatFloat" style="position: fixed; right: 0px; top: 150px; z-index: 99999; height: 70px; width: 65px; min-width: 65px; background-image: url(/tpl/Wap/default/common/css/img/MobileChatFloat.png); background-size: 65px; background-position: 0px 0px; background-repeat: no-repeat no-repeat;"></a></if>
+
+    <div id="ui-header" >
+        <div class="fixed">
+            <a class="ui-title" id="popmenu">选择分类</a> <a class="ui-btn-left_pre" href="{noercms::U('School/index',array('token'=>$token,'wecha_id'=>$wecha_id))}">
+            </a><a class="ui-btn-right" href=""></a>
+        </div>
+    </div>
+    <div id="overlay"></div>
+<div id="win" >
+<ul class="dropdown">
+<li><a href="{noercms::U('School/public_list',array('token'=>$token,'wecha_id'=>$wecha_id,'cid'=>$info['menu1_id']))}"><span>{noercms:$info['menu1']|default='学校简介'}</span></a></li>
+<li><a href="{noercms::U('School/public_list',array('token'=>$token,'wecha_id'=>$wecha_id,'cid'=>$info['menu2_id'],'type'=>'assess'))}"><span>{noercms:$info['menu2']|default='教师风采'}</span></a></li>
+<li><a href="{noercms::U('School/public_list',array('token'=>$token,'wecha_id'=>$wecha_id,'cid'=>$info['menu3_id']))}"><span>{noercms:$info['menu3']|default='同学天地'}</span></a></li>
+<li><a href="{noercms::U('School/public_list',array('token'=>$token,'wecha_id'=>$wecha_id,'cid'=>$info['menu4_id'],'type'=>'yyclass'))}"><span>{noercms:$info['menu4']|default='课程介绍'}</span></a></li>
+<li><a href="{noercms::U('School/public_list',array('token'=>$token,'wecha_id'=>$wecha_id,'type'=>'school'))}"><span>{noercms:$info['menu5']|default='食谱安排'}</span></a></li>
+<li><a href="{noercms::U('School/public_list',array('token'=>$token,'wecha_id'=>$wecha_id,'cid'=>$info['menu6_id']))}"><span>{noercms:$info['menu6']|default='校园公告'}</span></a></li>
+<li><a href="{noercms::U('School/qresults',array('token'=>$token,'wecha_id'=>$wecha_id))}"><span>{noercms:$info['menu7']|default='成绩查询'}</span></a></li>
+<li><a href="{noercms::U('Reply/index',array('token'=>$token,'wecha_id'=>$wecha_id))}"><span>{noercms:$info['menu8']|default='家长建议'}</span></a></li>
+<li><a href="{noercms::U('School/public_list',array('token'=>$token,'wecha_id'=>$wecha_id,'type'=>'course'))}"><span>课程预约</span></a></li>
+<div class="clr"></div>
+ </ul>
+</div>

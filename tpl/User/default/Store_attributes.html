@@ -1,0 +1,61 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />  
+<div class="content" style="width:1070px; background:none; margin-left:125px; border:none; margin-bottom:30px; margin-top:30px;" >
+<div class="cLineB">
+   <div  class="quick-actions_homepage">
+  </div>
+<div class="clr"></div>
+</div>
+<!--tab start-->
+<div class="tab">
+<ul>
+<li class="current tabli" id="tab2"><a href="{noercms::U('Store/index',array('token'=>$token))}">商品分类管理</a></li>
+<li class="tabli" id="tab0"><a href="{noercms::U('Store/product',array('token'=>$token,'catid'=>$catid))}">商品管理</a></li>
+<li class="tabli" id="tab2"><a href="{noercms::U('Store/orders',array('token'=>$token))}">订单管理</a></li>
+<li class="tabli" id="tab5"><a href="{noercms::U('Reply_info/set',array('token'=>$token,'infotype'=>'Shop'))}">商城回复配置</a></li>
+</ul>
+</div>
+<!--tab end-->
+<div class="cLine" style="width:100%">
+<div class="pageNavigator left">
+	<a href="{noercms::U('Store/attributeAdd',array('token'=>$token,'catid'=>$catid))}" title="新增属性" class="btnGrayS vm bigbtn">
+	<img src="{noercms::RES}/images/product/add.png" class="vm">新增<span class="red">{noercms:$catData.name}</span>分类的属性</a>
+</div>
+<div class="pageNavigator right">
+	<a href="{noercms::U('Store/index',array('token'=>$token,'catid'=>$catid))}" class="btnGrayS vm bigbtn">返回</a>
+</div>
+<div class="clr"></div>
+</div>
+<div class="msgWrap">
+<form method="post" action="" id="info">
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+<tr>
+<th class="select">名称</th>
+<th width="160">属性名称</th>
+<th width="260">属性值</th>
+<th width="150" class="norightborder">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr></tr>
+<volist name="list" id="attributeData"> 
+<tr>
+<td><input type="checkbox" name="del_id[]" value="285" class="checkitem"></td>
+<td>{noercms:$attributeData.name}</td>
+<td>{noercms:$attributeData.value}</td>
+<td class="norightborder"><a href="{noercms::U('Store/attributeAdd',array('token' => $token, 'id' => $attributeData['id'], 'catid' => $attributeData['catid']))}">修改</a> <a href="javascript:drop_confirm('您确定要删除吗?', '{noercms::U('Store/attributeDel',array('id' => $attributeData['id'], 'token'=> $token, 'catid' => $attributeData['catid']))}');">删除</a></td>
+</tr>
+</volist>
+</tbody>
+</table>
+</form>
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{noercms:$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

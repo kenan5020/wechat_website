@@ -1,0 +1,69 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::Common}/default_user_com.css" media="all">
+ <link rel="stylesheet" type="text/css" href="./tpl/User/default/common/css/cymain.css" />
+ <div class="content"  >
+  <div class="tab">
+<ul>
+<li class="<if condition="ACTION_NAME EQ 'index'">current</if> tabli" id="tab0"><a href="{noercms::U('Zhuangxiu/index',array('token'=>$token))}">装修公司介绍</a></li>
+<li class="<if condition="ACTION_NAME EQ 'son' ">current</if> tabli" id="tab2"><a href="{noercms::U('Zhuangxiu/son',array('token'=>$token))}">门店</a></li>
+<li class="<if condition="ACTION_NAME EQ 'housetype' ">current</if> tabli" id="tab2"><a href="{noercms::U('Zhuangxiu/housetype',array('token'=>$token))}">成功案例</a></li>
+<li class="<if condition="ACTION_NAME EQ 'album' or ACTION_NAME EQ 'album_add'">current</if> tabli" id="tab5"><a href="{noercms::U('Zhuangxiu/album',array('token'=>$token))}">装修相册</a></li>
+<li class="<if condition="ACTION_NAME EQ 'expert'">current</if> tabli" id="tab5"><a href="{noercms::U('Zhuangxiu/expert',array('token'=>$token))}">客户印象</a></li>
+<li class="<if condition="ACTION_NAME EQ 'zhuangxiuindex'">current</if> tabli" id="tab6"><a href="{noercms::U('Reservation/zhuangxiuindex',array('token'=>$token))}">预约管理</a></li>
+</ul>
+</div>  
+          <div class="cLine">
+    <div class="alert">
+    </div>
+</div>
+          <div class="cLine">
+            <div class="pageNavigator left">
+                <a href="{noercms::U('Reservation/add',array('token'=>$token,'thetype'=>'zhuangxiu'))}" class="btnGrayS vm bigbtn">
+                    <img src="tpl/User/default/common/images/pic.png" class="vm">添加预约
+                </a>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="msgWrap">
+          <form method="post" action="" id="info">
+          <input name="delall" type="hidden" value="del">
+           <input name="wxid" type="hidden" value="gh_423dwjkewad">
+            <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+					<tr> 
+					   <th>预约名称</th>
+							<th>关键字</th>
+							<th>预约电话</th>
+							<th>限定量</th>
+							<th>总订单限制</th>
+							<th>开始时间/结束时间</th>
+							<th>操作</th>
+					</tr>
+				</thead>
+				  <tbody>
+					<volist name="reslist" id="vo">
+						 <tr> 
+							<td>{noercms:$vo['title']}</td>
+							<td>{noercms:$vo['keyword']}</td>
+							<td>{noercms:$vo['tel']}</td>
+							<td><if condition="$vo['type'] eq 1">时间限制<elseif condition="$vo['type'] eq 2"/>限定每日量<else/>限定全部总量</if></td>
+							<td></td>
+							<td>{noercms:$vo['date']}</td>
+						   <td > 
+								<a href="{noercms::U('Reservation/manage',array('token'=>$vo['token'],'thetype'=>'zhuangxiu','id'=>$vo['id']))}" class="btn" title="订单管理">订单管理</a>
+								<a class="btn" href="{noercms::U('Reservation/edit',array('token'=>$vo['token'],'thetype'=>'zhuangxiu','id'=>$vo['id']))}" title="编辑">编辑</a> 
+								<a class="btn" href="{noercms::U('Reservation/del',array('token'=>$vo['token'],'thetype'=>'zhuangxiu','id'=>$vo['id']))}" onclick="return(confirm('确定要删除吗？'))"  title="删除">删除</a></td>
+						</tr>
+						</volist>
+					</tbody>
+            </table>
+           </form> 
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages">{noercms:$page}</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>  
+<include file="Public:footer"/>

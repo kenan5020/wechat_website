@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/weimob-ui-1-1.css?2013-12-28-1" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/common.css?2013-12-28-1" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/list-2.css?2013-12-28-1" media="all" />
+<script type="text/javascript" src="{noercms::RES}/src/jquery.js?2013-12-28-1"></script>
+<title>{noercms:$tpl.wxname}</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="{noercms::C('site_name')}、微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" />
+        <meta name="Description" content="{noercms::C('site_name')}，国内最大的微信公众智能服务平台，微盟八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" />
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+            <meta content="no-cache" http-equiv="pragma">
+            <meta content="0" http-equiv="expires">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+        <link rel="shortcut icon" href="{noercms::RES}/img/favicon.ico" />
+		<style type="text/css">
+.top_bar{
+    position:fixed;
+    width:100%;
+    left:0;
+    top:0;
+    z-index:100;
+}
+.top_bar+*{
+    padding-top:35px;
+}
+.top_menu{
+    display:-webkit-box;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#212C30), to(#121619));
+}
+.top_bar .top_menu>li{
+    -webkit-box-flex:1;
+    height:35px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255,255,255,0.1)),color-stop(50%,rgba(255,255,255,0.8)), to(rgba(255,255,255,0.1)));
+    -webkit-background-size:1px 80%;
+    background-size:1px 80%;
+    background-position: right center;
+    background-repeat: no-repeat;
+    position:relative;
+    text-align:center;
+}
+.top_menu>li:last-of-type{background:none;}
+.top_menu>li span{
+    display:inline-block;
+    height:100%;
+    width:25px;
+    margin:auto;
+    font-size:24px;
+    color:#fff;
+    line-height:35px;
+    /*background: url(../img/weimob-icons.png) no-repeat 0 5px;*/
+}
+.top_menu>li span.i_back{
+    background-position:0 5px;
+}
+.top_menu>li span.i_home{
+    background-position:-33px 5px;
+}
+.top_menu>li span.i_tel{
+    background-position:-65px 5px;
+}
+.top_menu>li span.i_menu{
+    background-position:-95px 5px;
+}
+.menu_font{
+    text-align:left;
+    position:absolute;
+    top:35px;
+    right:10px;
+    z-index:500;
+}
+.menu_font.hidden{
+    display:none;
+}
+</style>
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+        <link rel="stylesheet" type="text/css" href="../../img/font-awesome.css?v=2013122901" media="all" />
+<div class="weimob-page">
+		<div style="height:35px!important;"></div>
+	<div class="top_bar">
+		<nav>
+			<ul class="top_menu">
+				<li onClick="window.history.go(-1);"><span class="icon-chevron-sign-left"></span></li>
+				<li onClick="location.href='{noercms::U('Index/index',array('token'=>$tpl['token']))}'"><span class="icon-home"></span></li>
+									<li><a href="tel:<if condition="$homeInfo.dianhua neq false">{noercms:$homeInfo.dianhua}<else/>没有留电话</if>"><span class="icon-phone"></span></a></li>
+								<li onClick="$('#menu_font').toggleClass('hidden');">
+					<span class="icon-list-ul"></span>
+					<ul id="menu_font" class="menu_font hidden" onClick="$('#menu_font').toggleClass('hidden');">
+					<volist name="info" id="vo">
+																					<li>
+																		<a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{noercms:$vo.url|htmlspecialchars_decode}</if>" class="icon-smile">
+										{noercms:$vo.name}									</a>
+								</li>
+								</volist> 
+																		</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<!--
+分享前控制
+-->
+	<script>
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+			window.shareData = {
+				"imgUrl": "http://stc.weimob.com//img/template/lib/home-450300.jpg?v=2013-12-18-2?=2013-12-18-2",
+				"timeLineLink": "http://www.weimob.com/weisite/list?pid=34087&bid=64052&wechatid=fromUsername&ltid=93586&wxref=mp.weixin.qq.com",
+				"sendFriendLink": "http://www.weimob.com/weisite/list?pid=34087&bid=64052&wechatid=fromUsername&ltid=93586&wxref=mp.weixin.qq.com",
+				"weiboLink": "http://www.weimob.com/weisite/list?pid=34087&bid=64052&wechatid=fromUsername&ltid=93586&wxref=mp.weixin.qq.com",
+				"tTitle": "二号分类",
+				"tContent": "",
+				"fTitle": "二号分类",
+				"fContent": "",
+				"wContent": ""
+			};
+			// 发送给好友
+			WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+				WeixinJSBridge.invoke('sendAppMessage', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.sendFriendLink,
+					"desc": window.shareData.fContent,
+					"title": window.shareData.fTitle
+				}, function (res) {
+					_report('send_msg', res.err_msg);
+				})
+			});
+			// 分享到朋友圈
+			WeixinJSBridge.on('menu:share:timeline', function (argv) {
+				WeixinJSBridge.invoke('shareTimeline', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.timeLineLink,
+					"desc": window.shareData.tContent,
+					"title": window.shareData.tTitle
+				}, function (res) {
+					_report('timeline', res.err_msg);
+				});
+			});
+			// 分享到微博
+			WeixinJSBridge.on('menu:share:weibo', function (argv) {
+				WeixinJSBridge.invoke('shareWeibo', {
+					"content": window.shareData.wContent,
+					"url": window.shareData.weiboLink,
+				}, function (res) {
+					_report('weibo', res.err_msg);
+				});
+			});
+		}, false)
+	</script>
+	        <div class="weimob-content">
+			<volist name="res" id="so">
+                            <div class="weimob-list">
+                                        <if condition="$so['url']">
+<a href="{noercms:$so.url}" class="tbox">
+<else />
+<a href="{noercms::U('Index/content',array('id'=>$so['id'],'token'=>$so['token']))}" class="tbox">
+</if>
+                        <div class="weimob-list-item-line">
+                            <div class="weimob-list-item-title">{noercms:$so.title}</div>
+                             <div class="weimob-list-item-summary">{noercms:$so.createtime|date="y-m-d",###}</div>
+                            <div class="weimob-list-item-img"><img src="{noercms:$so.pic}"/></div>
+                            <div class="weimob-list-item-summary">{noercms:$so.text}</div>
+                        </div>
+                        <div class="weimob-list-more">
+                            <div class="weimob-list-item-more">阅读全文</div>
+                            <div class="weimob-list-item-more-icon icon-arrow-r"></div>
+                        </div>
+                    </a>
+                </div>
+				</volist>
+                    </div>
+					<!--
+下一页 上一页 开始
+-->
+<section id="Page_wrapper">
+<div id="pNavDemo" class="c-pnav-con">
+<section class="c-p-sec">
+<div class='c-p-pre <eq name="p" value="1"> c-p-grey </eq> '><span class="c-p-p"><em></em></span><a <eq name="p" value="1"><else/>href="{noercms::C('site_url')}/index.php?g=Wap&m=Index&a=lists&classid=<php>echo $_GET['classid'];</php>&token={noercms:$tpl.token}&p=<php>echo $p-1;</php>"</eq>  >上一页</a></div>
+<div class="c-p-cur">
+<div class="c-p-arrow c-p-down"><span>{noercms:$p}/{noercms:$page}</span><span></span></div>
+	<select class="c-p-select" onChange="dourl('{noercms::C('site_url')}/index.php?g=Wap&m=Index&a=lists&classid=<php>echo $_GET['classid'];</php>&token={noercms:$tpl.token}&p='+this.value)">
+		<?php
+			for($i=1;$i<=$page;$i++){
+				if($i==$p){
+					echo '<option value="'.$i.'" selected>第'.$i.'页</option>';
+				}else{
+					echo '<option value="'.$i.'">第'.$i.'页</option>';
+				}
+			}
+		?>
+	</select>
+</div>
+<div class='c-p-next <eq name="p" value="$page"> c-p-grey </eq>'  >
+<?php
+	if($p<$page){
+		echo '<a href="'.C('site_url').'/index.php?g=Wap&m=Index&a=lists&classid='.(int)$_GET['classid'].'&token='.$tpl['token'].'&p='.($p+1).'">';
+	}else{
+		echo '<a>';
+	}
+?>
+下一页</a><span class="c-p-p"><em></em></span></div>
+</section>
+</div>
+</section>
+    </div>        
+	</body>
+</html>

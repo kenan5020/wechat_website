@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/reset.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/peak-3.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/home-menu.css" media="all" />
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/jquery.js"></script>
+<title>关于我们</title>
+        <style>
+            img{width:100%!important;}
+        </style>
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+<div class="body" style="padding-bottom:60px;">
+    <div class="top_bar footer_bar">
+            <section>
+                    <div class="nav_8">
+                        <ul class="box">
+                            <li>
+                                <a href="javascript:history.go(-1);">
+                                    <p class="back2"></p>
+                                    <span>返回</span>
+                                </a>
+                            </li>
+                                                            <li>
+                                <a href="tel:{noercms:$about['tel']}">
+                                    <p class="tel"></p>
+                                    <span>联系电话</span>
+                                </a>
+                            </li>
+                                <li>
+                                <a href="http://api.map.baidu.com/marker?location={noercms:$about['latitude']},{noercms:$about['longitude']}&title={noercms:$about['shortname']}&name={noercms:$about['name']}&content={noercms:$about['address']}&output=html&src=weiba|weiweb">
+                                    <p class="addr"></p>
+                                    <span>地址导航</span>
+                                </a>
+                            </li>
+                                                        <li>
+                                <a href="{noercms::U('Zhengwu/index',array('token'=>$token,'wecha_id'=>$wecha_id))}">
+                                    <p class="home"></p>
+                                    <span>首页</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </section>
+        </div>
+        <!--section class="news_article">
+        <header>
+            <h3 style="font-size:14px;">联系我们</h3>
+            <small class="gray">{noercms:$about['name']}</small>
+            <p><img src="{noercms:$about['logourl']}" alt=""></p>
+        </header>
+        <article>
+            <p>
+            <img alt="" src="http://api.map.baidu.com/staticimage?width=558&height=360&center={noercms:$about['address']}&markers={noercms:$about['address']}|{noercms:$about['longitude']},{noercms:$about['latitude']}&zoom=19&markerStyles=s,A,0xff0000" /> 
+<p>
+    <strong><span style="color:#009900;font-size:16px;">免费热线：{noercms:$about['tel']}</span></strong><br />
+地址：{noercms:$about['address']}<br />
+公司简介：<br />
+<?php //echo html_entity_decode(htmlspecialchars_decode($about['intro'])); ?>
+</p></P>
+        </article>
+    </section-->
+<div style="padding-bottom:0!important;">
+    <a href="javascript:window.scrollTo(0,0);" style="font-size:12px;margin:5px auto;display:block;color:#fff;text-align:center;line-height:35px;background:#333;margin-bottom:-10px;">返回顶部</a>
+</div></div>
+                <div mark="stat_code" style="width:0px; height:0px; display:none;">
+             </div>
+    </body>
+</html>

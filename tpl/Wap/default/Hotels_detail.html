@@ -1,0 +1,44 @@
+<include file="Hotels:header"/>
+<body>
+	<div class="html">
+		<div class="main">
+			<header>
+	<a class="ico-hd arr-hd" href="javascript:history.go(-1);"></a>
+	<h1>订单详情</h1>
+</header>
+<div class="contxt cont-artical">
+	<div class="box-cont box-order">
+		<div class="hd">
+			<b>在线预订客房{noercms:$company['name']}</b>
+			<i>{noercms:$order['housename']}</i> | <i>{noercms:$order['nums']}间</i>
+		</div>
+		<div class="bd box-txt">
+			<p><span>入住日期</span><b>{noercms:$order['startdate']}</b></p>
+			<p><span>离店日期</span><b>{noercms:$order['enddate']} </b></p>
+			<p><span>订单状态</span><if condition="$order['status'] eq 1"><b>完成入住</b><else /><b>未完成</b></if></p>
+		</div>
+		<div class="ft box-txt">
+			<p><span>联系人电话：</span><b>{noercms:$order['tel']}</b></p>
+			<p><span>总 金 额：</span><b>￥{noercms:$order['price']}</b></p>
+		</div>
+	</div>
+	<br><br>
+</div>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+window.shareData = {  
+            "moduleName":"Hotels",
+            "moduleID":"{noercms:$company[0]['id']}",
+            "imgUrl": "{noercms:$company[0]['logourl']}", 
+            "timeLineLink": "{noercms::C('site_url') .  U('Hotels/detail',array('token' => $_GET['token']))}",
+            "sendFriendLink": "{noercms::C('site_url') .  U('Hotels/detail',array('token' => $_GET['token']))}",
+            "weiboLink": "{noercms::C('site_url') .  U('Hotels/detail',array('token' => $_GET['token']))}",
+            "tTitle": "{noercms:$metaTitle}",
+            "tContent": "{noercms:$metaTitle}"
+        };
+</script>
+{noercms:$shareScript}
+</html>

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://txweb.nbstwh.com/bgy/bgy.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"><style type="text/css" id="__360se6_success_css"></style>
+<meta charset="gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="Description" content="{noercms:$tpl.wxname}">
+<meta name="Keywords" content="{noercms:$tpl.wxname}">
+<meta name="author" content="Tencent-TGideas">
+<title>{noercms:$tpl.wxname}</title>
+<link rel="stylesheet" href="/tpl/Wap/default/common/css/1123/6.css">
+<style type="text/css">
+html{font-size: 16px;height:100%}
+body, p, h1, h2, dl, dt, dd{margin: 0;padding: 0;font-size: 1rem;color: #FFF;}
+img{border:0;}
+a, button, input{-webkit-tap-highlight-color:rgba(255, 0, 0, 0);}
+ol, ul{list-style:none;}
+.hid{width:0;height:0;overflow:hidden;text-indent:-9999px;}
+body{font-family: Helvetica;height:100%;}
+section{display: block;}
+p{ font-family:"微软雅黑";}
+@font-face{font-family: 'invitation';src:url('http://mat1.gtimg.com/gd/weixin/yqh/fonts/invitation.woff') format('woff'), url('http://mat1.gtimg.com/gd/weixin/yqh/fonts/invitation.ttf') format('truetype');font-weight: normal;font-style: normal;}[data-icon]:before{font-family: 'invitation';content: attr(data-icon);speak: none;font-weight: normal;font-variant: normal;text-transform: none;line-height: 1;-webkit-font-smoothing: antialiased;}
+.wrap h1, .sec1 h2{display: none;}
+.wrap{position: relative;height:100%;width: 100%;overflow: hidden;}
+.svg{position: absolute;left: 0;bottom: 0;width: 100%;height: 100%;z-index:2;-webkit-animation: opa_btm 3s linear;animation: opa_btm 3s linear;}
+.bg{position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index:1;}
+.bg .bg_sec{width: 100%;float: left;position: relative;overflow: hidden;/*min-height: 416px;*/}
+
+.bg02{background-image:url(/tpl/Wap/default/common/css/1123/img/bg2.jpg);background-color:#22b573;background-size:100%;background-position:bottom;background-repeat:no-repeat;}
+.bg03{background-image: url(/tpl/Wap/default/common/css/1123/img/bg3.jpg);background-color:#0099ff;background-size:100%;background-position:bottom;background-repeat:no-repeat;}
+.bg04{background-image: url(/tpl/Wap/default/common/css/1123/img/bg4.jpg);background-color:#9900cc;background-size:100%;background-position:bottom;background-repeat:no-repeat;}
+.bg05{background-image: url(/tpl/Wap/default/common/css/1123/img/bg5.jpg);background-color:#900643;background-size:100%;background-position:bottom;background-repeat:no-repeat;}
+.sec{z-index: 1;position: absolute;left: 0;top: 0;width: 100%;height: 100%;-webkit-transition:all 0.3s linear;-webkit-transform:translateY(0px);transition:all 0.3s linear;transform:translateY(0px);-webkit-backface-visibility:hidden;}
+.sec section{overflow: hidden;position: relative;width: 100%;/*min-height: 416px;*/z-index: 3;-webkit-backface-visibility:hidden;}
+.drag{-webkit-transition:none;transition:none;}
+.sec1 span{background: url(bgy_1_files/icon01.png) no-repeat;background-size: 341.5px;}
+
+.sec1{overflow: hidden;z-index: 3;}
+.bg01{background: #7fbf34 url(bgy_1_files/bg_01.jpg) center top no-repeat;background-size: 320px;}
+.sec1 span, .sec1 b{z-index: 3;position: absolute;display: block;}
+.sec1 .ico_tri01{right: 50%;margin-right: 90px;top: 10%;width: 96px;height: 57px;background-position: -2px -8.5px;}
+.sec1 .ico_tri02{left: 50%;margin-left: 80px;top: 18%;width: 64px;height: 60px;background-position: -108px -6.5px;}
+.sec1 .ico_tri03{right: 50%;margin-right: 64px;top: 47%;width: 93px;height: 40px;background-position: -178px -16.5px;}
+.sec1 .ico_tri04{right: 50%;margin-right: 70px;top: 14%;width: 77px;height: 82px;background-position: -2px -76px;}
+.sec1 .ico_tri05{left: 50%;margin-left: 110px;top: 42%;width: 85px;height: 104px;background-position: -97.5px -76px;}
+.sec1 .ico_tri06{right: 50%;margin-right: 95px;top: 64%;width: 63px;height: 93px;background-position: -202px -76px;}
+.sec1 .ico_up{left: 50%;margin-left: 40px;top: 14%;width: 62px;height: 87px;background-position: -279.5px 0;}
+.sec1 .start, .sec2 .start, .sec3 .start, .sec4 .start, .sec5 .start{position: absolute;left: 50%;margin-left: -17px;top: 93%;margin-top: -34px;width: 34px;height: 34px;}
+.sec2 .start, .sec3 .start, .sec4 .start, .sec5 .start{top: 95%;}
+.sec1 .start{background:#fff;border-radius: 100%;}
+.sec1 .start b, .sec2 .start b, .sec3 .start b, .sec4 .start b, .sec5 .start b{position: absolute;left: 50%;margin-left: -10px;z-index: 3;font-size: 1.25rem;color: #7FBF34;text-align: center;line-height: 29px;-webkit-transform: rotate(180deg);transform: rotate(180deg);}
+.sec1_show h2{-webkit-animation: opa 1.5s linear;animation: opa 1.5s linear;}
+@-webkit-keyframes opa{0%{opacity: 0}}
+@keyframes opa{0%{opacity: 0}}
+.sec1_show .layer:nth-child(3){-webkit-animation: opa_scal 1.2s ease-in-out;animation: opa_scal 1.2s ease-in-out;}
+.sec1_show .layer:nth-child(4){-webkit-animation: opa_scal 1.5s ease-in-out;animation: opa_scal 1.5s ease-in-out;}
+@-webkit-keyframes opa_scal{0%, 50%{-webkit-transform: scale(0);opacity: 0}}
+@keyframes opa_scal{0%, 50%{transform: scale(0);opacity: 0}}
+.start{-webkit-animation: opa_btm 1.5s ease-in-out;animation: opa_btm 1.5s ease-in-out;}
+@-webkit-keyframes opa_btm{0%, 25%{opacity: 0;-webkit-transform: translate(0, 20px);}}
+@keyframes opa_btm{0%, 25%{opacity: 0;transform: translate(0, 20px);}}
+.start b{-webkit-animation: start 1.5s infinite ease-in-out;animation: start 1.5s infinite ease-in-out;}
+@-webkit-keyframes start{0%, 30%{opacity: 0;-webkit-transform: rotate(180deg) translate(0, -10px);}
+60%{opacity: 1;-webkit-transform: rotate(180deg) translate(0, 0);}
+100%{opacity: 0;-webkit-transform: rotate(180deg) translate(0, 5px);}}
+@keyframes start{0%, 30%{opacity: 0;transform: rotate(180deg) translate(0, -10px);}
+60%{opacity: 1;transform: rotate(180deg) translate(0, 0);}
+100%{opacity: 0;transform: rotate(180deg) translate(0, 5px);}}
+.sec2 .p{z-index: 2;position: absolute;left: 48%;margin-left: -70px;top: 10%;line-height: 1.5;}
+.sec2 h2{font-size: 2.15rem;}
+.sec2 p{font-size: 0.75rem;padding-left: 0.5rem;}
+.sec2 p:nth-last-child(1){padding-left: 2rem;}
+.sec2 .data{z-index: 2;font-size: 0.75rem;position: absolute;left: 50%;margin-left: -115px;top: 9%;text-decoration: underline;color: #78A89B;}
+.sec2 .ico_reader{z-index: 2;position: absolute;left: 54%;margin-left: -54px;top: 56%;display: block;}
+.ico_reader{z-index: 2;position: absolute;left: 50%;margin-left: -54px;top: 48%;display: block;}
+.ico_rea{z-index: 1;position: absolute;left: 21px;top: 20px;display: block;width: 88px;height: 81px;background-position: -2px -9px;}
+.ico_reader_cir{position: absolute;left: 0;top: 0;display: block;width: 100px;height: 100px;border: 15px solid #FFF;background: #fff;border-radius: 100%;}
+.bg02 b{position: absolute;left: 50%;color: #3F826F;}
+.bg02 .b_a{font-size: 1.75rem;margin-left: -95px;top: 60px;}
+.bg02 .b_b{font-size: 1.75rem;margin-left: -125px;top: 150px;}
+.bg02 .b_c{font-size: 1.75rem;margin-left: -25px;top: 180px;}
+.bg02 .b_d{font-size: 6rem;margin-left: 50px;top: 65px;color: #418875;-webkit-transform: rotate(30deg);transform: rotate(30deg);}
+.bg02 .b_e{font-size: 5rem;margin-left: 70px;top: 175px;}
+.bg02 .b_f{font-size: 5rem;margin-left: 40px;top: 63%;}
+.bg02 .b_g{font-size: 5rem;margin-left: 100px;top: 72%;}
+.bg02 .b_h{font-size: 1.75rem;margin-left: -120px;top: 70%;}
+.bg02 .b_i{font-size: 6rem;margin-left: -130px;top: 80%;}
+/****/
+.sec2 .p h2, .sec2 .p p, .sec2 .data, .sec4 .p h2, .sec4 .p p, .sec4 .data, .sec5 .data{-webkit-transform: translate(50px, 0);transform: translate(50px, 0);opacity: 0;-webkit-transition: all 0.5s linear;transition: all 0.5s linear;}
+.sec3 .p h2, .sec3 .p p, .sec5 .p h2, .sec5 .p p, .sec3 .data{-webkit-transform: translate(-50px, 0);transform: translate(-50px, 0);opacity: 0;-webkit-transition: all 0.5s linear;transition: all 0.5s linear;}
+.sec4 .p h2, .sec3 .p h2, .sec5 .p h2{-webkit-transition: all 0.3s linear;transition: all 0.3s linear;}
+.sec2 .p p, .sec3 .data, .sec4 .data, .sec5 .data{-webkit-transition: all 0.8s linear;transition: all 0.8s linear;}
+.sec2 .data{-webkit-transition: all 1s linear;transition: all 1s linear;}
+.sec2_show .p h2, .sec2_show .p p, .sec2_show .data, .sec3_show .p h2, .sec3_show .p p, .sec3_show .data, .sec4_show .p h2, .sec4_show .p p, .sec4_show .data, .sec5_show .p h2, .sec5_show .p p, .sec5_show .data{-webkit-transform: translate(0, 0);transform: translate(0, 0);opacity: 1;}
+/****/
+.sec2 .ico_rea, .sec2 .ico_reader_cir{opacity: 0;}
+.sec2_show .ico_rea{opacity:1;-webkit-animation: ico_reader_cir 1.3s linear;animation: ico_reader_cir 1.3s linear;}
+.sec2_show .ico_reader_cir{opacity:1;-webkit-animation: ico_reader_cir 1s linear;animation: ico_reader_cir 1s linear;}
+@-webkit-keyframes ico_reader_cir{0%, 50%{opacity: 0;-webkit-transform: scale(0);}
+70%{opacity: 0.8;-webkit-transform: scale(1.5);}
+80%{opacity: 1;-webkit-transform: scale(0.8);}
+90%{-webkit-transform: scale(1.2);}}
+@keyframes ico_reader_cir{0%, 50%{opacity: 0;transform: translate(-80px, 0);}}
+.sec3 .p{z-index: 2;position: absolute;left: 40%;margin-left: -115px;top: 5%;line-height: 1.5;text-align: left;}
+.sec3 .p img{width:60%}
+.sec3 h2{font-size: 2.25rem;}
+.sec3 p{font-size: 0.75rem;padding-right: 1rem;}
+.sec3 p:nth-last-child(1){padding-right: 2rem;}
+.sec3 .data{z-index: 2;font-size: 0.75rem;position: absolute;left: 50%;margin-left: -120px;top: 84%;text-decoration: underline;color: #FBCEAD;}
+.ico_comic{z-index: 3;position: absolute;left: 50%;margin-left: -49px;top: 38%;display: block;}
+.ico_com{z-index: 1;position: absolute;left: 12px;top: 15px;display: block;width: 92px;height: 90px;background-position: -74px -2px;}
+.ico_comic_tri01{font-size: 176px;position: absolute;left: 0px;top: 0px;color: #FFCA13;-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
+.ico_comic_tri02{font-size: 136px;position: absolute;left: 15px;top: 20px;color: #FFF5D9;-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
+.ico_naruto{z-index: 2;position: absolute;left: 50%;margin-left: -13px;top: 35%;display: block;width: 169px;height: 205px;}
+.bg03 b{position: absolute;left: 50%;color: #EC8630;}
+.bg03 .b_a{font-size: 3rem;margin-left: -140px;top: 20%;}
+.bg03 .b_b{font-size: 3.5rem;margin-left: -140px;top: 70%;}
+.bg03 .b_c{font-size: 3rem;margin-left: 110px;top: 10%;}
+.sec3 .ico_com, .sec3 .ico_naruto, .sec3 .ico_comic_tri01, .sec3 .ico_comic_tri02{opacity: 0;}
+.sec3_show .ico_com{opacity:1;-webkit-animation: ico_com 1s linear;animation: ico_com 1s linear;}
+@-webkit-keyframes ico_com{0%, 50%{-webkit-transform: translate(-60px, 60px) scale(0);opacity: 0}
+70%{-webkit-transform: translate(0, 0) scale(1.1);opacity: 1}
+80%{-webkit-transform: translate(0, 0) scale(0.8);}
+100%{-webkit-transform: translate(0, 0) scale(1);opacity: 1}}
+@keyframes ico_com{0%, 50%{transform: translate(-60px, 60px) scale(0);opacity: 0}
+70%{transform: translate(0, 0) scale(1.1);opacity: 1}
+80%{transform: translate(0, 0) scale(0.8);}
+100%{transform: translate(0, 0) scale(1);opacity: 1}}
+.sec3_show .ico_comic_tri01{opacity:1;-webkit-animation: ico_comic_tri 0.5s ease-in;animation: ico_comic_tri 0.5s ease-in;}
+.sec3_show .ico_comic_tri02{opacity:1;-webkit-animation: ico_comic_tri 0.4s ease-in;animation: ico_comic_tri 0.4s ease-in;}
+@-webkit-keyframes ico_comic_tri{0%{-webkit-transform: translate(100px, -100px) rotate(-5deg);opacity: 0}
+60%{-webkit-transform: translate(40px, -40px) rotate(-5deg);opacity: 0.3}
+100%{-webkit-transform: translate(0, 0) rotate(-5deg);opacity: 1}}
+@keyframes ico_comic_tri{0%{transform: translate(100px, -100px) rotate(-5deg);opacity: 0}
+60%{transform: translate(40px, -40px) rotate(-5deg);opacity: 0.3}
+100%{transform: translate(0, 0) rotate(-5deg);opacity: 1}}
+.sec3_show .ico_naruto{opacity:1;-webkit-animation: naruto 1.5s ease-in-out;animation: naruto 1.5s ease-in-out;}
+@-webkit-keyframes naruto{0%, 50%{opacity: 0;-webkit-transform: translate(-80px, 0);}}
+@keyframes naruto{0%, 50%{opacity: 0;transform: translate(-80px, 0);}}
+.sec4 .p{z-index: 4;position: absolute;left: 54%;margin-left: -100px;top: 6%;line-height: 1.5;text-align:right;}
+.sec4 h2{font-size: 2.25rem;}
+.sec4 p{font-size: 0.75rem;padding-left: 1rem;}
+.sec4 p:nth-last-child(1){padding-left: 2rem;}
+.sec4 .data{z-index: 2;font-size: 0.75rem;position: absolute;left: 50%;margin-left: 20px;top: 78%;text-decoration: underline;color: #BAD4FF;}
+.ico_film{z-index: 3;position: absolute;left: 50%;margin-left: -112px;top: 45%;}
+.ico_fil{z-index: 2;position: absolute;left: 18px;top: 19px;display: block;width: 77px;height: 77px;background-position: -165.5px -5.5px;}
+.ico_film_squ{position: absolute;left: 0;top: 0;display: block;width: 72px;height: 72px;border: 15px solid #5FC5FF;background: #FFFFFF;-webkit-transform: rotate(-28deg);transform: rotate(-28deg);}
+.ico_roco{z-index: 1;position: absolute;left: 50%;margin-left: 23px;top: 38%;display: block;width: 102px;height: 110px;background-position: -26.5px -212.5px;}
+.bg04 .layer:nth-last-child(2){z-index: 3;}
+.bg04 .layer:nth-last-child(1){z-index: 1;}
+.bg04 b{position: absolute;left: 50%;color: #4C91FF;}
+.bg04 .b_a{font-size: 3rem;margin-left: -148px;top: 40%;}
+.bg04 .b_b{font-size: 12rem;margin-left: 55px;top: 60%;color: #559AFF;}
+.bg04 .b_c{font-size: 3rem;margin-left: 80px;top: 20%;}
+.sec4 .ico_roco{opacity: 0;}
+.sec4 .ico_fil{opacity: 0;-webkit-transform: translate(60px, -30px) scale(0.8) rotate(-56deg);transform: translate(60px, -30px) scale(0.8) rotate(-56deg);-webkit-transition: all 0.7s linear;transition: all 0.7s linear;}
+.sec4_show .ico_fil{opacity: 1;-webkit-transform: translate(0, 0) scale(1) rotate(0);transform: translate(0, 0) scale(1) rotate(0);}
+.sec4 .ico_film_squ{opacity: 0;-webkit-transform: translate(60px, -30px) rotate(-64deg);transform: translate(60px, -30px) rotate(-64deg);-webkit-transition: all 0.3s linear;transition: all 0.3s linear;}
+.sec4_show .ico_film_squ{opacity: 1;-webkit-transform: translate(0, 0) rotate(-28deg);transform: translate(0, 0) rotate(-28deg);}
+.sec4_show .ico_roco{opacity: 1;-webkit-animation: roco 1.1s ease-in-out;animation: roco 1.1s ease-in-out;}
+@-webkit-keyframes roco{0%, 60%{opacity: 0;-webkit-transform: translate(-100px, 30px) scale(0.8);}}
+@keyframes roco{0%, 60%{opacity: 0;transform: translate(-100px, 30px) scale(0.8);}}
+.sec5 .p{z-index: 3;position: absolute;left: 38%;margin-left: -110px;top: 8%;line-height: 1.5;text-align: left;}
+.sec5 h2{font-size: 2rem;}
+.sec5 p{font-size: 0.75rem;padding-right: 1rem;}
+.sec5 p:nth-last-child(1){padding-right: 2rem;}
+.sec5 .data{z-index: 3;font-size: 0.75rem;position: absolute;left: 50%;margin-left: -118px;top: 85%;text-decoration: underline;color: #A5E0BC;}
+.ico_player{z-index: 2;position: absolute;left: 55%;margin-left: -152px;top: 50%;display: block;}
+.ico_pla{z-index: 1;position: absolute;left: 17px;top: 18px;display: block;width: 85px;height: 90px;background-position: -244px -6px;}
+.ico_player_tri01{font-size: 176px;position: absolute;left: 0;top: 0px;color: #00FFA8;-webkit-transform: rotate(79deg);transform: rotate(79deg);}
+.ico_player_tri02{font-size: 136px;position: absolute;left: 23px;top: 18px;color: #FFFFFF;-webkit-transform: rotate(79deg);transform: rotate(79deg);}
+.ico_garen{position: absolute;left: 50%;margin-left: 26px;bottom: 10%;display: block;width: 115px;height: 92px;background-position: -19.5px -331.5px;}
+.sec5 .layer:nth-last-child(2){z-index: 2;}
+.sec5 .layer:nth-last-child(1){z-index: 3;}
+.bg05 b{position: absolute;left: 50%;color: #04B65A;}
+.bg05 .b_a{font-size: 3rem;margin-left: -148px;top: 40%;}
+.bg05 .b_b{font-size: 5rem;margin-left: 61px;top: 30%;}
+.bg05 .b_c{font-size: 3rem;margin-left: 119px;top: 60%;}
+.sec5 .ico_player_tri01, .sec5 .ico_player_tri02, .sec5 .ico_pla, .sec5 .ico_garen{opacity: 0;}
+.sec5_show .ico_pla{opacity: 1;-webkit-animation: ico_pla 1.6s linear;animation: ico_pla 1.6s linear;}
+@-webkit-keyframes ico_pla{0%{-webkit-transform: translate(0, 0) rotate(-360deg) scale(0);opacity: 0}
+60%{-webkit-transform: translate(0, 0) rotate(0) scale(1);opacity: 1}
+70%{-webkit-transform: translate(-30px, -30px) rotate(-30deg) scale(1);}
+80%{-webkit-transform: translate(0, 0) rotate(0) scale(1);}}
+@keyframes ico_pla{0%{transform: translate(0, 0) rotate(-360deg) scale(0);opacity: 0}
+60%{transform: translate(0, 0) rotate(0) scale(1);opacity: 1}
+70%{transform: translate(-30px, -30px) rotate(-30deg) scale(1);}
+80%{transform: translate(0, 0) rotate(0) scale(1);}}
+.sec5_show .ico_player_tri01{opacity:1;-webkit-animation: ico_player_tri 0.4s ease-in;animation: ico_comic_tri 0.4s ease-in;}
+.sec5_show .ico_player_tri02{opacity:1;-webkit-animation: ico_player_tri 0.5s ease-in;animation: ico_comic_tri 0.5s ease-in;}
+@-webkit-keyframes ico_player_tri{0%{-webkit-transform: translate(-100px, 100px) rotate(79deg);opacity: 0}
+60%{-webkit-transform: translate(-40px, 40px) rotate(79deg);opacity: 0.3}
+100%{-webkit-transform: translate(0, 0) rotate(79deg);opacity: 1}}
+.sec5_show .ico_garen{opacity: 1;-webkit-animation: garen 1.6s ease-in-out;animation: garen 1.6s ease-in-out;}
+@-webkit-keyframes garen{0%, 40%{-webkit-transform: translate(10%, -10%) rotate(-40deg);opacity: 0;}
+60%{-webkit-transform: translate(-70%, -70%) rotate(-40deg);opacity: 1;}}
+@keyframes garen{0%, 40%{transform: translate(10%, -10%) rotate(-40deg);opacity: 0;}
+60%{transform: translate(-80%, -80%) rotate(-40deg);opacity: 1;}}
+
+.time{font-size: 0.75rem;padding: 10px 5px 15px 5px;border-right: 1px solid rgba(255, 255, 255, 0.1);}
+.time strong{font-size: 28px;}
+.addr{font-size: 1rem; text-align:center; /*padding: 15px 0px 10px 5px;*/}
+.addr strong{font-size: 18px;padding-top: 5px;}
+.copyright{position: absolute;left: 0;bottom: 10px;width: 100%;font-size: 0.75rem;text-align: center;-webkit-transform:scale(0.875);}
+#container{width:100%;height:160px;}
+@media screen and (max-height: 415px){.bg01 .bg{background-position: center -85px;}
+.sec1 .ico_up{top: 0;}
+.sec2 .p{top: 13%;}
+.sec3 .p{top: 13%;}
+.ico_comic{margin-left: -110px;}
+.sec4 .p{top: 9%;}
+.ico_film{top: 50%;}
+.sec5 .p{top: 13%;}
+.time{padding-top:0;padding-bottom:0;}
+.addr{padding-top:5px;padding-bottom:0;}
+#container{width:260px;height:140px;float:left;margin:10px 20px 0 0;}}
+.ico_com_guan{z-index: 1;position: absolute;left: 25px;top: 19px;display: block;width: 69px;height: 84px;background-position: -93px -2px;}
+h1{font-size: 1px;}
+h2{font-size: 1px;}
+</style>
+<script type="text/javascript" src="/tpl/Wap/default/common/css/1123/common.js" charset="utf-8"></script>
+<style type="text/css">
+@media screen{.smnoscreen {display:none}} 
+@media print{.smnoprint{display:none}}
+</style>
+<script type="text/javascript" src="/tpl/Wap/default/common/css/1123/controls.js" charset="utf-8"></script>
+<script type="text/javascript" src="/tpl/Wap/default/common/css/1123/ea.js" charset="utf-8"></script>
+</head>
+<body onload="init();">
+<div class="wrap" id="scene" style="-webkit-transform: translate3d(0, 0, 0); -webkit-backface-visibility: hidden;">
+  <div class="sec drag" style="-webkit-transform: matrix(1, 0, 0, 1, 0, 0);">
+  
+    <div class="bg">
+      <div class="bg_sec bg01" style="height: 602px;"></div>
+      <div class="bg_sec bg02" style="height: 602px;"></div>
+      <div class="bg_sec bg03" style="height: 602px;"></div>
+      <div class="bg_sec bg04" style="height: 602px;"></div>
+      <div class="bg_sec bg05" style="height: 602px;"></div>
+      <div class="bg_sec bg06" style="height: 602px;"></div>
+      <div class="bg_sec bg07" style="height: 602px;"></div>
+      <div class="bg_sec bg08" style="height: 602px;"></div>
+      <div class="bg_sec bg09" style="height: 602px;"></div>
+      <div class="bg_sec bg10" style="height: 602px;"></div>
+      <div class="bg_sec bg11" style="height: 602px;"></div>
+      <div class="bg_sec bg12" style="height: 602px;"></div>
+      <div class="bg_sec bg13" style="height: 602px;"></div>
+
+    </div>
+ <!---->    
+<!--    <div class="svg" style="height: 5000px; ">
+      <svg  width="100%" height="100%" version="1.1">
+
+<line x1="50%" y1="9%" x2="10%" y2="12%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+<line x1="10%" y1="12%" x2="94%" y2="20.5%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+<line x1="94%" y1="20.5%" x2="6%" y2="31.4%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+<line x1="6%" y1="31.4%" x2="90%" y2="42%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+<line x1="90%" y1="42%" x2="7%" y2="51%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+<line x1="7%" y1="51%" x2="94%" y2="61%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+<line x1="94%" y1="61%" x2="71%" y2="70%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+<line x1="71%" y1="70%" x2="86%" y2="72%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+<line x1="86%" y1="72%" x2="25.2%" y2="79.1%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+<line x1="25.2%" y1="79.1%" x2="88%" y2="81.8%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+<line x1="88%" y1="81.8%" x2="10%" y2="89.1%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+<line x1="10%" y1="89.1%" x2="17%" y2="90%" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+    
+        <circle cx="10%" cy="12%" r="4" fill="#FFF"></circle>
+        <circle cx="94%" cy="20.5%" r="5" stroke="#FFF" stroke-width="3" fill="#468E7C"></circle>
+        <circle cx="6%" cy="31.4%" r="4" fill="#FFF"></circle>
+        <circle cx="90%" cy="42%" r="5" stroke="#FFF" stroke-width="3" fill="#F79536"></circle>
+        <circle cx="7%" cy="51%" r="5" stroke="#FFF" stroke-width="3" fill="#5FA3FF"></circle>
+        <circle cx="94%" cy="61%" r="4" fill="#FFF"></circle>
+        <circle cx="86%" cy="72%" r="4" fill="#FFF"></circle>
+        <circle cx="25.2%" cy="79.1%" r="4" fill="#FFF"></circle>
+        <circle cx="88%" cy="81.8%" r="4" fill="#FFF"></circle>
+        <circle cx="10%" cy="89.1%" r="4" fill="#FFF"></circle>
+        <circle cx="88%" cy="81.8%" r="4" fill="#FFF"></circle>
+      </svg>
+    </div>-->
+ <!----><volist name="info" id="vo" >
+ <if condition="$i eq 1">
+    <section class="sec1 sec1_show" style="width: 1239px; height: 602px;">
+        <div style=" width:100%; height:100%; background-image:url({noercms:$vo.img}); background-size:100%; background-position:bottom; background-repeat:no-repeat; position:relative;">        
+
+        <!--<span class="ico_up"></span>-->
+        <!--<div class="layer" data-depth="0.75" style="-webkit-transform: translate3d(0%, 0%, 0px); -webkit-backface-visibility: hidden; position: relative; display: block; height: 100%; width: 100%; left: 0px; top: 0px; "> 		
+            <span class="ico_tri01"></span>
+            <span class="ico_tri02"></span>
+        </div>-->
+        <!--<div class="layer" data-depth="1.2" style="-webkit-transform: translate3d(0%, 0%, 0px); -webkit-backface-visibility: hidden; position: absolute; display: block; height: 100%; width: 100%; left: 0px; top: 0px; "> 
+        	<span class="ico_tri04"></span>
+            <span class="ico_tri05"></span><span class="ico_tri06"></span> 
+        </div>-->
+        <span class="start">
+        	<b aria-hidden="true" data-icon="1"></b>
+        </span> 
+        </div>
+      
+    </section>
+      </if>
+    </volist>
+    <volist name="info" id="vo" >
+    <if condition="$i eq 2">
+    <section class="sec2" style="width: 1239px; height: 602px;">
+    <div style=" width:100%; height:100%; background-image:url(bgy_1_files/bg2.png); background-size:100%; background-position:bottom; background-repeat:no-repeat; ">
+
+        <div class="p">
+            <h2>{noercms:$vo.name}</h2>
+            <p>{noercms:$vo.info}</p>
+            <p style="font-size:1.1em; padding-top:1em;"></p>
+        </div>
+        <span class="ico_reader"> 
+            <span class="ico_rea"><img src="{noercms:$vo.img}" width="100"></span> 
+            <span class="ico_reader_cir"></span> 
+        </span> 
+        <span class="start">
+            <b aria-hidden="true" data-icon="1"></b>
+        </span> 
+    </div>
+   
+    </section>
+        </if>
+    </volist>
+    <volist name="info" id="vo" >
+    <if condition="$i eq 3">
+    <section class="sec3 " style="width: 1239px; height: 602px;">
+        <div style=" width:100%; height:100%; background-image:url(bgy_1_files/bg3.png); background-size:100%; background-position:bottom; background-repeat:no-repeat;">
+
+        <div class="p">
+            <h2>{noercms:$vo.name}</h2>
+            <p>{noercms:$vo.info}</p>
+            <p></p>
+            <p></p>
+            <p style="font-size:1.1em; padding-top:1em;" "=""></p>
+        </div>
+        <span class="ico_comic" style="top:44%"> 
+            <span class="ico_com"><img src="{noercms:$vo.img}" width="100"></span> 
+            <span aria-hidden="true" data-icon="2" class="ico_reader_cir"></span>
+            <span aria-hidden="true" data-icon="2" class="ico_reader_cir"></span> 
+        </span>
+        <span class="start">
+        	<b aria-hidden="true" data-icon="1"></b>
+        </span> 
+       </div>
+    </section>
+            </if>
+    </volist>
+        <volist name="info" id="vo" >
+    <if condition="$i eq 4">
+    <section class="sec4 " style="width: 1239px; height: 602px;">
+            <div style=" width:100%; height:100%; background-image:url({noercms:$vo.img}); background-size:100%; background-position:bottom; background-repeat:no-repeat;">
+
+        <div class="p">
+            <h2>{noercms:$vo.name}</h2>
+            <p>{noercms:$vo.info}</p>
+            <p></p>
+            <p style="font-size:1.1em; padding-top:1em;" "=""></p>
+        </div>
+        <span class="ico_film"> 
+            <span class="ico_fil"><img src="./慈溪碧桂园_files/4_1.png" width="100"></span> 
+            <span class="ico_reader_cir"></span> 
+        </span>
+        <span class="start">
+            <b aria-hidden="true" data-icon="1"></b>
+        </span> 
+        </div>
+    </section>
+            </if>
+    </volist>
+       <volist name="info" id="vo" >
+    <if condition="$i eq 5">
+    <section class="sec5 " style="width: 1239px; height: 602px;">
+                <div style=" width:100%; height:100%; background-image:url({noercms:$vo.img}); background-size:100%; background-position:bottom; background-repeat:no-repeat;">
+
+      <div class="p">
+          <h2>{noercms:$vo.name}</h2>
+          <p>{noercms:$vo.info}</p>
+          <p></p>
+          <p style="font-size:1.1em; padding-top:1em;" "=""></p>
+      </div>
+      <span class="ico_player"> 
+          <span class="ico_pla"><img src="./慈溪碧桂园_files/5_1.png" width="100"></span> 
+          <span aria-hidden="true" data-icon="2" class="ico_reader_cir"></span>
+      </span>
+      </div>
+    </section>
+              </if>
+    </volist>
+    
+
+
+
+       <volist name="info" id="vo" >
+    <if condition="$i eq 6">  
+  <section class="sec6" style="width: 1239px; height: 602px;">
+              <div style=" width:100%; height:100%; background-image:url({noercms:$vo.img}); background-size:100%; background-position:bottom; background-repeat:no-repeat;">
+
+        <div class="p" style=" text-align:right;">
+           <h2>{noercms:$vo.name}</h2>
+          <p>{noercms:$vo.info}</p>
+          <p></p>
+          <p style="font-size:1.1em; padding-top:1em;"></p>
+        </div>
+        <span class="ico_reader"> 
+            <span class="ico_rea"><img src="./慈溪碧桂园_files/6_1.png" width="100"></span> 
+            <span class="ico_reader_cir"></span> 
+        </span> 
+        <span class="start">
+            <b aria-hidden="true" data-icon="1"></b>
+        </span> 
+        </div>
+    </section>
+            </if>
+    </volist>
+    
+        <volist name="info" id="vo" >
+    <if condition="$i eq 7">  
+    <section class="sec7 " style="width: 1239px; height: 602px;">
+                <div style=" width:100%; height:100%; background-image:url({noercms:$vo.img}); background-size:100%; background-position:bottom; background-repeat:no-repeat;">
+
+      <div class="p">
+            <h2>{noercms:$vo.name}</h2>
+            <p>{noercms:$vo.info}</p>
+            <p></p>
+            <p style="font-size:1.1em; padding-top:1em;" "=""></p>
+      </div>
+      <span class="ico_player"> 
+          <span class="ico_pla"><img src="./慈溪碧桂园_files/7_1.png" width="100"></span> 
+          <span aria-hidden="true" data-icon="2" class="ico_reader_cir"></span>
+      </span>
+      </div>
+    </section>
+              </if>
+    </volist>
+      <volist name="info" id="vo" >
+    <if condition="$i eq 8">  
+    <section class="sec8" style="width: 1239px; height: 602px;">
+                <div style=" width:100%; height:100%; background-image:url({noercms:$vo.img}); background-size:100%; background-position:bottom; background-repeat:no-repeat;">
+
+        <div class="p">
+            <h2>{noercms:$vo.name}</h2>
+          <p>{noercms:$vo.info}</p>
+          <p></p>
+          <p></p>
+          <p style="font-size:1.1em; padding-top:1em;" "="">中西意法日韩越泰印</p>
+        </div>
+        <span class="ico_reader"> 
+            <span class="ico_rea"><img src="./慈溪碧桂园_files/8_1.png" width="100"></span> 
+            <span class="ico_reader_cir"></span> 
+        </span> 
+        <span class="start">
+            <b aria-hidden="true" data-icon="1"></b>
+        </span> 
+        </div>
+    </section>
+                </if>
+    </volist>
+     <volist name="info" id="vo" >
+    <if condition="$i eq 9">  
+    <section class="sec9" style="width: 1239px; height: 602px;">
+                <div style=" width:100%; height:100%; background-image:url({noercms:$vo.img}); background-size:100%; background-position:bottom; background-repeat:no-repeat;">
+
+        <div class="p">
+            <h2>{noercms:$vo.name}</h2>
+            <p>{noercms:$vo.info}</p>
+            <p></p>
+            <p></p>
+            <p style="font-size:1.1em; padding-top:1em;" "=""></p>
+        </div>
+        <span class="ico_reader"> 
+            <span class="ico_rea"><img src="./慈溪碧桂园_files/9_1.png" width="100"></span> 
+            <span class="ico_reader_cir"></span> 
+        </span> 
+        <span class="start">
+            <b aria-hidden="true" data-icon="1"></b>
+        </span> 
+       </div>
+    </section>
+      </if>
+    </volist>
+    
+<!--门-->  <volist name="info" id="vo" >
+    <if condition="$i eq 10">  
+	<section class="sec10 " style="width: 1239px; height: 602px;">
+      <div class="p">
+        <p style=" font-size:1.6em"><img src="{noercms:$vo.img}" width="50%"></p>
+        <p style=" font-size:0.8em">{noercms:$vo.name}<br>{noercms:$vo.info}</p>
+      </div>
+      <div class="door"><span></span></div>
+      <div class="layer" data-depth="1" style="-webkit-transform: translate3d(0.0869802824858757%, -0.6071030232558139%, 0px); -webkit-backface-visibility: hidden; position: relative; display: block; height: 100%; width: 100%; left: 0px; top: 0px;"><span class="ico_tri09"><img src="./慈溪碧桂园_files/10_2.png" width="60"></span></div>
+      <div class="layer" data-depth="0.8" style="-webkit-transform: translate3d(0.06958422598870057%, -0.4856824186046511%, 0px); -webkit-backface-visibility: hidden; position: absolute; display: block; height: 100%; width: 100%; left: 0px; top: 0px;"><span class="ico_tri10"><img src="./慈溪碧桂园_files/10_3.png" width="84"></span></div>
+      <div class="layer" data-depth="1.3" style="-webkit-transform: translate3d(0.11307436723163843%, -0.7892339302325581%, 0px); -webkit-backface-visibility: hidden; position: absolute; display: block; height: 100%; width: 100%; left: 0px; top: 0px;"><span class="ico_tri11"><img src="./慈溪碧桂园_files/10_4.png" width="67"></span></div>
+      <span class="start"><b aria-hidden="true" data-icon="1"></b></span> 
+      </section>
+          </if>
+    </volist>
+<!--门end-->   <volist name="info" id="vo" >
+    <if condition="$i eq 11">    
+      <section class="sec11" style="width: 1239px; height: 602px;">
+          <div class="p">
+              <p class="p11ico-1"></p>
+              <p class="p11ico-2"></p>
+          </div>
+          <span class="start"><b aria-hidden="true" data-icon="1"></b></span>
+      </section> 
+      
+      <section class="sec12" style="width: 1239px; height: 602px;">
+          <span class="ico_film"> 
+              <span class="ico_fil"><img src="{noercms:$vo.img}" width="130"></span> 
+              <span class="ico_reader_cir"></span> 
+          </span>
+          <span class="start"><b aria-hidden="true" data-icon="1"></b></span>
+      </section> 
+      
+      <section class="sec13 " style="width: 1239px; height: 602px;">
+          <div class="p"> 
+          	<!--<span class="time">MAY<strong>15日</strong></span>--> 
+            <span class="addr"> {noercms:$vo.name}<br>{noercms:$vo.info}<br></span> 
+          </div>          
+          <!--<div class="lookforward"><strong>敬请期待</strong></div>-->
+          <div style="text-align:center; padding-top:20px"> <img src="./慈溪碧桂园_files/13_1.jpg" style="width:98%"><br><img src="./慈溪碧桂园_files/13_2.png" width="98%"></div>
+        </section>
+      
+  </div>
+<!--<a href="javascript:;" class="player-button">
+			<span class="player-tip" style="display: none; ">点击开启/关闭音乐 
+            </span>
+</a>--><!-- autoplay="autoplay"--><audio id="myAudio" src="bgy_1_files/1.mp3" loop autoplay controls style="width:30px; height:30px; display:none; "></audio>
+<!--<video controls="controls" controls="controls" style="position:fixed;z-index:10000;display:block;top:5px;right:5px; width:55px; height:50px;" autoplay="autoplay">
+  <source src="bgy_1_files/1.mp3" />
+</video>
+  -->
+   <!--<embed src="bgy_1_files/1.mp3" width="32" height="32" ></embed>-->
+</div>
+<style>
+.player-button{position:fixed;z-index:10000;display:block;top:10px;right:10px;width:30px;height:30px;background:url(bgy_1_files/player-button.png); background-position: -30px 0;background-size:60px 30px;cursor:pointer;/*background-position: center;*/background-repeat: no-repeat;}
+.player-button-stop{background-position:0 0}
+.player-tip{position:absolute;top:5px;left:-140px;width:120px;background:rgba(59,89,114,.6);border-radius:4px 0 0 4px;font-size:10px;color:#ccc;line-height:20px;text-align:center}
+.player-tip:after{content:"";position:absolute;right:-32px;width:0;height:0;border-left:16px solid rgba(59,89,114,.6);border-top:10px solid transparent;border-right:16px solid transparent;border-bottom:10px solid transparent;}
+</style>
+<script charset="utf-8" src="/tpl/Wap/default/common/css/1123/js"></script>
+<script src="/tpl/Wap/default/common/css/1123/main.js" type="text/javascript"></script>
+<script src="/tpl/Wap/default/common/css/1123/parallax.js"></script>
+<script src="/tpl/Wap/default/common/css/1123/zepto.min.js"></script>
+<!--<script src="http://www.w3school.com.cn/jquery/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	//var aaa=document.getElementById("myAudio");
+	var myAudio=$("#myAudio")[0];
+	$(".player-button").toggle(
+		function(){
+			$(this).css("background-position","0 0");
+			myAudio.pause();
+		},
+		function(){
+			 $(this).css("background-position","-30px 0");
+			myAudio.play();
+		}
+	);
+});
+</script>-->
+<!--<script src="bgy_1_files/mod.base.js"></script>
+<script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed-min.js" data-config="{combine:true}"></script>-->
+<!--<script>
+$(document).ready(function(){
+  $(".player-button").toggle(
+  function(){
+	  $(this).css("background-position","0 0");
+	  $("audio").detach();},
+  function(){
+	  $(this).css("background-position","-30px 0");
+	  $(this).append($("audio").detach());}
+  );
+});
+</script>-->
+<!--<script>
+$(document).ready(function(){
+  $(".player-button").click(function(){
+	  $("audio").remove(),
+   $(this).addClass("player-button-stop");
+  });
+});
+</script>-->
+<script>
+
+function IsPC()  
+{  
+           var userAgentInfo = navigator.userAgent;  
+           var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
+           var flag = true;  
+           for (var v = 0; v < Agents.length; v++) {  
+               if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
+           }  
+           return flag;  
+}
+
+var jumpPc = IsPC();
+if(jumpPc!=false){
+window.location.href = "http://txweb.nbstwh.com/bgy/bgy.htm";
+}
+
+document.body.addEventListener('touchstart', function (e) {
+    //console.log("target:"+e.target.className);
+    e = e.changedTouches[0];
+    onStart(e);
+});
+
+document.body.addEventListener('touchmove', function (e) {
+    onMove(e.changedTouches[0], e);
+});
+
+document.body.addEventListener('touchend', function (e) {
+    onEnd(e.changedTouches[0]);
+});
+
+// 翻转的绑定
+window.onorientationchange = orientationChange;
+
+function initPage(){
+	pageWidth = $(window).width();
+	pageHeight = $(".wrap").height();
+	pages = $(".wrap section");
+	$(".bg .bg_sec").css("height",pageHeight);
+    var bg_sec_height = $('.bg .bg_sec').height();
+    $(".svg").css("height",bg_sec_height*10);
+
+    $(".wrap section").css({
+        "width":pageWidth+"px",//"height":$(".wrap").height()+"px"
+        "height":pageHeight+"px"
+    });
+    //$(".wrap").height($(".wrap").height());
+
+    secHeight = pageHeight * $(".wrap section").length;
+    lineHeight = 832 * secHeight / pageHeight;
+
+    $(".sec, .line").addClass("drag");
+    animatePage(curPage);
+    //$(".sec, .line").removeClass("drag");
+
+}
+
+function orientationChange(){
+	initPage();
+}
+
+// 以下是拖动效果
+var startX = 0,
+    startY = 0;
+    margin = 0;
+var pages = null;
+var curPage = 0;
+var pageWidth = 0,
+    pageHeight = 0;
+var lineHeight = 0, secHeight = 0;
+var targetElement = null;
+var scrollPrevent = false, movePrevent = false, touchDown = false;
+
+$(document).ready(function(){
+	initPage();
+});
+
+function onStart (e) {
+    if(movePrevent == true){
+        event.preventDefault();
+        return false;
+    }
+    if($(e.target).parents("#container").length==1){
+        scrollPrevent = true;
+    }else{
+        scrollPrevent = false;
+    }
+
+    $(".map").on('click', function(e){
+    	$(".map_show").addClass("show");
+    })
+
+    if(!$(e.target).parents("#container").length==1){
+	    $(".map_show").removeClass("show");
+    }
+
+    touchDown = true;
+
+    // 起始点，页面位置
+    startX = e.pageX;
+    startY = e.pageY;
+    //margin = parseInt($(".sec").css("top"));
+    //-webkit-transform:translateY(0px)
+
+    //matrix(1, 0, 0, 1, 0, 8)
+
+    $(".sec, .line").addClass("drag");
+
+    margin = $(".sec").css("-webkit-transform");
+    //margin = "matrix(1, 0, 0, 1, 0, -50)";
+    margin = margin.replace("matrix(", "");
+    margin = margin.replace(")", "");
+    margin = margin.split(",");
+    margin = parseInt(margin[5]);
+}
+
+function onMove (e, oe) {
+    if(movePrevent == true || touchDown != true){
+        event.preventDefault();
+        return false;
+    }
+    event.preventDefault();
+    if( scrollPrevent==false && e.pageY!=startY){
+        var temp = margin + e.pageY - startY;
+        $(".sec").css("-webkit-transform", "matrix(1, 0, 0, 1, 0, "+temp+")");
+        var b =  lineHeight / secHeight * temp;
+        $(".line").css("-webkit-transform", "matrix(1, 0, 0, 1, 0, "+b+")");
+    }
+}
+
+function onEnd (e) {
+    if(movePrevent == true){
+        event.preventDefault();
+        return false;
+    }
+
+    touchDown = false;
+
+    if( scrollPrevent==false ){
+        // 抬起点，页面位置
+        endX = e.pageX;
+        endY = e.pageY;
+        // swip 事件默认大于50px才会触发，小于这个就将页面归回
+        if( Math.abs(endY-startY)<=50) {
+            animatePage(curPage);
+        }else{
+        	if(endY>startY){
+        		prevPage();
+        	}else{
+        		nextPage();
+        	}
+        }
+    }
+
+    $(".sec, .line").removeClass("drag");
+}
+
+function prevPage(){
+    var newPage = curPage - 1;
+    animatePage(newPage);
+    
+}
+function nextPage(){
+    var newPage = curPage + 1;
+    animatePage(newPage);
+}
+
+function animatePage( newPage ){
+    if(newPage<0){
+        newPage = 0;
+    }
+    if(newPage>$(".wrap section").length-1){
+        newPage = $(".wrap section").length-1;
+    }
+
+    curPage = newPage;
+    var newMarginTop = newPage * (-pageHeight);
+    $(".sec").css({
+        "-webkit-transform" : "matrix(1, 0, 0, 1, 0, "+newMarginTop+")"
+    });
+
+    var newTop = -parseInt(curPage*pageHeight*(lineHeight/secHeight));
+    $(".line").css({
+        "-webkit-transform" : "matrix(1, 0, 0, 1, 0, "+newTop+")"
+    });
+
+    movePrevent = true;
+    setTimeout("movePrevent=false;", 300 );
+
+    // 每页动画
+    if( !$(pages[curPage]).hasClass("sec" + (curPage+1) + "_show") ){
+        $(pages[curPage]).addClass("sec" + (curPage+1) + "_show");
+    }
+    $(pages[curPage-1]).removeClass("sec" + (curPage) + "_show");
+    $(pages[curPage+1]).removeClass("sec" + (curPage+2) + "_show");
+
+    pgvSendClick({hottag:'index.index.start_qzone'});
+}
+
+
+// 视差
+var scene = document.getElementById('scene');
+var parallax = new Parallax(scene);
+
+//map
+var init = function() {
+    var center = new qq.maps.LatLng(23.011876,113.758120);
+    var map = new qq.maps.Map(document.getElementById('container'),{
+        center: center,
+        zoom: 14
+    });
+    var marker = new qq.maps.Marker({
+        position: center,
+        map: map
+    });
+    qq.maps.event.addListener(marker,"click",function(){
+        alert("you clicked me")
+    });
+    //setMap
+    var mapM=document.getElementById("mapM");
+    qq.maps.event.addDomListener(mapM,"click",function(){
+        marker.setVisible(true);
+        if(marker.getMap()){
+            marker.setMap(null);
+        }else{
+            marker.setMap(map);
+        }
+    });
+}
+function onBridgeReady() {
+    var mainTitle="{noercms:$tpl.wxname}",
+        mainDesc="{noercms:$tpl.wxname}",
+        mainURL="{noercms::C('site_url')}{noercms::U(Index/ACTION_NAME,array('token'=>$_GET['token'],'classid'=>$_GET['classid']))}",
+        mainImgUrl= "http://txweb.nbstwh.com/bgy/bgy_1_files/bg_01.jpg";
+
+    //转发朋友圈
+    WeixinJSBridge.on("menu:share:timeline", function(e) {
+        var data = {
+            img_url:mainImgUrl,
+            img_width: "120",
+            img_height: "120",
+            link: mainURL,
+            //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+            desc: mainDesc,
+            title: mainTitle
+        };
+        WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+            WeixinJSBridge.log(res.err_msg)
+        });
+    });
+    //同步到微博
+    WeixinJSBridge.on("menu:share:weibo", function() {
+        WeixinJSBridge.invoke("shareWeibo", {
+            "content": mainDesc,
+            "url": mainURL
+        }, function(res) {
+            WeixinJSBridge.log(res.err_msg);
+        });
+    });
+    //分享给朋友
+    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+        WeixinJSBridge.invoke("sendAppMessage", {
+            img_url: mainImgUrl,
+            img_width: "120",
+            img_height: "120",
+            link: mainURL,
+            desc: mainDesc,
+            title: mainTitle
+        }, function(res) {
+            WeixinJSBridge.log(res.err_msg)
+        });
+    });
+};
+//执行
+document.addEventListener('WeixinJSBridgeReady', function() {
+    onBridgeReady();
+});
+</script></body></html>

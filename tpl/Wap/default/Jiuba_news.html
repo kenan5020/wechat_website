@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" type="text/css" href="/tpl/Wap/default/common/estate/common.css" media="all">
+<link rel="stylesheet" type="text/css" href="/tpl/Wap/default/common/estate/car_reset.css" media="all">
+<link rel="stylesheet" type="text/css" href="/tpl/Wap/default/common/estate/list-8.css" media="all">
+<link rel="stylesheet" type="text/css" href="/tpl/Wap/default/common/estate/menu-2.css" media="all">
+<script type="text/javascript" src="/tpl/Wap/default/common/estate/jquery.js"></script>
+<title>{noercms:$classify['name']}</title>
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="">
+        <meta name="Description" content="">
+        <!-- Mobile Devices Support @begin -->
+            <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+            <meta content="no-cache" http-equiv="pragma">
+            <meta content="0" http-equiv="expires">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+            <meta name="apple-mobile-web-app-capable" content="yes"> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <!-- Mobile Devices Support @end -->
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+<div class="body">
+            <footer class="nav_footer">
+        <ul class="box">
+            <li><a href="javascript:history.go(-1);">返回</a></li>
+            <li><a href="javascript:history.go(1);">前进</a></li>
+            <li><a href="{noercms::U('Jianshen/index',array('token'=>$token,'wecha_id'=>$Think.get.wecha_id))}">首页</a></li>
+            <li><a href="javascript:location.reload();">刷新</a></li>
+        </ul>
+    </footer>
+                    <header>
+            <div class="head_news">
+                    <ul>
+                        <li><img src="{noercms:$classify['img']}"></li>
+                    </ul>
+                    <ol>{noercms:$classify['name']}</ol>
+            </div>
+        </header>
+            <section>
+                    <ul class="list_ul list_ul_news">
+                     <volist name="imgtxt" id="vo">
+                      <li>
+                        <a class="tbox" href="{noercms::U('Jianshen/newlist',array('token'=>$token,'wecha_id'=>$wecha_id,'mid'=>$vo['mid']))}">
+                            <div>
+                                <img src="{noercms:$vo['pic']}" style="width:60px!important; height:60px;">
+                            </div>
+                            <div>
+                                <p>{noercms:$vo['title']}</p>
+                                <p>{noercms:$vo['createtime']|date="Y年m月d日",###}</p>
+                            </div>
+                        </a>
+                    </volist>
+                    </ul>
+                    </section>
+</div>            <div mark="stat_code" style="width:0px; height:0px; display:none;">
+                    </div>
+</body></html>

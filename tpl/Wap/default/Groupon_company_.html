@@ -1,0 +1,45 @@
+<include file="Groupon:header_0"/>
+    <div id="deal-bizinfo" class="box-style deal-bizinfo">
+        <h2><span class="icon-fonts">H</span>总店信息</h2>
+
+            <div class="biz-info">
+                <a href="{noercms::U('Groupon/company',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'id'=>$product['id']))}">
+                    <div class="biz-detail">
+                        <p class="title ell"> {noercms:$thisCompany.name}</p>
+
+                        <p class="address ell">{noercms:$thisCompany.address}</p>
+                    </div>
+                </a>
+
+                <div class="icon-fonts call">
+                    <a href="tel:{noercms:$thisCompany.tel}">E</a>
+                </div>
+            </div>
+            <a class="more" href="{noercms::U('Groupon/companyMap',array('token'=>$_GET['token'],'id'=>$_GET['id'],'companyid'=>$thisCompany['id'],'wecha_id'=>$_GET['wecha_id']))}">查看地图</a>
+            
+    </div>
+    
+    <if condition="$branchStoreCount gt 0">
+    <div id="deal-bizinfo" class="box-style deal-bizinfo">
+        <h2><span class="icon-fonts">H</span>分店信息</h2>
+        <volist array="branchStores" foreach="s">
+            <div class="biz-info">
+                <a href="{noercms::U('Groupon/company',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'id'=>$product['id']))}">
+                    <div class="biz-detail">
+                        <p class="title ell"> {noercms:$s.name}</p>
+
+                        <p class="address ell">{noercms:$s.address}</p>
+                    </div>
+                </a>
+
+                <div class="icon-fonts call">
+                    <a href="tel:{noercms:$s.tel}">E</a>
+                </div>
+            </div>
+            
+            <a class="more" href="{noercms::U('Groupon/companyMap',array('token'=>$_GET['token'],'id'=>$_GET['id'],'companyid'=>$s['id'],'wecha_id'=>$_GET['wecha_id']))}">查看地图</a><br>
+            </volist>
+            
+    </div>
+    </if>
+<include file="Groupon:footer_0"/>

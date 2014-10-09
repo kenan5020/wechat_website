@@ -1,0 +1,111 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/default_user_com.css" media="all">
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<script src="{noercms::RES}/js/select/js/jquery.js"></script>
+<script src="{noercms::RES}/js/select/js/comm.js"></script>
+<script src="{noercms::RES}/js/select/js/linkagesel-min.js"></script>
+<script src="{noercms::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{noercms::STATICS}/artDialog/plugins/iframeTools.js"></script>
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{noercms::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<script>
+var editor;
+KindEditor.ready(function(K) {
+editor = K.create('#info', {
+resizeType : 1,
+allowPreviewEmoticons : false,
+allowImageUpload : true,
+uploadJson : '/index.php?g=User&m=Upyun&a=kindedtiropic',
+items : [
+'source','undo','plainpaste','wordpaste','clearhtml','quickformat','selectall','fullscreen','fontname', 'fontsize','subscript','superscript','indent','outdent','|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline','hr']
+});
+});
+</script>
+<div class="content" style="width:95%; background:none; margin-left:25px; border:none; margin-bottom:30px; margin-top:30px;" >
+  <div class="cLineB">
+    <div  class="quick-actions_homepage">
+    <ul class="quick-actions">
+    <li class="bg_ls"> <a href="{noercms::U('Car/index',array('token'=>$token))}"> <i class="icon-truck"></i> 微汽车 </a> </li>
+      <li class="bg_lb"> <a href="{noercms::U('Product/orders',array('token'=>$token,'dining'=>1))}"> <i class="icon-glass"></i> 微餐饮 </a> </li>
+      <li class="bg_dy"> <a href="{noercms::U('Estate/index',array('token'=>$token))}"> <i class="icon-star"></i> 微房产</a> </li>
+      <li class="bg_lg"> <a href="{noercms::U('Jiudian/index',array('token'=>$token))}"> <i class="icon-plus"></i> 微酒店</a> </li>
+      <li class="bg_ly"> <a href="{noercms::U('Yiliao/index',array('token'=>$token))}"> <i class="icon-tag"></i> 微医疗 </a> </li>
+      <li class="bg_lo"> <a href="{noercms::U('Reservation/index',array('token'=>$token))}"> <i class="icon-map-marker"></i> 微预约 </a> </li>
+      <li class="bg_db"> <a href="javascript:history.go(-1);"> <i class="icon-share-alt"></i> 返回</a> </li>
+    </ul>
+  </div>
+  <h4>添加销售</h4>
+  <include file="Car:menu"/>
+  <a href="javascript:history.go(-1);return false;" class="right btnGrayS vm" style="margin-top:-27px">返回</a>
+ </div>
+ <!--tab start-->
+<!--tab end-->
+    <div class="msgWrap bgfc" style="margin-top:10px;">
+      <form class="form" method="post" action="" target="_top" enctype="multipart/form-data">
+        <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+                <tr>
+                    <th width="120">姓名：</th>
+                    <td> <input type="text" name="name" id="name" class="px" data-rule-required="true" data-rule-maxlength="10" value="{noercms:$salers['name']}"/>
+                        <span class="maroon">*</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <th width="120">头像：</th>
+                    <td> 
+                     <p>
+                         <img class="thumb_img" id="picture_src" src="{noercms:$salers['picture']|default='tpl/User/default/common/car/car_sell.png'}" style="max-height:100px;">
+                         <input type="input" class="px" id="picture" value="{noercms:$salers['picture']|default='tpl/User/default/common/car/car_sell.png'}" name="picture" >
+                         <span class="help-inline">
+                              <script src="{noercms::STATICS}/upyun.js"></script><a href="###" onclick="upyunPicUpload('picture',720,400,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('picture')">预览</a>
+                              <span class="help-inline">建议尺寸：图片150*150</span>
+                         </span>
+                     </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="120">电话：</th>
+                    <td>
+                         <input type="text" name="mobile" id="mobile" class="px" data-rule-required="true" data-rule-phone="true" value="{noercms:$salers['mobile']}"/>
+                         <span class="maroon">*</span>
+                         <span class="help-inline">如0551-01234567</span>
+                     </td>
+                </tr>
+                <tr>
+                    <th width="120">显示顺序：</th>
+                    <td>  <input type="text" id="sort" name="sort" value="{noercms:$salers['sort']|default=1}" class="input-mini px" data-rule-required="true" data-rule-number="true" /><span class="maroon">*</span>
+                     <span class="help-inline">数字越大越靠前</span></td>
+                </tr>
+                <tr>
+                    <th>类型：</th>
+                    <td>
+                    <select name="salestype" id="salestype">
+                      <option value="1" <if condition="$salers['salestype'] eq 1"> checked="checked"</if>>售前</option>
+                      <option value="2" <if condition="$salers['salestype'] eq 2"> checked="checked"</if>>售后</option>
+                      <option value="3" <if condition="$salers['salestype'] eq 3"> checked="checked"</if>>售前/售后</option>
+                    </select> 
+                    </td>
+                </tr>
+                <tr>
+                    <th width="120">介绍:</th>
+                    <td> <textarea name="info"  id="info" style="width:605px;height:120px"  data-rule-maxlength="150" placeholder="可不填">{noercms:$salers['info']}</textarea></td>
+                </tr>
+                  <tr>
+                    <td>
+                    <if condition="$salers['id'] neq ''">
+                    <input type="hidden" name="id" value="{noercms:$salers['id']}" />
+                    </if>
+                      <input type="hidden" name="token" value="{noercms:$token}" />
+                        <button type="submit" name="button" class="btn btn-success">保存</button>
+                        <a href="javascript:history.go(-1);" class="btn btn-danger">取消</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+  </div> 
+        </div>
+<include file="Public:footer"/>

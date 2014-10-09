@@ -1,0 +1,178 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/default_user_com.css" media="all">
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<script src="{noercms::RES}/js/select/js/jquery.js"></script>
+<script src="{noercms::RES}/js/select/js/comm.js"></script>
+<script src="{noercms::RES}/js/select/js/linkagesel-min.js"></script>
+<script src="{noercms::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{noercms::STATICS}/artDialog/plugins/iframeTools.js"></script>
+<div class="content" style="width:95%; background:none; margin-left:25px; border:none; margin-bottom:30px; margin-top:30px;" >
+  <div class="cLineB">
+    <div  class="quick-actions_homepage">
+    <ul class="quick-actions">
+    <li class="bg_ls"> <a href="{noercms::U('Car/index',array('token'=>$token))}"> <i class="icon-truck"></i> 微汽车 </a> </li>
+      <li class="bg_lb"> <a href="{noercms::U('Product/orders',array('token'=>$token,'dining'=>1))}"> <i class="icon-glass"></i> 微餐饮 </a> </li>
+      <li class="bg_dy"> <a href="{noercms::U('Estate/index',array('token'=>$token))}"> <i class="icon-star"></i> 微房产</a> </li>
+      <li class="bg_lg"> <a href="{noercms::U('Jiudian/index',array('token'=>$token))}"> <i class="icon-plus"></i> 微酒店</a> </li>
+      <li class="bg_ly"> <a href="{noercms::U('Yiliao/index',array('token'=>$token))}"> <i class="icon-tag"></i> 微医疗 </a> </li>
+      <li class="bg_lo"> <a href="{noercms::U('Reservation/index',array('token'=>$token))}"> <i class="icon-map-marker"></i> 微预约 </a> </li>
+      <li class="bg_db"> <a href="javascript:history.go(-1);"> <i class="icon-share-alt"></i> 返回</a> </li>
+    </ul>
+  </div>
+  <h4>添加车型</h4>
+  <include file="Car:menu"/>
+  <a href="javascript:history.go(-1);return false;" class="right btnGrayS vm" style="margin-top:-27px">返回</a>
+ </div>
+ <!--tab start-->
+<!--tab end-->
+    <div class="msgWrap bgfc" style="margin-top:10px;">
+      <form class="form" method="post" action="" target="_top" enctype="multipart/form-data">
+        <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+                <tr>
+                    <th width="120">车型名称：</th>
+                    <td> <input type="text" name="name" id="name" class="input-medium px" data-rule-required="true" data-rule-maxlength="20" value="{noercms:$carmodel['name']}"/>
+                      <span class="maroon">*</span>
+                    </td>
+                </tr>
+               <tr>
+                    <th>品牌/车系：</th>
+                    <td>
+                    <select id="car_brands_id"  data-rule-required="true"></select>
+                    <input type='hidden' name='brand_serise' id="brand_serise"  value="{noercms:$carmodel['brand_serise']}"/>
+                    <input type='hidden' name='s_id' id="s_id" class='px' value="{noercms:$carmodel['s_id']}"/>
+                    <span class="maroon">选择品牌，车系会自动出来</span>
+                    <!--select name="car_series" id="car_series" class="input-medium px" data-rule-required="true"></select-->
+<script>
+    var opts = {
+            select: '#car_brands_id',
+            url: "{noercms::U('Car/get_car_brand',array('token'=>$token))}",
+            head:'请选择！',
+            autoHide:true
+    };
+    var linkageSel = new LinkageSel(opts);
+    linkageSel.onChange(function(){
+        var input = $("#brand_serise"),
+        d = this.getSelectedDataArr('name'),
+        s_id = linkageSel.getSelectedData('s_id'),
+        arr = [];
+        for (var i = 0, len = d.length; i < len; i++) {
+            arr.push(d[i]);
+        }
+        input.val(arr.join('/'));
+        $("#s_id").val(s_id);
+    });
+</script>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="120">年款：</th>
+                    <td>
+                         <select class="input-medium valid" name="model_year">
+                             <option value="2014">2022</option>
+                             <option value="2014">2021</option>
+                             <option value="2014">2020</option>
+                             <option value="2014">2019</option>
+                             <option value="2014">2018</option>
+                             <option value="2014">2017</option>
+                             <option value="2014">2016</option>
+                             <option value="2014">2015</option>
+                             <option value="2014" selected="">2014</option>
+                             <option value="2013" >2013</option>
+                             <option value="2012">2012</option>
+                             <option value="2011">2011</option>
+                             <option value="2010">2010</option>
+                             <option value="2009">2009</option>
+                             <option value="2008">2008</option>
+                             <option value="2007">2007</option>
+                             <option value="2006">2006</option>
+                             <option value="2005">2005</option>
+                             <option value="2004">2004</option>
+                             <option value="2003">2003</option>
+                             <option value="2002">2002</option>
+                             <option value="2001">2001</option>
+                            <option value="2001">2000</option>
+                         </select>
+                     </td>
+                </tr>
+                <tr>
+                    <th width="120">显示顺序：</th>
+                    <td>  <input type="text" id="sort" name="sort" value="{noercms:$carmodel['sort']|default=1}" class="input-mini px" data-rule-required="true" data-rule-number="true" /><span class="maroon">*</span>
+                                        <span class="help-inline">数字越大越靠前</span></td>
+                </tr>
+                <tr>
+                    <th>指导价：</th>
+                    <td> 
+                             <input type="text" id="prices" name="guide_price" value="{noercms:$carmodel['guide_price']}" class="input-mini px" data-rule-number="true" />
+                                        <span class="help-inline">(万元)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="120">经销商报价：</th>
+                    <td> <input type="text" id="Text1" name="dealer_price" class="input-medium px" value="{noercms:$carmodel['dealer_price']}"/>
+                         <span class="help-inline">(万元) 如:19.24-35.59</span></td>
+                </tr>
+                <tr>
+                    <th width="120">图片：:</th>
+                    <td> 
+                                        <p>
+                                            <img class="thumb_img" id="pic_url_src" src="{noercms:$carmodel['pic_url']|default='tpl/User/default/common/car/lanbo.jpg'}" style="max-height:100px;">
+                                            <input type="input" class="px" id="pic_url" value="{noercms:$carmodel['pic_url']|default='tpl/User/default/common/car/lanbo.jpg'}" name="pic_url" >
+                                            <span class="help-inline">
+                                                 <script src="{noercms::STATICS}/upyun.js"></script><a href="###" onclick="upyunPicUpload('pic_url',720,400,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('pic_url')">预览</a>
+                                                <span class="help-inline">建议尺寸：宽720像素，高400像素</span>
+                                            </span>
+                                        </p>
+                    </td>
+                </tr>
+                  <tr>
+                    <th width="120">全景相册名称:</th>
+                    <td> 
+                         <select id="panorama_id" name="panorama_id" class="input-medium" data-rule-required="true"> 
+                                          <option value="0">请选择360全景相册</option> 
+                                            <volist name="panorama" id="vo">
+                                               <option value="{noercms:$vo['pid']}" <if condition="$vo['pid'] eq $carmodel['panorama_id']">selected="selected"</if>>{noercms:$vo['name']}</option>
+                                            </volist>
+                                        </select>
+                                        <span class="maroon">*</span>
+                                        <span class="help-inline">如果没有，请先到 <a href="{noercms::U('Panorama/add',array('token'=>$token))}" class="btn"><strong><font color='red'>360°全景</strong></font></a>添加</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="120">排量：</th>
+                    <td><input type="text" id="pl" name="emission" class="px" value="{noercms:$carmodel['emission']}" data-rule-number="true" />
+                        <span class="help-inline">(L)</span></td>
+                <tr>
+                    <th width="120">挡位个数：</th>
+                    <td>  <input type="text" id="dwgs" name="stalls" class="px" value="{noercms:$carmodel['stalls']}" data-rule-integer="true" /></td>
+                </tr>
+                <tr>
+                    <th width="120">变速箱：</th>
+                    <td> 
+                            <select name="box" id="bsx" class="input-medium">
+                                <option value="1" <if condition="$carmodel['box'] eq 1">selected</if> >自动变速箱(AT)</option>
+                                <option value="2" <if condition="$carmodel['box'] eq 2">selected</if> >手动变速箱(MT)</option>
+                                <option value="3" <if condition="$carmodel['box'] eq 3">selected</if> >手自一体 </option>
+                                <option value="4" <if condition="$carmodel['box'] eq 4">selected</if> >无级变速箱(CVT)</option>
+                                <option value="5" <if condition="$carmodel['box'] eq 5">selected</if> >无级变速(VDT)</option>
+                                <option value="6" <if condition="$carmodel['box'] eq 6">selected</if> >双离合变速箱(DCT)</option>
+                                <option value="7" <if condition="$carmodel['box'] eq 7">selected</if> >序列变速箱(AMT)</option>
+                            </select>
+                    </td>
+                </tr>
+                  </tr>
+                    <td>
+                    <if condition="$carmodel['id'] neq ''">
+                    <input type="hidden" name="id" value="{noercms:$carmodel['id']}" />
+                    </if>
+                      <input type="hidden" name="token" value="{noercms:$token}" />
+                        <button type="submit" name="button" class="btn btn-success">保存</button>
+                        <a href="javascript:history.go(-1);" class="btn btn-danger">取消</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+  </div> 
+        </div>
+<include file="Public:footer"/>

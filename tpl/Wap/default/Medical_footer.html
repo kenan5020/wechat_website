@@ -1,0 +1,21 @@
+
+       <div data-role="fieldcontain">
+          <div data-role="header">
+            <a data-iconpos="notext" title="Home"></a>
+            <h6 style='padding:0px;margin:0'><a href="javascript:window.scrollTo(0,0);" data-role="button" data-icon="flat-cmd">返回顶部</a></h6>
+            <a data-iconpos="notext"  title="Home"></a>
+          </div>
+      </div>
+<script type="text/javascript">
+window.shareData = {
+            "moduleName":"Medical",
+            "moduleID":"0",
+            "imgUrl": "{noercms:$cominfo['logourl']}",
+            "sendFriendLink": "{noercms::C('site_url')}{noercms::U('Medical/index',array('token'=>$token))}",
+            "tTitle": "{noercms:$title}",
+            "tContent": "{noercms:$cominfo['intro']|html_entity_decode|strip_tags|mb_substr=0,89,'utf-8'}..."
+        };
+</script>
+{noercms:$shareScript}
+<script type="text/javascript" src="/tpl/Wap/default/common/js/ChatFloat.js"></script>
+<if condition="$kefu['yiliao'] eq '1'"><a href="{noercms:$kefu.info2}" id="CustomerChatFloat" style="position: fixed; right: 0px; top: 150px; z-index: 99999; height: 70px; width: 65px; min-width: 65px; background-image: url(/tpl/Wap/default/common/css/img/MobileChatFloat.png); background-size: 65px; background-position: 0px 0px; background-repeat: no-repeat no-repeat;"></a></if>

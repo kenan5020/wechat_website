@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/reset.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/peak-3.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/menu-2.css" media="all" />
+<script type="text/javascript" src="./tpl/Wap/default/common/js/jquery.min.js"></script>
+<title>{noercms:$res.title} - {noercms:$tpl.wxname}</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="{noercms::C('site_name')}、{noercms::C('site_name')}微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" />
+        <meta name="Description" content="{noercms::C('site_name')}，国内最大的微信公众智能服务平台，{noercms::C('site_name')}八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" />
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+            <meta content="no-cache" http-equiv="pragma">
+            <meta content="0" http-equiv="expires">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+        <link rel="shortcut icon" href="{noercms::RES}/img/favicon.ico" />
+        <style>
+            img{width:100%!important;}
+        </style>
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+        <link rel="stylesheet" type="text/css" href="../../img/font-awesome.css?v=2013121903" media="all" />
+<div class="body" style="padding-bottom:60px;">
+					<footer class="nav_footer">
+		<ul class="box">
+			<li><a href="javascript:history.go(-1);">返回</a></li>
+			<li><a href="javascript:history.go(1);">前进</a></li>
+			<li><a href="{noercms::U('Index/index',array('token'=>$res['token']))}">首页</a></li>
+			<li><a href="javascript:location.reload();">刷新</a></li>
+		</ul>
+	</footer>
+		<section class="news_article">
+		<header>
+			<h3 style="font-size:14px;">{noercms:$res.title}</h3>
+			<small class="gray">{noercms:$res.createtime|date="y-m-d",###}</small>
+		</header>
+		<article>
+			<eq name="res.showpic" value="1"><p><img src="{noercms:$res.pic}" /><p></eq>
+	<span style="white-space:normal;">　　</span>{noercms:$res.info|htmlspecialchars_decode}
+<p>公众微信号:{noercms:$tpl.weixin}</P>
+		</article>
+	</section>
+	<section style="width:95%; margin:0px auto;">
+	<div id="mcover" onClick="document.getElementById('mcover').style.display='';" style="display:none;">
+		<img src="{noercms::RES}/img/guide.png">
+	</div>
+	<div class="text" id="content">
+		<div id="mess_share">
+			<div id="share_1">
+				<button class="button2" onClick="document.getElementById('mcover').style.display='block';">
+					<img src="{noercms::RES}/img/icon_msg.png">&nbsp;发送给朋友
+				</button>
+			</div>
+			<div id="share_2">
+				<button class="button2" onClick="document.getElementById('mcover').style.display='block';">
+					<img src="{noercms::RES}/img/icon_timeline.png">&nbsp;分享到朋友圈
+				</button>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+</section>
+<div style="padding-bottom:0!important;">
+	<a href="javascript:window.scrollTo(0,0);" style="font-size:12px;margin:5px auto;display:block;color:#fff;text-align:center;line-height:35px;background:#333;margin-bottom:-10px;">返回顶部</a>
+</div></div>        			<footer>
+				<div class="weimob-copyright" style="color:{noercms:$homeInfo.plugmenucolor}">{noercms:$homeInfo.copyright}</div>
+							</footer>
+				<div mark="stat_code" style="width:0px; height:0px; display:none;">
+					</div>
+	</body>
+</html>

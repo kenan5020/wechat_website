@@ -1,0 +1,90 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/review.css" media="all">
+    <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/back.css" media="all">
+    <script type="text/javascript" src="{noercms::RES}/js/fang/share.js"></script>
+    <script type="text/javascript" src="{noercms::RES}/js/fang/common.js"></script>
+    <script type="text/javascript" src="{noercms::RES}/js/fang/review.js"></script>
+    <title>房友印象</title>
+    <script src="{noercms::RES}/js/fang/sharedata.js"></script>
+</head>
+<body onselectstart="return true;" ondragstart="return false;" style="">
+<style type="text/css">
+    .review_man h3{font-size:18px;}
+        #impress a{
+        overflow:hidden;
+    }
+    .review_man h3{font-size:18px;}
+    .is_1 a[style*='flex:0'], .is_2 a[style*='flex:0']{
+    display:none;
+    }
+</style>
+<script type="text/javascript">
+    function yx(){
+        document.getElementById('impress').style.display='none';
+        document.getElementById('professional').style.display="block";
+    }
+    function dp(){
+        document.getElementById('impress').style.display='block';
+        document.getElementById('professional').style.display="none";
+    }
+</script>
+<div class="wrapper">
+	<!-- start -->
+		<ul class="nav_top" id="navTop" style="display: -webkit-box; ">
+			<li onclick="dp();" ><a onclick="REVIEW.switchPanel(0);return false;" class="current" style="cursor:pointer;">房友印象</a></li>
+			<li onclick="yx();" ><a onclick="REVIEW.switchPanel(1);return false;" class="" style="cursor:pointer;">专家点评</a></li>
+		</ul>
+	<!-- end -->
+	<div id="impress" class="impress" style="display: block; ">  
+        <h3>选择或添加您的楼盘印象</h3>  
+        <div class="is_1">   
+			 <volist name="arr" id="v" offset="0" length="1"> 
+			<a href="javascript:void(0);" class="is_11" style="-webkit-box-flex:30;">    
+                <span>{noercms:$v.title} {noercms:$v.sum}%</span>   
+            </a>
+			</volist>
+            <!--  每一个-webkit-box-flex的值为百分比 -->   
+            <div class="is_12" style="-webkit-box-flex:42;">
+                <!--  这里-webkit-box-flex的值为is_12_1和is_12_2的百分比相加 -->    
+                <volist name="arr" id="v" offset="1" length="2">
+				<a href="javascript:void(0);" class="is_12_{noercms:$i}" style="-webkit-box-flex:{noercms:$v.sum};">                        
+                    <span>{noercms:$v.title} {noercms:$v.sum}%</span>    
+                </a>
+				</volist>
+            </div>  
+        </div>  
+        <div class="is_2">   
+            <volist name="arr" id="v" offset="3">
+			<a href="javascript:void(0);"  class="is_2{noercms:$i}" style="-webkit-box-flex:{noercms:$v.sum};">    
+                <span>{noercms:$v.title} {noercms:$v.sum}%</span>   
+            </a>
+			</volist>
+        </div> 
+    </div>
+	<div id="professional" style="display: none; " jqmoldstyle="block">     
+		<volist name="data" id="v">
+		<div class="review_box">
+            <div class="review_man"> 
+                <img src="{noercms:$v.topic}" width="70" height="70" style="width:70px!important; height:70px!important; " alt="">     
+                <h3>{noercms:$v.name}<em><br>{noercms:$v.job}</em></h3>     
+                <p>{noercms:$v.info}</p>    
+            </div>    
+            <div class="review_word">     
+                <h2>{noercms:$v.title}</h2>     
+                <p>{noercms:$v.dianping}</p>    
+            </div>   
+        </div>   
+		</volist>
+    </div>
+</div>
+<div class="pop_mask" id="popMask" style="display:none;"></div>
+<script>
+    var PID = 2356;
+    var WECHATID = 'o8ViLjqXXdEbCHRGmquQb7L19-T0';
+</script>
+<a href="javascript:history.go(-1);" class="back360" style="">&nbsp;</a>
+<div mark="stat_code" style="width:0px; height:0px; display:none;"></div>
+</body>
+</html>

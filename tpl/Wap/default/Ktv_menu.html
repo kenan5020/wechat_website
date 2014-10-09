@@ -1,0 +1,64 @@
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/font-awesome.css" media="all">
+<p><br/><br/><br/><br/><br/></p>
+<link rel="stylesheet" type="text/css" href="{noercms::COMMON}/wap/estate/back.css" media="all">
+<a href="javascript:history.go(-1);" class="back360" style="">&nbsp;</a>
+<section>
+            <div style="visibility: visible;" id="navList_box" class="box_swipe">
+<ul style="list-style: none; width: 1280px; transition: 0ms; -webkit-transition: 0ms; -webkit-transform: translate3d(0px, 0, 0);">
+                <li style="width: 640px; display: table-cell; vertical-align: top;">
+                <a href="{noercms::U('Ktv/index',array('token'=>$token,'wecha_id'=>$wecha_id))}">
+                    <span class="icon-home"></span>
+                        <img src="" alt="KTV介绍">
+                        <div>KTV介绍</div>
+                </a>
+                <a href="{noercms::U('Ktv/album',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item">
+                    <span class="icon-picture"></span>
+                    <img src="" alt="环境相册">
+                    <div>环境相册</div>
+                            </a>
+                <a href="{noercms::U('Ktv/housetype',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item">
+                        <span class="icon-building"></span>
+                        <img src="" alt="KTV包厢">
+                        <div>KTV包厢</div>
+                </a>
+                <a href="{noercms::U('Ktv/impress',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item">
+                    <span class="icon-check"></span>
+                        <img src="" alt="客人印象">
+                        <div>客人印象</div>
+                </a>
+                </li>
+                    <li style="width: 640px; display: table-cell; vertical-align: top;">
+                    <a href="{noercms::U('Ktv/news',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item">
+                        <span class="icon-rss-sign"></span>
+                        <img src="" alt="新闻动态">
+                        <div>新闻动态</div>
+                    </a>
+                    <a href="{noercms::U('Reservation/index',array('token'=>$token,'wecha_id'=>$wecha_id,'rid'=>$rid))}" class="noercms-list-item">
+                    <span class="icon-edit"></span>
+                        <img src="" alt="服务预约">
+                        <div>服务预约</div>
+                    </a>
+                    <a href="{noercms::U('Card/vip',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item">
+                    <span class="icon-credit-card"></span>
+                    <img src="" alt="加入会员">
+                    <div>加入会员</div>
+                    </a>
+                    <!--a href="{noercms::U('Ktv/aboutus',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item"-->
+                    <a href="tel:{noercms:$es_data.tel}" class="noercms-list-item">
+                    <span class="icon-phone"></span>
+                    <img src="" alt="联系我们">
+                    <div>联系我们</div>
+                    </a>
+                        </li>
+                </ul>
+                <ol>
+                    <a href="javascript:navList_box.prev();">&nbsp;</a>
+                    <a href="javascript:navList_box.next();">&nbsp;</a>
+                </ol>
+            </div>
+        </section>
+        <script>
+            $(document).ready(function(){
+                window.navList_box = new Swipe(document.getElementById('navList_box'), {auto:0});
+            });
+        </script>

@@ -1,0 +1,73 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="./tpl/User/default/common/css/cymain.css" />
+<div class="content" style="width:1070px; background:none; margin-left:125px; border:none; margin-bottom:30px; margin-top:30px;" >
+   <div class="cLineB">
+    <div  class="quick-actions_homepage">
+    
+  </div>
+              <h4 class="left">分组管理</h4>
+              <div class="clr"></div>
+          </div>
+ <div class="cLineD">
+
+         </div>
+          <div class="cLine">
+    <div class="ftip" style="margin:0 auto">
+   微信接口不支持删除分组操作，所以添加的时候请您谨慎操作，如需删除请到公众平台删除，本系统会与公众平台同步
+    </div>
+</div>
+          
+          <div class="cLine">
+            <div class="pageNavigator left">
+				<a href="{noercms::U('User/Wechat_group/groupSet')}" class="btnGrayS vm bigbtn">
+					<img src="tpl/User/default/common/images/text.png" class="vm">添加
+				</a>
+				&nbsp;
+				&nbsp;
+				<a href="{noercms::U('User/Wechat_group/sysGroups')}" class="btnGrayS vm bigbtn">
+					<img src="tpl/User/default/common/images/text.png" class="vm">同步
+				</a>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="msgWrap">
+          <form method="post" action="" id="info">
+          <input name="delall" type="hidden" value="del">
+           <input name="wxid" type="hidden" value="gh_423dwjkewad">
+            <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+					<th class="select">编号</th>
+					<th>公众平台中编号</th>
+					<th>名称 </th>
+					<th>粉丝量 </th>
+					<th>简介</th>
+					<th class="norightborder">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+			  <volist name="groups" id="list">
+                <tr>
+                  <td>{noercms:$list.id}</td>
+                  <td>{noercms:$list.wechatgroupid}</td>
+                  <td><a href="{noercms::U('Wechat_group/index',array('wechatgroupid'=>$list['wechatgroupid']))}">{noercms:$list.name}</a></td>
+				  <td>{noercms:$list.fanscount}</td>
+                  <td>{noercms:$list.intro}</td>
+                  <td class="norightborder">
+						<a href="{noercms::U('Wechat_group/groupSet',array('id'=>$list['id']))}">修改</a>　
+				   </td>
+                </tr>
+      			</volist>
+                 
+              </tbody>
+            </table>
+           </form> 
+          </div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{noercms:$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+        </div>	
+<include file="Public:footer"/>

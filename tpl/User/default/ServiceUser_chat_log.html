@@ -1,0 +1,62 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/default_user_com.css" media="all">
+<div class="content" style="width:1070px; background:none; margin-left:125px; border:none; margin-bottom:30px; margin-top:30px;" >
+  <div class="cLineB">
+    <div  class="quick-actions_homepage">
+    
+  </div>
+ <h4>工号管理</h4>
+ <include file="ServiceUser:menu"/>   
+          </div>
+          
+          <div class="cLine">
+    <div class="alert">
+    <p><span class="bold">工号管理：</span>添加工号后，在登陆的时候填写工号，密码，token即可。</p>
+    </div>
+</div>
+          
+         
+          <div class="msgWrap">
+          
+         
+            <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+             <tr>                          
+				<th class="span3">ID</th>
+				<th class="span3">登陆名：</th>
+				<th class="span3">工号</th>
+				<th class="span3">时间</th>
+				<th class="span3">操作</th>
+			</tr>
+			  </thead>
+				<tbody>
+					<if condition="$list eq ''">
+						<tr>
+						<td colspan="6" style="text-align:center; height:30px;"><strong>暂无客服信息.</strong></td>
+						</tr>
+					<else/>
+					<volist name="list" id="list">
+						<tr>
+						<td style="text-align:left;">{noercms:$list['id']}</td> 
+						<td style="text-align:left;">{noercms:$list['keyword']}</td> 
+						<td style="text-align:center; ;"><span class="label"> {noercms:$list['name']}</span></td>
+						<td style="text-align:center; ;"><span class="label"> {noercms:$list['enddate ']|date='Y-m-d',###}</span></td>
+						
+						<td style="text-align:center; ">
+						<a href="{noercms::U('ServiceUser/chat_log_del',array('id'=>$list['id'],'token'=>$list['token']))}" onclick="return(confirm('确定要删除吗？'))" class="btn">删除</a></a>
+						</td>
+						</tr>
+					</volist>
+					</if>
+				</tbody>
+            </table>
+         
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages">{noercms:$page}</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>  
+<include file="Public:footer"/>

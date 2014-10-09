@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>{noercms:$tpl.wxname}</title>
+        <base href="." />
+        <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+		<link href="./tpl/Wap/default/Index_/{noercms:$tpl.tpltypeid}/index_{noercms:$tpl.color_id}.css" rel="stylesheet" type="text/css" />
+		<link href={noercms::RES}/css/flash/css/plugmenu.css" rel="stylesheet" type="text/css" />
+    </head>
+
+<body>
+<div class="wrap">
+	<div class="show"><div><img src="./tpl/Wap/default/Index_/30/head.png" width="304" height="190"></div></div>
+    <div class="main">
+      	<ul>
+		<php>$ii=0;</php>
+		<volist name="info" id="vo">
+		<php> $ii++;</php>
+    		        	<li id="m<php>echo $ii;</php>">
+                        <a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{noercms:$vo.url}</if>">
+						<div>
+                       <span  class="icon" style="background:url({noercms:$vo.img}) 0 center no-repeat;background-size:50px 34px;"><em></em></span>
+                    <span class="title"> {noercms:$vo.name}</span> 
+                                   </div></a>
+            </li>
+               </volist>                
+                    </ul>
+  </div>
+</div>
+        <div id="insert2"></div>
+        <div style="display:none"> </div>
+
+<div class="plug-div">
+        <div class="plug-phone">
+            <div class="plug-menu themeStyle" style="background:{noercms:$homeInfo.plugmenucolor}"><span class="close"></span></div> 
+               <volist name="plugmenus" id="vo">
+                        <div class="themeStyle plug-btn plug-btn{noercms:$i} close" style="background:{noercms:$homeInfo.plugmenucolor}">
+							<a  href="{noercms:$vo.url}">
+								<span style="background-image: url({noercms::RES}/css/flash/images/img/{noercms:$vo.name}.png);" ></span>
+							</a>
+						</div>
+                      </volist>   
+<div class="plug-btn plug-btn5 close"></div>
+                    </div>
+</div>
+
+<script src="{noercms::RES}/allcss/zepto.min.js" type="text/javascript"></script>
+<script src="{noercms::RES}/css/flash/js/plugmenu.js" type="text/javascript"></script>
+<br /><br />
+<div class="copyright">
+{noercms:$homeInfo.copyright}
+</div> 
+<div style="display:none"> {noercms:$tpl.tongji|htmlspecialchars_decode}</div>
+    </body></html>

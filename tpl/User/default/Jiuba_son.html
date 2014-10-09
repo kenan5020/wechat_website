@@ -1,0 +1,68 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/default_user_com.css" media="all">
+ <div class="content"  >
+         <link rel="stylesheet" type="text/css" href="./tpl/User/default/common/css/cymain.css" />
+        <div class="tab">
+<ul>
+<li class="<if condition="ACTION_NAME EQ 'index'">current</if> tabli" id="tab0"><a href="{noercms::U('Jiuba/index',array('token'=>$token))}">经营主体介绍</a></li>
+<li class="<if condition="ACTION_NAME EQ 'son' ">current</if> tabli" id="tab2"><a href="{noercms::U('Jiuba/son',array('token'=>$token))}">酒吧</a></li>
+<li class="<if condition="ACTION_NAME EQ 'housetype' ">current</if> tabli" id="tab2"><a href="{noercms::U('Jiuba/housetype',array('token'=>$token))}">特色酒水</a></li>
+<li class="<if condition="ACTION_NAME EQ 'album' or ACTION_NAME EQ 'album_add'">current</if> tabli" id="tab5"><a href="{noercms::U('Jiuba/album',array('token'=>$token))}">酒吧相册</a></li>
+<li class="<if condition="ACTION_NAME EQ 'expert'">current</if> tabli" id="tab5"><a href="{noercms::U('Jiuba/expert',array('token'=>$token))}">会员印象</a></li>
+<li class="<if condition="ACTION_NAME EQ 'jiubaindex'">current</if> tabli" id="tab6"><a href="{noercms::U('Reservation/jiubaindex',array('token'=>$token))}">预约管理</a></li>
+</ul>
+</div>
+          <div class="cLine">
+    <div class="alert">
+    <p><span class="bold">使用方法：</span> 如果您的整体经营主体由多个酒吧项目组成，请在此添加，如果没有可以不添加。</p>
+    </div>
+</div>
+          <div class="cLine">
+            <div class="pageNavigator left">
+                <a href="{noercms::U('Jiuba/son_add',array('token'=>$token,'pid'=>$pid))}" class="btnGrayS vm bigbtn">
+                    <img src="tpl/User/default/common/images/pic.png" class="vm">添加酒吧
+                </a>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="msgWrap">
+          <form method="post" action="" id="info">
+          <input name="delall" type="hidden" value="del">
+           <input name="wxid" type="hidden" value="gh_423dwjkewad">
+            <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                                        <tr>
+                                            <th class="span4">酒吧名称</th>
+                                            <th class="span2">显示顺序</th>
+                                            <th class="span2">操作</th>
+                                        </tr>
+                                    </thead>
+               <tbody>
+                                    <if condition="$son_data eq ''">
+                                        <tr>
+                                        <td colspan="4" style="text-align:center; height:30px;"><strong>没有任何酒吧信息.</strong> 如果您的整体经营主体由多个酒吧项目组成，请在此添加，如果没有可以不添加。</td>
+                                        </tr>
+                                    <else/>
+                                    <volist name="son_data" id="list">
+                                        <tr>
+                                        <td style="">{noercms:$list['title']}</td>
+                                        <td style="">{noercms:$list['sort']}</td>
+                                        <td style="">
+                                        <a href="{noercms::U('Jiuba/son_add',array('id'=>$list['id'],'token'=>$list['token'],'pid'=>$pid))}" class="btn">编辑</a>
+                                        <a href="{noercms::U('Jiuba/son_del',array('id'=>$list['id'],'token'=>$list['token']))}" onclick="return(confirm('确定要删除吗？'))" class="btn">删除</a></a>
+</td>
+                                        </tr>
+                                    </volist>
+                                    </if>
+                                    </tbody>
+            </table>
+           </form> 
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages">{noercms:$page}</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>  
+<include file="Public:footer"/>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/weimob-ui-1-1.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/list-1.css" media="all" />
+<if condition="$menuid gt 0">
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/menu-2.css" media="all" />
+</if>
+<script type="text/javascript" src="{noercms::RES}/js/jquery.js"></script>
+<script type="text/javascript" src="{noercms::RES}/js/swipe.js"></script>
+<script type="text/javascript" src="{noercms::RES}/js/zepto.js"></script>
+<title>{noercms:$home['webname']}</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="keywords" content="{noercms::C('keyword')}" />
+<meta name="description" content="{noercms::C('content')}" />
+<!-- Mobile Devices Support @begin -->
+<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="0" http-equiv="expires">
+<meta content="telephone=no, address=no" name="format-detection">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- Mobile Devices Support @end -->
+<link rel="shortcut icon" href="/tpl/static/favicon.ico" />
+<style>
+img {
+	width:100%!important;
+}
+</style>
+<style type="text/css">
+/*pages*/
+#Page_wrapper .c-pnav-con {
+	text-align:center;
+	font-size:18px;
+}
+#Page_wrapper .c-pnav-con ul {
+	list-style:none;
+	display:inline-block;
+}
+#Page_wrapper .c-pnav-con ul li {
+	display:inline-block;
+	padding:5px 15px;
+}
+#Page_wrapper .c-pnav-con ul li:nth-child(2) {
+width:85px;
+}
+#Page_wrapper .c-pnav-con ul li:nth-child(3) {
+margin-left:-110px;
+}
+#Page_wrapper .c-pnav-con ul li:last-child {
+	margin-left:0;
+}
+#Page_wrapper .c-pnav-con .c-p-sec {
+	display:inline-block;
+	margin:20px auto;
+}
+#Page_wrapper .c-pnav-con .c-p-sec div {
+	display:inline-block;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-pre {
+	width:88px;
+	float:left;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-pre a {
+	display:inline-block;
+	width:70px;
+	height:30px;
+	line-height:30px;
+	background-image:-webkit-gradient(linear, left top, right bottom, from(#fefefe), to(#e8e8e8));
+	background-image:-webkit-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-moz-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-ms-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-o-linear-gradient(#fefefe, #e8e8e8);
+	background-image:linear-gradient(#fefefe, #e8e8e8);
+	border:1px #D5D5D5 solid;
+	overflow:hidden;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	border-left:0 #d5d5d5 solid;
+	border-right:1px #d5d5d5 solid;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-pre .c-p-p {
+	display:inline-block;
+	width:17px;
+	height:30px;
+	position:relative;
+	overflow:hidden;
+	vertical-align:top;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-pre .c-p-p em {
+	display:inline;
+	-webkit-transform:rotate(45deg);
+	background-image:-webkit-gradient(linear, left top, right bottom, from(#fefefe), to(#e8e8e8));
+	background-image:-webkit-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-moz-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-ms-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-o-linear-gradient(#fefefe, #e8e8e8);
+	background-image:linear-gradient(#fefefe, #e8e8e8);
+	position:absolute;
+	top:4px;
+	left:6px;
+	width:21px;
+	height:21px;
+	border:1px solid #ddd;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-next {
+	width:88px;
+	margin-left:5px;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-next a {
+	display:inline-block;
+	width:70px;
+	height:30px;
+	line-height:30px;
+	background-image:-webkit-gradient(linear, left top, right bottom, from(#fefefe), to(#e8e8e8));
+	background-image:-webkit-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-moz-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-ms-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-o-linear-gradient(#fefefe, #e8e8e8);
+	background-image:linear-gradient(#fefefe, #e8e8e8);
+	border:1px #D5D5D5 solid;
+	overflow:hidden;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	border-left:1px #d5d5d5 solid;
+	border-right:0 #d5d5d5 solid;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-next .c-p-p {
+	display:inline-block;
+	width:17px;
+	height:30px;
+	position:relative;
+	overflow:hidden;
+	vertical-align:top;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-next .c-p-p em {
+	display:inline;
+	-webkit-transform:rotate(45deg);
+	background-image:-webkit-gradient(linear, left top, right bottom, from(#fefefe), to(#e8e8e8));
+	background-image:-webkit-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-moz-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-ms-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-o-linear-gradient(#fefefe, #e8e8e8);
+	background-image:linear-gradient(#fefefe, #e8e8e8);
+	position:absolute;
+	top:4px;
+	left:-12px;
+	width:21px;
+	height:21px;
+	border:1px solid #ddd;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-cur {
+	position:relative;
+	height:30px;
+	vertical-align:baseline;
+	text-align:center;
+	margin-left:5px;
+	float:left;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-cur .c-p-arrow {
+	display:inline-block;
+	width:88px;
+	line-height:30px;
+	border:1px solid #ddd;
+	background-image:-webkit-gradient(linear, left top, right bottom, from(#fefefe), to(#e8e8e8));
+	background-image:-webkit-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-moz-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-ms-linear-gradient(#fefefe, #e8e8e8);
+	background-image:-o-linear-gradient(#fefefe, #e8e8e8);
+	background-image:linear-gradient(#fefefe, #e8e8e8);
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-cur .c-p-arrow span:first-child {
+	margin-right:5px;
+	width:50px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-cur .c-p-down span:last-child {
+	display:inline-block;
+	font-size:0;
+	border-top:3px solid #666;
+	border-left:3px solid #666;
+	width:6px;
+	height:6px;
+	background-color:transparent;
+	-webkit-transform:rotate(225deg);
+	margin-bottom:3px;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-cur .c-p-up span:last-child {
+	display:inline-block;
+	font-size:0;
+	border-top:3px solid #666;
+	border-left:3px solid #666;
+	width:6px;
+	height:6px;
+	background-color:transparent;
+	-webkit-transform:rotate(45deg);
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-grey {
+	display:inline-block;
+	float:left;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-grey a {
+	color:#999;
+}
+#Page_wrapper .c-pnav-con .c-p-sec .c-p-select {
+	position:absolute;
+	top:0;
+	left:0;
+	height:30px;
+	width:90px;
+	opacity:0;
+}
+</style>
+</head>
+<body onselectstart="return true;" ondragstart="return false;">
+<link rel="stylesheet" type="text/css" href="../../img/font-awesome.css?v=2013121903" media="all" />
+<div class="weimob-page">
+  <div class="top_bar">
+    <nav>
+      <ul class="top_menu">
+        <li onClick="window.history.go(-1);"><span class="icon-chevron-sign-left"></span></li>
+        <li onClick="location.href='{noercms::U('Index/index',array('token'=>$tpl['token']))}'"><span class="icon-home"></span></li>
+        <li><a href="tel:<if condition="$homeInfo.dianhua neq false">{noercms:$homeInfo.dianhua}
+          <else/>
+          没有留电话
+          </if>
+          "><span class="icon-phone"></span></a></li>
+         <li onClick="$('#menu_font').toggleClass('hidden');"> <span class="icon-list-ul"></span>
+          <ul id="menu_font" class="menu_font hidden" onClick="$('#menu_font').toggleClass('hidden');">
+            <volist name="info" id="vo">
+              <li> <a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}
+                <else/>
+                {noercms:$vo.url|htmlspecialchars_decode}
+                </if>
+                " class="{noercms:$vo.icon}">
+                {noercms:$vo.name} </a> </li>
+            </volist>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="weimob-content">
+    <div class="weimob-list">
+      <div align="center" >{noercms:$notice}</div>
+      <volist name="res" id="so">
+        <if condition="$so['url']">
+        <a class="weimob-list-item" href="{noercms:$so.url}">
+        <else />
+        <a class="weimob-list-item" href="{noercms::U('Index/content',array('id'=>$so['id'],'token'=>$so['token'],'wecha_id'=>$wecha_id,'noercms'=>'mp.weixin.qq.com'))}">
+        </if>
+        <div class="weimob-list-item-line">
+          <div class="weimob-list-item-title">{noercms:$so.title}</div>
+        </div>
+        <div class="weimob-list-item-icon-two icon-arrow-r" style="display:none;"></div>
+        </a> </volist>
+    </div>
+  </div>
+<section id="Page_wrapper">
+<div id="pNavDemo" class="c-pnav-con">
+<section class="c-p-sec">
+<div class='c-p-pre <eq name="p" value="1"> c-p-grey </eq> '><a <eq name="p" value="1"><else/>href="{noercms::C('site_url')}/index.php?g=Wap&m=Index&a=lists&classid=<php>echo $_GET['classid'];</php>&token={noercms:$tpl.token}&p=<php>echo $p-1;</php>"</eq>  >上一页</a></div>
+<div class="c-p-cur">
+<div class="c-p-arrow c-p-down"><span>{noercms:$p}/{noercms:$page}</span><span></span></div>
+	<select class="c-p-select" onchange="dourl('{noercms::C('site_url')}/index.php?g=Wap&m=Index&a=lists&classid=<php>echo $_GET['classid'];</php>&token={noercms:$tpl.token}&p='+this.value)">
+		<?php
+			for($i=1;$i<=$page;$i++){
+				if($i==$p){
+					echo '<option value="'.$i.'" selected>第'.$i.'页</option>';
+				}else{
+					echo '<option value="'.$i.'">第'.$i.'页</option>';
+				}
+			}
+		?>
+	</select>
+</div>
+<div class='c-p-next <eq name="p" value="$page"> c-p-grey </eq>'  >
+<?php
+	if($p<$page){
+		echo '<a href="'.C('site_url').'/index.php?g=Wap&m=Index&a=lists&classid='.(int)$_GET['classid'].'&token='.$tpl['token'].'&p='.($p+1).'">';
+	}else{
+		echo '<a>';
+	}
+?>
+下一页</a></div>
+</section>
+</div>
+</section>
+</div>
+<include file="Public:footer"/>
+</body>
+</html>

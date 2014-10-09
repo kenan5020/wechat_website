@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/146/css/snower.css?2013-12-09-1" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/146/css/common.css?2013-12-09-1" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/146/css/reset.css?2013-12-09-1" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/146/css/home-16.css?2013-12-09-1" media="all" />
+<script type="text/javascript" src="{noercms::RES}/css/146/js/maivl.js?2013-12-09-1"></script>
+<script type="text/javascript" src="{noercms::RES}/css/146/js/jquery.js?2013-12-09-1"></script>
+<script type="text/javascript" src="{noercms::RES}/css/146/js/swipe.js?2013-12-09-1"></script>
+<script type="text/javascript" src="{noercms::RES}/css/146/js/zepto.js?2013-12-09-1"></script>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/reset.css?2013-9-13-2" media="all" />
+<title>{noercms:$tpl.wxname}</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<!-- Mobile Devices Support @begin -->
+<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="0" http-equiv="expires">
+<meta content="telephone=no, address=no" name="format-detection">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- Mobile Devices Support @end -->
+</head>
+<body onselectstart="return true;" ondragstart="return false;">
+<if condition="$homeInfo['play_audio'] eq 'on'">
+<if condition="$homeInfo['bg_audio'] neq ''">
+<include file="Index:music"/>
+</if>
+</if>
+<link rel="stylesheet" type="text/css" href="../../img/font-awesome.css?v=2013121115" media="all" />
+<div class="body" <if condition="$homeInfo.radiogroup gt 0">style="padding-bottom:60px;"</if>>
+<!--
+	幻灯片管理
+	-->
+<div style="-webkit-transform:translate3d(0,0,0);">
+  <div id="banner_box" class="box_swipe">
+    <ul>
+      <volist name="flash" id="so">
+        <li> <a onClick="return false;"> <img src="{noercms:$so.img}" alt="{noercms:$so.info}" style="width:100%;" /> </a> </li>
+      </volist>
+    </ul>
+    <ol>
+      <li class="on"></li>
+      <li ></li>
+      <li ></li>
+      <li ></li>
+    </ol>
+  </div>
+</div>
+<script>
+		$(function(){
+			new Swipe(document.getElementById('banner_box'), {
+				speed:500,
+				auto:3000,
+				callback: function(){
+					var lis = $(this.element).next("ol").children();
+					lis.removeClass("on").eq(this.index).addClass("on");
+				}
+			});
+		});
+	</script>
+<header>
+  <div class="snower">
+    <script type="text/javascript"></script>
+    <script type="text/javascript" src="{noercms::RES}/css/146/js/snower.js"></script>
+  </div>
+</header>
+<!--
+		用户分类管理
+		-->
+<section>
+  <ul class="list_font">
+    <volist name="info" id="vo">
+      <li> <a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}
+        <else/>
+        {noercms:$vo.url|htmlspecialchars_decode}
+        </if>
+        ">
+        <div><span class="{noercms:$vo.icon}"></span></div>
+        <div>
+          <p>{noercms:$vo.name}</p>
+        </div>
+        </a> </li>
+    </volist>
+  </ul>
+</section>
+<div class="copyright" style="text-align:center;padding:10px 0; color:#fff;">
+<if condition="$iscopyright eq 1">
+{noercms:$homeInfo.copyright}
+<else/>
+{noercms:$siteCopyright}
+</if>
+</div>
+</div>
+<include file="Index:styleInclude"/>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<include file="Public:head"/>
+<div class="content"  >
+          <div class="cLineB"><h4>邮件平台</h4>请使用163邮箱，需要开启IMAP/SMTP服务，<a href="/img/images/email-help.jpg" target="_blank">开启帮助点我</a></div>
+          <form method="post" action="{noercms::U('User/Index/upsave')}" enctype="multipart/form-data">
+          <input type="hidden" name="id" value="{noercms:$info.id}">
+          <div class="msgWrap">
+            <table class="userinfoArea" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+			    <tr>
+                  <th><span class="red">*</span>邮件地址：</th>
+                  <td><input type="text" required="" class="px" name="email" value="{noercms:$info.email}" tabindex="1" size="25">
+                  <span class="red">商家邮箱用于接收邮件</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th><span class="red">*</span>SMTP账号：</th>
+                  <td><input type="text" required="" class="px" name="emailuser" value="{noercms:$info.emailuser}" tabindex="1" size="25">
+                  <span class="red">请填写您的163账号, 比如：xxxxxx</span>
+                  </td>
+                </tr>
+				<tr>
+                  <th><span class="red">*</span>SMTP密码：</th>
+                  <td><input type="text" required="" class="px" name="emailpassword" value="{noercms:$info.emailpassword}" tabindex="1" size="25">
+                  <span class="red">请填写您的163邮箱密码</span>请放心填写，此密码只有您自己看见</span>
+                  </td>
+                </tr>
+				<tr>
+                  <th><span class="red">*</span>邮件平台状态：</th>
+                  <td><input type="radio" value="1" name="emailstatus" <if condition="$info['emailstatus'] eq '1'">checked="checked"</if> />开启 <input type="radio" value="0" <if condition="$info['emailstatus'] eq '0'">checked="checked"</if> name="emailstatus"/>关闭
+                  </td>
+                </tr>
+				<div>
+				<input type="hidden" required="" class="px" name="wxname" value="{noercms:$info.wxname}" tabindex="1" size="25">
+				<input type="hidden" required=""  name="wxid" value="{noercms:$info.wxid}" class="px" tabindex="1" size="25" >
+				<input type="hidden" required="" name="weixin" value="{noercms:$info.weixin}" class="px" tabindex="1" size="25">
+				<input type="hidden" class="px" name="headerpic" value="{noercms:$info.headerpic}" size="60">
+				<input type="hidden" name="token" value="{noercms:$info.token}" class="px" tabindex="1" size="40">
+				<input type="hidden" class="px" id="province" value="{noercms:$info.province}" name="province" tabindex="1" size="20">
+				<input id="city" value="{noercms:$info.city}" type="hidden" name="city" class="px" tabindex="1" size="20">
+				<input type="hidden" required="" class="px" tabindex="1" value="{noercms:$info.qq}" name="qq" size="25">
+				<input type="hidden" required="" name="wxfans" value="{noercms:$info.wxfans}" class="px" tabindex="1" size="25">
+				<input type="hidden" required="" name="type" value="{noercms:$info.typeid}" class="px" tabindex="1" size="25">
+				</div>
+              </thead>
+                <tr>
+                  <td><button type="submit" class="btnGreen" id="saveSetting">保存</button></td>
+                </tr>
+            </table>
+          </div>
+          </form>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+  <!--底部-->
+  	</div>
+<include file="Public:footer"/>	

@@ -1,0 +1,154 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{noercms:$tpl['wxname']}</title>
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<LINK rel=stylesheet type=text/css href="{noercms::RES}/css/allcss/w56.css">
+ <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/snower.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/reset.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/home-32.css" media="all" />
+<script type="text/javascript" src="{noercms::RES}/src/template/maivl.js"></script>
+<script type="text/javascript" src="{noercms::RES}/src/jquery.js"></script>
+<SCRIPT type=text/javascript src="{noercms::RES}/js/v12/jquery-1.7.2.min.js"></SCRIPT>
+<SCRIPT type=text/javascript src="{noercms::RES}/js/v12/rotate.js"></SCRIPT>
+<SCRIPT type=text/javascript src="{noercms::RES}/js/v12/jquery.transform.js"></SCRIPT>
+<SCRIPT type=text/javascript src="{noercms::RES}/css/allcss/iscroll.js"></SCRIPT>
+<script type="text/javascript">
+            var myScroll;
+            function loaded() {
+                myScroll = new iScroll('wrapper', {
+                    snap: true,
+                    momentum: false,
+                    hScrollbar: false,
+                    onScrollEnd: function () {
+                        document.querySelector('#indicator > li.active').className = '';
+                        document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
+                    }
+                }); 
+            }
+            document.addEventListener('DOMContentLoaded', loaded, false);
+        </script>
+<META name=GENERATOR content="MSHTML 9.00.8112.16446"></HEAD>
+<BODY id=cate10>
+<DIV class=banner>
+<DIV style="OVERFLOW: hidden" id=wrapper>
+<DIV id=scroller>
+<UL id=thelist>
+<volist name="flash" id="so">
+<LI><P></P><IMG src="{noercms:$so.img}"></LI>
+</volist>  
+  </UL>
+  </DIV>
+</DIV>
+<!--播放器开始-->	
+				<script type="text/javascript" src="{noercms::RES}/js/heka/audio.js"></script>
+				<script>
+			window.addEventListener("DOMContentLoaded", function(){
+				playbox.init("playbox");
+			}, false);
+		</script>
+				<if condition="$homeInfo.musicurl neq false"><span id="playbox" class="btn_music" onClick="playbox.init(this).play();"><audio src="{noercms:$homeInfo.musicurl}" loop id="audio"></audio></span><else/></if>	
+        		<!--播放器结束-->
+<DIV id=nav>
+<DIV id=prev onClick="myScroll.scrollToPage('prev', 0,400,2);return false">← prev </DIV>
+<UL id=indicator>
+<volist name="flash" id="so">
+<LI>{noercms:$i}</LI>  
+</volist>	
+	</UL>
+<DIV id=next onClick="myScroll.scrollToPage('next', 0);return false">next → </DIV>
+</DIV>
+<DIV class=clr></DIV></DIV>
+<UL class=cateul>
+<volist name="info" id="vo">
+	<LI class=li1><A href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{noercms:$vo.url}</if>">
+  <DIV class=menubtn>
+  <DIV class=menuimg><IMG src="{noercms:$vo.img}"> 
+  </DIV>
+  <DIV class=menutitle>{noercms:$vo.name}</DIV></DIV></A></LI>
+</volist>
+  </UL>  
+  <div class="clr"></div>
+<script>
+            var count = document.getElementById("thelist").getElementsByTagName("img").length;	
+            for(i=0;i<count;i++){
+                document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+            }
+            document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+            setInterval(function(){
+                myScroll.scrollToPage('next', 0,400,count);
+            },3500 );
+            window.onresize = function(){ 
+                for(i=0;i<count;i++){
+                    document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+                }
+                document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+            } 
+</script>
+<!--
+分享前控制
+-->
+	<script type="text/javascript">
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+			window.shareData = {
+				"imgUrl": "<if condition="$homeInfo.picurl neq false">{noercms:$homeInfo.picurl}<else/>
+{noercms::RES}/images/themes/huifu.jpg</if>",
+				"timeLineLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"sendFriendLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"weiboLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"tTitle": "{noercms:$homeInfo.title}",
+				"tContent": "{noercms:$homeInfo.info}",
+				"fTitle": "{noercms:$homeInfo.title}",
+				"fContent": "{noercms:$homeInfo.info}",
+				"wContent": "{noercms:$homeInfo.info}"
+			};
+			// 发送给好友
+			WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+				WeixinJSBridge.invoke('sendAppMessage', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.sendFriendLink,
+					"desc": window.shareData.fContent,
+					"title": window.shareData.fTitle
+				}, function (res) {
+					_report('send_msg', res.err_msg);
+				})
+			});
+			// 分享到朋友圈
+			WeixinJSBridge.on('menu:share:timeline', function (argv) {
+				WeixinJSBridge.invoke('shareTimeline', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.timeLineLink,
+					"desc": window.shareData.tContent,
+					"title": window.shareData.tTitle
+				}, function (res) {
+					_report('timeline', res.err_msg);
+				});
+			});
+			// 分享到微博
+			WeixinJSBridge.on('menu:share:weibo', function (argv) {
+				WeixinJSBridge.invoke('shareWeibo', {
+					"content": window.shareData.wContent,
+					"url": window.shareData.weiboLink
+				}, function (res) {
+					_report('weibo', res.err_msg);
+				});
+			});
+		}, false)
+	</script>
+<div class="copyright" style="text-align:center; >
+<if condition="$iscopyright eq 1">
+{noercms:$homeInfo.copyright}
+<else/>
+{noercms:$siteCopyright}
+</if>
+</div>
+    <include file="Index:styleInclude"/>
+</BODY>
+</HTML>

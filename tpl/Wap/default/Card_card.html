@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{noercms:$thisCard.cardname}</title>
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="{noercms::RES}/card/style/style.css" rel="stylesheet" type="text/css">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js" type="text/javascript"></script>
+</head>
+<if condition="$error lt 0">
+<body id="cardunion" class="mode_webapp2">
+<else/>
+<body id="card" class="mode_webapp">
+</if>
+<if condition="$error lt 0">
+<div class="error" style="margin:50px auto 20px auto;text-align:center"><img src="{noercms::RES}/card/images/error.jpg" /></div>
+<div style="font-size:14px;text-align:center"><php>if($error==-1){</php>会员卡暂时缺货<php>}elseif($error==-2){</php>您的积分不够<php>}elseif($error==-3){</php>领取此会员卡需要{noercms:$thisCard.miniscore}积分，而您只有{noercms:$userScore}积分<php>}elseif($error==-4){</php>还没领取会员卡，现正在跳转<php>}</php></div>
+<include file="Card:bottom"/>
+<else/>
+<div id="overlay"></div>
+<div class="cardcenter">
+<div class="card"><img src="<?php if($thisCard['diybg']!=''){?>{noercms:$thisCard.diybg}<?php }else{?>{noercms:$thisCard.bg}<?php }?>" class="cardbg" />
+<if condition="$card.logo"><img id="cardlogo" class="logo" src="{noercms:$thisCard.logo}"></if>
+<h1 style="color:{noercms:$card.vipnamecolor}">{noercms:$thisCard.cardname}</h1>
+<strong class="pdo verify" style="color:{noercms:$card.numbercolor}"><span id="cdnb" ><em>会员卡号</em>{noercms:$thisMember.number}</span></strong> </div>
+<p class="explain"><span>{noercms:$thisCard.msg}</span></p>
+<div class="window" id="windowcenter">
+<div id="title" class="wtitle">领卡信息<span class="close" id="alertclose"></span></div>
+<div class="content">
+<div id="txt"></div>
+<p>
+<input name="truename" value=""  class="px" id="truename"  type="text" placeholder="请输入您的姓名">
+</p>
+<p>
+<input name="tel"  class="px" id="tel"  value=""  type="number"  placeholder="请输入您的电话">
+</p>
+<input type="button" value="确 定" name="确 定" class="txtbtn" id="windowclosebutton">
+</div>
+</div>
+</div>
+<div class="cardexplain" >
+    <div class="jifen-box">
+<ul class="zongjifen">
+<li><a href="/index.php?g=Wap&m=Card&a=expense&token={noercms:$token}&wecha_id={noercms:$wecha_id}&cardid={noercms:$card.id}">
+<div class="fengexian">
+<p>消费记录</p>
+<span>{noercms:$userInfo['expensetotal']}元</span></div>
+</a></li>
+<li><a href="/index.php?g=Wap&m=Card&a=signscore&token={noercms:$token}&wecha_id={noercms:$wecha_id}&cardid={noercms:$card.id}">
+<div class="fengexian">
+<p>剩余积分</p>
+<span>{noercms:$userScore}分</span></div>
+</a></li>
+<li><a href="/index.php?g=Wap&m=Card&a=signscore&token={noercms:$token}&wecha_id={noercms:$wecha_id}&cardid={noercms:$card.id}">
+<p>签到积分</p>
+<span>{noercms:$userInfo['sign_score']}分</span></a></li>
+</ul>
+<div class="clr"></div>
+</div>
+<ul class="round" id="notice">
+<li><a href="/index.php?g=Wap&m=Card&a=notice&token={noercms:$token}&wecha_id={noercms:$wecha_id}&cardid={noercms:$card.id}"><span>最新通知<?php if ($noticeCount>0){echo '<em class="ok">'.$noticeCount.'</em>';}else{echo '<em class="error">0</em>';}?></span></a></li>
+<li><a href="/index.php?g=Wap&m=Card&a=previlege&token={noercms:$token}&wecha_id={noercms:$wecha_id}&cardid={noercms:$card.id}"><span>会员卡特权<?php if ($previlegeCount>0){echo '<em class="ok">'.$previlegeCount.'</em>';}else{echo '<em class="error">0</em>';}?></span></a></li>          	<li><a href="/index.php?g=Wap&m=Card&a=integral&token={noercms:$token}&wecha_id={noercms:$wecha_id}&cardid={noercms:$card.id}"><span>积分换礼品<?php if ($integralCount>0){echo '<em class="ok">'.$integralCount.'</em>';}else{echo '<em class="error">0</em>';}?></span></a></li>
+<li><a href="/index.php?g=Wap&m=Card&a=coupon&token={noercms:$token}&wecha_id={noercms:$wecha_id}&cardid={noercms:$card.id}"><span>会员优惠券<?php if ($couponCount>0){echo '<em class="ok">'.$couponCount.'</em>';}else{echo '<em class="error">0</em>';}?></span></a></li>
+</ul>
+<ul class="round"  id="powerandgift"  >
+<li><a href="/index.php?g=Wap&m=Card&a=signscore&token={noercms:$token}&wecha_id={noercms:$wecha_id}&cardid={noercms:$card.id}"><span>签到赚积分<?php if ($todaySigned){echo '<em class="ok">今日已签到</em>';}else{echo '<em class="error">今日未签到</em>';}?></span></a></li>
+<li><a href="{noercms::U('Userinfo/index',array('token'=>$_GET['token'],'cardid'=>$_GET['cardid'],'wecha_id'=>$_GET['wecha_id']))}"><span>个人资料</span></a></li>
+</ul>
+<ul class="round">
+<li><a href="/index.php?g=Wap&m=Card&a=cardIntro&token={noercms:$token}&wecha_id={noercms:$wecha_id}&cardid={noercms:$card.id}"><span>会员卡说明</span></a></li>
+<li><a href="/index.php?g=Wap&m=Card&a=companyDetail&token={noercms:$token}&wecha_id={noercms:$wecha_id}"><span>商家电话及地址</span></a></li>
+</ul>
+      </div>
+<include file="Card:cardFooter"/>
+<script type="text/javascript">
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+WeixinJSBridge.call('hideToolbar');
+});
+</script>
+</if>
+</body>
+</html>

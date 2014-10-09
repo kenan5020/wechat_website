@@ -1,0 +1,91 @@
+<include file="Public:head"/> 
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<div class="content"  >
+<div class="cLineB">
+<h4 class="left"><span style="font-size:18px; text-align:inherit; color:#666">{noercms:$diaoyan.title} </span> 的题目列表 -- 参与人数 <span style="font-size:18px; text-align:inherit; color:#666">{noercms:$count}</span> 人 </h4>
+<div class="searchbar right">
+<form method="post" action="">
+</form>
+</div>
+<div class="clr"></div>
+</div>
+<div class="cLine">
+<div class="clr"></div>
+ <a href="{noercms::U('Diaoyan/index',array('token'=>$token))}" class="right  btnGreen" style="margin-top:0">返回</a> 
+</div>
+<div class="msgWrap">
+	<form method="post" action="" id="info">
+	<input name="delall" type="hidden" value="">
+	<input name="wxid" type="hidden" value="">
+	<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+		<volist name="timu" id="item"> 
+			<thead>
+				<tr>
+					<th width="100">{noercms:$item.title}</th>
+					<th width="100">选项票数</th>
+				</tr>
+			</thead>
+			<tbody>
+				<php>
+					if($item['optia'] != ''){
+				</php>
+					<tr>
+						<td>{noercms:$item.optia}</td>
+						<td>{noercms:$item.perca}</td>
+					</tr>
+				<php>
+					}
+				</php>
+				<php>
+					if($item['optib'] != ''){
+				</php>
+					<tr>
+						<td>{noercms:$item.optib}</td>
+						<td>{noercms:$item.percb}</td>
+					</tr>
+				<php>
+					}
+				</php>
+				<php>
+					if($item['optic'] != ''){
+				</php>
+					<tr>
+						<td>{noercms:$item.optic}</td>
+						<td>{noercms:$item.percc}</td>
+					</tr>
+				<php>
+					}
+				</php>
+				<php>
+					if($item['optid'] != ''){
+				</php>
+					<tr>
+						<td>{noercms:$item.optid}</td>
+						<td>{noercms:$item.percd}</td>
+					</tr>
+				<php>
+					}
+				</php>
+				<php>
+					if($item['optie'] != ''){
+				</php>
+					<tr>
+						<td>{noercms:$item.optie}</td>
+						<td>{noercms:$item.perce}</td>
+					</tr>
+				<php>
+					}
+				</php>
+			</tbody>
+		</volist>
+	</table>
+	</form>
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{noercms:$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

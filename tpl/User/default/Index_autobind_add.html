@@ -1,0 +1,43 @@
+<include file="Index:header"/>
+<div class="content">
+<!--tab start-->
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />  
+<div class="tab">
+<ul>
+<li class='<if condition="(ACTION_NAME eq \'autobind_add\')">current </if> tabli' id="tab5"><a href="{noercms::U('Index/autobind_add')}">一键绑定</a></li>
+<li class='<if condition="(ACTION_NAME eq \'add\')">current </if> tabli' id="tab5"><a href="{noercms::U('Index/add')}">手动绑定</a></li>
+</ul>
+</div>
+<!--tab end-->
+          <div class="cLineB" style="margin-left:300px;"><h4>添加微信公众号</h4></div>
+          <div class="msgWrap">
+            <table class="userinfoArea" border="0" cellspacing="0" cellpadding="0" width="600px;" style="margin-left:300px;">
+              <thead>
+	            <form method="post"  enctype="multipart/form-data">
+                 <tr>
+				  <th><span class="red">*</span>微信公众帐号</th>
+                  <td><input type="text" name="username" value="" class="px" tabindex="1" size="40"></td>
+                 </tr>
+                <tr>
+                  <th><span class="red">*</span>微信公众帐号密码：</th>
+                  <td><input type="password" required="" class="px" tabindex="1" value="" name="password" size="25"></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>绑定大概要5秒钟时间，别急</td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td><button type="submit" class="btnGreen" id="saveSetting">一键绑定</button></td>
+                </tr></form>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+  <!--底部-->
+  	</div>
+<include file="Public:footer"/>	

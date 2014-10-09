@@ -1,0 +1,115 @@
+<include file="Public:head"/>
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{noercms::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<script src="{noercms::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{noercms::STATICS}/artDialog/plugins/iframeTools.js"></script>
+<div class="content">
+<script>
+var editor;
+KindEditor.ready(function(K) {
+editor = K.create('#info', {
+resizeType : 1,
+allowPreviewEmoticons : false,
+allowImageUpload : true,
+uploadJson : '/index.php?g=User&m=Upyun&a=kindedtiropic',
+items : [
+'source','undo','plainpaste','wordpaste','clearhtml','quickformat','selectall','fullscreen','fontname', 'fontsize','subscript','superscript','indent','outdent','|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline','hr']
+});
+});
+</script>
+<div class="content" style="width:95%; background:none; margin-left:25px; border:none; margin-bottom:30px; margin-top:30px;" >
+  <div class="cLineB">
+    <div  class="quick-actions_homepage">
+    <ul class="quick-actions">
+    <li class="bg_ls"> <a href="{noercms::U('Car/index',array('token'=>$token))}"> <i class="icon-truck"></i> 微汽车 </a> </li>
+      <li class="bg_lb"> <a href="{noercms::U('Product/orders',array('token'=>$token,'dining'=>1))}"> <i class="icon-glass"></i> 微餐饮 </a> </li>
+      <li class="bg_dy"> <a href="{noercms::U('Estate/index',array('token'=>$token))}"> <i class="icon-star"></i> 微房产</a> </li>
+      <li class="bg_lg"> <a href="{noercms::U('Jiudian/index',array('token'=>$token))}"> <i class="icon-plus"></i> 微酒店</a> </li>
+      <li class="bg_ly"> <a href="{noercms::U('Yiliao/index',array('token'=>$token))}"> <i class="icon-tag"></i> 微医疗 </a> </li>
+      <li class="bg_lo"> <a href="{noercms::U('Reservation/index',array('token'=>$token))}"> <i class="icon-map-marker"></i> 微预约 </a> </li>
+      <li class="bg_db"> <a href="javascript:history.go(-1);"> <i class="icon-share-alt"></i> 返回</a> </li>
+    </ul>
+  </div>
+  <h4>添加车系</h4>
+  <include file="Car:menu"/>
+  <a href="javascript:history.go(-1);return false;" class="right btnGrayS vm" style="margin-top:-27px">返回</a>
+ </div>
+ <!--tab start-->
+<!--tab end-->
+    <div class="msgWrap bgfc" style="margin-top:10px;">
+      <form class="form" method="post" action="" target="_top" enctype="multipart/form-data">
+  <if condition="$series['id'] neq ''">
+         <input type="hidden" name="id" id="id" value="{noercms:$series['id']}"/>
+ </if>
+        <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+                <tr>
+                    <th width="120">品牌：</th>
+                    <td> 
+                         <select class="input-medium" name="brand">
+                         <volist name="brands" id="vo">
+                             <option value="{noercms:$vo['id']}@{noercms:$vo['name']}" <if condition="$vo[id] eq $bid"> selected="selected" </if> >{noercms:$vo['name']}</option>
+                            </volist>
+                        </select>
+                    </td>
+                </tr>
+               <tr>
+                    <th>车系名称：</th>
+                    <td>
+                        <input type="text" name="name" id="name" class="input-medium px" data-rule-required="true" data-rule-maxlength="20" value="{noercms:$series['name']}"/>
+                        <span class="maroon">*</span>
+                        <span class="help-inline">请添加车系的完整名称，如“奔驰A级”</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="120">车系简称：</th>
+                    <td>
+                      <input type="text" name="shortname" id="shortname" class="px" data-rule-required="true" data-rule-maxlength="4" value="{noercms:$series['shortname']}"/>
+                      <span class="maroon">*</span>
+                      <span class="help-inline">请添加车系的简称,如“A级”；手机端显示的是车系简称</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="120">图片：</th>
+                    <td> 
+                        <div class="controls">
+                                        <img class="thumb_img" id="picture_src" src="{noercms:$series['picture']|default='tpl/User/default/common/car/lanbo8.jpg'}" style="max-height: 100px;" />
+                                        <input type="text" class="px" id="picture" name="picture" value="{noercms:$series['picture']|default='tpl/User/default/common/car/lanbo8.jpg'}" />
+                                        <span class="maroon">*</span>
+                                        <span class="help-inline">
+                                            <script src="{noercms::STATICS}/upyun.js"></script><a href="###" onclick="upyunPicUpload('picture',640,180,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('picture')">预览</a>
+                                        </span>
+                                        <span class="help-inline">建议图片尺寸640*180，图片大小不超过300K</span>
+                                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>显示顺序：</th>
+                    <td> 
+                    <input type="text" id="sort" name="sort" value="{noercms:$series['sort']|default=1}" class="px" data-rule-required="true" data-rule-number="true" /><span class="maroon">*</span>
+                        <span class="help-inline">数字越大越靠前</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="120">车系亮点：</th>
+                    <td>  
+ <textarea name="info" style="width:605px;height:120px"  placeholder="请用简短的文字描述该车系的亮点所在,不超过200字"  id="info"  data-rule-maxlength="200">{noercms:$series['info']}</textarea>
+                    </td>
+                </tr>
+                <th>&nbsp;</th>
+                    <td>
+                        <input type="hidden" name="token" value="{noercms:$token}" />
+                        <button type="submit" name="button" class="btn btn-success">保存</button>
+                        <a href="javascript:history.go(-1);" class="btn btn-danger">取消</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+  </div> 
+        </div>
+<include file="Public:footer"/>

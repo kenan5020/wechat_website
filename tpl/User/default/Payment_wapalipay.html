@@ -1,0 +1,48 @@
+﻿<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<div class="content"  >
+<div class="cLineB">
+<h4>支付接口配置</h4>
+</div>
+<!--tab start-->
+<div class="tab">
+<ul>
+<li class='tabli' id="tab1"><a href="{noercms::U('Payment/index')}">微信支付</a></li>
+<li class='tabli current' id="tab2"><a href="{noercms::U('Payment/wapalipay')}">手机支付宝</a></li>
+</ul>
+</div>
+<!--tab end-->        
+<div class="msgWrap bgfc" style="margin-top:10px;">
+<form class="form" method="post" action="" target="_top" enctype="multipart/form-data">
+<table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th>支付开关：</th>
+<td><select name="enabled" id="enabled">
+<option value="0" <if condition="$payset.enabled eq 0">selected</if>>关闭支付</option>
+<option value="1" <if condition="$payset.enabled eq 1">selected</if>>开启支付</option>
+</select> 开启支付后，商城等b2c功能将有支付功能</td>
+</tr>
+<tr>
+<th width="120">支付宝帐号：</th>
+<td><input type="text" name="account" value="{noercms:$pay_config.account}" class="px" style="width:350px;"> <span class="red">*</span></td>
+</tr>
+<tr>
+<th width="120">支付宝PID：</th>
+<td><input type="text" name="pid" value="{noercms:$pay_config.pid}" class="px" style="width:350px;"> <span class="red">*</span></td>
+</tr>
+<tr>
+<th>支付宝KEY：</th>
+<td><input type="text" name="key" value="{noercms:$pay_config.key}" class="px" style="width:350px;"> <span class="red">*</span></td>
+</tr>
+<tr><th>&nbsp;</th>
+<td>
+<button type="submit" name="button" class="btnGreen">保存</button>
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+</div> 
+</div>
+<include file="Public:footer"/>

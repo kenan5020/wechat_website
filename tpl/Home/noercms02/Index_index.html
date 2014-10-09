@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{noercms::C('site_name')}-微信营销公众平台-微网站,微信公众平台,微信机器人,微信自动回复, 多用户微信营销系统</title>
+<link href="{noercms::RES}/css/common.css" type="text/css" rel="stylesheet" />
+<link href="{noercms::RES}/css/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{noercms::RES}//js/jquery.min.js"></script>
+<script type="text/javascript" src="{noercms::RES}/js/jquery.SuperSlide.2.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.fn.imgVAlign=function(){
+				return $(this).each(function(i){
+					//获取图片的src值，并定义给变量bg
+					var bg = $(this).attr("src");
+					//给图片的父元素定义背景图片的样式，并且背景图片
+					$(this).parent().parent().parent().css({"background": "url("+ bg +") no-repeat top center"
+					});
+					//将图片隐藏
+					$(this).css("display","none");
+				});
+			}
+			//调用上面写的插件
+			$(document).ready(function(){
+				$(".slideCon img").imgVAlign();
+	});		
+	
+})
+</script>
+<!--[if IE 6]>
+<script src="{noercms::RES}/js/PNG.js"></script>
+<script>
+  DD_belatedPNG.fix('.logo a');
+</script>
+<![endif]-->
+<script language="javascript">
+<!--
+//图片滚动列表
+var Speed_1 = 1; //速度(毫秒)
+var Space_1 = 20; //每次移动(px)
+var PageWidth_1 = 217 * 4; //翻页宽度
+var interval_1 = 7000; //翻页间隔
+var fill_1 = 0; //整体移位
+var MoveLock_1 = false;
+var MoveTimeObj_1;
+var MoveWay_1="right";
+var Comp_1 = 0;
+var AutoPlayObj_1=null;
+function GetObj(objName){if(document.getElementById){return eval('document.getElementById("'+objName+'")')}else{return eval('document.all.'+objName)}}
+function AutoPlay_1(){clearInterval(AutoPlayObj_1);AutoPlayObj_1=setInterval('ISL_GoDown_1();ISL_StopDown_1();',interval_1)}
+function ISL_GoUp_1(){if(MoveLock_1)return;clearInterval(AutoPlayObj_1);MoveLock_1=true;MoveWay_1="left";MoveTimeObj_1=setInterval('ISL_ScrUp_1();',Speed_1);}
+function ISL_StopUp_1(){if(MoveWay_1 == "right"){return};clearInterval(MoveTimeObj_1);if((GetObj('ISL_Cont_1').scrollLeft-fill_1)%PageWidth_1!=0){Comp_1=fill_1-(GetObj('ISL_Cont_1').scrollLeft%PageWidth_1);CompScr_1()}else{MoveLock_1=false}
+AutoPlay_1()}
+function ISL_ScrUp_1(){if(GetObj('ISL_Cont_1').scrollLeft<=0){GetObj('ISL_Cont_1').scrollLeft=GetObj('ISL_Cont_1').scrollLeft+GetObj('List1_1').offsetWidth}
+GetObj('ISL_Cont_1').scrollLeft-=Space_1}
+function ISL_GoDown_1(){clearInterval(MoveTimeObj_1);if(MoveLock_1)return;clearInterval(AutoPlayObj_1);MoveLock_1=true;MoveWay_1="right";ISL_ScrDown_1();MoveTimeObj_1=setInterval('ISL_ScrDown_1()',Speed_1)}
+function ISL_StopDown_1(){if(MoveWay_1 == "left"){return};clearInterval(MoveTimeObj_1);if(GetObj('ISL_Cont_1').scrollLeft%PageWidth_1-(fill_1>=0?fill_1:fill_1+1)!=0){Comp_1=PageWidth_1-GetObj('ISL_Cont_1').scrollLeft%PageWidth_1+fill_1;CompScr_1()}else{MoveLock_1=false}
+AutoPlay_1()}
+function ISL_ScrDown_1(){if(GetObj('ISL_Cont_1').scrollLeft>=GetObj('List1_1').scrollWidth){GetObj('ISL_Cont_1').scrollLeft=GetObj('ISL_Cont_1').scrollLeft-GetObj('List1_1').scrollWidth}
+GetObj('ISL_Cont_1').scrollLeft+=Space_1}
+function CompScr_1(){if(Comp_1==0){MoveLock_1=false;return}
+var num,TempSpeed=Speed_1,TempSpace=Space_1;if(Math.abs(Comp_1)<PageWidth_1/2){TempSpace=Math.round(Math.abs(Comp_1/Space_1));if(TempSpace<1){TempSpace=1}}
+if(Comp_1<0){if(Comp_1<-TempSpace){Comp_1+=TempSpace;num=TempSpace}else{num=-Comp_1;Comp_1=0}
+GetObj('ISL_Cont_1').scrollLeft-=num;setTimeout('CompScr_1()',TempSpeed)}else{if(Comp_1>TempSpace){Comp_1-=TempSpace;num=TempSpace}else{num=Comp_1;Comp_1=0}
+GetObj('ISL_Cont_1').scrollLeft+=num;setTimeout('CompScr_1()',TempSpeed)}}
+function picrun_ini(){
+GetObj("List2_1").innerHTML=GetObj("List1_1").innerHTML;
+GetObj('ISL_Cont_1').scrollLeft=fill_1>=0?fill_1:GetObj('List1_1').scrollWidth-Math.abs(fill_1);
+GetObj("ISL_Cont_1").onmouseover=function(){clearInterval(AutoPlayObj_1)}
+GetObj("ISL_Cont_1").onmouseout=function(){AutoPlay_1()}
+AutoPlay_1();
+}
+//产品展示滚动图片结束
+//-->
+</script>
+</head>
+
+<body>
+	<div class="sidebar">
+    	<ul>
+        	<li><a href="{noercms::U('Index/about')}"><img src="./tpl/Home/noercms02/common/images/pnav1.jpg" /></a></li>
+            <li><a href="tencent://message/?uin={noercms::C('site_qq')}&Site={noercms::C('site_url')}&Menu=yes"><img src="./tpl/Home/noercms02/common/images/pnav2.jpg" alt="QQ:327979560" /></a></li>
+        	<li><a href="#"><img src="./tpl/Home/noercms02/common/images/pnav3.jpg" /></a></li>
+            <li><a href="#"><img src="./tpl/Home/noercms02/common/images/top.jpg" /></a></li>
+        </ul>
+    </div>
+	<div class="top">
+    	<div class="centbox">
+        	<div class="fl">欢迎使用{noercms::C('site_name')}用户微信营销服务平台!</div>
+            <div class="topr fr">
+            	<ul>
+            		<li><a class="tbut" href="{noercms::U('Index/login')}">登录</a></li>
+                    <li><a class="tbut" href="{noercms::U('Index/reg')}">注册</a></li>
+                    <li class="qqico">{noercms::C('site_qq')}</li>
+                    <li class="sjico">{noercms::C('counts')}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+    	<div class="centbox">
+        	<div class="logo"><a href="/"><span>{noercms::C('site_name')}</span></a></div>
+            <div class="menu fr">
+            	<li class="menua"><a href="/">首页</a></li>
+            	<li><a href="/index.php?g=Home&m=Index&a=fc">功能介绍</a></li>
+            	<li><a href="/index.php?g=Home&m=Index&a=about">关于我们</a></li>
+            	<li><a href="/index.php?g=Home&m=Index&a=guide">案例展示</a></li>
+            	<li><a href="/index.php?g=Home&m=Index&a=faq">常见问题</a></li>
+            	<li><a href="/index.php?g=Home&m=Index&a=agent">渠道代理</a></li>                
+            </div>
+        </div>
+    </div>
+    <div class="banner">
+    	<div class="fullSlide ovh">
+             <div class="bd ovh">
+                <ul>
+                    <li><div class="slideCon ovh"><a href="javascript:void(0);"><img src="./tpl/Home/noercms02/common/images/ban1.jpg" /></a></div></li>
+                    <li><div class="slideCon ovh"><a href="javascript:void(0);"><img src="img/banner/03.jpg" /></a></div></li>
+                    <li><div class="slideCon ovh"><a href="javascript:void(0);"><img src="img/banner/05.jpg" /></a></div></li>
+                    <li><div class="slideCon ovh"><a href="javascript:void(0);"><img src="img/banner/06.jpg" /></a></div></li>    
+                </ul>
+            </div>
+            <div class="hd">
+                <ul>
+                </ul>
+            </div>
+    	</div>
+		<script type="text/javascript" src="{noercms::RES}/js/indexJs.js"></script>
+    </div>
+    <div class="content banlk20">
+    	<div class="centbox">
+        	<div class="ct_ti"><h2>我们是做什么的</h2><p>WHAT WE ARE</p></div>
+            <div class="ui1box">
+            <p>{noercms::C('site_name')}是为微信营销团购商家提供完美微信营销解决方案，服务于众多微信平台，我们销售的并不只是源码，更多的是服务，让微信营销变得更简单，更高效， 我们的功能，让你的微信公众平台与众不同，助敢于创新者前行。</p>
+            <h2 class="banlk20"><a href="{noercms::U('Index/fc')}"><img src="{noercms::RES}/images/ibtn.jpg" /></a></h2>
+            </div>
+        </div>
+    </div>
+    <div class="content banlk20 contbg">
+    	<div class="function">
+        	<ul>
+            	<li class="function_hover" onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc2')}">
+                	<div class="fun_l fico1"></div>
+                    <h2>微商城</h2>
+                    <p>小微信，大商城<br />四网合一的超级商城系统</p>
+                    </a>
+                </li>
+            	<li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc17')}">
+                	<div class="fun_l fico2"></div>
+                    <h2>微订餐</h2>
+                    <p>微信订餐，一键搞定</p>
+                    </a>
+                </li>
+            	<li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc15')}">
+                	<div class="fun_l fico3"></div>
+                    <h2>微酒店</h2>
+                    <p>微信订房，房型展示<br />酒店营销新途径</p>
+                    </a>
+                </li>
+            	<li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc3')}">
+                	<div class="fun_l fico4"></div>
+                    <h2>刮刮乐活动</h2>
+                    <p>开展在线刮奖活动<br />开展在线刮奖活动</p>
+                    </a>
+                </li>
+            	<li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc3')}">
+                	<div class="fun_l fico5"></div>
+                    <h2>幸运大转盘</h2>
+                    <p>快乐大转盘<br />幸运落谁家</p>
+                    </a>
+                </li>
+            	<li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc3')}">
+                	<div class="fun_l fico6"></div>
+                    <h2>优惠券活动</h2>
+                    <p>优惠电子券<br />方便快捷，微信营销必备</p>
+                    </a>
+                </li>
+            	<li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc9')}">
+                	<div class="fun_l fico7"></div>
+                    <h2>投票活动</h2>
+                    <p>电子投票<br />带给粉丝不一样的感受</p>
+                    </a>
+                </li>
+            	<li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc16')}">
+                	<div class="fun_l fico8"></div>
+                    <h2>LBS回复</h2>
+                    <p>LBS定位回复<br />商家营销新选择</p>
+                    </a>
+                </li>
+            	<li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc7')}">
+                	<div class="fun_l fico9"></div>
+                    <h2>相册功能</h2>
+                    <p>开启相册功能,就可得到一个精美的相册网站</p>
+                    </a>
+                </li>
+            	<li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc8')}">
+                	<div class="fun_l fico10"></div>
+                    <h2>自定义订单</h2>
+                    <p>在线预约，在线报名<br />各种预约一键搞定</p>
+                    </a>
+                </li>
+            	<li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc10')}">
+                	<div class="fun_l fico11"></div>
+                    <h2>微统计</h2>
+                    <p>粉丝关注，用户请求<br />实时统计，精确分析</p>
+                    </a>
+                </li>
+            	<li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                	<a href="{noercms::U('Index/fc2')}">
+                	<div class="fun_l fico12"></div>
+                    <h2>微团购</h2>
+                    <p>商家团购，秒杀活动<br />统统搬进微信里</p>
+                    </a>
+                </li onmouseover="this.className='function_hover'" onmouseout="this.className=''">
+                
+            </ul>
+        </div>
+    </div>
+    <div class="content banlk20">
+    	<div class="centbox">
+        	<div class="ct_ti"><h2>案例展示</h2><p>CASE</p></div>
+            <div class="ui2box">
+            <!-- picrotate_left start  -->
+                <DIV class=blk_18><A onmouseup=ISL_StopUp_1() class=LeftBotton 
+                onmousedown=ISL_GoUp_1() onmouseout=ISL_StopUp_1() href="javascript:void(0);" 
+                target=_self></A>
+                <DIV class=pcont id=ISL_Cont_1>
+                <DIV class=ScrCont>
+                <DIV id=List1_1><!-- piclist begin -->
+                <ul>
+                    <li><A href="#"><img onmouseout="this.src='{noercms::RES}/images/alimg1.jpg'" onmouseover="this.src='{noercms::RES}/images/alimg1a.jpg';" src="{noercms::RES}/images/alimg1.jpg" data-pinit="registered"></A></li>
+                <li><A href="#"><img onmouseout="this.src='{noercms::RES}/images/alimg2.jpg'" onmouseover="this.src='{noercms::RES}/images/alimg2a.jpg';" src="{noercms::RES}/images/alimg2.jpg" data-pinit="registered"></A></li>
+                <li><A href="#"><img onmouseout="this.src='{noercms::RES}/images/alimg3.jpg'" onmouseover="this.src='{noercms::RES}/images/alimg3a.jpg';" src="{noercms::RES}/images/alimg3.jpg" data-pinit="registered"></A></li>
+                <li><A href="#"><img onmouseout="this.src='{noercms::RES}/images/alimg4.jpg'" onmouseover="this.src='{noercms::RES}/images/alimg4a.jpg';" src="{noercms::RES}/images/alimg4.jpg" data-pinit="registered"></A></li>
+                <li><A href="#"><img onmouseout="this.src='{noercms::RES}/images/alimg5.jpg'" onmouseover="this.src='{noercms::RES}/images/alimg5a.jpg';" src="{noercms::RES}/images/alimg5.jpg" data-pinit="registered"></A></li>
+                <li><A href="#"><img onmouseout="this.src='{noercms::RES}/images/alimg6.jpg'" onmouseover="this.src='{noercms::RES}/images/alimg6a.jpg';" src="{noercms::RES}/images/alimg6.jpg" data-pinit="registered"></A></li>
+                <li><A href="#"><img onmouseout="this.src='{noercms::RES}/images/alimg7.jpg'" onmouseover="this.src='{noercms::RES}/images/alimg7a.jpg';" src="{noercms::RES}/images/alimg7.jpg" data-pinit="registered"></A></li>
+                <li><A href="#"><img onmouseout="this.src='{noercms::RES}/images/alimg8.jpg'" onmouseover="this.src='{noercms::RES}/images/alimg8a.jpg';" src="{noercms::RES}/images/alimg8.jpg" data-pinit="registered"></A></li>
+                </ul>
+                <!-- piclist end --></DIV>
+                <DIV id=List2_1></DIV></DIV></DIV>
+                <A onmouseup=ISL_StopDown_1() 
+                class=RightBotton onmousedown=ISL_GoDown_1() onmouseout=ISL_StopDown_1() 
+                href="javascript:void(0);" target=_self></A></DIV>
+                <SCRIPT type=text/javascript>
+                <!--
+                picrun_ini()
+                //-->
+                </SCRIPT>
+            <!-- picrotate_left end -->
+            </div>
+        </div>
+    </div>
+
+    <div class="content banlk20 contbg">
+    	<div class="centbox links"><a href="#">首页</a>|<a href="#">申请入驻</a>|<a href="#">渠道代理</a>|<a href="#">接口定制</a>|<a href="#">微信托管</a>|<a href="">关于{noercms::C('site_name')}</a>
+        	
+        </div>
+    </div>
+	<div class="footer"><p>客服QQ：327979560   邮箱：327979560@qq.com</p>
+<p>Copyright (c) 2013-2015 http://wx.weixin.maozi168.cn. All Rights Reserved {noercms::C('site_name')}微信营销公众平台-微网站版权所有 </p></div>
+</body>
+</html>

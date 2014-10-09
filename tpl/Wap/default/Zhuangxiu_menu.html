@@ -1,0 +1,67 @@
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/font-awesome.css" media="all">
+<p><br/><br/><br/><br/><br/></p>
+<link rel="stylesheet" type="text/css" href="{noercms::COMMON}/wap/estate/back.css" media="all">
+<a href="javascript:history.go(-1);" class="back360" style="">&nbsp;</a>
+<section>
+            <div style="visibility: visible;" id="navList_box" class="box_swipe">
+<ul style="list-style: none; width: 1280px; transition: 0ms; -webkit-transition: 0ms; -webkit-transform: translate3d(0px, 0, 0);">
+                <li style="width: 640px; display: table-cell; vertical-align: top;">
+                <a href="{noercms::U('Zhuangxiu/index',array('token'=>$token,'wecha_id'=>$wecha_id))}">
+                    <span class="icon-home"></span>
+                        <img src="" alt="装修介绍">
+                        <div>装修介绍</div>
+                </a>
+                <a href="{noercms::U('Zhuangxiu/album',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="weiwin-list-item">
+                    <span class="icon-picture"></span>
+                    <img src="" alt="门店">
+                    <div>门店</div>
+                            </a>
+                <a href="{noercms::U('Zhuangxiu/housetype',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="weiwin-list-item">
+                        <span class="icon-building"></span>
+                        <img src="" alt="成功案例">
+                        <div>成功案例</div>
+                </a>
+                <a href="{noercms::U('Zhuangxiu/impress',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="weiwin-list-item">
+                    <span class="icon-check"></span>
+                        <img src="" alt="客人印象">
+                        <div>客人印象</div>
+                </a>
+                </li>
+                    <li style="width: 640px; display: table-cell; vertical-align: top;">
+                    <a href="{noercms::U('Zhuangxiu/news',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="weiwin-list-item">
+                        <span class="icon-rss-sign"></span>
+                        <img src="" alt="新闻动态">
+                        <div>新闻动态</div>
+                    </a>
+                    <a href="{noercms::U('Reservation/index',array('token'=>$token,'wecha_id'=>$wecha_id,'addtype'=>'zhuangxiu'))}" class="weiwin-list-item">
+                    <span class="icon-edit"></span>
+                        <img src="" alt="服务预约">
+                        <div>服务预约</div>
+                    </a>
+                    <a href="{noercms::U('Card/index',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="weiwin-list-item">
+                    <span class="icon-credit-card"></span>
+                    <img src="" alt="加入会员">
+                    <div>加入会员</div>
+                    </a>
+                    <a href="{noercms::U('Zhuangxiu/aboutus',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="weiwin-list-item">
+                    <!-- <a href="tel:{noercms:$es_data1['tel']}" class="weiwin-list-item"> -->
+                    <span class="icon-phone"></span>
+                    <img src="" alt="关于我们">
+                    <div>关于我们</div>
+                    </a>
+                        </li>
+                </ul>
+                <ol>
+                    <a href="javascript:navList_box.prev();">&nbsp;</a>
+                    <a href="javascript:navList_box.next();">&nbsp;</a>
+                </ol>
+            </div>
+             <script type="text/javascript" src="/tpl/Wap/default/common/js/ChatFloat.js"></script>
+<a href="{noercms:$kefu.info2}" id="CustomerChatFloat" style="position: fixed; right: 0px; top: 150px; z-index: 99999; height: 70px; width: 65px; min-width: 65px; background-image: url(/tpl/Wap/default/common/css/img/MobileChatFloat.png); background-size: 65px; background-position: 0px 0px; background-repeat: no-repeat no-repeat;"></a>
+        </section>
+        <script>
+            $(document).ready(function(){
+                window.navList_box = new Swipe(document.getElementById('navList_box'), {auto:0});
+            });
+        </script>
+       

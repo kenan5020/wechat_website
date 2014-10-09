@@ -1,0 +1,104 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/default_user_com.css" media="all">
+<script src="{noercms::RES}/js/select/js/jquery.js"></script>
+<script src="{noercms::RES}/js/select/js/comm.js"></script>
+<script src="{noercms::RES}/js/select/js/linkagesel-min.js"></script>
+<script src="{noercms::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{noercms::STATICS}/artDialog/plugins/iframeTools.js"></script>
+<div class="content" style="width:95%; background:none; margin-left:25px; border:none; margin-bottom:30px; margin-top:30px;" >
+  <div class="cLineB">
+    <div  class="quick-actions_homepage">
+    <ul class="quick-actions">
+    <li class="bg_ls"> <a href="{noercms::U('Car/index',array('token'=>$token))}"> <i class="icon-truck"></i> 微汽车 </a> </li>
+      <li class="bg_lb"> <a href="{noercms::U('Product/orders',array('token'=>$token,'dining'=>1))}"> <i class="icon-glass"></i> 微餐饮 </a> </li>
+      <li class="bg_dy"> <a href="{noercms::U('Estate/index',array('token'=>$token))}"> <i class="icon-star"></i> 微房产</a> </li>
+      <li class="bg_lg"> <a href="{noercms::U('Jiudian/index',array('token'=>$token))}"> <i class="icon-plus"></i> 微酒店</a> </li>
+      <li class="bg_ly"> <a href="{noercms::U('Yiliao/index',array('token'=>$token))}"> <i class="icon-tag"></i> 微医疗 </a> </li>
+      <li class="bg_lo"> <a href="{noercms::U('Reservation/index',array('token'=>$token))}"> <i class="icon-map-marker"></i> 微预约 </a> </li>
+      <li class="bg_db"> <a href="javascript:history.go(-1);"> <i class="icon-share-alt"></i> 返回</a> </li>
+    </ul>
+  </div>
+  <h4>汽车文章类型管理</h4>
+  <include file="Car:menu"/> 最新车讯，最新优惠，尊享二手车都读取于 <a href="{noercms::U('Classify/index',array('token'=>$token))}" class="btn"> <strong><font color='red'>分类管理</strong></font></a>,如果没有，请先到<a href="{noercms::U('Classify/add',array('token'=>$token))}" class="btn"> <strong><font color='red'>分类管理</strong></font></a>添加</span>,然后再［<a href="{noercms::U('Img/add',array('token'=>$token))}"><strong><font color='red'>图文回复</strong></font></a>］添加您想添加的内容 <span class="help-inline"> <span class="maroon">的［<a href="{noercms::U('Img/index',array('token'=>$token))}"><strong><font color='red'>新增图文自定义回复</strong></font></a>］！</span> <!--a href="javascript:history.go(-1);return false;" class="right btnGrayS vm" style="margin-top:-27px">返回</a-->
+ </div>
+ <!--tab start-->
+<!--tab end-->
+    <div class="msgWrap bgfc" style="margin-top:10px;">
+      <form class="form" method="post" action="" target="_top" enctype="multipart/form-data">
+        <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+                <tr>
+                    <th width="120">最新车讯：</th>
+                    <td>
+                    <select class="input-medium valid" name="news_id">
+                          <volist  name="classify" id="vo">
+                              <option value="{noercms:$vo['id']}" <if condition="$carnews['news_id'] eq $vo['id']">selected='selected' </if>>{noercms:$vo['name']}</option>
+                              </volist>
+                    </select>
+                     <span class="maroon">店铺产品最新行情</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="120">最新优惠：</th>
+                    <td>
+                          <select class="input-medium valid" name="pre_id">
+                          <volist  name="classify" id="vo">
+                              <option value="{noercms:$vo['id']}"<if condition="$carnews['pre_id'] eq $vo['id']">selected='selected' </if>>{noercms:$vo['name']}</option>
+                              </volist>
+                          </select>
+                         <span class="maroon">如店铺或者产品最新打折优惠或促销</span>
+                     </td>
+                </tr>
+                <tr>
+                    <th width="120">尊享二手车</th>
+                    <td>   
+                    <select class="input-medium valid" name="usedcar_id">
+                          <volist  name="classify" id="vo">
+                              <option value="{noercms:$vo['id']}"<if condition="$carnews['usedcar_id'] eq $vo['id']">selected='selected' </if>>{noercms:$vo['name']}</option>
+                              </volist>
+                          </select>
+                           <span class="maroon">如店铺收藏的二手车</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>品牌相册：</th>
+                    <td> 
+                         <select id="album_id" name="album_id" class="input-medium valid" data-rule-required="true"> 
+                            <option value="0">请选择相册</option> 
+                                <volist name="photo" id="vo">
+                                    <option value="{noercms:$vo['id']}" <if condition="$vo['id'] eq $carnews['album_id']">selected="selected"</if>>{noercms:$vo['title']}</option>
+                                </volist>
+                          </select>
+                    <span class="maroon">如选择：兰博基尼欣赏</span>
+                     ，如果没有请去：<a href="{noercms::U('Photo/add',array('token'=>$token,'poid'=>$carnews['album_id']))}" class="btn">添加相册</a></td>
+                    </td>
+                </tr>
+                <tr>
+                    <th>店铺LBS：</th>
+                    <td> 
+                         <select id="company_id" name="company_id" class="input-medium valid" data-rule-required="true"> 
+                            <option value="0">请选择店铺LBS</option> 
+                                <volist name="company" id="vo">
+                                    <option value="{noercms:$vo['id']}" <if condition="$vo['id'] eq $carnews['company_id']">selected="selected"</if>>{noercms:$vo['name']}</option>
+                                </volist>
+                          </select>
+                    <span class="maroon"></span>
+                     ，如果没有请去：<a href="{noercms::U('Company/index',array('token'=>$token,'poid'=>$carnews['company_id']))}" class="btn">添加LBS</a></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <if condition="$carnews['id'] neq ''">
+                    <input type="hidden" name="id" value="{noercms:$carnews['id']}" />
+                    </if>
+                      <input type="hidden" name="token" value="{noercms:$token}" />
+                        <button type="submit" name="button" class="btn btn-success">保存</button>
+                        <a href="javascript:history.go(-1);" class="btn btn-danger">取消</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+  </div> 
+        </div>
+<include file="Public:footer"/>

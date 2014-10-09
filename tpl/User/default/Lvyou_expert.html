@@ -1,0 +1,70 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/default_user_com.css" media="all">
+ <div class="content" >
+<link rel="stylesheet" type="text/css" href="./tpl/User/default/common/css/cymain.css" />
+      <div class="tab">
+<ul>
+<li class="<if condition="ACTION_NAME EQ 'index'">current</if> tabli" id="tab0"><a href="{noercms::U('Lvyou/index',array('token'=>$token))}">旅游区简介</a></li>
+<li class="<if condition="ACTION_NAME EQ 'son' ">current</if> tabli" id="tab2"><a href="{noercms::U('Lvyou/son',array('token'=>$token))}">景区</a></li>
+<li class="<if condition="ACTION_NAME EQ 'housetype' ">current</if> tabli" id="tab2"><a href="{noercms::U('Lvyou/housetype',array('token'=>$token))}">景点</a></li>
+<li class="<if condition="ACTION_NAME EQ 'album' or ACTION_NAME EQ 'album_add'">current</if> tabli" id="tab5"><a href="{noercms::U('Lvyou/album',array('token'=>$token))}">风景相册</a></li>
+<li class="<if condition="ACTION_NAME EQ 'expert'">current</if> tabli" id="tab5"><a href="{noercms::U('Lvyou/expert',array('token'=>$token))}">游客点评</a></li>
+<li class="<if condition="ACTION_NAME EQ 'lvyouindex'">current</if> tabli" id="tab6"><a href="{noercms::U('Reservation/lvyouindex',array('token'=>$token))}">预约管理</a></li>
+</ul>
+</div>
+          <div class="cLine">
+    <div class="alert">
+    <p><span class="bold">使用方法：</span>请添加点评</p>
+    </div>
+</div>
+          <div class="cLine">
+            <div class="pageNavigator left">
+                <a href="{noercms::U('Lvyou/expert_add',array('token'=>$token))}" class="btnGrayS vm bigbtn">
+                    <img src="tpl/User/default/common/images/pic.png" class="vm">添加点评
+                </a>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="msgWrap">
+          <form method="post" action="" id="info">
+          <input name="delall" type="hidden" value="del">
+           <input name="wxid" type="hidden" value="gh_423dwjkewad">
+            <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                                        <tr> 
+                                          <th class="span3">点评标题</th>
+                                            <th class="span3">客户</th>
+                                            <th class="span1">显示顺序</th>
+                                            <th class="span2">操作</th>
+                                        </tr>
+                                    </thead>
+                                       <tbody>
+                                            <if condition="$expert eq ''">
+                                        <tr>
+                                        <td colspan="5" style="text-align:center; height:30px;"><strong>请加添客人印象信息.</strong></td>
+                                        </tr>
+                                    <else/>
+                                    <volist name="expert" id="list">
+                                        <tr>
+                                        <td>{noercms:$list['title']}</td>
+                                        <td>{noercms:$list['name']}</td> 
+                                        <td>{noercms:$list['sort']}</td>
+                                        <td>
+                                        <a href="{noercms::U('Lvyou/expert_add',array('id'=>$list['id'],'token'=>$list['token']))}" class="btn">编辑</a>
+                                        <a href="{noercms::U('Lvyou/expert_del',array('id'=>$list['id'],'token'=>$list['token']))}" onclick="return(confirm('确定要删除吗？'))"  class="btn">删除</a></a>
+</td>
+                                        </tr>
+                                    </volist>
+                                    </if>
+                                        </tbody>
+            </table>
+           </form> 
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages">{noercms:$page}</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>  
+<include file="Public:footer"/>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<html class=" clickberry-extension clickberry-extension-standalone"><head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{noercms::Common}/wap/estate/style.css" media="all">
+<link rel="stylesheet" type="text/css" href="{noercms::Common}/wap/estate/back.css" media="all">
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/wap/style.css" media="all">
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/wap/back.css" media="all">
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/.css" media="all">
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/wap/share.js"></script>
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/wap/common.js"></script>
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/wap/index.js"></script>
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/waphome.css" media="all">
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/reset.css" media="all">
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/jquery.js"></script>
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/swipe.js"></script>
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/zepto.js"></script>
+<script src="{noercms::STATICS}/vhouse/wap/sharedata.js"></script>
+<title>楼盘户型</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="{noercms::C('site_name')}微信、noercms、微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销">
+        <meta name="Description" content="{noercms::C('site_name')}微信、noercms，国内最大的微信公众智能服务平台，狗扑微信、noercms八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。">
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+            <meta content="no-cache" http-equiv="pragma">
+            <meta content="0" http-equiv="expires">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+            <meta name="apple-mobile-web-app-capable" content="yes"> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <!-- Mobile Devices Support @end -->
+    <meta content="clickberry-extension-here">
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+<div class="wrapper" id="container">
+    <!-- start -->
+        <div class="act_top" id="actTop">
+            <div class="act_top_show">
+                <img src="{noercms:$es_data['house_banner']|default='./tpl/static/vhouse/noercms32.jpg'}" width="720" height="130" id="bannerPic">
+            </div>
+        </div>
+        <div id="roomDetails"><div class="box box_up box_up3" id="box0"> <h3>{noercms:$es_data['title']}</h3>
+        <div class="box_type" style=" height:auto;">
+            <ul class="house_type">
+            <volist name="housetype" id="vo">
+                <li id="boxLi{noercms:$vo['id']}" class="current">
+                <a href="javascript:void(0);" onClick="List.toggleList({noercms:$vo['id']},0);">
+                 <strong>{noercms:$vo['name']}</strong>
+                 <span>{noercms:$vo['title']}</span>
+                 <em>{noercms:$vo['fang']}房{noercms:$vo['ting']}厅  {noercms:$vo['area']}</em>
+                 </a>
+                 <div class="house_photo house_arrow" style="display: -webkit-box;">
+                 <a href="{noercms::U('Estate/show_album',array('token'=>$token,'id'=>$vo['id'],'wecha_id'=>$wecha_id))}"  class="ico_type">户型图</a>
+                  <if condition="$vo['panorama_id'] neq ''">
+                 <a href="{noercms::U('Panorama/item',array('token'=>$token,'id'=>$vo['panorama_id'],'wecha_id'=>$wecha_id,'sgssz'=>'mp.weixin.qq.com'))}"  class="ico_360">全景图</a>
+                 </if>
+                 </div>
+                 </li>
+            </volist>
+        </ul>
+        </div>
+        </div>
+        </div>
+        <p>&nbsp;</p>
+    <!-- end -->
+</div>
+<div id="popFail" style="display: none;" jqmoldstyle="block">
+    <div class="bk"></div>
+    <div class="cont">
+        <img src="{noercms::Common}/wap/estate/loading.gif" alt="loading...">
+        正在加载...
+    </div>
+</div>
+<include file="Estate:menu"/>
+<script>
+var MAPURL = "http://api.map.baidu.com/staticimage?center={noercms:$es_data['place']}&width=600&height=200&zoom=16&markers={noercms:$es_data['lng']},{noercms:$es_data['lat']}&markerStyles=m,Y,0xFF0000,http://api.map.baidu.com/images/marker_red.png,-1,23,25";
+//var AMPURL = "http://api.map.baidu.com/staticimage?center={noercms:$es_data['place']}&width=600&height=200&zoom=16&markers={noercms:$es_data['lng']},{noercms:$es_data['lat']}&markerStyles=-1,http://api.map.baidu.com/images/marker_red.png,-1,23,25";
+</script>
+<script src="{noercms::STATICS}/vhouse/wap/tvp.player_lite.js" type="text/javascript"></script>
+<a href="javascript:history.go(-1);" class="back360" style="">&nbsp;</a>                
+<div mark="stat_code" style="width:0px; height:0px; display:none;"></div>
+</body></html>

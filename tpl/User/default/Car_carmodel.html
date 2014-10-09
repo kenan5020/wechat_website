@@ -1,0 +1,69 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/default_user_com.css" media="all">
+<div class="content" style="width:95%; background:none; margin-left:25px; border:none; margin-bottom:30px; margin-top:30px;" >
+  <div class="cLineB">
+    <div  class="quick-actions_homepage">
+    <ul class="quick-actions">
+    <li class="bg_ls"> <a href="{noercms::U('Car/index',array('token'=>$token))}"> <i class="icon-truck"></i> 微汽车 </a> </li>
+      <li class="bg_lb"> <a href="{noercms::U('Product/orders',array('token'=>$token,'dining'=>1))}"> <i class="icon-glass"></i> 微餐饮 </a> </li>
+      <li class="bg_dy"> <a href="{noercms::U('Estate/index',array('token'=>$token))}"> <i class="icon-star"></i> 微房产</a> </li>
+      <li class="bg_lg"> <a href="{noercms::U('Jiudian/index',array('token'=>$token))}"> <i class="icon-plus"></i> 微酒店</a> </li>
+      <li class="bg_ly"> <a href="{noercms::U('Yiliao/index',array('token'=>$token))}"> <i class="icon-tag"></i> 微医疗 </a> </li>
+      <li class="bg_lo"> <a href="{noercms::U('Reservation/index',array('token'=>$token))}"> <i class="icon-map-marker"></i> 微预约 </a> </li>
+      <li class="bg_db"> <a href="javascript:history.go(-1);"> <i class="icon-share-alt"></i> 返回</a> </li>
+    </ul>
+  </div>
+  <h4>车型管理</h4>
+  <include file="Car:menu"/>
+              <div class="clr"></div>
+          </div>
+          <div class="cLine">
+</div>
+          <div class="cLine">
+            <div class="pageNavigator left">
+                <a href="{noercms::U('Car/add_carmodel',array('token'=>$token))}" class="btnGrayS vm bigbtn">
+                    <img src="tpl/User/default/common/images/pic.png" class="vm">添加车型
+                </a>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="msgWrap">
+          <form method="post" action="" id="info">
+          <input name="delall" type="hidden" value="del">
+           <input name="wxid" type="hidden" value="gh_423dwjkewad">
+            <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                  <th>年款/名称</th>
+                  <th>品牌/车系</th>
+                  <th>报价</th>
+                  <th>显示顺序</th>
+                  <th style="width:200px;">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+              <volist name="carmodel" id="vo">
+                    <tr>
+                       <td>{noercms:$vo['model_year']}/{noercms:$vo['name']}</td>
+                       <td>{noercms:$vo['brand_serise']}</td>
+                        <td>{noercms:$vo['dealer_price']}</td>
+                       <td>{noercms:$vo['sort']}</td>
+                       <td class="input-medium">
+                            <a class="btn" href="{noercms::U('Car/edit_carmodel',array('token'=>$token,'id'=>$vo['id']))}" title="编辑">编辑</a>
+                            <a class="btn" href="{noercms::U('Car/del_carmodel',array('token'=>$token,'id'=>$vo['id']))}" title="删除" onclick="return(confirm('确定要删除吗？'))" >删除</a></td>
+                    </tr>
+                </volist>
+                 <tr>
+                </tr>
+              </tbody>
+            </table>
+           </form> 
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages">{noercms:$page}</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>
+<include file="Public:footer"/>

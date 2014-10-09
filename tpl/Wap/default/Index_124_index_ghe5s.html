@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html><head>
+
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>{noercms:$tpl.wxname}</title>
+
+        <base href="." />
+
+        <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+         <meta name="format-detection" content="telephone=no" /><style>
+
+#iframe_screen{
+    background:#fff;
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    z-index:300000;
+    overflow:hidden;
+}
+</style>
+
+<link href="{noercms::RES}/css/allcss/cate{noercms:$tpl.tpltypeid}_{noercms:$tpl.color_id}.css" rel="stylesheet" type="text/css" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/124/common.css" media="all">  -->   
+
+      
+
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/124/reset.css" media="all">
+
+<!-- <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/124/cate12_2.css" media="all"> -->
+
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/124/iscroll.css" media="all">
+
+
+
+<script type="text/javascript" src="{noercms::RES}/css/116/jQuery.js"></script>
+
+<script type="text/javascript" src="{noercms::RES}/css/124/jquery_min.js"></script>
+
+<script type="text/javascript" src="{noercms::RES}/css/124/idangerous_swiper.js"></script>
+
+<script type="text/javascript" src="{noercms::RES}/css/124/iscroll.js"></script>
+
+<script type="text/javascript" src="{noercms::RES}/css/124/swipe.js"></script>
+
+<script type="text/javascript" src="{noercms::RES}/css/124/zepto.js"></script>
+
+    </head>
+
+    <body onselectstart="return true;" ondragstart="return false;" id="cate12">
+
+<!--背景音乐-->
+
+<if condition="$dh['animation'] neq '0'"><iframe id="iframe_screen" src="./tpl/Wap/default/Index_an{noercms:$dh.animation}.html" frameborder="0"></iframe></if> <if condition="$homeInfo['musicurl'] neq false">
+
+<include file="Index:music"/>
+
+</if>
+
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/124/font-awesome.css" media="all">
+
+<script type="text/javascript">
+
+    var myScroll;
+
+    function loaded() {
+
+        myScroll = new iScroll('wrapper', {
+
+            snap: true,
+
+            momentum: false,
+
+            hScrollbar: false,
+
+            onScrollEnd: function() {
+
+                document.querySelector('#indicator > li.active').className = '';
+
+                document.querySelector('#indicator > li:nth-child(' + (this.currPageX + 1) + ')').className = 'active';
+
+            }
+
+        });
+
+    }
+
+    document.addEventListener('DOMContentLoaded', loaded, false);
+
+</script>
+
+
+
+
+
+<div class="body">
+
+        <!--
+
+    幻灯片管理
+
+    -->
+
+    <div style="-webkit-transform:translate3d(0,0,0);">
+
+        <div id="banner_box" class="box_swipe" style="visibility: visible;">
+
+            <ul style="list-style: none; width: {noercms:$num*433}px; transition: 0ms; -webkit-transition: 0ms; -webkit-transform: translate3d(0px, 0, 0);">
+
+            <volist name="flash" id="so">
+
+                <li style="width: 433px; display: table-cell; vertical-align: top;">
+
+                    <a href="{noercms:$so.url}">
+
+                        <img src="{noercms:$so.img}"  style="width:100%;">
+
+                    </a>
+
+                </li>
+
+                </volist>
+
+                
+
+            </ul>
+
+            <ol>
+
+                <volist name="flash" id="so">
+
+                    <li <if condition="$i eq 1">class="on"</if>></li>
+
+                </volist>
+
+            </ol>
+
+        </div>
+
+    </div>
+
+        <script>
+
+        $(function(){
+
+            new Swipe(document.getElementById('banner_box'), {
+
+                speed:500,
+
+                auto:3000,
+
+                callback: function(){
+
+                    var lis = $(this.element).next("ol").children();
+
+                    lis.removeClass("on").eq(this.index).addClass("on");
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+            <!--
+
+        用户分类管理
+
+        -->
+
+        <div id="insert1"></div>
+
+            <volist name="info" id="vo">
+
+            <div class="Category">
+
+                <div class="cname">
+
+                    {noercms:$vo.name}                <a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{noercms:$vo.url|htmlspecialchars_decode}</if>" class="more"><!-- 查看更多 --></a>
+
+                </div>
+
+                <div class="clist clist1 swiper-container" style="width:100%">
+
+                    <div class="swiper-wrapper" style="width: 100%;">
+
+                        <div class="swiper-slide " style="width:100%;">
+
+                    <ul>
+
+                    <volist name="vo['sub']" id="res">
+                    <if condition="$i lt 9">  
+
+                        <li>
+
+                            
+
+                            <a href="<if condition="$res['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$res['id'],'token'=>$res['token']))}<else/>{noercms:$res.url|htmlspecialchars_decode}</if>">
+
+                            <div>
+
+                                <img src="{noercms:$res.img}">
+
+                            </div>
+
+                                <span>{noercms:$res.name}</span>
+
+                            </a>
+
+                            
+
+                        </li>
+                        </if>
+
+                    </volist>
+
+                    </ul>
+
+                        </div>
+
+                       
+                          
+
+                        <div class="swiper-slide " style="width:100%;">
+
+                    <ul>
+
+                    <volist name="vo['sub']" id="res">
+                    <if condition="$i gt 8">  
+
+                        <li>
+
+                            
+
+                            <a href="<if condition="$res['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$res['id'],'token'=>$res['token']))}<else/>{noercms:$res.url|htmlspecialchars_decode}</if>">
+
+                            <div>
+
+                                <img src="{noercms:$res.img}">
+
+                            </div>
+
+                                <span>{noercms:$res.name}</span>
+
+                            </a>
+
+                            
+
+                        </li>
+                        </if>
+
+                    </volist>
+
+                    </ul>
+
+                        </div>
+
+                        </div>
+
+                    <div class="cpager"><span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span></div>
+
+                    
+
+                </div>
+
+            </div>
+
+            </volist>        
+
+    
+
+
+
+           
+
+</div>
+
+  <div class="copyright" style="text-align:center;padding:10px 0">
+
+<if condition="$iscopyright eq 1">
+
+{noercms:$homeInfo.copyright}
+
+<else/>
+
+{noercms:$siteCopyright}
+
+</if>
+
+</div>  <include file="Index:styleInclude"/><include file="$cateMenuFileName"/>
+
+	<if condition="ACTION_NAME eq 'index'">
+
+		<script type="text/javascript">
+
+			window.shareData = {  
+
+					"moduleName":"Index",
+
+					"moduleID": '0',
+
+					"imgUrl": "{noercms:$homeInfo.picurl}", 
+
+					"timeLineLink": "{noercms::C('site_url')}{noercms::U(Index/ACTION_NAME,array('token'=>$_GET['token']))}",
+
+					"sendFriendLink": "{noercms::C('site_url')}{noercms::U(Index/ACTION_NAME,array('token'=>$_GET['token']))}",
+
+					"weiboLink": "{noercms::C('site_url')}{noercms::U(Index/ACTION_NAME,array('token'=>$_GET['token']))}",
+
+					"tTitle": "{noercms:$homeInfo.title}",
+
+					"tContent": "{noercms:$homeInfo.info}"
+
+				};
+
+		</script>
+
+	<else />
+
+		<script type="text/javascript">
+
+			window.shareData = {  
+
+				"moduleName":"Index",
+
+				"moduleID": '1',
+
+				"imgUrl": "{noercms:$homeInfo.picurl}", 
+
+				"timeLineLink": "{noercms::C('site_url')}{noercms::U(Index/ACTION_NAME,array('token'=>$_GET['token'],'classid'=>$_GET['classid']))}",
+
+				"sendFriendLink": "{noercms::C('site_url')}{noercms::U(MODULE_NAME/ACTION_NAME,array('token'=>$_GET['token'],'classid'=>$_GET['classid']))}",
+
+				"weiboLink": "{noercms::C('site_url')}{noercms::U(MODULE_NAME/ACTION_NAME,array('token'=>$_GET['token'],'classid'=>$_GET['classid']))}",
+
+				"tTitle": "{noercms:$homeInfo.title}",
+
+				"tContent": "{noercms:$homeInfo.info}"
+
+			};
+
+		</script>	
+
+	
+
+	</if>
+
+{noercms:$shareScript}
+
+<!--chat-->
+<script type="text/javascript" src="/tpl/Wap/default/common/js/ChatFloat.js"></script>
+<if condition="$kefu['status'] eq '1'"><a href="{noercms:$kefu.info2}" id="CustomerChatFloat" style="position: fixed; right: 0px; top: 150px; z-index: 99999; height: 70px; width: 65px; min-width: 65px; background-image: url(/tpl/Wap/default/common/css/img/MobileChatFloat.png); background-size: 65px; background-position: 0px 0px; background-repeat: no-repeat no-repeat;"></a></if>   </body>
+</html>

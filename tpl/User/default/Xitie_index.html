@@ -1,0 +1,75 @@
+<include file="Public:head"/>  
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<script src="/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="/tpl/static/artDialog/plugins/iframeTools.js"></script>
+<div class="content"  >
+<div class="cLineB">
+<h4 class="left">微喜帖</h4>
+<div class="searchbar right">
+<form method="post" action="">
+<script>
+function selectall(name) {
+	var checkItems=$('.cbitem');
+	if ($("#check_box").attr('checked')==false) {
+		$.each(checkItems, function(i,val){
+			val.checked=false;
+		});
+	} else {
+		$.each(checkItems, function(i,val){
+			val.checked=true;
+		});
+	}
+}
+</script>
+</form>
+</div>
+<div class="clr"></div>
+</div>
+<!--tab start-->
+<div class="tab">
+<ul>
+<li class="tabli current" id="tab0"><a href="{noercms::U('Xitie/index',array('token'=>$token))}">微喜帖管理</a></li>
+<li class="tabli" id="tab0"><a href="{noercms::U('Reply_info/set',array('token'=>$token,'infotype'=>'Xitie'))}">微喜帖回复配置</a></li>
+</ul>
+</div>
+<!--tab end-->
+<div class="msgWrap">
+<form method="post" action="" id="info">
+<div class="cLine">
+<div class="pageNavigator left"> <a href="{noercms::U('Xitie/add',array('token'=>$token))}" title="" class="btnGrayS vm bigbtn"><img src="{noercms::RES}/images/product/add.png" class="vm">添加微喜帖</a></div>
+<div class="clr"></div>
+</div>
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+<tr>
+<th width="160">名称</th>
+<th width="130">关键词</th>
+<th width="130">新郎/新娘名称</th>
+<th width="120">外链代码</th>
+<th width="150" class="norightborder">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr></tr>
+<volist name="list" id="o"> 
+<tr>
+<td>{noercms:$o.title}</td>
+<td>{noercms:$o.keyword}</td>
+<td>{noercms:$o.name_xl}/{noercms:$o.name_xn}</td>
+<td>喜帖 {noercms:$o.id}</td>
+<td class="norightborder"><a href="/index.php?g=Wap&m=Xitie&token={noercms:$o.token}&id={noercms:$o.id}" target="_blank">预览</a> <a href="{noercms::U('Xitie/set',array('token'=>$token,'id'=>$o['id']))}">修改</a> <a href="javascript:drop_confirm('您确定要删除吗?', '{noercms::U('Xitie/delete',array('token'=>$token,'id'=>$o['id']))}');">删除</a></td>
+</tr>
+</volist>
+</tbody>
+</table>
+<input type="hidden" name="token" value="{noercms:$_GET['token']}" />
+</form>
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{noercms:$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

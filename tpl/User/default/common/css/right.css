@@ -1,0 +1,36 @@
+
+
+.help{ height:140px; background:#01b4df; padding-top:12px; padding-left:20px; }
+.help p{ letter-spacing:-1px; padding-left:6px; margin-top:6px; width:140px; font-size:13px;}
+.help B{ padding-left:5px; font-size:16px; font-weight:bold; }
+
+.help a{ font-size:16px; font-weight:bold; width:130px; display:block; margin-top:8px;}
+.help a:hover { color:#fff;font-weight:bold; font-size:18px; }
+.help img{ margin-right:8px;}
+.contact{ height:142px; background:#7f37b4; margin-top:9px; padding-left:2px; padding-top:10px;}
+
+.contact .phonenumber {
+	text-align: center;
+}
+
+.contact .talk {
+	padding-left: 2px;line-height:20px;  text-align: center;
+}
+.contact .qq {
+	padding-left: 12px;
+}
+.contact .qq a {
+	margin: 5px;
+}
+
+.information{ background:url(../images/bj_1.gif) repeat-y; height:136px; margin-top:9px; padding:8px;}
+.information p{ line-height:10px; font-size:18px; font-weight:bold; text-align:center;}
+.information  img{ text-align:center; margin-left:10px; margin-top:10px;}
+
+
+
+
+
+
+
+

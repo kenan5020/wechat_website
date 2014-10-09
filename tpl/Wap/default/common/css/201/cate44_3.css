@@ -1,0 +1,178 @@
+*{padding:0;margin:0;}
+li{list-style:none;}
+body{background:#430908;}
+.show{height:164px;}
+.main ul{padding:0 0 0;}
+.main ul:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.main li{float:left;background:#d6a956;width:32%;margin:4px 1% 0 0;padding:0 0 5px;}
+.main div{height:100%;}
+.main li a{color:#430908;font-size:12px;text-decoration:none;display:block;height:100%;}
+.main .title{display:block;text-align:center;padding:3px 5px 0 0;max-width:80%; white-space:nowrap;overflow:hidden;font-size:12px;}
+#m1 .title,#m2 .title,#m3 .title{text-align:left;padding:10px 10px 0 10px;}
+#m1,#m3{position:relative;}
+#m1 .icon,#m3 .icon{position:absolute;bottom:0;}
+.main #m1,.main #m2,.main #m3{min-height:190px;}
+#m1,#m4,#m7,#m10{margin-left:1%;}
+#m1 p,#m2 p,#m3 p{color:#924f00;padding:4px 10px 0;font-size:10px;height:36px;overflow:hidden;max-width:100%; overflow:hidden;font-size:12px;}
+.main .icon{display:block;height:120px;width:100%;}
+
+  
+  html, body {
+	color:#222;
+	font-family:Microsoft YaHei,Helvitica,Verdana,Tohoma,Arial,san-serif;
+	margin:0;
+	padding: 0;
+	text-decoration: none;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+	margin:0;
+	padding:0;
+}
+img {
+	border:0;
+}
+ol, ul {
+	list-style: none outside none;
+	margin:0;
+	padding: 0;
+}
+a {
+	color:#000000;
+	text-decoration: none;
+}
+.clr {
+	display:block;
+	clear:both;
+	height:0;
+	overflow:hidden;
+}
+.copyright{padding:8px;text-align:center;font-size:14px;color:#666;}
+.copyright a{color:#666;}
+
+
+/*iscroll*/
+
+.banner {
+	width:100%;
+	margin:0 auto;
+	padding:0;
+	background-color:#151515;
+}
+#wrapper {
+	margin:0;
+	width:100%;
+	height:auto;
+	float:left;
+	position:relative;	/* On older OS versions "position" and "z-index" must be defined, */
+	z-index:1;			/* it seems that recent webkit is less picky and works anyway. */
+	overflow:hidden;
+	
+}
+
+#scroller {
+	height:auto;
+	float:left;
+	padding:0;
+}
+
+#scroller ul {
+	list-style:none;
+	display:block;
+	float:left;
+	width:100%;
+	height:auto;
+	padding:0;
+	margin:0;
+	text-align:left;
+}
+
+#scroller li {
+	
+	display:block; float:left;
+	width:auto; height:auto;
+	text-align:center;
+	font-size:0px;
+	padding:0;
+	position:relative;
+}
+#scroller li a{
+	
+	display:block;
+	padding:0;
+	margin:0;
+}
+#scroller li p{
+	position:absolute;
+	z-index:2;
+	display:block;
+	width:100%;
+	bottom:0;
+	background-color:rgba(0, 0, 0, 0.5);
+	color:#F4F4F4;
+	font-size:14px;
+	text-indent: 55px;
+	line-height:24px;
+	text-align: left;
+    text-indent: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	padding:0;
+	margin:0;
+}
+#nav {
+	float: right;
+    margin-top: -15px;
+    padding: 0;
+    position: relative;
+    width: auto;
+    z-index: 3;
+}
+
+#prev, #next {
+	float:left;
+	font-weight:bold;
+	font-size:14px;
+	padding:5px 0;
+	width:80px;
+	display: none;
+}
+
+#next {
+	float:right;
+	text-align:right;
+}
+
+#indicator > li {
+	display:block; float:left;
+	list-style:none;
+	padding:0; margin:0;
+}
+
+#indicator {
+	display: block;
+    margin: 0 8px;
+    padding: 0;
+    width: auto;
+}
+
+#indicator > li {
+	text-indent:-9999em;
+	width:8px; height:8px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	-o-border-radius:4px;
+	border-radius:4px;
+	background:#888;
+	overflow:hidden;
+	margin-right:4px;
+}
+
+#indicator > li.active {
+	background:#DDDDDD;
+}
+
+#indicator > li:last-child {
+	margin:0;
+}
+
+

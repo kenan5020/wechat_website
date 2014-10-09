@@ -1,0 +1,99 @@
+@charset "utf-8";
+.st {
+}
+
+body{ margin:0; background:url(../images/1.jpg) #0247ad no-repeat center top; font-size:12px; font-family:"Microsoft YaHei","SimSun"; color:#FFF; margin-bottom:35px;width:expression(document.body.clientWidth <= 1000? "1000px": "auto");
+    min-width:1000px;}
+img{ border:0; padding:0; margin:0;}
+ul{ list-style:none; margin:0; padding:0;border:0;}
+li{margin:0; padding:0;border:0;}
+a{ text-decoration:none; color:#fff;margin:0; padding:0;border:0;}
+a:hover{ color:#F00;  text-decoration:none;FONT-WEIGHT:200;}
+a:visited{ text-decoration:none; }
+.clear { clear:both;}
+p{ margin:0; padding:0; line-height:25px; border:0;}
+  *{margin:0;padding:0;}
+    #bg{
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:-999;
+    }
+
+.topnav1{ height:62px;  background:#030652; box-shadow: 1px 2px 18px #00275a;border-bottom:1px solid #7a7a7a;text-align:center; width:100% !important;}
+.logo{ float:left; background:url(../images/logo.gif) no-repeat; height:58px; width:57px; margin-right:2px;}
+.nav{width:1000px; margin:0 auto;height:62px; white-space:nowrap; overflow:hidden}
+.topnav {  }
+.topnav ul {}
+.topnav ul li a {color:#fff; font-weight:bold; }
+.topnav ul li a:hover { color:#fa6e62; }
+.topnav ul { color:#FFF; font-size:12px;  }
+.topnav ul li { float:left;   line-height:62px;}
+
+
+
+
+/*顶部导航*/
+.main{ width:1000px; margin:0 auto;}
+.logo2{ height:80px; margin-top:38px;}
+.logo3{ background:url(../images/logo2f.png) no-repeat center; height:74px; width:378px; float:left; }
+.tel{ float:right; background:url(../images/tel.png) center no-repeat; width:214px; height:74px;}
+
+
+.main2{ height:540px;padding-top:30px;}
+.main_left{ float:left; width:806px; height:485px;}
+.main_right{float:right; width:152px;height:476px; padding-top:9px;}
+
+ .main_left:hover img{
+    opacity:0.7;
+    filter:alpha(opacity=70);
+}
+.main_left:hover img:hover{
+    opacity:1;
+    filter:alpha(opacity=100);
+} 
+
+.main_left img{
+    -moz-transition: opacity .7s cubic-bezier(0.2, 0.4, 0.7, 0.8);
+    -webkit-transition: opacity .7s cubic-bezier(0.2, 0.4, 0.7, 0.8);
+    transition: opacity .7s cubic-bezier(0.2, 0.4, 0.7, 0.8); display:block; float:left;margin-right:9px;margin-top:9px;}
+.main_left a{   }
+
+.help{ height:144px; background:#01b4df; padding-top:8px; }
+.help p{ letter-spacing:-1px; padding-left:6px; margin-top:6px; width:140px; font-size:13px;}
+.help B{ padding-left:5px; font-size:16px; font-weight:bold; }
+.contact{ height:132px; background:#7f37b4; margin-top:9px; padding-left:2px; padding-top:20px;}
+
+.contact .phonenumber {
+	text-align: center;
+}
+.contact .small {
+	 font-size: 10px;
+}
+.contact .large {
+	 font-size: 16px;
+}
+.contact .talk {
+	padding-left: 2px; text-align: center;
+}
+.contact .qq {
+	padding-left: 15px;
+}
+.contact .qq a {
+	margin: 5px;
+}
+
+.information{ background:url(../images/bj_1.gif) repeat-y; height:136px; margin-top:9px; padding:8px;}
+.information p{ line-height:10px; font-size:18px; font-weight:bold; text-align:center;}
+.information  img{ text-align:center; margin-left:10px; margin-top:10px;}
+.information div{ width:140px; line-height:15px;}
+
+
+
+/*公司注册*/
+.topf{ height:80px;}
+.tit{ font-size:18px; font-weight:bold;}
+
+
+
+

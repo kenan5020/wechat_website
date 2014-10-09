@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>var SITEURL='';</script>
+<title> {noercms::C('site_title')} {noercms::C('site_name')}</title>
+<link href="{noercms::RES}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="{noercms::RES}/css/stylet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{noercms::RES}/js/jquery.min.js"></script>
+<script type="text/javascript" src="{noercms::RES}/js/main.js"></script>
+<script type="text/javascript">
+function ying(){
+	 document.getElementById('tiduser').style.display="none";
+	 document.getElementById('quit').style.display="block";
+}
+function xian(){
+	 document.getElementById('tiduser').style.display="block";
+	 document.getElementById('quit').style.display="none";
+}
+setTimeout("xian()",5000);
+</script>
+</head>
+<body>
+<div id="herder" >
+	<div id="top">
+		<img src="{noercms::RES}/images/logo.png" />
+		<a href="/" >首页</a>
+		<a href="{noercms::U('Home/Index/fc')}" >功能介绍</a>
+		<a href="{noercms::U('Home/Index/about')}" >关于我们</a>
+		<a href="{noercms::U('Home/Index/price')}" >资费说明</a>
+		<a href="{noercms::U('Home/Index/common')}" >微信导航</a>
+		<a href="{noercms::U('User/Index/index')}" >管理中心</a>
+        <a href="{noercms::U('Home/Index/help')}" >帮助中心</a>
+		<a class="line" ></a>
+        <a href="#" class="a" id="tiduser" onmouseover="ying();" >您好：<span>{noercms:$Think.session.uname}</span></a>
+		<a href="#" class="a1" id="quit" onclick="Javascript:window.open('{noercms::U('System/Admin/logout')}')" onLoad=setTimeout("abc.style.display='none'",5000) >安全退出</a>
+	</div>
+</div>
+<div id="Frame" class="shadow">
+	<div id="nav">
+    <?php if(!empty($_GET['id'])){ ?>
+		<img src="{noercms:$wecha.headerpic}" width="50" height="50" />
+    <?php }else{ ?>
+    	<img src="{noercms::RES}/images/portrait2.png" width="50" height="50" />
+    <?php } ?>
+		<ul class="ul">
+        <?php if(!empty($_GET['id'])){ ?>
+			<li><strong>{noercms:$wecha.wxname}</strong><img src="{noercms::RES}/images/vip.png" /></li>
+			<li>微信号：{noercms:$wecha.weixin}</li>
+        <?php }else{ ?>
+        	<li><strong>用户：</strong><strong style="color:#CC3300;" >{noercms:$Think.session.uname}</strong></li>
+			<li><strong>等级：</strong><strong style="color:#CC3300;" >VIP<php>if($_SESSION['gid']>1){echo $_SESSION['gid']-1;}else{echo 0;}</php></strong></li>
+        <?php } ?>
+		</ul>
+		<ul >
+			<li>VIP有效时间：<if condition="$_SESSION['viptime'] neq 0">{noercms:$thisUser.viptime|date="Y-m-d",###}<else/>vip0不限时间</if></li>
+			<li>图文自定义：{noercms:$thisUser.diynum}/{noercms:$userinfo.diynum}</li>
+		</ul>
+		<ul>
+			<li>活动创建数：{noercms:$thisUser.activitynum}/{noercms:$userinfo.activitynum}</li>
+			<li>请求数：{noercms:$thisUser.connectnum}/{noercms:$userinfo.connectnum}</li>
+		</ul>
+		<ul>
+			<li>请求数剩余：<php>echo ($userinfo['connectnum']-$_SESSION['connectnum']);</php></li>
+			<li>已使用：<php>echo $_SESSION['diynum'];</php></li>
+		</ul>
+		<ul>
+			<li>当月赠送请求数：{noercms:$userinfo.connectnum}</li>
+			<li>当月剩余请求数：<php>echo $userinfo['connectnum']-$_SESSION['connectnum'];</php></li>
+		</ul>
+	</div>
+    <div id="floatline"></div>
+	<div id="Menu">
+		<div class="top">
+             <img src="{noercms::RES}/images/TwoMenu-ico-006.png" />
+            <a>管理平台</a>
+            <span>- 会员充值</span>
+		</div>
+		<div class="TwoMenu">
+			<a href="{noercms::U('Function/index',array('token'=>$token,'id'=>session('wxid')))}" >
+            	<img src="{noercms::RES}/images/TwoMenu-ico-06.png" />
+            	<span>管理</span>
+            </a>
+			<div id="TwoMenu-01" style="display:block;" >
+            	<img src="{noercms::RES}/images/TwoMenu-ico-006.png" /><a class="a">管理</a>
+            </div>
+			<?php for($i=1;$i<6;$i++){?>
+            	<a ></a>
+            <?php } ?>
+		</div>
+		<div class="ThreeMenu">
+        	<div class="contab" style="display:block;" >
+                <a href="{noercms::U('Index/useredit')}" class="Red" >
+                	<img src="{noercms::RES}/images/1-0.png" /><span>修改密码</span>
+                </a>
+                <a href="{noercms::U('Index/index')}" class="Highland" >
+                    <img src="{noercms::RES}/images/1-1.png" /><span>我的公号</span>
+                </a>
+                <a href="{noercms::U('Index/add')}" class="Navy" >
+                    <img src="{noercms::RES}/images/1-2.png" /><span>添加公号</span>
+                </a>
+                <a href="{noercms::U('Alipay/index')}" class="DarkGreen" >
+                    <img src="{noercms::RES}/images/1-3.png" /><span>会员充值</span>
+                </a>
+                  </a>
+                <a href="https://me.alipay.com/saivi" target="_blank" class="LightBlue" >
+                    <img src="{noercms::RES}/images/1-3.png" /><span>快速充值</span>
+                </a>
+            </div>
+		</div>
+	</div>
+	<div id="Content" >
+	</div>

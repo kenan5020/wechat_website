@@ -1,0 +1,48 @@
+<include file="Public:head"/>
+ <div class="content"  >
+<div class="cLineB">
+  <link rel="stylesheet" type="text/css" href="./tpl/User/default/common/css/cymain.css" />
+<div class="tab">
+<ul>
+<li class="<if condition="ACTION_NAME EQ 'index'">current</if> tabli" id="tab0"><a href="{noercms::U('Estate/index',array('token'=>$token))}">楼盘简介</a></li>
+<li class="<if condition="ACTION_NAME EQ 'son'">current</if> tabli" id="tab2"><a href="{noercms::U('Estate/son',array('token'=>$token))}">子楼盘</a></li>
+<li class="<if condition="ACTION_NAME EQ 'housetype'">current</if> tabli" id="tab2"><a href="{noercms::U('Estate/housetype',array('token'=>$token))}">楼盘户型</a></li>
+<li class="<if condition="ACTION_NAME EQ 'album'">current</if> tabli" id="tab5"><a href="{noercms::U('Estate/album',array('token'=>$token))}">楼盘相册</a></li>
+<li class="<if condition="ACTION_NAME EQ 'impress'">current</if> tabli" id="tab5" style="display:none"><a href="{noercms::U('Estate/impress',array('token'=>$token))}" style="display:none">房友印象</a></li>
+<li class="<if condition="ACTION_NAME EQ 'expert'">current</if> tabli" id="tab5"><a href="{noercms::U('Estate/expert',array('token'=>$token))}">专家点评</a></li>
+<li class="<if condition="ACTION_NAME EQ 'estateindex'">current</if> tabli" id="tab6"><a href="{noercms::U('Reservation/estateindex',array('token'=>$token))}">预约管理</a></li>
+</ul>
+</div>
+  <h4 style="padding-top:10px;">添加楼盘相册</h4><a href="javascript:history.go(-1);return false;" class="right btnGrayS vm" style="margin-top:-27px">返回</a>
+ </div>
+    <div class="msgWrap bgfc">
+	  <form class="form" method="post" action="" target="_top" >	 
+		<table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%">
+			<tbody>
+				<tr>
+					<input type="hidden" name="thetype" value="estate">
+				  <th valign="top"><span class="red">*</span>经选择相册名称：</th>
+				  <td>
+					  <select id="poid" name="poid" class="input-medium" data-rule-required="true"> 
+                            <option value="0">请选择相册</option> 
+                                <volist name="photo" id="vo">
+                                    <option value="{noercms:$vo['id']}" <if condition="$vo['id'] eq $album['poid']">selected="selected"</if>>{noercms:$vo['title']}</option>
+                                </volist>
+                          </select>
+                     <a href="{noercms::U('Photo/add',array('token'=>$token,'poid'=>$poid['poid']))}" class="btn"><i class="icon-plus"></i>添加相册</a></td>
+				</tr>
+				<th>&nbsp;</th>
+				  <if condition="$album['id'] neq ''">
+                                    <input type="hidden" name="id" value="{noercms:$album['id']}" />
+                                </if>
+					<td>
+						<button type="submit" name="button" class="btnGreen">保存</button>
+						<a href="javascript:history.go(-1);" class="btnGray vm">取消</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+  </div> 
+        </div>
+<include file="Public:footer"/>

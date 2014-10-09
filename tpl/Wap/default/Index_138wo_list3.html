@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/weimob-ui-1-1.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/list-3.css" media="all" />
+<if condition="$menuid gt 0">
+  <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/menu-{noercms:$menuid}.css?2013-10-21-2" media="all" />
+</if>
+<script type="text/javascript" src="{noercms::RES}/js/jquery.js"></script>
+<script type="text/javascript" src="{noercms::RES}/js/swipe.js"></script>
+<script type="text/javascript" src="{noercms::RES}/js/zepto.js"></script>
+<title>{noercms:$home['webname']}</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="keywords" content="{noercms::C('keyword')}" />
+<meta name="description" content="{noercms::C('content')}" />
+<!-- Mobile Devices Support @begin -->
+<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="0" http-equiv="expires">
+<meta content="telephone=no, address=no" name="format-detection">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- Mobile Devices Support @end -->
+<link rel="shortcut icon" href="/tpl/static/favicon.ico" />
+<style>
+img {
+	width:100%!important;
+}
+</style>
+</head>
+<body onselectstart="return true;" ondragstart="return false;">
+<link rel="stylesheet" type="text/css" href="../../img/font-awesome.css?v=2013121903" media="all" />
+<div class="weimob-page">
+  <div class="top_bar">
+    <nav>
+      <ul class="top_menu">
+        <li onClick="window.history.go(-1);"><span class="icon-chevron-sign-left"></span></li>
+        <li onClick="location.href='{noercms::U('Index/index',array('token'=>$tpl['token']))}'"><span class="icon-home"></span></li>
+        <li><a href="tel:<if condition="$homeInfo.dianhua neq false">{noercms:$homeInfo.dianhua}
+          <else/>
+          没有留电话
+          </if>
+          "><span class="icon-phone"></span></a></li>
+         <li onClick="$('#menu_font').toggleClass('hidden');"> <span class="icon-list-ul"></span>
+          <ul id="menu_font" class="menu_font hidden" onClick="$('#menu_font').toggleClass('hidden');">
+            <volist name="info" id="vo">
+              <li> <a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}
+                <else/>
+                {noercms:$vo.url|htmlspecialchars_decode}
+                </if>
+                " class="icon-smile">
+                {noercms:$vo.name} </a> </li>
+            </volist>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="weimob-content">
+    <div class="weimob-list">
+      <div align="center" >{noercms:$notice}</div>
+      <volist name="res" id="so">
+        <if condition="$so['url']">
+        <a class="weimob-list-item" href="{noercms:$so.url}">
+        <else />
+        <a class="weimob-list-item" href="{noercms::U('Index/content',array('id'=>$so['id'],'token'=>$so['token'],'wecha_id'=>$wecha_id,'noercms'=>'mp.weixin.qq.com'))}">
+        </if>
+        <div class="weimob-list-item-line">
+          <div class="weimob-list-item-title">{noercms:$so.title}</div>
+          <div class="weimob-list-item-fulltitle">{noercms:$so.createtime|date='Y-m-d',###}</div>
+          <div class="weimob-list-item-img"><img src="{noercms:$so.pic}"/></div>
+          <div class="weimob-list-item-summary">{noercms:$so.text}</div>
+        </div>
+        </a> </volist>
+    </div>
+  </div>
+</div>
+<include file="Public:footer"/>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<include file="Index:header"/>
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{noercms::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<script>
+	KindEditor.ready(function(K){
+		var editor = K.editor({
+			allowFileManager:true
+		});
+		K('#upload').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#pic').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#pic').val(url);
+						}else{
+							K('#pic').val("{noercms::C('site_url')}"+url);
+						}
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+	});
+</script>
+<div class="content">
+<!--tab start-->
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />  
+<div class="tab">
+<ul>
+<li class='<if condition="(ACTION_NAME eq \'autobind_add\')">current </if> tabli' id="tab5"><a href="{noercms::U('Index/autobind_add')}">一键绑定</a></li>
+<li class='<if condition="(ACTION_NAME eq \'add\')">current </if> tabli' id="tab5"><a href="{noercms::U('Index/add')}">手动绑定</a></li>
+</ul>
+</div>
+<!--tab end-->
+<div class="content"  >
+          <div class="cLineB"><h4>添加微信公众号</h4></div>
+          <form method="post" action="{noercms::U('User/Index/insert')}" enctype="multipart/form-data">
+          <div class="msgWrap">
+            <table class="userinfoArea" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                  <th><span class="red">*</span>公众号名称：</th>
+                  <td><input type="text" required="" class="px" name="wxname" value="" tabindex="1" size="25">
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th><span class="red">*</span>公众号原始id：</th>
+                  <td><input type="text" required="" name="wxid" value="" onmouseup="this.value=this.value.replace('_430','')" class="px" tabindex="1" size="25">　<span class="red">请认真填写，错了不能修改。</span>比如：gh_423dwjkeww3</td>
+                </tr>
+                <tr>
+                  <th><span class="red">*</span>微信号：</th>
+                  <td><input type="text" required="" name="weixin" value="" class="px" tabindex="1" size="25">　比如：noercms </td>
+                </tr>
+                  <tr>
+                  <th><span class="red">*</span>头像地址（url）:</th>
+                  <td><input class="px" id="pic" name="headerpic" value="" size="60"><span class="ke-button-common" id="upload" style="margin-top: 0px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="上传图片"></span></td>
+                </tr>
+                 <tr style="display:none">
+                  <th><span class="red">*</span>TOKEN</th>
+                  <td><input type="text" name="token" value="{noercms:$tokenvalue}" class="px" tabindex="1" size="40">(填写你的公众号)例：wephoneweixin,请勿填写文,或者其它特殊字符，此处token和腾讯平台必须一致!</td>
+                </tr>
+                <tr>
+                  <th><span class="red">*</span>地区</th>
+                  <td>
+                  <input type="text" class="px" id="province" value="{noercms:$province}" name="province" tabindex="1" size="20"> 省  <input id="city" value="{noercms:$city}" type="text" name="city" class="px" tabindex="1" size="20"> 市
+               （此处关联公交等本地化查询）
+                  </td>
+                </tr>
+                <tr style="display:none">
+                  <th><span class="red">*</span>公众号邮箱：</th>
+                  <td><input type="text" required="" class="px" tabindex="1" value="{noercms:$email}" name="qq" size="25"></td>
+                </tr>
+                 <tr style="display:none">
+                  <th><span class="red">*</span>粉丝数：</th>
+                  <td><input type="text" required="" name="wxfans" value="0" class="px" tabindex="1" size="25"></td>
+                </tr>
+                <tr>
+                  <th>类型：</th>
+                  <td><select id="type" name="type">                  
+                  <option value="1,情感">情感</option>
+                  <option value="2,数码">数码</option>
+                  <option value="3,娱乐">娱乐</option>
+                  <option value="4,IT">IT</option>
+                  <option value="5,数码">数码</option>
+                  <option value="6,购物">购物</option>
+                  <option value="7,生活">生活</option>
+                  <option value="8,服务">服务</option>
+                  </select></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td><button type="submit" class="btnGreen" id="saveSetting">保存</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </form>
+        </div>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+  <!--底部-->
+  	</div>
+<include file="Public:footer"/>	

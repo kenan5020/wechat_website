@@ -1,0 +1,95 @@
+﻿<html><head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/style.css" media="all">
+        <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/fang/back.css" media="all">
+        <script type="text/javascript" src="{noercms::RES}/js/fang/share.js"></script>
+        <script type="text/javascript" src="{noercms::RES}/js/fang/common.js"></script>
+        <script type="text/javascript" src="{noercms::RES}/js/fang/picroll.js"></script>
+        <title>楼盘户型图</title>
+    <script src="{noercms::RES}/js/fang/sharedata.js"></script></head>
+    <body onselectstart="return true;" ondragstart="return false;" style="">
+<style type="text/css">
+	.btn_zoom_in,.btn_zoom_out,.btn_down {bottom: 100px;}
+	.btn_down{left: 20px;}
+	.btn_zoom_in,.btn_zoom_out{right:20px;}
+	.zoomDiv{
+		width:100%;
+		height:100%;
+		display:none;
+		z-index:299;
+		overflow:scroll;
+		text-align:center;
+		background: rgba(0,0,0,0.7);
+		background-size:30px 30px;
+	}
+	.type_up .btn_more{top:45px;}
+	.type_full .type_up .btn_more{top:22px;}
+	.type_full .type_info .type_num{display:none;}
+	#topNavWrapper { 
+    width: 100%; 
+    text-align: left; 
+    height: 25px; 
+    margin: 0px auto; 
+    z-index:100; 
+    position:absolute;
+    _position: relative ; 
+    _top:0px; 
+} 
+#topNavWrapper a{
+    width:20%;
+    line-height:25px;
+    text-align:center;
+    height:25px;
+    float:left;
+    cursor:pointer;
+    color:#eee;
+    background: rgba(0,0,0,1);
+    font-size:14px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+</style>
+<div id="zoomDiv" class="zoomDiv">
+	<img id="zoomImg" width="200%" height="200%" src="images/1.gif">
+</div>
+<div id="detailContainer" class="type_show" style="overflow: hidden; ">
+	<div id="topNavWrapper">
+        <a onclick="img1();" id="text1" style="background:#666;">1</a>
+        <a onclick="img2();" id="text2" <if condition="$arr['topic2'] eq null">style="display:none"</if> >2</a>
+        <a onclick="img3();" id="text3" <if condition="$arr['topic3'] eq null">style="display:none"</if> >3</a>
+        <a onclick="img4();" id="text4" <if condition="$arr['topic4'] eq null">style="display:none"</if> >4</a>
+        <a onclick="img5();" id="text5" <if condition="$arr['topic5'] eq null">style="display:none"</if> >5</a>
+    </div>
+    <!-- 全部开时加上样式type_full -->
+		<img src="{noercms:$arr['topic1']}" style="margin:10% 10%;width:80%;height:80%;" id="pic1" />
+        <img src="{noercms:$arr['topic2']}" style="margin:10% 10%;width:80%;height:80%;display:none;" id="pic2" />
+        <img src="{noercms:$arr['topic3']}" style="margin:10% 10%;width:80%;height:80%;display:none;" id="pic3" />
+        <img src="{noercms:$arr['topic4']}" style="margin:10% 10%;width:80%;height:80%;display:none;" id="pic4" />
+        <img src="{noercms:$arr['topic5']}" style="margin:10% 10%;width:80%;height:80%;display:none;" id="pic5" />
+	<div class="type_info" id="picDetail" onclick="Picroll.switchDetail();">  
+        <p class="type_num" id="typeNum">{noercms:$arr['name']}</p>  
+        <a href="javascript:void(0);" class="type_up">   
+            <strong>{noercms:$arr['name']}</strong>   
+            <span>{noercms:$arr['fang_zi']}</span>   
+            <em>{noercms:$arr['fang']}房{noercms:$arr['ting']}厅 约{noercms:$arr['area']}平方米</em>   
+            <span class="btn_more">详情</span>  
+        </a>  
+        <div class="type_detail">   
+            <p>楼层：{noercms:$arr['louceng']}</p>         
+            <p>建筑面积：约{noercms:$arr['area']}平方米</p>       
+            <ul>         
+                <li>{noercms:$arr['info']}</li>       
+            </ul>  
+        </div> 
+    </div>
+	<a href="javascript:void(0);" class="btn_show_close"><span>关闭</span></a>
+</div>
+<div class="pop_mask" id="popMask" style="display:none;"></div>
+<script>
+	var PID = 2356;
+	var WECHATID = 'o8ViLjqXXdEbCHRGmquQb7L19-T0';
+</script>
+<a href="javascript:history.go(-1);" class="back360" style="">&nbsp;</a>        		
+<div mark="stat_code" style="width:0px; height:0px; display:none;"></div>
+</body>
+</html>

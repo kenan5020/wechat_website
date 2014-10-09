@@ -1,0 +1,783 @@
+[ 2014-09-22T22:11:19+08:00 ] 123.114.43.53 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000452s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001521s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000253s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014972s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016834s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.017165s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.017520s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017697s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001202s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.018097s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000418s ]
+
+[ 2014-09-22T22:11:28+08:00 ] 123.114.43.53 /index.php?g=Home&m=Index&a=solution
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001657s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000258s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/30a8010ffe19dfe7e10e69b8621c032d.php 第 1 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/30a8010ffe19dfe7e10e69b8621c032d.php 第 1 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001957s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012330s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.014342s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.014653s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.014988s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.015157s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001156s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.015549s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000412s ]
+
+[ 2014-09-22T22:11:31+08:00 ] 123.114.43.53 /index.php?g=Home&m=Index&a=navigation
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001602s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000251s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/09e1df67eacd4b7b94625f19ed6cc4a2.php 第 1 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/09e1df67eacd4b7b94625f19ed6cc4a2.php 第 1 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001896s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009341s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.011280s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.011579s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.011880s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.012041s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001079s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.012424s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000483s ]
+
+[ 2014-09-22T22:11:33+08:00 ] 123.114.43.53 /index.php?g=Home&m=Index&a=spread
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000432s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001330s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000266s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/7071266af254f25f872ea3b9477fb2d1.php 第 1 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/7071266af254f25f872ea3b9477fb2d1.php 第 1 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001638s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010929s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.012606s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.012913s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.013226s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.013387s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001104s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.013770s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000430s ]
+
+[ 2014-09-22T22:11:45+08:00 ] 123.114.43.53 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001538s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000250s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001833s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015032s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016910s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.017244s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.017606s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017772s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001199s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.018173s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000461s ]
+
+[ 2014-09-22T22:11:51+08:00 ] 123.114.43.53 /index.php?g=Home&m=Index&a=login
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001606s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000260s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001909s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006650s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.008599s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.008862s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.009182s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.009373s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001106s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.009765s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000437s ]
+
+[ 2014-09-22T22:11:54+08:00 ] 123.114.43.53 /index.php?g=Home&m=Index&a=reg
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001693s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000252s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001985s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006698s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.008722s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.008973s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.009307s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.009488s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001106s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.009887s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000472s ]
+
+[ 2014-09-22T22:12:09+08:00 ] 123.114.43.53 /index.php?m=Index&a=reg
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000415s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001346s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000242s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005855s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.007525s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.007769s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.008069s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.008240s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001043s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.008622s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000408s ]
+
+[ 2014-09-22T22:12:26+08:00 ] 123.114.43.53 /index.php?m=Users&a=checkreg
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_users` [ RunTime:0.000929s ]
+SQL: SHOW COLUMNS FROM `wqy_user_group` [ RunTime:0.000444s ]
+SQL: SELECT * FROM `wqy_user_group` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000188s ]
+SQL: SELECT * FROM `wqy_users` WHERE ( `username` = 'test' ) LIMIT 1   [ RunTime:0.000156s ]
+SQL: SELECT * FROM `wqy_users` WHERE ( `email` = 'test@test.com' ) LIMIT 1   [ RunTime:0.000140s ]
+NOTIC: [2] md5() expects at least 1 parameter, 0 given /alidata/www/ces/noercms/_Core/Lib/Core/Model.class.php 第 876 行.
+SQL: INSERT INTO `wqy_users` (`username`,`password`,`tel`,`email`,`qq`,`createtime`,`createip`,`viptime`,`lasttime`,`lastip`,`status`,`gid`) VALUES ('test','098f6bcd4621d373cade4e832627b4f6','123831231','test@test.com','1234567',1411395146,'123.114.43.53',1411395146,1411395146,'123.114.43.53',1,4) [ RunTime:0.000193s ]
+SQL: UPDATE `wqy_users` SET `viptime`=1411654346 WHERE ( `id` = 1 ) [ RunTime:0.000147s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.011616s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000258s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.011929s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005784s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.017753s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.018005s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.018277s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.018450s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001018s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.018824s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000446s ]
+
+[ 2014-09-22T22:12:27+08:00 ] 123.114.43.53 /index.php?g=User&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+NOTIC: [2048] Declaration of IndexAction::insert() should be compatible with that of BaseAction::insert() /alidata/www/ces/noercms/Lib/Action/User/IndexAction.class.php 第 2 行.
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_user_group` [ RunTime:0.000639s ]
+SQL: SELECT * FROM `wqy_user_group` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000196s ]
+SQL: SHOW COLUMNS FROM `wqy_users` [ RunTime:0.000712s ]
+SQL: SELECT * FROM `wqy_users` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000197s ]
+SQL: SHOW COLUMNS FROM `wqy_wxuser` [ RunTime:0.001181s ]
+SQL: SELECT `wxname`,`wxid`,`headerpic`,`weixin` FROM `wqy_wxuser` WHERE ( `token` = null ) AND ( `uid` = 1 ) LIMIT 1   [ RunTime:0.000287s ]
+SQL: SHOW COLUMNS FROM `wqy_wxuser_message` [ RunTime:0.000913s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'text' ) LIMIT 1   [ RunTime:0.000147s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 28 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'image' ) LIMIT 1   [ RunTime:0.000176s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 29 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'voice' ) LIMIT 1   [ RunTime:0.000145s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 30 行.
+SQL: SELECT COUNT(distinct CreateTime) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'unsubscribe' ) LIMIT 1   [ RunTime:0.013731s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 31 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'subscribe' ) LIMIT 1   [ RunTime:0.000134s ]
+SQL: SHOW COLUMNS FROM `wqy_user_group` [ RunTime:0.000494s ]
+SQL: SELECT * FROM `wqy_user_group`  [ RunTime:0.000147s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser` WHERE ( `uid` = 1 ) LIMIT 1   [ RunTime:0.000116s ]
+SQL: SELECT * FROM `wqy_wxuser` WHERE ( `uid` = 1 ) ORDER BY id desc LIMIT 0,25   [ RunTime:0.000193s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.052530s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000272s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: weixin /alidata/www/ces/noercmsdata/logs/Cache/User/56f7804e54d354c9c14b7fc522e75478.php 第 69 行.
+NOTIC: [8] Undefined index: id /alidata/www/ces/noercmsdata/logs/Cache/User/56f7804e54d354c9c14b7fc522e75478.php 第 74 行.
+NOTIC: [8] Undefined index: id /alidata/www/ces/noercmsdata/logs/Cache/User/56f7804e54d354c9c14b7fc522e75478.php 第 75 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.052853s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010958s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.063872s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.064176s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.064449s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.064613s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001074s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.065001s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000408s ]
+
+[ 2014-09-22T22:12:33+08:00 ] 123.114.43.53 /index.php?g=User&m=Index&a=edit&
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+NOTIC: [2048] Declaration of IndexAction::insert() should be compatible with that of BaseAction::insert() /alidata/www/ces/noercms/Lib/Action/User/IndexAction.class.php 第 2 行.
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_user_group` [ RunTime:0.000679s ]
+SQL: SELECT * FROM `wqy_user_group` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000205s ]
+SQL: SHOW COLUMNS FROM `wqy_users` [ RunTime:0.000737s ]
+SQL: SELECT * FROM `wqy_users` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000175s ]
+SQL: SHOW COLUMNS FROM `wqy_wxuser` [ RunTime:0.000996s ]
+SQL: SELECT `wxname`,`wxid`,`headerpic`,`weixin` FROM `wqy_wxuser` WHERE ( `token` = null ) AND ( `uid` = 1 ) LIMIT 1   [ RunTime:0.000147s ]
+SQL: SHOW COLUMNS FROM `wqy_wxuser_message` [ RunTime:0.000604s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'text' ) LIMIT 1   [ RunTime:0.000148s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 28 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'image' ) LIMIT 1   [ RunTime:0.000124s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 29 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'voice' ) LIMIT 1   [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 30 行.
+SQL: SELECT COUNT(distinct CreateTime) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'unsubscribe' ) LIMIT 1   [ RunTime:0.000133s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 31 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'subscribe' ) LIMIT 1   [ RunTime:0.000120s ]
+SQL: SELECT * FROM `wqy_wxuser` WHERE ( `uid` = 1 ) LIMIT 1   [ RunTime:0.000167s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.015151s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000277s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: weixin /alidata/www/ces/noercmsdata/logs/Cache/User/a2e4b87f30e952417329ae79443dd206.php 第 70 行.
+NOTIC: [8] Undefined index: id /alidata/www/ces/noercmsdata/logs/Cache/User/a2e4b87f30e952417329ae79443dd206.php 第 75 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.015470s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022386s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.037897s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.038254s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.038685s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.038851s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001297s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.039273s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000407s ]
+
+[ 2014-09-22T22:14:13+08:00 ] 123.114.43.53 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001367s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000250s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001672s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014316s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016015s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016332s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016668s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016842s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001153s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.017231s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000397s ]
+
+[ 2014-09-22T22:20:07+08:00 ] 123.114.43.53 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001591s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000254s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001888s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014951s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016884s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.017211s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.017574s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017753s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001198s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.018145s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000419s ]
+
+[ 2014-09-22T22:21:45+08:00 ] 123.114.43.53 /index.php?g=System&m=Admin&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001224s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000261s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001528s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005562s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.007130s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.007393s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.007719s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.007905s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001096s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.008281s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000445s ]
+
+[ 2014-09-22T22:22:05+08:00 ] 14.17.18.143 /index.php?g=System&m=Admin&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001304s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000266s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001628s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005543s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.007209s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.007461s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.007787s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.007964s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001083s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.008351s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000466s ]
+
+[ 2014-09-22T22:22:14+08:00 ] 123.114.43.53 /index.php?g=System&m=System&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000410s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000491s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `level` = null ) AND ( `pid` = 2 ) AND ( `status` = 1 ) AND ( `display` > 0 ) ORDER BY `sort` asc  [ RunTime:0.000164s ]
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000441s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `display` = 1 ) AND ( `status` = 1 ) ORDER BY `sort` asc  [ RunTime:0.000233s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.009167s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000270s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.009479s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005792s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015309s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.015558s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.015849s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016021s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001039s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.016408s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000444s ]
+
+[ 2014-09-22T22:22:15+08:00 ] 123.114.43.53 /index.php?g=System&m=System&a=top
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000456s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000554s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `level` = null ) AND ( `pid` = 2 ) AND ( `status` = 1 ) AND ( `display` > 0 ) ORDER BY `sort` asc  [ RunTime:0.000260s ]
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000458s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `display` = 1 ) AND ( `status` = 1 ) ORDER BY `sort` asc  [ RunTime:0.000240s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.012104s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000899s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.013050s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006370s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.019459s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.019713s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.019988s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.020156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001614s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.021135s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000427s ]
+
+[ 2014-09-22T22:22:15+08:00 ] 123.114.43.53 /index.php?g=System&m=System&a=main
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000458s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000574s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `level` = null ) AND ( `pid` = 2 ) AND ( `status` = 1 ) AND ( `display` > 0 ) ORDER BY `sort` asc  [ RunTime:0.000267s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.014231s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000354s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.014634s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006800s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.021479s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.021719s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.022006s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.022180s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001022s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.022558s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000445s ]
+
+[ 2014-09-22T22:22:15+08:00 ] 123.114.43.53 /index.php?g=System&m=System&a=menu
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000412s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000416s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `level` = null ) AND ( `pid` = 2 ) AND ( `status` = 1 ) AND ( `display` > 0 ) ORDER BY `sort` asc  [ RunTime:0.000212s ]
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000394s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `display` = 2 ) AND ( `status` = 1 ) AND ( `pid` = 2 ) AND ( `level` = 2 ) ORDER BY `sort` asc  [ RunTime:0.018811s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.061766s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000271s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.062077s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005491s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.067606s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.067844s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.068101s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.068269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000975s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.068638s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000430s ]
+
+[ 2014-09-22T22:22:15+08:00 ] 123.114.43.53 /index.php?g=System&m=System&a=footer
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000406s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000424s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `level` = null ) AND ( `pid` = 2 ) AND ( `status` = 1 ) AND ( `display` > 0 ) ORDER BY `sort` asc  [ RunTime:0.000195s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.056595s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000257s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.056895s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004288s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.061221s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.061443s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.061703s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.061863s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000962s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.062237s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000413s ]
+
+[ 2014-09-22T22:40:07+08:00 ] 123.114.43.53 /index.php?g=System&m=System&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000611s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `level` = null ) AND ( `pid` = 2 ) AND ( `status` = 1 ) AND ( `display` > 0 ) ORDER BY `sort` asc  [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000400s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `display` = 1 ) AND ( `status` = 1 ) ORDER BY `sort` asc  [ RunTime:0.000290s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.009982s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000254s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.010288s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005050s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015374s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.015634s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.015902s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016075s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001067s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.016495s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000441s ]
+
+[ 2014-09-22T22:40:07+08:00 ] 123.114.43.53 /index.php?g=System&m=System&a=top
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000583s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `level` = null ) AND ( `pid` = 2 ) AND ( `status` = 1 ) AND ( `display` > 0 ) ORDER BY `sort` asc  [ RunTime:0.000235s ]
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000405s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `display` = 1 ) AND ( `status` = 1 ) ORDER BY `sort` asc  [ RunTime:0.000272s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.009622s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000256s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.009919s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006279s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016234s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016491s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016759s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016922s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000997s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.017288s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000439s ]
+
+[ 2014-09-22T22:40:07+08:00 ] 123.114.43.53 /index.php?g=System&m=System&a=footer
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000568s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `level` = null ) AND ( `pid` = 2 ) AND ( `status` = 1 ) AND ( `display` > 0 ) ORDER BY `sort` asc  [ RunTime:0.000257s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.012107s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000284s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.012437s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005224s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.017702s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.017947s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.018226s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.018396s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001020s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.018794s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2014-09-22T22:40:07+08:00 ] 123.114.43.53 /index.php?g=System&m=System&a=main
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000460s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000502s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `level` = null ) AND ( `pid` = 2 ) AND ( `status` = 1 ) AND ( `display` > 0 ) ORDER BY `sort` asc  [ RunTime:0.000206s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.010292s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000271s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.010608s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005870s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016518s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016767s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.017045s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017209s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001020s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.017595s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000451s ]
+
+[ 2014-09-22T22:40:07+08:00 ] 123.114.43.53 /index.php?g=System&m=System&a=menu
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000429s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000458s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `level` = null ) AND ( `pid` = 2 ) AND ( `status` = 1 ) AND ( `display` > 0 ) ORDER BY `sort` asc  [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000380s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `display` = 2 ) AND ( `status` = 1 ) AND ( `pid` = 2 ) AND ( `level` = 2 ) ORDER BY `sort` asc  [ RunTime:0.000301s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.037463s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000272s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.037782s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005689s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.043508s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.043750s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.044012s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.044183s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000990s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.044563s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000432s ]
+
+[ 2014-09-22T22:40:10+08:00 ] 123.114.43.53 /index.php?g=System&m=System&a=main
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000435s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_node` [ RunTime:0.000593s ]
+SQL: SELECT * FROM `wqy_node` WHERE ( `level` = null ) AND ( `pid` = 2 ) AND ( `status` = 1 ) AND ( `display` > 0 ) ORDER BY `sort` asc  [ RunTime:0.000250s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.008905s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000258s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.009216s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005030s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.014284s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.014532s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.014792s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.014961s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001007s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.015357s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000437s ]
+
+[ 2014-09-22T22:40:13+08:00 ] 123.114.43.53 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001337s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000260s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001639s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013948s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015628s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.015949s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016286s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016452s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001162s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.016854s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000408s ]
+
+[ 2014-09-22T22:40:19+08:00 ] 123.114.43.53 /index.php?g=User&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+NOTIC: [2048] Declaration of IndexAction::insert() should be compatible with that of BaseAction::insert() /alidata/www/ces/noercms/Lib/Action/User/IndexAction.class.php 第 2 行.
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `wqy_user_group` [ RunTime:0.000683s ]
+SQL: SELECT * FROM `wqy_user_group` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `wqy_users` [ RunTime:0.000645s ]
+SQL: SELECT * FROM `wqy_users` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `wqy_wxuser` [ RunTime:0.001086s ]
+SQL: SELECT `wxname`,`wxid`,`headerpic`,`weixin` FROM `wqy_wxuser` WHERE ( `token` = null ) AND ( `uid` = 1 ) LIMIT 1   [ RunTime:0.000189s ]
+SQL: SHOW COLUMNS FROM `wqy_wxuser_message` [ RunTime:0.000523s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'text' ) LIMIT 1   [ RunTime:0.000171s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 28 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'image' ) LIMIT 1   [ RunTime:0.000156s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 29 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'voice' ) LIMIT 1   [ RunTime:0.000148s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 30 行.
+SQL: SELECT COUNT(distinct CreateTime) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'unsubscribe' ) LIMIT 1   [ RunTime:0.000152s ]
+NOTIC: [8] Undefined index: wxid /alidata/www/ces/noercms/Lib/Action/UserAction.class.php 第 31 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser_message` WHERE ( `ToUserName` = null ) AND ( `MsgType` = 'subscribe' ) LIMIT 1   [ RunTime:0.000146s ]
+SQL: SHOW COLUMNS FROM `wqy_user_group` [ RunTime:0.000396s ]
+SQL: SELECT * FROM `wqy_user_group`  [ RunTime:0.000176s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wqy_wxuser` WHERE ( `uid` = 1 ) LIMIT 1   [ RunTime:0.000148s ]
+SQL: SELECT * FROM `wqy_wxuser` WHERE ( `uid` = 1 ) ORDER BY id desc LIMIT 0,25   [ RunTime:0.000209s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.017614s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000271s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: weixin /alidata/www/ces/noercmsdata/logs/Cache/User/56f7804e54d354c9c14b7fc522e75478.php 第 69 行.
+NOTIC: [8] Undefined index: id /alidata/www/ces/noercmsdata/logs/Cache/User/56f7804e54d354c9c14b7fc522e75478.php 第 74 行.
+NOTIC: [8] Undefined index: id /alidata/www/ces/noercmsdata/logs/Cache/User/56f7804e54d354c9c14b7fc522e75478.php 第 75 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.017931s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011630s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.029602s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.029868s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.030163s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.030343s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001053s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.030708s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000411s ]
+
+[ 2014-09-22T23:04:20+08:00 ] 106.120.160.119 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000430s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001354s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000251s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001645s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013949s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015635s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.015957s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016285s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016468s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001173s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.016871s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000431s ]
+
+[ 2014-09-22T23:04:39+08:00 ] 101.199.112.53 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001330s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000267s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001637s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014048s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015726s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016046s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016381s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001175s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.016962s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000402s ]
+
+[ 2014-09-22T23:38:41+08:00 ] 222.186.128.50 http://www.baidu.com/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001600s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000264s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001909s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015009s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016962s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.017311s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.017670s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017850s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001219s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.018256s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000409s ]
+

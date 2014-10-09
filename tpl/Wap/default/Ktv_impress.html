@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/wap/review.css" media="all">
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/wap/back.css" media="all">
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/wap/share.js"></script>
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/wap/common.js"></script>
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/wap/review.js"></script>
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/waphome.css" media="all">
+<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/reset.css" media="all">
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/jquery.js"></script>
+<script type="text/javascript" src="{noercms::STATICS}/vhouse/swipe.js"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="{noercms::COMMON}/wap/buttons/css/buttons.css">
+<script type="text/javascript" src="{noercms::COMMON}/wap/buttons/js/buttons.js"></script>
+<title>专家点评</title>
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销">
+        <meta name="Description" content="国内最大的微信公众智能服务平台，八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。">
+        <!-- Mobile Devices Support @begin -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+        <!-- Mobile Devices Support @end -->
+<script src="{noercms::STATICS}/vhouse/wap/sharedata.js"></script></head>
+<body onselectstart="return true;" ondragstart="return false;">
+<style type="text/css">
+    .review_man h3{font-size:18px;}
+    #impress a{
+        overflow:hidden;
+    }
+    .review_man h3{font-size:18px;}
+    .is_1 a[style*='flex:0'], .is_2 a[style*='flex:0']{
+        display:none;
+    }
+</style>
+<!--script>
+    function iswitch_panel(obj){
+        var ipm = $('#impress');
+        var pro = $('#professional');
+        if(obj==0){
+            ipm.show();
+            pro.hide();
+        }else{
+            ipm.hide();
+            pro.show();
+        }
+    }
+</script-->
+<div class="wrapper">
+    <!-- start -->
+        <ul class="nav_top" id="navTop" style="display: -webkit-box;">
+            <!--li><a href="javascript:void(0);" onclick="iswitch_panel(0);return false;" class="current">房友印象</a></li-->
+            <li><a href="javascript:void(0);" onclick="iswitch_panel(1);return false;">专家点评</a></li>
+        </ul>
+    <!-- end -->
+    <div id="impress" style="display: none;" class="impress"><h3>选择您的印象，喜欢就赞我吧</h3>
+    <volist name="impress" id="vo" >
+        <if condition="($i%2) eq 0">
+           <if condition="($i%4) eq 2">
+<a href="#" id="{noercms:$vo['id']}" onclick="getId('id',{noercms:$vo['id']})" class="button button-circle button-caution"><span>{noercms:$vo['title']} {noercms:$vo['comment']}赞</span></a>
+           <else/>
+ <a href="#" id="{noercms:$vo['id']}" onclick="getId('id',{noercms:$vo['id']})" class="button button-circle button-action"><span>{noercms:$vo['title']} {noercms:$vo['comment']}赞</span></a>
+           </if>
+        <else/>
+        <if condition="($i%3) eq 3">
+<a href="" id="{noercms:$vo['id']}" onclick="getId('id',{noercms:$vo['id']})" class="button button-circle button-primary" ><span>{noercms:$vo['title']} {noercms:$vo['comment']}赞</span> </a>
+        <else/>
+   <a href="#" id="{noercms:$vo['id']}" onclick="getId('id',{noercms:$vo['id']})" class="button button-circle button-highlight"><span>{noercms:$vo['title']} {noercms:$vo['comment']}赞</span></a>
+        </if>
+        </if>
+</volist>
+    </div>
+    <!--专家-->
+    <div id="professional" style="display:block;">
+     <volist name="expert" id="exp">
+        <div class="review_box">
+            <div class="review_man"> <img src="{noercms:$exp['face']}" width="70" height="70" style="width:70px!important; height:70px!important; " alt="">     
+            <h3>{noercms:$exp['name']}<em><br>{noercms:$exp['position']}</em></h3>
+            <p>{noercms:$exp['description']}</p>
+            </div>
+            <div class="review_word">
+            <h2>{noercms:$exp['title']}</h2>
+            <p>{noercms:$exp['comment']}</p>
+            </div>
+        </div>
+    </volist>
+ </div>
+</div>
+<script>
+$(document).ready(function() {
+function getId(obj,val){
+    var imp_id = val;
+    var token="{noercms:$Think.get.token}";
+    var wecha_id="{noercms:$Think.get.wecha_id}";
+    if (wecha_id == '') {
+        alert("请认返回上一页面，重新进入。");
+        return
+    }
+    var submitData = {
+        imp_id: imp_id,
+        token: token,
+        wecha_id:wecha_id,
+        action: "impress_add"
+    },
+    $.post("{noercms::U('Jianshen/impress_add',array('token'=>$token,'wecha_id'=>$wecha_id))}", submitData,
+    function(data) {
+        var xobj=eval('('+data+')');
+        //alert(xobj.msg);
+        if (xobj.success == 1) {
+            alert(xobj.msg);
+            return
+        }else{
+            alert("Hi,您已经赞了噢。");
+        }
+    },
+    "json");
+ }
+})
+</script>
+	<link rel="stylesheet" type="text/css" href="{noercms::STATICS}/vhouse/font-awesome.css" media="all">
+<p><br/><br/><br/><br/><br/></p>
+<link rel="stylesheet" type="text/css" href="{noercms::COMMON}/wap/estate/back.css" media="all">
+<a href="javascript:history.go(-1);" class="back360" style="">&nbsp;</a>
+<section>
+            <div style="visibility: visible;" id="navList_box" class="box_swipe">
+<ul style="list-style: none; width: 1280px; transition: 0ms; -webkit-transition: 0ms; -webkit-transform: translate3d(0px, 0, 0);">
+                <li style="width: 640px; display: table-cell; vertical-align: top;">
+                <a href="{noercms::U('Ktv/index',array('token'=>$token,'wecha_id'=>$wecha_id))}">
+                    <span class="icon-home"></span>
+                        <img src="" alt="KTV介绍">
+                        <div>KTV介绍</div>
+                </a>
+                <a href="{noercms::U('Ktv/album',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item">
+                    <span class="icon-picture"></span>
+                    <img src="" alt="环境相册">
+                    <div>环境相册</div>
+                            </a>
+                <a href="{noercms::U('Ktv/housetype',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item">
+                        <span class="icon-building"></span>
+                        <img src="" alt="KTV包厢">
+                        <div>KTV包厢</div>
+                </a>
+                <a href="{noercms::U('Ktv/impress',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item">
+                    <span class="icon-check"></span>
+                        <img src="" alt="客人印象">
+                        <div>客人印象</div>
+                </a>
+                </li>
+                    <li style="width: 640px; display: table-cell; vertical-align: top;">
+                    <a href="{noercms::U('Ktv/news',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item">
+                        <span class="icon-rss-sign"></span>
+                        <img src="" alt="新闻动态">
+                        <div>新闻动态</div>
+                    </a>
+                    <a href="{noercms::U('Reservation/index',array('token'=>$token,'wecha_id'=>$wecha_id,'rid'=>$rid))}" class="noercms-list-item">
+                    <span class="icon-edit"></span>
+                        <img src="" alt="服务预约">
+                        <div>服务预约</div>
+                    </a>
+                    <a href="{noercms::U('Card/vip',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item">
+                    <span class="icon-credit-card"></span>
+                    <img src="" alt="加入会员">
+                    <div>加入会员</div>
+                    </a>
+                    <!--a href="{noercms::U('Ktv/aboutus',array('token'=>$token,'wecha_id'=>$wecha_id))}" class="noercms-list-item"-->
+                    <a href="tel:{noercms:$es_data1['tel']}" class="noercms-list-item">
+                    <span class="icon-phone"></span>
+                    <img src="" alt="联系我们">
+                    <div>联系我们</div>
+                    </a>
+                        </li>
+                </ul>
+                <ol>
+                    <a href="javascript:navList_box.prev();">&nbsp;</a>
+                    <a href="javascript:navList_box.next();">&nbsp;</a>
+                </ol>
+            </div>
+        </section>
+        <script>
+            $(document).ready(function(){
+                window.navList_box = new Swipe(document.getElementById('navList_box'), {auto:0});
+            });
+        </script>
+</body></html>

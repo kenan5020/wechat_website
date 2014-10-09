@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)http://card.renmai.cn/card/user-card-detail/Y2EzNmNjZjRjZTdkZWQwMjdlNmYzMWJiMWJmYzVkODU= -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>
+            {noercms:$company.company}-微名片   </title>
+        <meta name="description" content="">
+        
+        <meta http-equiv="Expires" content="0">
+                
+        <meta name="keywords" content="">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="format-detection" content="telephone=no">
+
+        
+
+<script async src="{noercms::RES}/vcard/js/analytics.js"></script><script type="text/javascript">
+    document.global_config_data = {
+        version:'201403261348',
+        debug:'debug',
+        host:'http://card.renmai.cn',
+        page:'user.card.detail.page',
+        resource_root:'http://img.renmai.weibo.com/card_resources/resources/111'
+    };
+    var require = {
+        urlArgs : "v=201403261348"
+    };
+	
+</script>
+<link href="{noercms::RES}/vcard/style.css" rel="stylesheet">
+
+
+
+    <script type="text/javascript" charset="utf-8" async data-requirecontext="_" data-requiremodule="main" src="{noercms::RES}/vcard/js/main.js"></script><script type="text/javascript" charset="utf-8" async data-requirecontext="_" data-requiremodule="jquery" src="{noercms::RES}/vcard/js/jquery.js"></script><script type="text/javascript" charset="utf-8" async data-requirecontext="_" data-requiremodule="purl" src="{noercms::RES}/vcard/js/purl.js"></script><script type="text/javascript" charset="utf-8" async data-requirecontext="_" data-requiremodule="lazy.load" src="{noercms::RES}/vcard/js/jquery.lazyload.min.js"></script><script type="text/javascript" charset="utf-8" async data-requirecontext="_" data-requiremodule="base" src="{noercms::RES}/vcard/js/base.js"></script><script type="text/javascript" charset="utf-8" async data-requirecontext="_" data-requiremodule="user.card.detail.page" src="{noercms::RES}/vcard/js/page.user.card.detail.js"></script></head>
+    <body id="Card_usercarddetail">
+             <header style="background:url({noercms::RES}/vcard/icon.png) no-repeat 97% 26%;background-size: 40px;">
+    <h1><a class="button" href="javascript:void(0);"  style="display: block;
+background: url({noercms:$company.logo}) no-repeat 10px 5px;
+background-size: 40px 40px;
+padding-left: 60px;
+padding-right: 10px;
+color: #303233;">{noercms:$company.company} - 微名片</a></h1>
+    </header>        <div id="wrap">
+    
+    <volist name="info" id="vo">
+     
+        <section class="card-box animation1">
+        <a href="{noercms::U('Vcard/index',array('token'=>$vo['token'],'id'=>$vo['id']))}">
+    <header style="background:url({noercms::RES}/vcard/icon.png) no-repeat 97% 44%;background-size: 40px;">
+        <div class="card-avatar fl" >
+            <img id="avatar" src="{noercms:$vo.image}" alt="">
+        </div>
+        <div class="card-owner">
+            <h1>{noercms:$vo.name}</h1><h2>{noercms:$vo.jianjie}</h2>        </div>
+    </header>
+    </a>
+    <div class="card-meta">
+        <li><span class="meta-name">手机:</span><span class="meta-content"><a class="button" href="tel:{noercms:$vo.tel}">{noercms:$vo.tel}</a></span></li><li><span class="meta-name"> 邮箱:</span><span class="meta-content"><a class="button" href="mailto:{noercms:$vo.email}">{noercms:$vo.email}</a></span></li>
+    </div>
+    
+
+</section>
+
+</volist>
+<a href="{noercms::U('Index/index',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id']))}"><button class="button-large button-blue" id="save_pbk_user">进入微官网</button>   </a>                  <footer>
+                  <footer>
+    <div class="footer-inner">
+        @{noercms:$company.company}-版权所有
+
+    </div>
+</footer>            </div>
+
+    <script type="text/javascript">
+
+        var desc = '{noercms:$company.company} - 微名片';
+        var shareUrl = location.href;
+        var shareImage = '{noercms:$company.tp}';
+        var title = '{noercms:$company.company} - 微名片';
+        var circle = '{noercms:$company.company} - 微名片';
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+            // 发送给好友
+
+//            var desc = document.title + ', 您可以收藏到名片夹或分享给朋友.';
+//            if(location.pathname == '/card/carddetail'){
+//                desc = document.title + ', 点击查看名片详情.';
+//            }
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                shareFriend();
+            });
+
+            // 分享到朋友圈
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                shareTimeline();
+            });
+
+            WeixinJSBridge.on('menu:share:weibo', function(argv){
+                shareWeibo();
+            });
+
+        }, false);
+
+
+        function shareFriend() {
+            WeixinJSBridge.invoke('sendAppMessage',{
+                "img_url": shareImage,
+                "img_width": "640",
+                "img_height": "640",
+                "link": shareUrl,
+                "desc": desc,
+                "title":title
+            }, function(res) {
+                _report('send_msg', res.err_msg);
+            })
+        }
+
+        function shareTimeline() {
+            WeixinJSBridge.invoke('shareTimeline',{
+                "img_url": shareImage,
+                "img_width": "640",
+                "img_height": "640",
+                "link": shareUrl,
+                "desc": circle,
+                "title": circle
+            }, function(res) {
+                _report('timeline', res.err_msg);
+            });
+        }
+
+        function shareWeibo() {
+            WeixinJSBridge.invoke('shareWeibo',{
+                "content": desc + shareUrl,
+                "url": shareUrl
+            }, function(res) {
+                _report('weibo', res.err_msg);
+            });
+        }
+    </script>
+    <script src="{noercms::RES}/vcard/js/require.js" data-main="http://img.renmai.weibo.com/card_resources/resources/111/scripts/main.js" type="text/javascript"></script>    
+			<div id="popBox" class="gone">			    <div class="overlay">			    </div>			    <div class="popBox-content">			        <img src="{noercms::RES}/vcard/js/2014_04_23_08_58_28ofC1Kt5jxQRMBD5yyy6ur_zrnBMc.jpg">			    </div>			</div><div id="remind"><div id="remind-1"></div></div></body></html>

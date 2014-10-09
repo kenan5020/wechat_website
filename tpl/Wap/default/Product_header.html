@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
+	<title>{noercms:$metaTitle}</title>
+	<meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="cleartype" content="on">
+	<link type="text/css" rel="stylesheet" href="{noercms:$staticFilePath}/css/style.css?v=20140615" />
+	<link rel="stylesheet" href="{noercms:$staticFilePath}/css/base.css?v=20131207">	
+	<link rel="stylesheet" href="{noercms:$staticFilePath}/css/common.css?v=20131207">
+	<link rel="stylesheet" href="{noercms:$staticFilePath}/css/index.css?v=20131207">
+	<link rel="stylesheet" type="text/css" href="{noercms:$staticFilePath}/css/idangerous.swiper.css?v=20131207">
+	<link rel="stylesheet" type="text/css" href="{noercms:$staticFilePath}/css/dynamic-slides.css?v=20131207">
+	<script type="text/javascript" src="{noercms:$staticFilePath}/js/jquery-1.7.2.min.js?v=20131206"></script>
+	<script type="text/javascript" src="{noercms:$staticFilePath}/js/mjquery.js?v=20131206"></script>
+	<script type="text/javascript" src="{noercms:$staticFilePath}/js/common.js?v=20131206"></script>
+</head>
+
+<body>
+	<!--头部-->
+	<header>
+		<div>
+			<a onclick="javascript:;" class="productcats" style="margin-top:5px"><span></span></a>
+			<a href="{noercms::U('Product/cats',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'dining'=>$isDining))}" class="home"><span></span></a>
+			<a href="{noercms::U('Product/my',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'dining'=>$isDining))}" class="kf"><span></span></a>
+			<a href="{noercms::U('Product/cart',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'dining'=>$isDining))}" class="car"><span></span></a>
+		</div>
+	</header><!--主体-->
+	<div id="win" style="display: none;">
+		<ul class="dropdown"> 
+			<volist name="headercats" id="cat">
+			<li><a href="<if condition="$cat['parentid'] eq 0">{noercms::U('Product/products',array('token'=>$_GET['token'],'catid'=>$cat['id'],'wecha_id'=>$wecha_id,'dining'=>$isDining))}<else/>{:U('Product/products',array('token'=>$_GET['token'],'catid'=>$cat['id'],'wecha_id'=>$wecha_id))}</if>"><span>{noercms:$cat.name}</span></a></li>
+			</volist>
+			
+		<div class="clr"></div>
+		</ul>
+	</div>
+	<div class="p_floatbox">
+    <div class="f_list_car p_buy clearfix" id="p_buy">
+    	<span class="all_price">总价格：<font id="all_price">￥{noercms:$totalProductFee}</font></span>
+    	<span>总共<font id="all_numb">{noercms:$totalProductCount}</font>件商品</span>
+    	<a href="{noercms::U('Product/cart',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'dining'=>$isDining))}" class="p_btn_buy"><span class="ts1">进入购物车</span></a>
+    </div>
+</div>

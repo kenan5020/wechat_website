@@ -1,0 +1,142 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/default_user_com.css" media="all">
+<script src="./tpl/User/default/common/js/date/WdatePicker.js"></script>
+<script src="/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="/tpl/static/artDialog/plugins/iframeTools.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="{noercms::Common}/daterangepicker/daterangepicker-bs3.css" />
+<script type="text/javascript" src="{noercms::Common}/daterangepicker/moment.js"></script>
+<script type="text/javascript" src="{noercms::Common}/daterangepicker/daterangepicker.js"></script>
+<script>
+var editor;
+KindEditor.ready(function(K) {
+editor = K.create('#info', {
+resizeType : 1,
+allowPreviewEmoticons : false,
+allowImageUpload : true,
+uploadJson : '/index.php?g=User&m=Upyun&a=kindedtiropic',
+items : [
+'source','undo','plainpaste','wordpaste','clearhtml','quickformat','selectall','fullscreen','fontname', 'fontsize','subscript','superscript','indent','outdent','|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline','hr']
+});
+});
+function setlatlng(longitude,lat){
+  art.dialog.data('longitude', longitude);
+  art.dialog.data('latitude', latitude);
+  // 此时 iframeA.html 页面可以使用 art.dialog.data('test') 获取到数据，如：
+  // document.getElementById('aInput').value = art.dialog.data('test');
+  art.dialog.open("{noercms::U('Map/setLatLng',array('token'=>$token,'id'=>$id))}",{lock:false,title:'设置经纬度',width:600,height:400,yesText:'关闭',background: '#000',opacity: 0.87});
+}
+</script>
+<div class="content" style="width:95%; background:none; margin-left:25px; border:none; margin-bottom:30px; margin-top:30px;" >
+  <div class="cLineB">
+    <div  class="quick-actions_homepage">
+    <ul class="quick-actions">
+    <li class="bg_ls"> <a href="{noercms::U('Car/index',array('token'=>$token))}"> <i class="icon-truck"></i> 微汽车 </a> </li>
+      <li class="bg_lb"> <a href="{noercms::U('Product/orders',array('token'=>$token,'dining'=>1))}"> <i class="icon-glass"></i> 微餐饮 </a> </li>
+      <li class="bg_dy"> <a href="{noercms::U('Estate/index',array('token'=>$token))}"> <i class="icon-star"></i> 微房产</a> </li>
+      <li class="bg_lg"> <a href="{noercms::U('Jiudian/index',array('token'=>$token))}"> <i class="icon-plus"></i> 微酒店</a> </li>
+      <li class="bg_ly"> <a href="{noercms::U('Yiliao/index',array('token'=>$token))}"> <i class="icon-tag"></i> 微医疗 </a> </li>
+      <li class="bg_lo"> <a href="{noercms::U('Reservation/index',array('token'=>$token))}"> <i class="icon-map-marker"></i> 微预约 </a> </li>
+      <li class="bg_db"> <a href="javascript:history.go(-1);"> <i class="icon-share-alt"></i> 返回</a> </li>
+    </ul>
+  </div>
+  <h4>预约系统设置  ---- <if condition="$addtype eq 'drive'">预约试驾<else/>预约保养</if> </h4>
+  <include file="Car:menu"/>
+  <!--a href="javascript:history.go(-1);return false;" class="right btnGrayS vm" style="margin-top:-27px">返回</a-->
+ </div>
+  <div class="msgWrap bgfc">
+  <form action="" method="post" class="form-horizontal form-validate" novalidate="novalidate">
+ <input type="hidden" name="rid" id="rid" value="123"/>
+ <input type="hidden" name="addtype" value="{noercms:$addtype}"/> 
+<if condition="$reslist['id'] neq ''">
+  <input type="hidden" name="id" id="id" value="{noercms:$reslist['id']}"/>
+</if>
+    <div class="control-group">
+        <label for="title" class="control-label">图文消息标题：</label>
+        <div class="controls">
+           <input type="text" placeholder="请输入图文消息标题" name="title" id="title" class="span4"  value="{noercms:$reslist['title']}" data-rule-required="true" /><span class="maroon">*</span><span class="help-inline">尽量简单，不要超过20字</span>
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="keyword" class="control-label">触发关键词：</label>
+        <div class="controls">
+            <input type="text" name="keyword" id="keyword" class="span4" data-rule-required="true" value="{noercms:$reslist['keyword']}"><span class="maroon">*</span><span class="help-inline">只能设置一个关键字</span>
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="coverurl" class="control-label">图文封面：</label>
+<!--试驾预约-->
+    <if condition="$addtype eq 'drive'">
+        <div class="controls">
+      <img class="thumb_img" id="picurl_src" src="{noercms:$reslist['picurl']|default='tpl/User/default/common/car/yuyue.jpg'}" style="max-height:100px;">
+      <input id="picurl" type="text" class="span4" name="picurl" class="input-xlarge"  data-rule-required="true" data-rule-url="true" value="{noercms:$reslist['picurl']|default='tpl/User/default/common/car/yuyue.jpg'}" />
+          <span class="help-inline">
+               <script src="{noercms::STATICS}/upyun.js"></script><a href="###" onclick="upyunPicUpload('picurl',720,400,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('picurl')">预览</a>
+              <span class="help-inline">建议尺寸：宽720像素，高400像素</span>
+          </span>
+       </div>
+<else/>
+ <div class="controls">
+      <img class="thumb_img" id="picurl_src" src="{noercms:$reslist['picurl']|default='tpl/User/default/common/car/baoyang.jpg'}" style="max-height:100px;">
+      <input id="picurl" type="text" class="span4" name="picurl" class="input-xlarge"  data-rule-required="true" data-rule-url="true" value="{noercms:$reslist['picurl']|default='tpl/User/default/common/car/baoyang.jpg'}" />
+          <span class="help-inline">
+               <script src="{noercms::STATICS}/upyun.js"></script><a href="###" onclick="upyunPicUpload('picurl',720,400,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('picurl')">预览</a>
+              <span class="help-inline">建议尺寸：宽720像素，高400像素</span>
+          </span>
+       </div>
+</if>
+    </div>
+     <div class="control-group">
+    <label for="address" class="control-label">预约地址：</label>
+     <div class="controls">
+        <input type="text" name="address" id="address" class="span4"  value="{noercms:$reslist['address']}" data-rule-required="true"  placeholder="请输入接待预约用户的地址"/><span class="maroon">*</span><span class="help-inline">如上海市浦东新区上南路1000号</span>
+    </div>
+ </div>
+    <div class="control-group">
+    <label for="suggestId" class="control-label">地图标识：</label>
+         <div class="controls">
+          经度 <input type="text" id="longitude"  name="lng" size="14" class="px" value="{noercms:$reslist['lng']}" /> 
+          纬度 <input type="text" id="latitude" name="lat" size="14"  class="px" value="{noercms:$reslist['lat']}" /> 
+          <a href="###" onclick="setlatlng($('#longitude').val(),$('#latitude').val())">在地图中查看/设置</a>
+         </div>
+    </div>
+<div class="control-group">
+         <label for="estate_desc" class="control-label">预约电话：</label>
+         <div class="controls">
+             <input type="text" name="tel" id="tel" class="span4" value="{noercms:$reslist['tel']}"  data-rule-required="true"  placeholder="请输入接收预约的电话号码"/><span class="maroon">*</span><span class="help-inline">如0551-62696666</span>
+         </div>
+     </div>
+     <div class="control-group">
+         <label for="project_brief" class="control-label">订单页头部图片：</label>
+<!--试驾预约-->
+    <if condition="$addtype eq 'drive'">
+         <div class="controls">
+             <img class="thumb_img" id="headpic_src" src="{noercms:$reslist['headpic']|default='tpl/User/default/common/car/yuyue.jpg'}" style="max-height: 100px;">
+              <input id="headpic"type="text"class="input-large" name="headpic" class="span4 px"  data-rule-required="true" data-rule-url="true" value="{noercms:$reslist['headpic']|default='tpl/User/default/common/car/yuyue.jpg'}" />
+            <span class="maroon">*</span>
+            <span class="help-inline">
+            <a href="###" onclick="upyunPicUpload('headpic',720,400,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('headpic')">预览</a>
+         </div>
+<else/>
+ <div class="controls">
+             <img class="thumb_img" id="headpic_src" src="{noercms:$reslist['headpic']|default='tpl/User/default/common/car/baoyang.jpg'}" style="max-height: 100px;">
+              <input id="headpic"type="text"class="input-large" name="headpic" class="span4 px"  data-rule-required="true" data-rule-url="true" value="{noercms:$reslist['headpic']|default='tpl/User/default/common/car/baoyang.jpg'}" />
+            <span class="maroon">*</span>
+            <span class="help-inline">
+            <a href="###" onclick="upyunPicUpload('headpic',720,400,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('headpic')">预览</a>
+         </div>
+</if>
+     </div>
+     <div class="control-group">
+        <label for="traffic_desc" class="control-label">订单详情：</label>
+        <div class="controls">
+          <textarea class="input-xlarge" id="info" name="info" style="width:560px;height:75px;border:1px #000 solid"  placeholder="显示在图文封面下方，文字请尽量的简洁">{noercms:$reslist['info']}</textarea>
+        </div>
+    </div>
+                                <div class="form-actions">
+            <button id="bsubmit" type="submit" data-loading-text="提交中..." class="btn btn-success">保存</button>　<button type="button" class="btn btn-danger">取消</button>
+        </div>
+                        </div>
+</form>
+  </div> 
+        </div>
+<include file="Public:footer"/>

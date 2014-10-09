@@ -1,0 +1,1 @@
+(function(){try{var g=window.document,i=window.params;g.getElementById("wpa_release_a05_btn").innerHTML=xssFilter(i.btn1);getOnlineStatus(i);var h="kfuin ws referrer cref pt a aty dm sv sp bt",e=copyParam(i,h);bindChat("wpa_release_a05_btn",e)}catch(j){}}());

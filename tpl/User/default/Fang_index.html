@@ -1,0 +1,304 @@
+<include file="Public:head"/>
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/plugins/code/prettify.css" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<script src="/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="/tpl/static/artDialog/plugins/iframeTools.js"></script>
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{noercms::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<script src="{noercms::RES}/js/date/WdatePicker.js"></script>
+<script type="text/javascript" src="{noercms::RES}/js/formCheck/formcheck.js"> </script>
+<script src="{noercms::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<script>
+	KindEditor.ready(function(K){
+		var editor = K.editor({
+			allowFileManager:true
+		});
+		K('#upload_pic').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#pic').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#pic').val(url);
+						}else{
+							K('#pic').val("{noercms::C('site_url')}"+url);
+						}
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+		K('#upload_opening_animation').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#opening_animation').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#opening_animation').val(url);
+						}else{
+							K('#opening_animation').val("{noercms::C('site_url')}"+url);
+						}
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+		K('#upload_small_pic').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#small_pic').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#small_pic').val(url);
+						}else{
+							K('#small_pic').val("{noercms::C('site_url')}"+url);
+						}
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+		K('#upload_site_map_1').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#site_map_1').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#site_map_1').val(url);
+						}else{
+							K('#site_map_1').val("{noercms::C('site_url')}"+url);
+						}
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+		K('#upload_site_map_2').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#site_map_2').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#site_map_2').val(url);
+						}else{
+							K('#site_map_2').val("{noercms::C('site_url')}"+url);
+						}
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+		K('#upload_site_map_3').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#site_map_3').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#site_map_3').val(url);
+						}else{
+							K('#site_map_3').val("{noercms::C('site_url')}"+url);
+						}
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+		K('#upload_site_map_4').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#site_map_4').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#site_map_4').val(url);
+						}else{
+							K('#site_map_4').val("{noercms::C('site_url')}"+url);
+						}
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+		K('#upload_site_map_5').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					fileUrl : K('#site_map_5').val(),
+					clickFn : function(url, title) {
+						if(url.indexOf("http") > -1){
+							K('#site_map_5').val(url);
+						}else{
+							K('#site_map_5').val("{noercms::C('site_url')}"+url);
+						}
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+	});
+</script>
+<script>
+var editor;
+KindEditor.ready(function(K) {
+editor = K.create('#content', {
+resizeType : 1,
+allowPreviewEmoticons : false,
+allowImageUpload : false,
+items : [
+'source','undo','clearhtml','hr',
+'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+'insertunorderedlist', '|', 'emoticons', 'image','link', 'unlink','baidumap','lineheight','table','anchor','preview','print','template','code','cut']
+});
+});
+var editor;
+KindEditor.ready(function(K) {
+editor = K.create('#content2', {
+resizeType : 1,
+allowPreviewEmoticons : false,
+allowImageUpload : false,
+items : [
+'source','undo','clearhtml','hr',
+'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+'insertunorderedlist', '|', 'emoticons', 'image','link', 'unlink','baidumap','lineheight','table','anchor','preview','print','template','code','cut']
+});
+});
+var editor;
+KindEditor.ready(function(K) {
+editor = K.create('#content3', {
+resizeType : 1,
+allowPreviewEmoticons : false,
+allowImageUpload : false,
+items : [
+'source','undo','clearhtml','hr',
+'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+'insertunorderedlist', '|', 'emoticons', 'image','link', 'unlink','baidumap','lineheight','table','anchor','preview','print','template','code','cut']
+});
+});
+</script>
+<script>
+function selectall(name) {
+	var checkItems=$('.cbitem');
+	if ($("#check_box").attr('checked')==false) {
+		$.each(checkItems, function(i,val){
+			val.checked=false;
+		});
+	} else {
+		$.each(checkItems, function(i,val){
+			val.checked=true;
+		});
+	}
+}
+function setlatlng(longitude,latitude){
+	art.dialog.data('longitude', longitude);
+	art.dialog.data('latitude', latitude);
+	// 此时 iframeA.html 页面可以使用 art.dialog.data('test') 获取到数据，如：
+	// document.getElementById('aInput').value = art.dialog.data('test');
+	art.dialog.open('{noercms::U('Map/setLatLng',array('token'=>$token,'id'=>$id))}',{lock:false,title:'设置经纬度',width:600,height:400,yesText:'关闭',background: '#000',opacity: 0.87});
+}
+</script>
+<div class="content"  >
+	<div class="tab">
+		<ul>
+		<li class="current tabli" id="tab0"><a href="{noercms::U('Fang/index',array('token'=>$token))}">楼盘简介</a></li>
+		<li class="tabli" id="tab2"><a href="{noercms::U('Fang/zindex',array('token'=>$token,'pid'=>$set['id']))}">子楼盘管理</a></li>
+		<li class="tabli" id="tab2"><a href="{noercms::U('Fang/hu_index',array('token'=>$token,'pid'=>$set['id']))}">户型管理</a></li>
+		<li class="tabli" id="tab2"><a href="{noercms::U('Fang/effect_index',array('token'=>$token,'pid'=>$set['id']))}">印象管理</a></li>
+		<li class="tabli" id="tab5"><a href="{noercms::U('Fang/photo_index',array('token'=>$token,'pid'=>$set['id']))}">相册管理</a></li>
+		<li class="tabli" id="tab5"><a href="{noercms::U('Fang/dianping_index',array('token'=>$token,'pid'=>$set['id']))}">专家点评</a></li>
+		<li class="tabli" id="tab2"><a href="{noercms::U('Fang/yuyue_index',array('token'=>$token,'pid'=>$set['id']))}">预约看房</a></li>
+		</ul>
+	</div>
+    <div class="cLineB"> 
+    <h4>楼盘简介</h4> 
+   </div> 
+   <form class="form" method="post" id="form" action="" enctype="multipart/form-data"> 
+<if condition="$isUpdate eq 1">
+<input type="hidden" name="id" value="{noercms:$set.id}" />
+</if>
+    <div class="msgWrap bgfc"> 
+     <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+      <tbody> 
+	   <tr> 
+        <th><span class="red">*</span>图文消息标题：</th>
+        <td><input type="text" name="title" id="name" value="{noercms:$set.title}" class="px" style="width:400px;" />
+		触发关键词后返回的图文消息标题
+		</td> 
+       </tr>
+	    <tr> 
+        <th><span class="red">*</span>触发关键词：</th> 
+        <td><input  type="text" id="keyword" name="keyword" value="{noercms:$set.keyword}" class="px require" style="width:400px;" />
+			多个关键字请用空格分开
+		</td> 
+        </tr>	
+        <tr> 
+        <th><span class="red"></span>图文消息封面：</th>
+        <td><input type="text" name="topic" value="{noercms:$set.topic}" id="small_pic" class="px" style="width:400px;"  readonly="readonly"/><span class="ke-button-common" id="upload_small_pic" style="margin-top: 3px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="Upload"></span></td> 
+        </tr>
+		<tr> 
+        <th><span class="red">*</span>相册名称：</th>
+        <td><input type="text" name="name" id="name" value="{noercms:$set.name}" class="px" style="width:400px;" />
+		楼盘相册标题 建议10字内
+		</td> 
+       </tr>
+	   <tr> 
+        <th><span class="red"></span>楼盘头部图片：</th>
+        <td><input type="text" name="lou_top_topic" value="{noercms:$set.lou_top_topic}" id="site_map_1" class="px" style="width:400px;"  readonly="readonly"/><span class="ke-button-common" id="upload_site_map_1" style="margin-top: 3px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="Upload"></span></td> 
+       </tr>
+	   <tr> 
+        <th><span class="red"></span>户型头部图片：</th>
+        <td><input type="text" name="hu_top_topic" value="{noercms:$set.hu_top_topic}" id="site_map_2" class="px" style="width:400px;"  readonly="readonly"/><span class="ke-button-common" id="upload_site_map_2" style="margin-top: 3px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="Upload"></span></td> 
+       </tr>
+	   <tr> 
+        <th><span class="red"></span>首页幻灯片:</th>
+        <td><input type="text" name="slide1" value="{noercms:$set.slide1}" id="site_map_3" class="px" style="width:400px;"  readonly="readonly"/><span class="ke-button-common" id="upload_site_map_3" style="margin-top: 3px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="Upload"></span></td> 
+       </tr>
+	   <tr> 
+        <th><span class="red"></span></th>
+        <td><input type="text" name="slide2" value="{noercms:$set.slide2}" id="site_map_4" class="px" style="width:400px;"  readonly="readonly"/><span class="ke-button-common" id="upload_site_map_4" style="margin-top: 3px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="Upload"></span></td> 
+       </tr>
+	   <tr> 
+        <th><span class="red"></span></th>
+        <td><input type="text" name="slide3" value="{noercms:$set.slide3}" id="site_map_5" class="px" style="width:400px;"  readonly="readonly"/><span class="ke-button-common" id="upload_site_map_5" style="margin-top: 3px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="Upload"></span></td> 
+       </tr>
+	   <tr> 
+        <th><span class="red"></span>地址：</th>
+        <td><input type="text" name="address" value="{noercms:$set.address}" class="px" style="width:400px;" /></td> 
+       </tr>
+		<tr> 
+        <th><span class="red">*</span>经纬度：</th> 
+        <td>经度 <input type="text" id="longitude"  name="longitude" size="14" class="px" value="{noercms:$set.longitude}" /> 纬度 <input type="text"  name="latitude" size="14" id="latitude" class="px" value="{noercms:$set.latitude}" /> <a href="###" onclick="setlatlng($('#longitude').val(),$('#latitude').val())">在地图中查看/设置</a></td> 
+       </tr>
+        <TR>
+			<TH valign="top"><label for="info">楼盘简介：</label></TH>
+            <TD><textarea name="lou_info" id="content"  rows="5" style="width:590px;height:360px">{noercms:$set.lou_info}</textarea></TD>
+        </TR> 
+		<TR>
+			<TH valign="top"><label for="info">项目简介：</label></TH>
+            <TD><textarea name="hu_info" id="content2"  rows="5" style="width:590px;height:360px">{noercms:$set.hu_info}</textarea></TD>
+        </TR>  
+		<TR>
+			<TH valign="top"><label for="info">交通配套：</label></TH>
+            <TD><textarea name="jiao_info" id="content3"  rows="5" style="width:590px;height:360px">{noercms:$set.jiao_info}</textarea></TD>
+        </TR>  
+       <tr>         
+       <th>&nbsp;<input type="hidden" name="id" value="{noercms:$set.id}" /></th>
+       <td>
+		<!--input type="hidden" name="time" value="{noercms:$set.time}" /-->
+       <button type="submit" class="btnGreen">保存</button> &nbsp; <a href="{noercms::U('Yiliao/add',array('token'=>$token))}" class="btnGray vm">取消</a></td> 
+       </tr> 
+      </tbody> 
+     </table> 
+     </div>
+   </form> 
+  </div> 
+<script language="javascript">
+$(function(){
+	$("#form").valid([
+	{ name:"name",simple:"名称",require:true},
+	{ name:"keyword",simple:"关键词",require:true}
+	],true,true);
+})
+</script>
+  <include file="Public:footer" />

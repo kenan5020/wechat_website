@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/snower.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/reset.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/home-49.css" media="all" />
+<script type="text/javascript" src="{noercms::RES}/src/template/maivl.js"></script>
+<script type="text/javascript" src="{noercms::RES}/src/jquery.js"></script>
+<script type="text/javascript" src="{noercms::RES}/src/template/swipe.js"></script>
+<script type="text/javascript" src="{noercms::RES}/src/template/zepto.js"></script>
+<title>{noercms:$tpl.wxname}</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="{noercms::C('site_name')}、上海微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" />
+        <meta name="Description" content="{noercms::C('site_name')}，国内最大的微信公众智能服务平台，{noercms::C('site_name')}八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" />
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+            <meta content="no-cache" http-equiv="pragma">
+            <meta content="0" http-equiv="expires">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+        <link rel="shortcut icon" href="{noercms::RES}/img/favicon.ico" />
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+<link rel="stylesheet" type="text/css" href="../../img/font-awesome.css" media="all" />
+<style>
+	.body{
+		max-width:640px;
+		margin:auto;
+		min-height:100%;
+		background-color:#f4f4f4;
+		position:relative;
+					background:url('<if condition="$homeInfo.homeurl neq false">{noercms:$homeInfo.homeurl}<else/>
+{noercms::RES}/images/themes/bg1.jpg</if>') no-repeat 0 0;
+				background-size:100% 100%;
+	}
+</style>
+<div class="body">
+<section>
+    <header>
+        <div class="snower">
+            <script type="text/javascript"></script>
+            <script type="text/javascript" src="{noercms::RES}/src/template/snower.js"></script>
+        </div>
+    </header> 
+	<!--播放器开始-->	
+				<script type="text/javascript" src="{noercms::RES}/js/heka/audio.js"></script>
+				<script>
+			window.addEventListener("DOMContentLoaded", function(){
+				playbox.init("playbox");
+			}, false);
+		</script>
+				<if condition="$homeInfo.musicurl neq false"><span id="playbox" class="btn_music" onClick="playbox.init(this).play();"><audio src="{noercms:$homeInfo.musicurl}" loop id="audio"></audio></span><else/></if>	
+        		<!--播放器结束-->	 
+		<div class="logo">
+			<img src="<if condition="$homeInfo.picurl neq false">{noercms:$homeInfo.picurl}<else/>{noercms::RES}/images/themes/huifu.jpg</if>" style="height:50px;" />
+		</div>
+		<ul class="list_font">
+		<volist name="info" id="vo">
+						<li>
+									<a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>
+{noercms:$vo.url|htmlspecialchars_decode}</if>">
+									<div><span class="{noercms:$vo.icon}"></span></div>
+					<div>
+						<p>{noercms:$vo.name}</p>
+					</div>
+				</a>
+			</li>
+			</volist>
+					</ul>
+	</section>
+</div>
+<!--
+分享前控制
+-->
+	<script>
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+			window.shareData = {
+				"imgUrl": "<if condition="$homeInfo.picurl neq false">{noercms:
+$homeInfo.picurl}<else/>
+{noercms::RES}/images/themes/huifu.jpg</if>",
+				"timeLineLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"sendFriendLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"weiboLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"tTitle": "欢迎访问{noercms:$tpl.wxname}微信版3G网站",
+				"tContent": "欢迎访问{noercms:$tpl.wxname}微信版3G网站",
+				"fTitle": "欢迎访问{noercms:$tpl.wxname}微信版3G网站",
+				"fContent": "欢迎访问{noercms:$tpl.wxname}微信版3G网站",
+				"wContent": "欢迎访问{noercms:$tpl.wxname}微信版3G网站"
+			};
+			// 发送给好友
+			WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+				WeixinJSBridge.invoke('sendAppMessage', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.sendFriendLink,
+					"desc": window.shareData.fContent,
+					"title": window.shareData.fTitle
+				}, function (res) {
+					_report('send_msg', res.err_msg);
+				})
+			});
+			// 分享到朋友圈
+			WeixinJSBridge.on('menu:share:timeline', function (argv) {
+				WeixinJSBridge.invoke('shareTimeline', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.timeLineLink,
+					"desc": window.shareData.tContent,
+					"title": window.shareData.tTitle
+				}, function (res) {
+					_report('timeline', res.err_msg);
+				});
+			});
+			// 分享到微博
+			WeixinJSBridge.on('menu:share:weibo', function (argv) {
+				WeixinJSBridge.invoke('shareWeibo', {
+					"content": window.shareData.wContent,
+					"url": window.shareData.weiboLink
+				}, function (res) {
+					_report('weibo', res.err_msg);
+				});
+			});
+		}, false)
+	</script>
+<div class="copyright" style="text-align:center; >
+<if condition="$iscopyright eq 1">
+{noercms:$homeInfo.copyright}
+<else/>
+{noercms:$siteCopyright}
+</if>
+</div>
+</div>              
+    <include file="Index:styleInclude"/>  
+	</body>
+</html>

@@ -1,0 +1,17 @@
+.list_font{
+    width:240px;
+    margin:auto;
+}
+
+.list_font li{
+    padding:5px;
+    width:120px!important;
+    height:120px!important;
+    background-color:rgba(23, 152, 219, 0.85);
+}
+.list_font li:nth-of-type(6n+1){
+    background-color:rgba(250, 103, 32, 0.85);
+}
+.list_font li a{
+    color:#fff;
+}

@@ -1,0 +1,204 @@
+﻿<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/index.css" media="all" />
+<link href="{noercms::RES}/css/base.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="{noercms::RES}/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="{noercms::RES}/js/jquery.cityselect.js"></script>
+<script type="text/javascript" src="{noercms::RES}/js/HeaderMenu.js"></script>
+<link href="{noercms::RES}/css/HaedMenu.css" type="text/css" rel="stylesheet">
+<link href="{noercms::RES}/css/notification.css" rel="stylesheet" type="text/css">
+<script src="{noercms::RES}/js/jquery.cookie.js" type="text/javascript"></script>
+<script type="text/javascript" src="{noercms::RES}/js/jfade.js"></script>
+<script type="text/javascript" src="{noercms::RES}/js/images.js"></script>
+<script src="{noercms::RES}/js/html5.js"></script>
+<script type="text/javascript" src="{noercms::RES}/js/carouFredSel.js"></script>
+<body>
+ <div class="w-top">
+            <div class="w-head">
+                
+                <div class="w-wrap">
+                    <a class="w-left" href="#"><img src="{noercms::C('logo')}"   ></a>
+                    <div class="w-head-line w-left">
+                    </div>
+                    <div class="w-left">
+                        <div class="w-city-select">
+                           
+                        </div>
+                            <div class="w-head-login">
+                                <a href="{noercms::U('Index/login')}" class="">登录</a>&nbsp;｜&nbsp;<a href="{noercms::U('Index/reg')}" class="">注册</a></div>
+                    </div>
+                    <ul class="w-menu Menu">
+                          <li><a href="/" class="hover">首页</a></li>
+
+
+
+
+
+
+
+                    <li><a href="{noercms::U('Home/Index/fc')}">功能介绍</a></li>
+
+
+
+
+
+
+
+                    <li><a href="{noercms::U('Home/Index/about')}">关于我们</a></li>
+
+
+
+
+
+
+
+                    <li><a href="{noercms::U('Home/Index/price')}">资费说明</a></li>
+
+
+
+
+
+
+
+                    <li><a href="{noercms::U('Home/Index/guide')}">案例展示</a></li>
+
+  					
+
+
+
+
+
+               	<if condition="$_SESSION[uid]==false">
+				<li><a href="{noercms::U('Index/login')}">登录后台</a></li>
+				<li><a href="{noercms::U('Index/reg')}" class="hover">创建一个帐号</a></li>
+					<else/>
+                <li><a href="{noercms::U('User/Index/index')}">管理中心</a></li>
+				<li><a href="/#" onClick="Javascript:window.open('{noercms::U('System/Admin/logout')}','_blank')" >退出</a></li>
+				</if>	
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+<!--
+
+    <div class="nav clearfix">
+
+
+
+
+
+
+
+        <div class="nav-content">   
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+		<img src="{noercms::C('logo')}"   >
+
+
+
+
+
+
+
+            <div class="right line-li">
+
+
+
+
+
+
+
+                <ul>
+
+
+
+
+
+
+
+                    <li><a href="/" class="hover">首页</a></li>
+
+
+
+
+
+
+
+                    <li><a href="{noercms::U('Home/Index/fc')}">功能介绍</a></li>
+
+
+
+
+
+
+
+                    <li><a href="{noercms::U('Home/Index/about')}">关于我们</a></li>
+
+
+
+
+
+
+
+                    <li><a href="{noercms::U('Home/Index/price')}">资费说明</a></li>
+
+
+
+
+
+
+
+                    <li><a href="{noercms::U('Home/Index/guide')}">案例展示</a></li>
+
+  					
+
+
+
+
+
+               	<if condition="$_SESSION[uid]==false">
+				<li><a href="{noercms::U('Index/login')}">登录后台</a></li>
+				<li><a href="{noercms::U('Index/reg')}" class="hover">创建帐号</a></li>
+					<else/>
+                <li><a href="{noercms::U('User/Index/index')}">管理中心</a></li>
+				<li><a href="/#" onClick="Javascript:window.open('{noercms::U('System/Admin/logout')}','_blank')" >退出</a></li>
+				</if>	
+
+                </ul>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>-->

@@ -1,0 +1,71 @@
+<include file="Public:head"/> 
+  <link href="{noercms::STATICS}/vote/wap/skins/all.css?v=0.9.1" rel="stylesheet">
+    <link href="{noercms::STATICS}/vote/wap/vote.css" rel="stylesheet">
+  <script src="{noercms::STATICS}/vote/wap/js/jquery.js"></script>
+  <script src="{noercms::STATICS}/vote/wap/jquery.icheck.min.js?v=0.9.1"></script>
+<div class="content"  > 
+  <div class="layout clear">
+      <div class="skin skin-line">          
+            <div class="skin-section">
+              <h4>{noercms:$vote.title}</h4>  
+              <h3><a href="{noercms::U('Vote/index')}" class="right btnGrayS vm" style="margin-top:-27px">返回</a></h3>
+             <p class="modus"> <if condition="$vote['cknums'] eq 1"> 单选<else/>多选</if>投票，<span class="number">共有{noercms:$count}人参与投票</span></p>
+              <ul class="list">
+              <volist name="vote_item" id="li"> 
+              <if condition="$vote['cknums'] eq 1">
+          <if condition="$vote['type'] eq 'text'">
+              <li>
+                <input tabindex="{noercms:$i}" type="radio" name="vid" value="{noercms:$li.id}" id="line-radio-{noercms:$i}">
+                <label for="line-radio-{noercms:$i}">{noercms:$li.item}</label>
+               <div class="progress-bar orange shine">
+    <span style="width: {noercms:$li.per|default=2}%">{noercms:$li.per}%</span></div>             
+             </li>
+          <else/> <!--img-->
+                <li>
+                <span><img src="{noercms:$li.startpicurl}" ></span>
+                <input tabindex="{noercms:$i}" type="radio" name="vid" value="{noercms:$li.id}" id="line-radio-{noercms:$i}">
+                <label for="line-radio-{noercms:$i}">{noercms:$li.item}</label>
+                <div class="progress-bar orange shine">
+    <span style="width: {noercms:$li.per|default=2}%">{noercms:$li.per}%</span></div>                   
+              </li>
+          </if>
+              <else/>
+                    <if condition="$vote['type'] eq 'text'">
+              <li>
+                <input tabindex="{noercms:$i}" type="radio" name="vid" value="{noercms:$li.id}" id="line-radio-{noercms:$i}">
+                <label for="line-radio-{noercms:$i}">{noercms:$li.item}</label>
+                <div class="progress-bar orange shine">
+    <span style="width: {noercms:$li.per|default=2}%">{noercms:$li.per}%</span></div>             
+             </li>
+          <else/> <!--img-->
+                <li>
+                <span><img src="{noercms:$li.startpicurl}" ></span>
+                <input tabindex="{noercms:$i}" type="radio" name="vid" value="{noercms:$li.id}" id="line-radio-{noercms:$i}">
+                <label for="line-radio-{noercms:$i}">{noercms:$li.item}</label>
+                <div class="progress-bar orange shine">
+    <span style="width: {noercms:$li.per|default=2}%">{noercms:$li.per}%</span></div>                 
+              </li>
+          </if>
+              </if>
+                </volist>                  
+        </ul>             
+     </div>
+<script>
+  $(document).ready(function(){
+     $('.skin-line input').each(function(){
+       var self = $(this),
+        label = self.next(),
+        label_text = label.text();
+       label.remove();
+       self.iCheck({
+         checkboxClass: 'icheckbox_line-orange',
+         radioClass: 'iradio_line-orange',
+         insert: '<div class="icheck_line-icon"></div>' + label_text
+       });       
+    });
+});
+</script>  
+</div> 
+</div>  
+</div>
+<include file="Public:footer"/>

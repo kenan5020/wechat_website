@@ -1,0 +1,55 @@
+<include file="Public:head"/>
+<div class="content"  >
+          <div class="cLineB"><h4>短信平台</h4></div>
+          <form method="post" action="{noercms::U('User/Index/upsave')}" enctype="multipart/form-data">
+          <input type="hidden" name="id" value="{noercms:$info.id}">
+          <div class="msgWrap">
+            <table class="userinfoArea" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+			    <tr>
+                  <th><span class="red">*</span>短信平台手机号：</th>
+                  <td><input type="text" required="" class="px" name="phone" value="{noercms:$info.phone}" tabindex="1" size="25"><span class="red">用于接收订单的手机号</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th><span class="red">*</span>短信平台账号：</th>
+                  <td><input type="text" required="" class="px" name="smsuser" value="{noercms:$info.smsuser}" tabindex="1" size="25"><span class="red">支持平台：<a href="http://url7.me/XTfL1" target="_blank">点击注册</a></span>
+                  </td>
+                </tr>
+				<tr>
+                  <th><span class="red">*</span>短信平台密码：</th>
+                  <td><input type="text" required="" class="px" name="smspassword" value="{noercms:$info.smspassword}" tabindex="1" size="25">
+                  </td>
+                </tr>
+				<tr>
+                  <th><span class="red">*</span>短信平台状态：</th>
+                  <td><input type="radio" value="1" checked="checked" name="smsstatus"/>开启 <input type="radio" value="0" name="smsstatus"/>关闭
+                  </td>
+                </tr>
+				<div>
+				<input type="hidden" required="" class="px" name="wxname" value="{noercms:$info.wxname}" tabindex="1" size="25">
+				<input type="hidden" required="" title="无法修改，您可以联系管理员" name="wxid" value="{noercms:$info.wxid}" class="px" tabindex="1" size="25" style="color:#DDD;">
+				<input type="hidden" required="" name="weixin" value="{noercms:$info.weixin}" class="px" tabindex="1" size="25">
+				<input type="hidden" class="px" name="headerpic" value="{noercms:$info.headerpic}" size="60">
+				<input type="hidden" name="token" value="{noercms:$info.token}" class="px" tabindex="1" size="40">
+				<input type="hidden" class="px" id="province" value="{noercms:$info.province}" name="province" tabindex="1" size="20">
+				<input id="city" value="{noercms:$info.city}" type="hidden" name="city" class="px" tabindex="1" size="20">
+				<input type="hidden" required="" class="px" tabindex="1" value="{noercms:$info.qq}" name="qq" size="25">
+				<input type="hidden" required="" name="wxfans" value="{noercms:$info.wxfans}" class="px" tabindex="1" size="25">
+				<input type="hidden" required="" name="type" value="{noercms:$info.typeid}" class="px" tabindex="1" size="25">
+				</div>
+              </thead>
+                <tr>
+                  <td><button type="submit" class="btnGreen" id="saveSetting">保存</button></td>
+                </tr>
+            </table>
+          </div>
+          </form>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+  <!--底部-->
+  	</div>
+<include file="Public:footer"/>	

@@ -1,0 +1,41 @@
+<!DOCTYPE html><html>
+<head>
+    <title>户型图</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+        body { padding: 0; margin: 0; background: black; }
+    </style>
+    <link href="{noercms::RES}/photoswipe/photoswipe.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="{noercms::RES}/photoswipe/lib/simple-inheritance.min.js"></script>
+    <script type="text/javascript" src="{noercms::RES}/photoswipe/code-photoswipe-1.0.11.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function(){
+            // Set up PhotoSwipe, setting "preventHide: true"
+            Code.PhotoSwipe.Current.setOptions({
+                preventHide: true,
+                getImageSource: function(obj){
+                    return obj.url;
+                },
+                getImageCaption: function(obj){
+                    return obj.caption;
+                }
+            });
+            Code.PhotoSwipe.Current.setImages([
+                { url: "{noercms:$housetype['type1']}", caption: "{noercms:$housetype['name']}-{noercms:$housetype['area']}"},
+                { url: "{noercms:$housetype['type2']}", caption: "{noercms:$housetype['name']}-{noercms:$housetype['area']}"},
+                { url: "{noercms:$housetype['type3']}", caption: "{noercms:$housetype['name']}-{noercms:$housetype['area']}"},
+                { url: "{noercms:$housetype['type4']}", caption: "{noercms:$housetype['name']}-{noercms:$housetype['area']}"}
+            ]);
+            Code.PhotoSwipe.Current.show(0);
+        }, false);
+    </script>
+</head>
+<body>
+</body>
+</html>

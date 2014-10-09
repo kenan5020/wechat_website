@@ -1,0 +1,112 @@
+<include file="Public:head"/> 
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<script src="/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="/tpl/static/artDialog/plugins/iframeTools.js"></script>
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{noercms::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<script src="./tpl/User/default/common/js/cart/jscolor.js" type="text/javascript"></script>
+<script type="text/javascript" src="/tpl/User/default/common/js/jquery.js"></script>
+<script>
+var editor;
+KindEditor.ready(function(K) {
+editor = K.create('#intro', {
+resizeType : 1,
+allowPreviewEmoticons : false,
+allowImageUpload : true,
+uploadJson : '/index.php?g=User&m=Upyun&a=kindedtiropic',
+items : [
+'source','undo','clearhtml','hr',
+'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+'insertunorderedlist', '|', 'emoticons', 'image','link', 'unlink','baidumap','lineheight','table','anchor','preview','print','template','code','cut']
+});
+});
+</script>
+  <div class="content"  > 
+   <div class="cLineB"> 
+    <h4>商家设置 </h4> 
+    <a href="{noercms::U('Host/index',array('token'=>$token))}" class="right  btnGreen" style="margin-top:-27px">返回</a> 
+   </div> 
+   <form class="form" method="post" action="" enctype="multipart/form-data"> 
+    <input type="hidden" name="id" value="{noercms:$set.id}" /> 
+    <div class="msgWrap bgfc"> 
+     <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+      <tbody> 
+       <tr> 
+        <th width="120"><span class="red">*</span>关键词：</th> 
+        <td><input type="text" name="keyword" value="{noercms:$set.keyword}" class="px" style="width:400px;" /> <span class="red">只能写一个关键词</span></td> 
+       </tr> 
+       <tr> 
+        <th><span class="red">*</span>商家名称：</th> 
+        <td><input type="text" name="title" value="{noercms:$set.title}" class="px" style="width:400px;" /></td> 
+       </tr> 
+       <tr style="display:none"> 
+        <th><span class="red">*</span>商家地址：</th> 
+        <td><input type="text" name="address" value="{noercms:$set.address}" class="px" style="width:400px;" /></td> 
+       </tr> 
+       <tr> 
+        <th><span class="red">*</span>商家电话：</th> 
+        <td><input type="text" name="tel" value="{noercms:$set.tel}" class="px" style="width:400px;" />电话号码</td> 
+       </tr> 
+       <tr> 
+        <th><span class="red">*</span>手机号：</th> 
+        <td><input type="text" name="tel2" value="{noercms:$set.tel2}" class="px" style="width:400px;" />手机号</td> 
+       </tr> 
+       <tr> 
+        <th><span class="red">*</span>订单封面图片：</th> 
+        <td><input type="text" name="ppicurl" id="pic" value="{noercms:$set.ppicurl}"  class="px require" style="width:400px;" readonly="readonly"/><script src="/tpl/static/upyun.js"></script><a href="###" onclick="upyunPicUpload('pic',700,420,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('pic')">预览</a></td> 
+       </tr> 
+       <tr> 
+        <th><span class="red">*</span>订单页头部图片：</th> 
+        <td><input type="text" name="headpic" value="<if condition="$set.headpic neq false">{noercms:$set.headpic}<else/>{noercms::RES}/images/cart_info/online.jpg</if>" class="px" style="width:400px;" /> 不会自定义请留空:填写图片外链地址，推荐大小为720x125，高度可根据自身需求调整。<br />不填默认本图片: <a target="ss" href="{noercms::C('site_url')}/tpl/User/default/common/images/cart_info/online.jpg">点击查看</a> </td> 
+       </tr> 
+       <tr> 
+        <th valign="top"><span class="red">*</span>商家图片：</th> 
+        <td valign="top">
+         <div class="bdrcontent"> 
+          <div id="div_ptype"> 
+           <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+            <thead> 
+             <tr> 
+              <th width="160">文字描述</th>  
+              <th width="160">图片地址</th> 
+              <th width="160">图片跳转地址以http://开头</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr> 
+              <td width="160"><input type="text" name="name" value="{noercms:$set.name}" class="px" style="width:160px;" /></td>  
+              <td width="200"><input type="text"  id="picurl" name="picurl" value="{noercms:$set.picurl}" class="px" style="width:160px;" /><script src="/tpl/static/upyun.js"></script><a href="###" onclick="upyunPicUpload('picurl',700,420,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('picurl')">预览</a></td>  
+              <td width="200"><input type="text" name="url" value="{noercms:$set.url}" class="px" style="width:160px;" /></td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </div> 
+         </div> 
+</td> 
+       </tr> 
+       <tr> 
+        <th valign="top"><span class="red">*</span>商家介绍：</th> 
+        <td valign="top"><textarea class="px" id="info" name="info" style="width: 410px; height: 180px;">{noercms:$set.info}</textarea></td> 
+       </tr> 
+       <tr> 
+        <th valign="top"><span class="red">*</span>订单说明：</th> 
+        <td valign="top"><textarea class="px" id="info2" name="info2" style="width: 410px; height: 180px; ">{noercms:$set.info2}</textarea></td> 
+       </tr> 
+      </tbody> 
+     </table> 
+    </div>
+        <div class="msgWrap"> 
+       <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+       <tbody>
+       <tr>         
+        <td>&nbsp;</td> <td>&nbsp;</td> <td>&nbsp;</td> <td>&nbsp;</td>  <td><button type="submit" name="button" class="btnGreen">保存</button> | <a href="{noercms::U('Host/index',array('token'=>$token))}" class="btnGray vm">取消</a></td> 
+       </tr> 
+      </tbody> 
+     </table> 
+     </div>
+   </form> 
+  </div> 
+  <include file="Public:footer" />

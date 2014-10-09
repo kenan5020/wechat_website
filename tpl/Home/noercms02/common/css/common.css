@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document zqy*/
+
+body{width:100%;margin:0px;padding:0px;font-family:Microsoft YaHei,Helvitica,Verdana,Tohoma,Arial,san-serif;font-size:12px;color:#333;}
+fieldset,img{border:none;}
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,label,blockquote,th,td,button,span{padding:0;margin:0;}
+input,button,select,textarea{outline:none}
+ol,ul,li{list-style-type:none;}
+address,caption,cite,code,dfn,th,var,em{font-weight:normal;font-style:normal;}
+.clear{clear:both;}
+/*a {blr:expression_r(this.onFocus=this.blur())}
+area {blr:expression_r(this.onFocus=this.blur())}*/
+a{outline:none;hide-focus:expression(this.hideFocus=true);}
+a span{ display:none}
+a{ text-decoration:none;}
+/*clearfix*/
+.clearfix{ clear:both}
+.clearfix:after{content:'\20 ';display:block;height:0;clear:both;}
+/*color*/
+.white{ color:#FFFFFF}
+.green{ color:green}
+.green2{color:#6bc30d;}
+.blue{ color:blue}
+.red{ color:red}
+/*common style*/
+.b{ font-weight:bold}
+.pr{ position:relative;}
+.pa{ position:absolute;}
+.ovh { overflow:hidden; *zoom:1}
+.fl{ float:left;}
+.fr{ float:right;}
+.tac{ text-align:center;}
+.tar{ text-align:right;}
+.fs14{ font-size:14px}
+.di{ display:inline}
+.banlk10{margin-top:10px;}
+.banlk20{margin-top:20px;}
+.font14{font-size:14px;}
+.font16{font-size:16px;}
+/*top*/
+.top, .header, .content, .footer{width:100%; overflow:hidden; display:block;}
+.centbox{width:1000px; margin:auto; overflow:hidden; display:block;}
+.top{height:35px; line-height:35px; background:#6bc30d; color:#fff;}
+.topr li{float:right; font-size:14px;}
+.tbut{line-height:35px; padding:0 15px; color:#fff; margin-left:2px; display:inline-block; background:#479700;}
+.qqico{background:url(../images/t_ico2.jpg) no-repeat 0 9px; margin-right:20px; display:inline; padding-left:25px;}
+.sjico{background:url(../images/t_ico1.jpg) no-repeat 5px 9px; margin-right:20px; display:inline; padding-left:25px;}
+/*header*/
+.logo{float:left;}
+.logo a{ width:202px; height:80px;background:url(../images/logo.png) no-repeat; display:block;}
+.menu{margin-top:31px;}
+.menu li{float:left; font-size:16px; margin-left:10px; display:inline;}
+.menu a{padding:0 6px 10px; color:#333; display:block;}
+.menu a:hover{color:#479700;}
+.menu li.menua a{background:url(../images/menline.jpg) repeat-x left bottom;}
+.menu li.menua a:hover{color:#333;}
+
+.contbg{background:#f4f4f6; border-top:1px #eaebef solid; border-bottom:1px #eaebef solid;}
+/*links*/
+.links{padding:20px 0; text-align:center; font-size:14px; color:#999;}
+.links a{color:#333; padding:0 10px;}
+.links a:hover{color:#6bc30d;}
+/*links*/
+.footer{text-align:center; color:#fff; line-height:20px; background:#6bc30d; padding:20px 0;}
+.footer p{padding:5px 0;}
+/*sidebar*/
+.sidebar{position:fixed; _position:absolute; top:20%; right:0; z-index:9999;}
+.sidebar li{ border-bottom:1px #fff solid; width:66px; height:66px; overflow:hidden; display:block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

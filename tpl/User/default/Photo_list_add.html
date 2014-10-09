@@ -1,0 +1,110 @@
+<include file="Public:head"/> 
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/cymain.css" />
+<script src="/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="/tpl/static/artDialog/plugins/iframeTools.js"></script>
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{noercms::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{noercms::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{noercms::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<script src="./tpl/User/default/common/js/cart/jscolor.js" type="text/javascript"></script>
+<script type="text/javascript" src="/tpl/User/default/common/js/jquery.js"></script>
+<script>
+var editor;
+KindEditor.ready(function(K) {
+editor = K.create('#intro', {
+resizeType : 1,
+allowPreviewEmoticons : false,
+allowImageUpload : true,
+uploadJson : '/index.php?g=User&m=Upyun&a=kindedtiropic',
+items : [
+'source','undo','clearhtml','hr',
+'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+'insertunorderedlist', '|', 'emoticons', 'image','link', 'unlink','baidumap','lineheight','table','anchor','preview','print','template','code','cut']
+});
+});
+</script>
+<div class="content"  >
+<div class="cLineB">
+  <h4>上传图片</h4><a href="javascript:history.go(-1);" class="right btnGrayS vm" style="margin-top:-27px">返回</a>
+ </div>
+ <div class="cLineB">
+<div class="pageNavigator left"><strong>此相册地址：<a href="{noercms::C('site_url')}/index.php?g=Wap&m=Photo&a=plist&token={noercms:$token}&id={noercms:$Think.get.id}" class="green">{noercms::C('site_url')}/index.php?g=Wap&m=Photo&a=plist&token={noercms:$token}&id={noercms:$Think.get.id}</a></strong></div>
+<div class="clr"></div>
+</div>
+ <div class="msgWrap form">
+   <input type="hidden" name="formhash" value="7566c850">
+   <input type="hidden" name="wxid" value="gh_423dwjkewad">
+<div class="bdrcontent">
+<div id="div_ptype">
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<form action="" method="post">
+<thead>
+	<tr>
+		<th style=" width:120px;">名称</th>                   
+		<th style=" width:70px;">显示顺序</th>
+		<th>图片外链地址（宽720够了，高不限制）</th>
+		<th>图片简单说明（可不填）</th>
+		<th style=" width:80px;">显示</th>
+		<th style=" width:100px;" class="norightborder">操作</th>
+	</tr>
+</thead>  
+<tr>
+	<td><input type="text" name="title" value=""  class="px"/></td>
+	<td><input type="text" name="sort" value="0"  class="px" style="width:50px;" /></td>
+	<td>
+		<div class="cateimg"></div>
+		<input class="px" style="width:250px;" type="text" name="picurl" id="picurl" value=""  /> <script src="/tpl/static/upyun.js"></script><a href="###" onclick="upyunPicUpload('picurl',1500,1000,'{noercms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('picurl')">预览</a>
+		<input type="hidden"   name="pid" value="{noercms:$Think.get.id}"  />
+	</td>
+	<td><input class="px" type="text"  style="width:250px;"  name="info" value=""  /></td>
+	<td><input class="checkbox" type="checkbox" name="status" value="1"  checked ></td>
+	<td class="norightborder">
+		<button type="submit" id="vtype" class="btnGray vm" ><strong>添加</strong></button>　
+	</td>
+</tr> 
+</form>
+ <tr>
+	<td colspan="6"><div class="cLineB">
+  <h4>图片列表</h4>  
+ </div></td>
+ </tr>
+ <thead>
+<tr>
+<th style=" width:120px;">名称</th>
+<th style=" width:70px;">显示顺序</th>
+<th>图片外链地址</th>
+                        <th>图片简单说明（可不填）</th>
+<th style=" width:80px;">显示</th>
+                        <th style=" width:100px;" class="norightborder">操作</th>
+</tr>
+</thead> 
+<volist name="photo" id="photo">
+ <form method="post" action="{noercms::U('Photo/list_edit',array('token'=>session('token')))}">              
+<tr>
+	<td><input type="text" name="title" value="{noercms:$photo.title}"  class="px"    /></td>
+	<td><input type="text" name="sort" value="{noercms:$photo.sort}"  class="px" style="width:50px;" /></td>
+	<td><div class="cateimg"></div><input class="px"  style="width:250px;"   type="text"   name="picurl" value="{noercms:$photo.picurl}"  id="picurl{noercms:$i}"/> <a href="###" onclick="window.open('/uploads/upload.php?n=picurl{noercms:$i}')" class="a_upload">上传</a> <script src="/tpl/static/upyun.js"></script><a href="###" onclick="viewImg('picurl{noercms:$i}')">预览</a></td>
+	<td><input class="px" type="text"  style="width:250px;"  name="info" value="{noercms:$photo.info}"  /></td>
+	<td>
+		<input class="checkbox" type="checkbox" name="status" value="1"  <if condition="$list['status'] eq 1">checked</if> >
+		<input type="hidden"   name="id" value="{noercms:$photo.id}"  /></td>
+	<td class="norightborder">
+		<button type="submit" name="edit" value="true" class="btnGreen vm" style="height:20px;font-size:12px;line-height:10px;">
+			<strong>修改</strong>
+		</button>
+	<a href="{noercms::U('Photo/list_del',array('id'=>$photo['id'],'token'=>session('token')))}">删除</a>
+	</td>
+</tr>
+</form>
+</volist>
+  </table>
+</div>
+</div>
+<div class="footactions" style="padding-left:10px">
+  <div class="pages"></div>
+</div>
+ </div>
+        </div>
+<include file="Public:footer"/>  
+ 

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>{noercms:$tpl.wxname}</title>
+        <base href="." />
+        <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+		<link href="{noercms::RES}/css/202/cate{noercms:$tpl.tpltypeid}_{noercms:$tpl.color_id}.css" rel="stylesheet" type="text/css" />
+    </head>
+<body>
+<div class="wrap">
+	<div class="show"><div><img src="{noercms::RES}/css/202/head.png" width="304" height="190"></div></div>
+    <div class="main">
+      	<ul>
+		<php>$ii=0;</php>
+		<volist name="info" id="vo">
+		<php> $ii++;</php>
+    		        	<li id="m<php>echo $ii;</php>">
+                        <a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{noercms:$vo.url}</if>">
+						<div>
+                       <span  class="icon" style="background:url({noercms:$vo.img}) 0 center no-repeat;background-size:50px 34px;"><em></em></span>
+                    <span class="title"> {noercms:$vo.name}</span> 
+                                   </div></a>
+            </li>
+               </volist>                
+                    </ul>
+  </div>
+</div>
+        <div id="insert2"></div>
+        <div style="display:none"> </div>
+<!--播放器开始-->	
+				<script type="text/javascript" src="{noercms::RES}/js/heka/audio.js"></script>
+				<script>
+			window.addEventListener("DOMContentLoaded", function(){
+				playbox.init("playbox");
+			}, false);
+		</script>
+				<if condition="$homeInfo.musicurl neq false"><span id="playbox" class="btn_music" onclick="playbox.init(this).play();"><audio src="{noercms:$homeInfo.musicurl}" loop id="audio"></audio></span><else/></if>	
+        		<!--播放器结束-->
+<!--
+分享前控制
+-->
+	<script type="text/javascript">
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+			window.shareData = {
+				"imgUrl": "<if condition="$homeInfo.picurl neq false">{noercms:$homeInfo.picurl}<else/>
+{noercms::RES}/images/themes/huifu.jpg</if>",
+				"timeLineLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"sendFriendLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"weiboLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"tTitle": "{noercms:$homeInfo.title}",
+				"tContent": "{noercms:$homeInfo.info}",
+				"fTitle": "{noercms:$homeInfo.title}",
+				"fContent": "{noercms:$homeInfo.info}",
+				"wContent": "{noercms:$homeInfo.info}"
+			};
+			// 发送给好友
+			WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+				WeixinJSBridge.invoke('sendAppMessage', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.sendFriendLink,
+					"desc": window.shareData.fContent,
+					"title": window.shareData.fTitle
+				}, function (res) {
+					_report('send_msg', res.err_msg);
+				})
+			});
+			// 分享到朋友圈
+			WeixinJSBridge.on('menu:share:timeline', function (argv) {
+				WeixinJSBridge.invoke('shareTimeline', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.timeLineLink,
+					"desc": window.shareData.tContent,
+					"title": window.shareData.tTitle
+				}, function (res) {
+					_report('timeline', res.err_msg);
+				});
+			});
+			// 分享到微博
+			WeixinJSBridge.on('menu:share:weibo', function (argv) {
+				WeixinJSBridge.invoke('shareWeibo', {
+					"content": window.shareData.wContent,
+					"url": window.shareData.weiboLink
+				}, function (res) {
+					_report('weibo', res.err_msg);
+				});
+			});
+		}, false)
+	</script>
+<div class="copyright" style="text-align:center">
+<if condition="$iscopyright eq 1">
+{noercms:$homeInfo.copyright}
+<else/>
+{noercms:$siteCopyright}
+</if>
+</div>
+</div>              
+    <include file="Index:styleInclude"/>  
+    </body></html>

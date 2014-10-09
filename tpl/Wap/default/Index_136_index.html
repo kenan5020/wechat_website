@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/snower.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/reset.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{noercms::RES}/css/template/home-28.css" media="all" />
+<script type="text/javascript" src="{noercms::RES}/src/template/maivl.js"></script>
+<script type="text/javascript" src="{noercms::RES}/src/jquery.js"></script>
+<script type="text/javascript" src="{noercms::RES}/src/template/swipe.js"></script>
+<script type="text/javascript" src="{noercms::RES}/src/template/zepto.js"></script>
+<title>{noercms:$tpl.wxname}</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="{noercms::C('site_name')}、温州微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" />
+        <meta name="Description" content="{noercms::C('site_name')}，国内最大的微信公众智能服务平台，温州八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" />
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+            <meta content="no-cache" http-equiv="pragma">
+            <meta content="0" http-equiv="expires">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+        <link rel="shortcut icon" href="{noercms::RES}/img/favicon.ico" />
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+<link rel="stylesheet" type="text/css" href="../../img/font-awesome.css" media="all" />
+<div class="body" style="padding-bottom:52px;">
+		<!--
+	幻灯片管理
+	-->
+	<div style="-webkit-transform:translate3d(0,0,0);">
+		<div id="banner_box" class="box_swipe">
+			<ul>
+			<volist name="flash" id="so">
+			<li><a href="{noercms:$so.url}"><img src="{noercms:$so.img}" alt="{noercms:$so.info}" style="width:100%;" /></a></li>
+			</volist>
+							</ul>
+			<ol>
+									<volist name="flash" id="so"><li   <if condition="$i eq 1">class="active"</if>  ></li></volist>
+							</ol>
+		</div>
+	</div>
+		<script>
+		$(function(){
+			new Swipe(document.getElementById('banner_box'), {
+				speed:500,
+				auto:3000,
+				callback: function(){
+					var lis = $(this.element).next("ol").children();
+					lis.removeClass("on").eq(this.index).addClass("on");
+				}
+			});
+		});
+	</script>
+<br/><header>
+        <div class="snower">
+            <script type="text/javascript"></script>
+        </div>
+    </header>
+	    <section>
+		<a href="tel:{noercms:$homeInfo.dianhua}" class="link_tel icon-phone"><if condition="$homeInfo.dianhua neq false">{noercms:$homeInfo.dianhua}<else/>没有留电话</if> </a>
+        </section>
+<!--播放器开始-->	
+				<script type="text/javascript" src="{noercms::RES}/js/heka/audio.js"></script>
+				<script>
+			window.addEventListener("DOMContentLoaded", function(){
+				playbox.init("playbox");
+			}, false);
+		</script>
+				<if condition="$homeInfo.musicurl neq false"><span id="playbox" class="btn_music" onClick="playbox.init(this).play();"><audio src="{noercms:$homeInfo.musicurl}" loop id="audio"></audio></span><else/></if>	
+        		<!--播放器结束-->	
+		<section>
+            <ul class="list_ul">
+			<volist name="info" id="vo"> 
+                                    <li>
+													<a href="<if condition="$vo['url'] eq ''">{noercms::U('Wap/Index/lists',array('classid'=>$vo
+['id'],'token'=>$vo['token']))}<else/>{noercms:$vo.url|htmlspecialchars_decode}</if>">
+						                           <figure>
+								<div style="background-image:url({noercms:$vo.img});">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">{noercms:$vo.name}</figcaption>
+							</figure>
+						</a>
+					</li>
+					</volist>
+                            </ul>
+        </section>
+    </div>
+<!--
+分享前控制
+-->
+	<script>
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+			window.shareData = {
+				"imgUrl": "<if condition="$homeInfo.picurl neq false">{noercms:
+$homeInfo.picurl}<else/>
+{noercms::RES}/images/themes/huifu.jpg</if>",
+				"timeLineLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"sendFriendLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"weiboLink": "{noercms::U('Index/index',array('token'=>$res['token']))}",
+				"tTitle": "欢迎访问{noercms:$tpl.wxname}微信版3G网站",
+				"tContent": "欢迎访问{noercms:$tpl.wxname}微信版3G网站",
+				"fTitle": "欢迎访问{noercms:$tpl.wxname}微信版3G网站",
+				"fContent": "欢迎访问{noercms:$tpl.wxname}微信版3G网站",
+				"wContent": "欢迎访问{noercms:$tpl.wxname}微信版3G网站"
+			};
+			// 发送给好友
+			WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+				WeixinJSBridge.invoke('sendAppMessage', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.sendFriendLink,
+					"desc": window.shareData.fContent,
+					"title": window.shareData.fTitle
+				}, function (res) {
+					_report('send_msg', res.err_msg);
+				})
+			});
+			// 分享到朋友圈
+			WeixinJSBridge.on('menu:share:timeline', function (argv) {
+				WeixinJSBridge.invoke('shareTimeline', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.timeLineLink,
+					"desc": window.shareData.tContent,
+					"title": window.shareData.tTitle
+				}, function (res) {
+					_report('timeline', res.err_msg);
+				});
+			});
+			// 分享到微博
+			WeixinJSBridge.on('menu:share:weibo', function (argv) {
+				WeixinJSBridge.invoke('shareWeibo', {
+					"content": window.shareData.wContent,
+					"url": window.shareData.weiboLink
+				}, function (res) {
+					_report('weibo', res.err_msg);
+				});
+			});
+		}, false)
+	</script>
+<div class="copyright" style="text-align:center; >
+<if condition="$iscopyright eq 1">
+{noercms:$homeInfo.copyright}
+<else/>
+{noercms:$siteCopyright}
+</if>
+</div>
+</div>              
+    <include file="Index:styleInclude"/> 
+	</body>
+</html>

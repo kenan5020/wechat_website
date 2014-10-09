@@ -1,0 +1,19 @@
+.content-slide>a {
+margin-bottom: 5px;
+}
+.device {height: 430px;}
+.swiper-container {height: 365px;}
+.ico img {margin-top:3px;border-radius: 100%; padding: 10px;}
+
+
+
+#cate67  .content-slide>a:nth-child(9n+1) .mbg .ico img { background-color:rgba(210,170,84,0.9)}
+#cate67  .content-slide>a:nth-child(9n+2) .mbg .ico img  { background-color:rgba(108,160,182,0.9)}
+#cate67  .content-slide>a:nth-child(9n+3) .mbg .ico img { background-color:rgba(129,165,93,0.9)}
+#cate67  .content-slide>a:nth-child(9n+4) .mbg .ico img { background-color:rgba(209,109,82,0.9)}
+
+#cate67  .content-slide>a:nth-child(9n+5) .mbg .ico img { background-color:rgba(109,108,168,0.9)}
+#cate67  .content-slide>a:nth-child(9n+6) .mbg .ico img { background-color:rgba(196,126,184,0.9)}
+#cate67  .content-slide>a:nth-child(9n+7) .mbg .ico img { background-color:rgba(120,180,135,0.9)}
+#cate67  .content-slide>a:nth-child(9n+8) .mbg .ico img { background-color:rgba(210,84,145,0.9)}
+#cate67  .content-slide>a:nth-child(9n+9) .mbg .ico img { background-color:rgba(160,113,99,0.9)}

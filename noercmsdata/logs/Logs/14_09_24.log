@@ -1,0 +1,326 @@
+[ 2014-09-24T00:22:01+08:00 ] 222.186.128.54 http://www.baidu.com/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001398s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000254s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001693s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014560s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016305s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016638s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016981s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017151s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001196s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.017572s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000421s ]
+
+[ 2014-09-24T00:30:39+08:00 ] 192.184.60.203 http://www.baidu.com/?rands=_34361281439332725251050091610952860
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001530s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000278s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001854s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014956s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016850s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.017171s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.017517s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017695s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001209s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.018122s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000414s ]
+
+[ 2014-09-24T00:30:40+08:00 ] 192.184.60.203 http://www.soso.com/?rands=_7225899613688304422977230423968952
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001341s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000252s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001632s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014020s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015691s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016048s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016375s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016559s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001238s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.016993s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000398s ]
+
+[ 2014-09-24T00:30:40+08:00 ] 192.184.60.203 http://www.so.com/?rands=_29970602695987801166620686987512720
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000429s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001278s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000243s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001563s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013862s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015465s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.015781s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016124s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016316s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001193s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.016721s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000430s ]
+
+[ 2014-09-24T00:30:40+08:00 ] 192.184.60.203 http://60.173.11.232:2222/?rands=_625045264833605215934837381019501648
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001346s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000251s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001638s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013895s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015572s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.015894s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016242s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001179s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.016811s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000414s ]
+
+[ 2014-09-24T00:30:41+08:00 ] 192.184.60.203 http://mail.126.com/?rands=_125429718141370810710691291364149028
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001317s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000260s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001617s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014542s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016213s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016700s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.017105s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017280s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001429s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.017709s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000474s ]
+
+[ 2014-09-24T02:54:47+08:00 ] 222.186.128.50 http://www.baidu.com/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001342s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000247s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001629s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013875s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015544s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.015873s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016207s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016372s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001163s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.016771s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000421s ]
+
+[ 2014-09-24T06:14:52+08:00 ] 58.221.60.7 http://www.baidu.com/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001414s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000257s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001713s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014803s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016571s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016955s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.017303s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001266s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.017963s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000446s ]
+
+[ 2014-09-24T07:18:20+08:00 ] 222.186.128.54 http://www.baidu.com/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000436s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001366s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000320s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001728s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014223s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015992s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016316s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016662s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016830s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001176s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.017233s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000457s ]
+
+[ 2014-09-24T08:34:05+08:00 ] 222.186.128.51 http://www.baidu.com/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001353s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000262s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001655s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014053s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015749s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016081s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016408s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016586s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001171s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.016993s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000411s ]
+
+[ 2014-09-24T08:47:36+08:00 ] 1.163.65.100 mx3.mail2000.com.tw:25
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+NOTIC: [8] Undefined index: HTTP_HOST /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 347 行.
+NOTIC: [8] Undefined index: 1 /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+NOTIC: [8] Undefined index: HTTP_HOST /alidata/www/ces/noercms/_Core/Common/common.php 第 261 行.
+NOTIC: [8] Undefined index: 1 /alidata/www/ces/noercms/_Core/Lib/Core/View.class.php 第 69 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001424s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000241s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001714s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014482s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016253s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016621s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016970s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001238s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.017559s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000419s ]
+
+[ 2014-09-24T09:45:46+08:00 ] 58.221.59.172 http://www.baidu.com/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000441s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001768s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000288s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.002098s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014033s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016214s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016551s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016879s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017055s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001228s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.017473s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000404s ]
+
+[ 2014-09-24T13:35:15+08:00 ] 180.185.59.195 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001342s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000400s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014392s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.016240s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.016580s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016908s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.017088s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001191s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.017504s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000401s ]
+
+[ 2014-09-24T16:09:06+08:00 ] 222.186.128.54 http://www.baidu.com/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000436s ]
+NOTIC: [2] Cannot use a scalar value as an array /alidata/www/ces/noercms/_Core/Lib/Core/Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.001371s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000254s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+NOTIC: [8] Undefined index: uid /alidata/www/ces/noercmsdata/logs/Cache/Home/79043ee92b523d43801fb485caf7016e.php 第 35 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001668s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013903s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.015610s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.015933s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.016280s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.016449s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001175s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.016849s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000424s ]
+
