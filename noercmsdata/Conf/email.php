@@ -1,9 +1,9 @@
 <?php 
 return array (
   'email' => 'true',
-  'email_server' => 'mail.weixin.maozi168.cn',
+  'email_server' => 'mail.qq.com',
   'email_port' => '25',
-  'email_user' => 'noercms',
+  'email_user' => '2816215624',
   'email_pwd' => '',
   'pwd_email_title' => '密码找回',
   'pwd_email_content' => '尊敬的用户{username}:
