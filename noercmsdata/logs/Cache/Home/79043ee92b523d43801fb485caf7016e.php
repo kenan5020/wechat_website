@@ -27,7 +27,6 @@
           <li> <a href="/" class="active">首页</a> </li>
           <li> <a href="<?php echo U('Home/Index/solution');?>" class="">经典案例</a> </li>
           <li> <a href="<?php echo U('Home/Index/navigation');?>" class="">功能导航</a> </li>
-          <li> <a href="<?php echo U('Home/Index/spread');?>" class="">渠道代理</a> </li>
           <li> <a href="<?php echo U('Home/Index/about');?>" class="">关于我们</a> </li>
         </ul>
       </div>
@@ -49,8 +48,8 @@
     <div class="note">
       <div class="slider-note wrap">
         <ul id="slider-note">
-          <li>noercms后台重磅升级！！全新的后台，全新的noercms！</li>
-          <li>noercms官方网站重磅升级！！全新的官网，全新的noercms！</a></li>
+          <li>微盟合创微信平台后台重磅升级！！全新的后台，全新的微盟合创微信平台！</li>
+          <li>微盟合创微信平台官方网站重磅升级！！全新的官网，全新的微盟合创微信平台！</a></li>
           <li>微社区全面升级，开放全账户类型体验</a></li>
         </ul>
       </div>
@@ -162,7 +161,7 @@
     </div>
     <div class="clearfix index index-2" id="index-2">
       <div class="wrap">
-        <h4>谁使用了noercms</h4>
+        <h4>谁使用了微信平台服务</h4>
         <small>超过<i>25682</i>品牌客户选择了，支持深度定制</small>
         <ul class="clearfix list-case">
           <li> <a> <span><img src="<?php echo RES;?>/images/E6BBA8E6B19FE59BBDE99985E5B9BFE59CBA2.jpg"></span> <small>滨江国际广场</small>
@@ -204,11 +203,9 @@
 
 			<dl class="list-arrow-square">
 
-				<dt>关于noercms</dt>
+				<dt>关于微盟合创</dt>
 
 				<dd><a href="<?php echo U('Home/Index/contact');?>">联系方式</a></dd>
-
-				<dd><a href="<?php echo U('Home/Index/spread');?>">渠道代理</a></dd>
 
 				<dd><a href="<?php echo U('Home/Index/about');?>">关于我们</a></dd>
 

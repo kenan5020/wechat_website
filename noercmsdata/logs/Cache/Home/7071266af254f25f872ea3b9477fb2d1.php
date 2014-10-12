@@ -10,8 +10,6 @@
 
 				<dd><a href="<?php echo U('Home/Index/contact');?>">联系方式</a></dd>
 
-				<dd><a href="<?php echo U('Home/Index/spread');?>">渠道代理</a></dd>
-
 				<dd><a href="<?php echo U('Home/Index/about');?>">关于我们</a></dd>
 
 			</dl>
