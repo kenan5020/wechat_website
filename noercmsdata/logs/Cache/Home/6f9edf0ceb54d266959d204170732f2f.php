@@ -286,7 +286,7 @@
 
     <a class="tools-phone"><?php echo C('phone');?></a>
 
-    <a class="tools-spread" href="<?php echo U('Home/Index/spread');?>">申请代理</a>
+    <a class="tools-spread" href="<?php echo U('Home/Index/about');?>">联系我们</a>
 
     <a class="tools-qrd"></a>
 
