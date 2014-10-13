@@ -34,21 +34,6 @@ function getV(){
     </div>
 </div>
 <!--/box-->
-<div class="box">
-	<h3>noercms官方动态</h3>
-    <div class="con dcon">
-    <div class="kjnav">
-    <a href="http://iiys.taobao.com/" target="_blank">使用帮助</a><a href="http://iiys.taobao.com/" target="_blank">技术售后</a><a href="http://iiys.taobao.com/" target="_blank">安装指导</a>
-	<a href="http://iiys.taobao.com/" target="_blank">联系我们</a>
-	<a href="http://iiys.taobao.com/" target="_blank">升级咨询</a>
-    </div>
-    <ul class="myinfo kjinfo">
-   <li class="title">售后服务</li>
-
-<li>客服QQ：327979560</li>
-	</ul>
-    </div>
-</div>
 
 <!--/box-->
 </div>
