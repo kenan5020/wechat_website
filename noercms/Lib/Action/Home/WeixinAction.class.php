@@ -216,13 +216,15 @@ class WeixinAction extends Action
 		//file_put_contents("a1.txt",$this->fun);
 		$datafun = explode ( ',', $open ['queryname'] );
 		
-		$tags = $this->get_tags ( $key );
+		//$tags = $this->get_tags ( $key );
+		$tags = $key;
 		//s:13:"上海,天气";
 		//分词技术不完整修补
 		if(substr($key,0,6)=="计算"){
 			$tags=str_replace('计算','计算,',$key);
 		}
 		
+		//file_put_contents("tags.txt",$tags);
 		$back = explode ( ',', $tags );
 		foreach ( $back as $keydata => $data ) {
 			
