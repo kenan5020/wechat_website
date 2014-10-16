@@ -1,9 +1,9 @@
-<?php
+<?php 
 return array (
   'tp' => '',
   'site_name' => '湖南微盟合创',
   'site_title' => '湖南微盟合创微信公众平台-微网站',
-  'site_url' => 'http://localhost',
+  'site_url' => 'http://120.24.56.15',
   'logo' => 'img/logo.png',
   'erwei' => '/img/image/getqrcode.jpg',
   'phone' => '0735-2855558',
@@ -43,4 +43,3 @@ return array (
   'content' => '湖南微盟合创微信公众平台',
   'copyright' => '湖南微盟合创版权所有',
 );
-?>

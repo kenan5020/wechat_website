@@ -1,2 +1,4 @@
 
-/noercmsdata/logs/
+noercmsdata/logs/*
+noercmsdata/Conf/*
+noercmsdata/logs/
