@@ -4744,7 +4744,7 @@ NOTIC: [8] Undefined offset:  3 D:\wwwroot\ces\wwwroot\noercms\_Core\Lib\Core\Mo
 NOTIC: [8] Undefined offset:  3 D:\wwwroot\ces\wwwroot\noercms\_Core\Lib\Core\Model.class.php 第 868 行.
 NOTIC: [8] Undefined offset:  3 D:\wwwroot\ces\wwwroot\noercms\_Core\Lib\Core\Model.class.php 第 868 行.
 NOTIC: [8] Undefined offset:  3 D:\wwwroot\ces\wwwroot\noercms\_Core\Lib\Core\Model.class.php 第 868 行.
-SQL: INSERT INTO `wqy_wxuser` (`wxname`,`wxid`,`weixin`,`headerpic`,`token`,`province`,`city`,`qq`,`wxfans`,`uid`,`tpltypeid`,`tpllistid`,`tplcontentid`,`tpltypename`,`tpllistname`,`tplcontentname`,`createtime`,`updatetime`,`typeid`,`typename`) VALUES ('12wsae','12e2121','212ewqe','http://ces.maozi168.cn/uploads/image/20140811/53e8d82f5c1b7.png','vzkhtl1407768589','henan','sanmenx','1407768589@yourdomain.com',0,1,'1','1','1','ty_index','yl_list','ktv_content',1407768633,1407768633,1,'情感') [ RunTime:0.000386s ]
+SQL: INSERT INTO `wqy_wxuser` (`wxname`,`wxid`,`weixin`,`headerpic`,`token`,`province`,`city`,`qq`,`wxfans`,`uid`,`tpltypeid`,`tpllistid`,`tplcontentid`,`tpltypename`,`tpllistname`,`tplcontentname`,`createtime`,`updatetime`,`typeid`,`typename`) VALUES ('12wsae','12e2121','212ewqe','http://ces.github.com/uploads/image/20140811/53e8d82f5c1b7.png','vzkhtl1407768589','henan','sanmenx','1407768589@yourdomain.com',0,1,'1','1','1','ty_index','yl_list','ktv_content',1407768633,1407768633,1,'情感') [ RunTime:0.000386s ]
 SQL: UPDATE `wqy_users` SET `wechat_card_num`=wechat_card_num+1 WHERE ( `id` = 1 ) [ RunTime:0.000264s ]
 SQL: SHOW COLUMNS FROM `wqy_token_open` [ RunTime:0.008646s ]
 SQL: SHOW COLUMNS FROM `wqy_function` [ RunTime:0.001755s ]

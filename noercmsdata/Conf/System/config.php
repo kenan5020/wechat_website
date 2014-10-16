@@ -17,6 +17,6 @@ return array (
   'RBAC_USER_TABLE' => 'wqy_role_user',
   'RBAC_ACCESS_TABLE' => 'wqy_access',
   'RBAC_NODE_TABLE' => 'wqy_node',
-  'SPECIAL_USER' => 'admin',
+  'SPECIAL_USER' => 'test',
 );
 ?>

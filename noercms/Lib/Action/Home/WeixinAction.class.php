@@ -4,7 +4,7 @@ class WeixinAction extends Action
 	private $token;
 	private $fun;
 	private $data = array ();
-	private $my = '狗扑软件';
+	private $my = 'Vemon';
 	public function index() 
 	{
 		$this->token = $this->_get ( 'token' );
@@ -29,7 +29,7 @@ class WeixinAction extends Action
 		$viptime=M('users')->field ( 'viptime' )->where(array("id"=>$wxuser['uid']))->find();
 		$nowtime=time();
 		if(sizeof($wxuser)>0 && $viptime['viptime']<$nowtime){
-			return array("狗扑软件提醒您，您的帐号已经过期！请去官方网址:http://wx.weixin.maozi168.cn开通VIP权限继续使用。","text");
+			return array("Vemon提醒您，您的帐号已经过期！请去官方网址:http://wx.weixin.github.com开通VIP权限继续使用。","text");
 		}
 		$data2=$data;
 		$wxuser_message = M ( 'wxuser_message' )->field ( 'MsgType' )->where ( array (
@@ -3729,7 +3729,7 @@ class WeixinAction extends Action
 		$str = 'http://www.tuling123.com/openapi/api?key=2d5c65414458b189825a797c0485f2b1&info=' . urlencode ( $name );
 		$json = json_decode ( file_get_contents ( $str ) );
 		
-		$str = str_replace ( '狗扑软件', $this->my, str_replace ( '提示：', $this->my . '提醒您:', str_replace ( '{br}', "\n", $json->text ) ) );
+		$str = str_replace ( 'Vemon', $this->my, str_replace ( '提示：', $this->my . '提醒您:', str_replace ( '{br}', "\n", $json->text ) ) );
 		
 		return $str;
 	}
@@ -3955,7 +3955,7 @@ class WeixinAction extends Action
 		}
 	}
 	public function get_tags($title, $num = 10) 
-	{
+	{ss
 		if($title=="摇一摇"){
 			return $title;
 		}

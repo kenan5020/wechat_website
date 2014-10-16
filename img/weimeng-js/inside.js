@@ -9,8 +9,8 @@ var G = {
     logic: {},
     util: {},
     domain: {
-        w: 'weixin.maozi168.cn',
-        t: 'http://wx.weixin.maozi168.cn',
+        w: 'weixin.github.com',
+        t: 'http://wx.weixin.github.com',
         k: 'http://www.v513.com/img'
     },
     set: {
