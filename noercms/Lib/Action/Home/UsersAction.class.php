@@ -101,7 +101,7 @@ class UsersAction extends BaseAction{
 				if(C('ischeckuser')!='true'){
 					$this->success('注册成功,请联系在线客服审核帐号',U('User/Index/index'));exit;
 				}
-				$viptime=time()+3*24*3600;
+				$viptime=time()+365*24*3600;
 				$db->where(array('id'=>$id))->save(array('viptime'=>$viptime));
 				session('uid',$id);
 				session('gid',C('reg_groupid'));
