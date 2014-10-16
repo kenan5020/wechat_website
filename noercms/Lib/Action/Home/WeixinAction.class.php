@@ -3957,7 +3957,7 @@ class WeixinAction extends Action
 		}
 	}
 	public function get_tags($title, $num = 10) 
-	{ss
+	{
 		if($title=="摇一摇"){
 			return $title;
 		}
