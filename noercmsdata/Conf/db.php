@@ -5,7 +5,7 @@ return array (
   'DB_PORT' => '3306',
   'DB_NAME' => 'noercms',
   'DB_USER' => 'root',
-  'DB_PWD' => '1234',
+  'DB_PWD' => '0cd31ba4e0',
   'DB_PREFIX' => 'wqy_',
 );
 ?>
