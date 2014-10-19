@@ -29,7 +29,7 @@ class WeixinAction extends Action
 		$viptime=M('users')->field ( 'viptime' )->where(array("id"=>$wxuser['uid']))->find();
 		$nowtime=time();
 		if(sizeof($wxuser)>0 && $viptime['viptime']<$nowtime){
-			return array("Vemon提醒您，您的帐号已经过期！请去官方网址:http://wx.weixin.github.com开通VIP权限继续使用。","text");
+			return array("Vemon提醒您，您的帐号已经过期！请去官方网址:http://wx.vemonhc.com开通VIP权限继续使用。","text");
 		}
 		$data2=$data;
 		$wxuser_message = M ( 'wxuser_message' )->field ( 'MsgType' )->where ( array (

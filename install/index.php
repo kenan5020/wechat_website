@@ -29,7 +29,7 @@ $lang = array(
 			<strong>三、协议规定的约束和限制 </strong>
 				<p>1、未获商业授权之前，不得将本软件用于商业用途（包括但不限于企业网站、经营性网站、以营利为目的或实现盈利的网站）。</p>
 				<p>2、未经官方许可，不得对本软件或与之关联的商业授权进行出租、出售、抵押或发放子许可证。</p>
-				<p>3、不管你的网站是否整体使用 noercms微信公共平台，还是部份栏目使用 微信公共平台，在你使用了 noercms微信公共平台的网站主页上必须加上 noercms微信公共平台  官方网址(<a href="http://weixin.github.com" target="_blank">weixin.github.com</a>)的链接。</p>
+				<p>3、不管你的网站是否整体使用 noercms微信公共平台，还是部份栏目使用 微信公共平台，在你使用了 noercms微信公共平台的网站主页上必须加上 noercms微信公共平台  官方网址(<a href="http://vemonhc.com" target="_blank">vemonhc.com</a>)的链接。</p>
 				<p>4、未经官方许可，禁止在 noercms微信公共平台  的整体或任何部分基础上以发展任何派生版本、修改版本或第三方版本用于重新分发。</p>
 				<p>5、如果您未能遵守本协议的条款，您的授权将被终止，所被许可的权利将被收回，并承担相应法律责任。 </p>
 			<strong>四、有限担保和免责声明 </strong>
@@ -203,7 +203,7 @@ $method = isset($allow_method[$step]) ? $allow_method[$step] : '';
 //检测标识文件是否存在，如果存在，那么停止安装
 if (file_exists('lock')){
 	@header("Content-type: text/html; charset=UTF-8");
-	echo '系统已经安装过了，如果要重新安装，那么请删除install目录下的lock文件.访问<a href="http://weixin.github.com" target="_blank">weixin.github.com</a>获取更多帮助';
+	echo '系统已经安装过了，如果要重新安装，那么请删除install目录下的lock文件.访问<a href="http://vemonhc.com" target="_blank">vemonhc.com</a>获取更多帮助';
 	exit;
 }
 
