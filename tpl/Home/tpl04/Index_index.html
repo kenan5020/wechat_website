@@ -31,7 +31,7 @@
         </ul>
       </div>
       <div class="header-btns">
-        <if condition="$_SESSION[uid]==false"> <a href="{noercms::U('Home/Index/login')}" class="btn btn-text">登录</a> <a href="{noercms::U('Home/Index/reg')}" class="btn btn-green">注册试用</a>
+        <if condition="$_SESSION[uid]==false"> <a href="{noercms::U('Home/Index/login')}" class="btn btn-green">登录</a> <!-- <a href="{noercms::U('Home/Index/reg')}" class="btn btn-green">注册试用</a> -->
           <else/>
           <a href="{noercms::U('User/Index/index')}" class="btn btn-green">{noercms:$Think.session.uname}</a> <a href="/#" class="btn btn-green" onClick="Javascript:window.open('{noercms::U('System/Admin/logout')}','_blank')" >退出</a> </if>
       </div>
