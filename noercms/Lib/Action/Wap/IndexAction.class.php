@@ -274,7 +274,7 @@ class IndexAction extends WapAction{
 				
 
 			//多数模板没有分页，这里取消分页功能
-				$res=$db->where($where)->order('usort DESC')->select();
+				$res=$db->where($where)->order('createtime DESC')->select();
 				$res=$this->convertLinks($res);
 
 			//控制模板中的不同字段
